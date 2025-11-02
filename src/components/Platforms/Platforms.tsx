@@ -64,6 +64,7 @@ const Platforms = () => {
               {t('platforms.mobileApps.featuresTitle')}
             </p>
             <ul className="list-disc pl-6 space-y-2 mt-2 text-base font-medium text-body-color dark:text-body-color-dark">
+              <li>{t('platforms.mobileApps.features.passwordsPasskeys')}</li>
               <li>{t('platforms.mobileApps.features.biometric')}</li>
               <li>{t('platforms.mobileApps.features.offline')}</li>
               <li>{t('platforms.mobileApps.features.integration')}</li>

@@ -86,8 +86,8 @@
     },
     "items": {
       "passwordManager": {
-        "title": "Password Manager",
-        "description": "AliasVault allows you to generate and store all your passwords in one place, and access them from any device (desktop, mobile, tablet)."
+        "title": "Passwords & Passkeys",
+        "description": "Generate and store all your passwords and passkeys in one place, and access them from any device (desktop, mobile, tablet)."
       },
       "aliasGenerator": {
         "title": "Alias Generator",
@@ -226,6 +226,7 @@
       "fDroidAlt": "Download on F-Droid",
       "featuresTitle": "The AliasVault mobile apps feature:",
       "features": {
+        "passwordsPasskeys": "Passwords & passkeys autofill with native OS integration",
         "biometric": "Biometric authentication (Face ID / Touch ID)",
         "offline": "Offline access to your passwords",
         "integration": "Integration with mobile browsers",
@@ -238,7 +239,7 @@
       "install": "Install",
       "featuresTitle": "Our browser extensions allow you to:",
       "features": {
-        "autofill": "Auto-fill passwords and login information",
+        "autofill": "Autofill passwords & passkeys",
         "aliases": "Generate new email aliases on the fly",
         "access": "Access your vault directly from your browser",
         "save": "Securely save new credentials as you browse"
@@ -277,41 +278,45 @@
     "title": "Frequently Asked Questions",
     "description": "Find answers to common questions about AliasVault's features, security, and deployment options.",
     "items": {
-      "1": {
+      "whatIsAliasVault": {
         "question": "What is AliasVault and who is it for?",
         "answer": "AliasVault is a password manager built with a strong focus on privacy, making it the ideal choice for privacy-conscious individuals. All your data is safely stored inside your own personal vault and encrypted with your master password that never leaves your device. No one but you, (not even us) can see inside your vault.\n\nAliasVault also features a built-in email server that allows you to create unique email addresses (aliases) for different services. If you care about controlling your digital identity, preventing spam, and reducing your exposure in data breaches, AliasVault helps you manage credentials and aliases securely.\n\nFully open-source and transparent. No third-party dependencies."
       },
-      "2": {
+      "passkeySupport": {
+        "question": "Does AliasVault support passkeys?",
+        "answer": "Yes! You can create and login with passkeys via the AliasVault browser extension, iOS and Android mobile apps. Passkeys are securely stored in your fully encrypted vault and automatically synced across all your devices, ensuring seamless and secure access wherever you need it."
+      },
+      "pricing": {
         "question": "How much does AliasVault cost?",
         "answer": "The current core version of AliasVault, with all of its features, is completely free to use and will always remain that way. Both for the official cloud-hosted and self-hosted options. \n\nIn the near future, we do plan to introduce optional premium features such as additional storage space, automatic back-ups, and more. These paid options will help support the continued development and costs of the project.\n\nThat said, we are currently focused on developing and refining the basic features of AliasVault to ensure a stable and reliable foundation for all users. Premium features are part of our longer-term roadmap, but our current priority is to deliver a solid core experience.\n\nIf you'd like to support the project in the meantime, we welcome donations — please visit our [contactLink]contact page[/contactLink] for more information."
       },
-      "3": {
+      "deviceSupport": {
         "question": "Which devices are supported by AliasVault?",
         "answer": "AliasVault works on all major platforms: web, desktop, and mobile.\n\nYou can access your vault through the AliasVault web app, browser extensions, or by downloading the mobile apps, ensuring you always have access to your vault no matter the device."
       },
-      "4": {
+      "security": {
         "question": "How does AliasVault protect my data?",
-        "answer": "Security is the foundation of AliasVault. End-to-end encryption (AES-256-GCM) is used to encrypt all your data. Everything, including usernames, passwords and even email contents, is encrypted on your device. Even on our servers, your information stays encrypted, protected by your master password, which only you know. Our strict zero-knowledge architecture guarantees that no one — not even us — can access your vault.\n\nFor in-depth technical details, visit our [docsLink]architecture documentation[/docsLink]."
+        "answer": "Security is the foundation of AliasVault. End-to-end encryption (AES-256-GCM) is used to encrypt all your data. Everything, including usernames, passwords and even email contents, is encrypted on your device. Even on our servers, your information stays encrypted, protected by your master password, which only you know. Our strict zero-knowledge architecture guarantees that no one (not even us) can access your vault.\n\nFor in-depth technical details, visit our [docsLink]architecture documentation[/docsLink]."
       },
-      "5": {
+      "importData": {
         "question": "Can I import my passwords from other password managers?",
         "answer": "Yes! AliasVault makes it easy to migrate your credentials from other password managers. We support importing from popular services including 1Password, Bitwarden, Chrome, Dashlane, Firefox, KeePass, KeePassXC, Proton Pass, and Strongbox.\n\nSimply export your data from your current password manager and use AliasVault's import function in the web app to seamlessly transfer all your credentials, notes, 2FA codes and other data.\n\nPlus, AliasVault also includes export functionality, so if you ever decide to switch to another service in the future, you can easily take your data with you. You have full control over your data."
       },
-      "6": {
+      "selfHosting": {
         "question": "Can I self-host AliasVault on my own server?",
         "answer": "Yes, AliasVault is designed from the ground up to be fully self-hosted. You can easily deploy it on your own server using Docker, giving you complete control over your data and infrastructure. AliasVault comes with an automatic install script which makes installation a breeze.\n\nDetailed installation instructions are available in our [docsLink]documentation[/docsLink]."
       },
-      "7": {
+      "emailAliasFeature": {
         "question": "How does the email alias feature work?",
         "answer": "AliasVault includes a built-in email server that allows you to create unique email addresses (aliases) for different services.\n\nWhen someone sends an email to your alias, it's received directly in AliasVault and immediately encrypted, helping you maintain privacy and reduce spam."
       },
-      "8": {
+      "emailAliasLimitations": {
         "question": "Are there limitations to using email aliases?",
         "answer": "Currently there are two main restrictions:\n\n1) Email aliases are receive-only, meaning you cannot send or reply to emails from your aliases. This measure prevents potential abuse of the system for spam.\n\n2) There is a 10 megabyte size limit for incoming emails - any emails larger than this will be rejected.\n\nIn the future, optional paid subscriptions will lift these restrictions. Also, currently email storage has no limit but is based on fair-use. In the future specific limits may be introduced for the free tier, but will be announced in advance."
       },
-      "9": {
+      "story": {
         "question": "What's the story behind AliasVault?",
-        "answer": "AliasVault started as a side project in early 2024, driven by the belief that privacy is a right, not a luxury. It was created to make the internet a safer, more private place — where users are in control of their digital identity.\n\nThe creator of AliasVault, Leendert de Borst, has long been passionate about fighting spam and making privacy accessible. Back in 2013, he launched asdasd.nl, a Dutch temporary email service that over the years grew into the multilingual SpamOK.com, helping thousands of users shield themselves from spam and data collection.\n\nAliasVault is the next step in that journey: a self-hostable, end-to-end encrypted password and alias manager that helps you generate unique email aliases and strong passwords for every service you use. By minimizing the personal information you share online, AliasVault helps you stay secure and anonymous.\n\nSince the beta release in December 2024, AliasVault has seen steady and frequent updates, introducing new features like browser extensions, two-factor authentication, mobile apps and import support from other password managers — all designed to make privacy more powerful and accessible.\n\nAliasVault is fully open-source and entirely self-funded. It's built to be transparent, community-driven, and privacy-first.\n\nLearn more about [missionLink]our mission[/missionLink] and what drives this project."
+        "answer": "AliasVault started as a side project in early 2024, driven by the belief that privacy is a right, not a luxury. It was created to make the internet a safer, more private place — where users are in control of their digital identity.\n\nThe creator of AliasVault, Leendert de Borst, has long been passionate about fighting spam and making privacy accessible. Back in 2013, he launched asdasd.nl, a Dutch temporary email service that over the years grew into the multilingual SpamOK.com, helping thousands of users shield themselves from spam and data collection.\n\nAliasVault is the next step in that journey: a self-hostable, end-to-end encrypted password and alias manager that helps you generate unique email aliases and strong passwords for every service you use. By minimizing the personal information you share online, AliasVault helps you stay secure and anonymous.\n\nSince the beta release in December 2024, AliasVault has seen steady and frequent updates, introducing new features like browser extensions, two-factor authentication, mobile apps and import support from other password managers: all designed to make privacy more powerful and accessible.\n\nAliasVault is fully open-source and entirely self-funded. It's built to be transparent, community-driven, and privacy-first.\n\nLearn more about [missionLink]our mission[/missionLink] and what drives this project."
       }
     }
   },
@@ -458,16 +463,16 @@
   "featuresData": {
     "passwordManagement": {
       "title": "Password Management",
-      "description": "Securely store, generate, and manage all your passwords in one place with AliasVault's powerful password management features.",
+      "description": "Securely store, generate, and manage all your passwords and passkeys in one place with AliasVault's powerful password and passkey management features.",
       "imageAlt": "AliasVault Password Management",
       "features": {
         "passwordManager": {
           "name": "Password Manager",
-          "description": "Store all your passwords securely in one place, accessible from any device with industry leading end-to-end encryption."
+          "description": "Store all your passwords securely in one place, accessible from any device with industry leading end-to-end encryption. Easily generate strond and unique passwords for each service."
         },
-        "adjustableGenerator": {
-          "name": "Adjustable Generator",
-          "description": "Create custom patterns, length, and character sets for your passwords to make them more secure. Customizable per credential."
+        "passkeySupport": {
+          "name": "Passkeys",
+          "description": "Create and login with passkeys via the browser extension, iOS and Android apps. Passkeys are securely stored in your vault and synced across all devices."
         },
         "builtIn2FA": {
           "name": "Built-in 2FA Authenticator",
@@ -631,6 +636,7 @@
       },
       "features": {
         "passwordManagement": "Password Management",
+        "passkeySupport": "Passkeys",
         "emailAliasManagement": "Email Alias Management",
         "randomIdentityGeneration": "Random Identity Generation",
         "openSource": "Open Source",
@@ -702,6 +708,7 @@
         "endToEndEncryption": "End-to-End Encryption",
         "openSource": "Open Source",
         "passwordManagerIntegration": "Password Manager Integration",
+        "passkeySupport": "Passkeys",
         "customDomains": "Custom Domains",
         "customDomainsValue": "✅ (on self-hosted version)",
         "browserExtension": "Browser Extension",
@@ -774,6 +781,7 @@
       },
       "features": {
         "passwordManagement": "Password Management",
+        "passkeySupport": "Passkeys",
         "clientsOpenSource": "Clients Open Source",
         "serverOpenSource": "Server/Backend Open Source",
         "selfHostingCapability": "Self-hosting Capability",

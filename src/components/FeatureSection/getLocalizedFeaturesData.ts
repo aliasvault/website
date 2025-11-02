@@ -29,8 +29,8 @@ export function getLocalizedFeaturesData(t: TranslationFunction): FeatureCategor
           status: "available" as const
         },
         {
-          name: t('featuresData.passwordManagement.features.adjustableGenerator.name'),
-          description: t('featuresData.passwordManagement.features.adjustableGenerator.description'),
+          name: t('featuresData.passwordManagement.features.passkeySupport.name'),
+          description: t('featuresData.passwordManagement.features.passkeySupport.description'),
           status: "available" as const
         },
         {

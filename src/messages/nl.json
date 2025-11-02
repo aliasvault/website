@@ -86,19 +86,19 @@
     },
     "items": {
       "passwordManager": {
-        "title": "Wachtwoordmanager",
-        "description": "AliasVault stelt je in staat om al je wachtwoorden op één plek te genereren en op te slaan, en ze vanaf elk apparaat te openen (desktop, mobiel, tablet)."
+        "title": "Wachtwoorden & passkeys",
+        "description": "Genereer en bewaar al je wachtwoorden en passkeys op één plek, toegankelijk vanaf elk apparaat (desktop, mobiel, tablet)."
       },
       "aliasGenerator": {
-        "title": "Alias Generator",
+        "title": "Alias generator",
         "description": "AliasVault stelt je in staat om unieke aliassen (identiteiten) te genereren die je kunt gebruiken om je aan te melden voor verschillende diensten, waarbij je echte identiteit verborgen blijft."
       },
       "emailServer": {
-        "title": "Ingebouwde E-mailserver",
+        "title": "Ingebouwde e-mailserver",
         "description": "AliasVault heeft zijn eigen ingebouwde e-mailserver waarmee je unieke e-mailadressen kunt aanmaken en e-mails rechtstreeks in AliasVault kunt ontvangen. Geen externe e-mailservice vereist."
       },
       "encryption": {
-        "title": "End-to-End Versleuteling",
+        "title": "End-to-end versleuteling",
         "description": "Je gegevens worden volledig versleuteld op je lokale apparaat voordat ze online worden opgeslagen. Je hoofdwachtwoord wordt nooit naar de server verzonden. Niemand, behalve jij, kan in je vault (kluis) kijken."
       },
       "hosting": {
@@ -106,7 +106,7 @@
         "description": "Je kunt de officiële AliasVault cloud-service gebruiken, of AliasVault zelf hosten op je eigen server of een cloudprovider van je keuze. Jij bepaalt waar je je gegevens opslaat."
       },
       "openSource": {
-        "title": "Gratis en Open-Source",
+        "title": "Gratis en open-source",
         "description": "AliasVault is gratis en open-source software. Het is gebouwd met transparantie in gedachten, en de broncode is vrij beschikbaar op GitHub om te bekijken."
       }
     }
@@ -226,6 +226,7 @@
       "fDroidAlt": "Download op F-Droid",
       "featuresTitle": "De AliasVault mobiele apps bevatten:",
       "features": {
+        "passwordsPasskeys": "Wachtwoorden & Passkeys met native OS integratie",
         "biometric": "Biometrische authenticatie (Face ID / Touch ID)",
         "offline": "Offline toegang tot je wachtwoorden",
         "integration": "Integratie met mobiele browsers",
@@ -238,7 +239,7 @@
       "install": "Installeren",
       "featuresTitle": "Onze browserextensies stellen je in staat om:",
       "features": {
-        "autofill": "Wachtwoorden en inloginformatie automatisch in te vullen",
+        "autofill": "Autofillen van wachtwoorden & passkeys",
         "aliases": "Nieuwe e-mailaliassen ter plekke te genereren",
         "access": "Je vault (kluis) rechtstreeks vanuit je browser te benaderen",
         "save": "Nieuwe inloggegevens veilig op te slaan terwijl je browst"
@@ -277,39 +278,43 @@
     "title": "Veelgestelde Vragen",
     "description": "Vind antwoorden op veelvoorkomende vragen over AliasVault's functies, beveiliging en implementatie-opties.",
     "items": {
-      "1": {
+      "whatIsAliasVault": {
         "question": "Wat is AliasVault en voor wie is het bedoeld?",
         "answer": "AliasVault is een wachtwoordmanager met een sterke focus op privacy, waardoor het de ideale keuze is voor privacy-bewuste gebruikers. Al je gegevens worden veilig opgeslagen in je eigen vault (kluis) en versleuteld met je hoofdwachtwoord dat nooit je apparaat verlaat. Alleen jij kan in je vault kijken, niemand anders, zelfs wij niet.\n\nDe unieke feature van AliasVault is dat het daarnaast ook beschikt over een ingebouwde e-mailserver waarmee je unieke e-mailadressen (aliassen) kunt aanmaken voor verschillende services. Als je waarde hecht aan het houden van grip op je digitale privacy, het voorkomen van spam en het verminderen van je blootstelling bij datalekken, helpt AliasVault je om inloggegevens en aliassen veilig te beheren.\n\nVolledig open-source en transparant. Geen afhankelijkheden van derden."
       },
-      "2": {
+      "passkeySupport": {
+        "question": "Ondersteunt AliasVault passkeys?",
+        "answer": "Ja! Je kunt passkeys aanmaken en inloggen met passkeys via de AliasVault browser extensie, iOS en Android mobiele apps. Passkeys worden veilig opgeslagen in je volledig versleutelde vault (kluis) en automatisch gesynchroniseerd tussen al je apparaten, zodat je overal veilig kunt inloggen."
+      },
+      "pricing": {
         "question": "Hoeveel kost AliasVault?",
         "answer": "De huidige basisversie van AliasVault, met alle bestaande functies, is volledig gratis te gebruiken en zal dat altijd blijven. Zowel voor de officiële cloud-gehoste als self-hosted opties.\n\nIn de nabije toekomst zijn we wel van plan om optionele premium functies te introduceren zoals extra opslagruimte, automatische back-ups en meer. Deze betaalde opties zullen ons helpen bij de verdere ontwikkeling en het dragen van de kosten voor het runnen van het project.\n\nDat gezegd hebbende, zijn we momenteel gefocust op het ontwikkelen en verfijnen van de basisfuncties van AliasVault om een stabiele en betrouwbare basis voor alle gebruikers te garanderen. Premium functies maken deel uit van onze langetermijn roadmap, maar onze huidige prioriteit is het leveren van een solide basisversie.\n\nAls je het project in de tussentijd wilt helpen, zijn donaties zeer welkom — bezoek onze [contactLink]contactpagina[/contactLink] voor meer informatie."
       },
-      "3": {
+      "deviceSupport": {
         "question": "Welke apparaten worden ondersteund door AliasVault?",
         "answer": "AliasVault werkt op alle belangrijke platforms: web, browser extensies en smartphone.\n\nJe kunt je vault (kluis) benaderen via de AliasVault web-app, browserextensies, of door de mobiele apps te downloaden, zodat je altijd toegang hebt tot je vault ongeacht het apparaat."
       },
-      "4": {
+      "security": {
         "question": "Hoe beschermt AliasVault mijn gegevens?",
         "answer": "Beveiliging is de basis van AliasVault. End-to-end versleuteling (AES-256-GCM) wordt gebruikt om al je gegevens te versleutelen. Alles, inclusief gebruikersnamen, wachtwoorden en zelfs e-mailinhoud, wordt versleuteld op je apparaat. Zelfs op onze servers blijven je gegevens versleuteld, beschermd door je hoofdwachtwoord, dat alleen jij kent. Onze strikte zero-knowledge architectuur garandeert dat niemand anders dan jijzelf toegang heeft tot je vault (kluis).\n\nVoor uitgebreide technische details, bezoek onze [docsLink]architectuurdocumentatie[/docsLink]."
       },
-      "5": {
+      "importData": {
         "question": "Kan ik mijn wachtwoorden importeren van andere wachtwoordmanagers?",
         "answer": "Ja! AliasVault maakt het eenvoudig om je inloggegevens over te zetten van andere wachtwoordmanagers. We ondersteunen het importeren van populaire services zoals 1Password, Bitwarden, Chrome, Dashlane, Firefox, KeePass, KeePassXC, Proton Pass en Strongbox.\n\nExporteer simpelweg je gegevens van je huidige wachtwoordmanager en gebruik AliasVault's importfunctie in de web-app om eenvoudig al je inloggegevens, notities, 2FA-codes en andere gegevens over te zetten.\n\nBovendien bevat AliasVault ook exportfunctionaliteit, dus als je ooit besluit om over te stappen naar een andere service, kunt je je gegevens eenvoudig meenemen. Je hebt volledige controle over je gegevens."
       },
-      "6": {
+      "selfHosting": {
         "question": "Kan ik AliasVault zelf hosten op mijn eigen server?",
         "answer": "Ja, AliasVault is vanaf de grond opgebouwd om volledig zelf-gehost te worden. Je kunt AliasVault eenvoudig installeren op je eigen server met Docker, waardoor je volledige controle hebt over je gegevens en infrastructuur. AliasVault komt met een automatisch installatiescript dat installatie een fluitje van een cent maakt.\n\nGedetailleerde installatie-instructies zijn beschikbaar in onze [docsLink]documentatie[/docsLink]."
       },
-      "7": {
+      "emailAliasFeature": {
         "question": "Hoe werkt de e-mailalias functie?",
         "answer": "AliasVault bevat een ingebouwde e-mailserver waarmee je unieke e-mailadressen (aliassen) kunt aanmaken voor verschillende services.\n\nWanneer iemand een e-mail naar je alias stuurt, wordt deze direct in AliasVault ontvangen en onmiddellijk versleuteld. Je kunt de e-mail vervolgens rechtstreeks in AliasVault bekijken."
       },
-      "8": {
+      "emailAliasLimitations": {
         "question": "Zijn er beperkingen aan het gebruik van e-mailaliassen?",
         "answer": "Momenteel zijn er twee restricties:\n\n1) E-mailaliassen zijn alleen-ontvangen, wat betekent dat je geen e-mails kunt verzenden of beantwoorden vanaf je aliassen. Deze maatregel voorkomt mogelijk misbruik van het systeem voor spam.\n\n2) Er is een limiet van 10 megabyte voor inkomende e-mails - e-mails groter dan dit worden geweigerd.\n\nIn de toekomst zullen optionele betaalde abonnementen deze restricties opheffen. Ook heeft e-mailopslag momenteel geen limiet maar is gebaseerd op fair-use. In de toekomst kunnen specifieke limieten worden geïntroduceerd voor de gratis tier, maar deze zullen van tevoren worden aangekondigd."
       },
-      "9": {
+      "story": {
         "question": "Wat is het verhaal achter AliasVault?",
         "answer": "AliasVault begon als een side-project begin 2024, gedreven door het idee en principe dat privacy een recht is - geen luxe. AliasVault is gemaakt om het internet een veiligere en meer anonieme plek te maken waar gebruikers de controle hebben over hun digitale privacy.\n\nDe maker van AliasVault, Leendert de Borst, is een Nederlandse softwareontwikkelaar en voorvechter van privacy. In 2013 lanceerde hij asdasd.nl, een Nederlandse tijdelijke e-mailservice die in de loop der jaren uitgroeide tot het meertalige SpamOK.com, dat duizenden gebruikers helpt om zichzelf te beschermen tegen spam.\n\nAliasVault is de volgende stap in die reis: een self-hostable, end-to-end versleutelde wachtwoord- en aliasmanager die je helpt unieke e-mailaliassen en sterke wachtwoorden te genereren voor elke (online) dienst die je gebruikt. Door de persoonlijke informatie die je online deelt te minimaliseren, helpt AliasVault je veilig en anoniem te blijven.\n\nSinds de bètarelease in december 2024 heeft AliasVault elke paar weken nieuwe updates gekregen, waarbij nieuwe functies zijn geïntroduceerd zoals browserextensies, twee-factor authenticatie, mobiele apps en importondersteuning van andere wachtwoordmanagers — allemaal ontworpen om privacy krachtiger en toegankelijker te maken.\n\nAliasVault is volledig open-source en volledig zelf-gefinancierd. Het is gebouwd met transparantie en privacy in het achterhoofd en is community-gedreven.\n\nLeer meer over [missionLink]onze missie[/missionLink] en wat dit project drijft."
       }
@@ -458,16 +463,16 @@
   "featuresData": {
     "passwordManagement": {
       "title": "Wachtwoordmanager",
-      "description": "Bewaar, genereer en beheer al je wachtwoorden veilig op één plek met AliasVault's krachtige wachtwoordmanagerfuncties.",
+      "description": "Bewaar, genereer en beheer al je wachtwoorden en passkeys veilig op één plek met AliasVault's krachtige wachtwoord- en passkey functies.",
       "imageAlt": "AliasVault wachtwoordmanager",
       "features": {
         "passwordManager": {
           "name": "Wachtwoordmanager",
-          "description": "Bewaar al je wachtwoorden veilig op één plek, toegankelijk vanaf elk apparaat met toonaangevende end-to-end versleuteling."
+          "description": "Bewaar al je wachtwoorden veilig op één plek, toegankelijk vanaf elk apparaat met krachtige end-to-end versleuteling. Genereer eenvoudig sterke en unieke wachtwoorden voor elke service."
         },
-        "adjustableGenerator": {
-          "name": "Wachtwoordgenerator",
-          "description": "Genereer wachtwoorden met aangepaste patronen, lengtes en tekensets om ze veiliger te maken. Aanpasbaar per credential."
+        "passkeySupport": {
+          "name": "Passkeys",
+          "description": "Creëer en log in met passkeys via de browser extensie, iOS en Android apps. Passkeys worden veilig opgeslagen in je vault en automatisch gesynchroniseerd tussen al je apparaten."
         },
         "builtIn2FA": {
           "name": "Ingebouwde 2FA authenticator",
@@ -631,6 +636,7 @@
       },
       "features": {
         "passwordManagement": "Wachtwoordmanager",
+        "passkeySupport": "Passkeys",
         "emailAliasManagement": "E-mailaliassen",
         "randomIdentityGeneration": "Identiteitgeneratie",
         "openSource": "Open source",
@@ -702,6 +708,7 @@
         "endToEndEncryption": "End-to-end versleuteling",
         "openSource": "Open source",
         "passwordManagerIntegration": "Wachtwoordmanager integratie",
+        "passkeySupport": "Passkeys",
         "customDomains": "Aangepaste domeinen",
         "customDomainsValue": "✅ (op self-hosted versie)",
         "browserExtension": "Browserextensie",
@@ -774,6 +781,7 @@
       },
       "features": {
         "passwordManagement": "Wachtwoordmanager",
+        "passkeySupport": "Passkeys",
         "clientsOpenSource": "Clients open-source",
         "serverOpenSource": "Server/Backend open-source",
         "selfHostingCapability": "Self-hosting mogelijkheid",
