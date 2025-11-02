@@ -1,0 +1,92 @@
+---
+title: "AliasVault 0.24.0 Released"
+description: "Passkey support is here, new languages and more cross-platform improvements"
+date: "2025-11-05"
+image: "/images/blog/headers/0.24.0.jpg"
+author:
+  name: "Leendert de Borst"
+  image: "/images/founder/founder.jpg"
+  designation: "Founder"
+tags:
+  - release
+---
+
+I'm happy to share that the latest release of AliasVault, 0.24.0, now introduces the heavily requested **passkey support (WebAuthn Level 2)** for passwordless authentication, adds **three new language options** (Brazilian Portuguese, Russian, and Polish), and brings **cross-platform improvements** across web, mobile, and browser extension apps. This release also includes important bug fixes and performance updates across all platforms.
+
+> 🚨 **Important Note:** This release includes a client vault model update. After upgrading, your vault can only be opened by v0.24.0+ client versions. For self-hosted users: make sure you update your server to avoid compatibility issues.
+
+<ClickableImage
+ src="/images/blog/releases/0.24.0.jpg"
+ alt="AliasVault 0.24.0 Release"
+ caption="Passkey support, new languages, cross-platform improvements, enhanced autofill"
+/>
+
+## 🔐 1. Passkey Support (WebAuthn Level 2)
+
+AliasVault now supports creating and logging in with **passkeys** on websites and apps. This long-awaited feature brings passwordless authentication to your encrypted vault.
+
+### Key Features:
+- **Cross-platform support**: Passkeys work via the AliasVault browser extension, iOS app, and Android app
+- **Secure storage**: Passkeys are safely stored in your encrypted vault and automatically synced across all your devices
+- **WebAuthn Level 2 compliance**: Full support for the latest WebAuthn standards
+
+Passkeys provide a more secure and convenient alternative to traditional passwords, using cryptographic keys stored on your devices. If you come across any bugs or issues when using passkeys, please reach out to us on Discord or create an issue on GitHub.
+
+## 🌍 2. New Language Options
+
+AliasVault is now available in **three additional languages**, bringing secure password management to even more users around the world:
+
+- **Brazilian Portuguese (pt-BR)**
+- **Russian (ru)**
+- **Polish (pl)**
+
+A warm thank you to our contributors on Crowdin! Do you want to help improve translations and/or make AliasVault available in your native language? Check out the [AliasVault project on Crowdin](https://crowdin.com/project/aliasvault) and apply.
+
+## 🚀 3. General Improvements Across Apps
+
+### Mobile App Features
+- **Manual offline mode**: Users can now manually open vaults in offline mode if the server takes too long to respond (useful for bad internet connectivity)
+- **Image zoom support**: Added zoom functionality for attachment previews in mobile apps
+- **Improved search**: Enhanced search logic with AND/OR operators by default for more flexible credential finding
+- **Filtering**: New credential filter option
+
+### iOS Enhancements
+- **iOS 26+ Quick Autofill**: The iOS app now supports the quick autofill feature, showing suggested credential entries directly in the iOS keyboard for faster access
+- **Updated iOS layout margins**: Improved UI spacing and layout for iOS 26+
+- **Minimum iOS version**: Updated from iOS 15.6 to iOS 17
+
+### Android Improvements
+- **Enhanced dark mode support**: Improved dark mode experience across the Android app
+- **Custom API URL persistence**: Custom API URLs now persist during logout, making switching between accounts easier
+
+### Browser Extension Updates
+- **Improved search**: Enhanced search logic with AND/OR operators by default
+- **Better custom URL settings UI**: Redesigned interface for custom URL configuration
+- **Enhanced autofill**: Improved autofill accuracy and field detection
+- **Password field autofocus**: Automatic focus on password field when unlocking the vault
+
+## 🐛 4. Bug Fixes and Technical Improvements
+
+- Fixed autofill showing too many irrelevant suggestions and improved field detection accuracy
+- Fixed email decryption errors that sometimes prevented emails from loading
+- Corrected handling of private email domains and multiple domain displays
+
+## 🔄 5. Upgrade Instructions
+
+This release includes a **client vault model update**. After upgrading, your vault can only be opened by v0.24.0+ client versions.
+
+### For Self-Hosted Users:
+
+**Important:** Make sure you update your server before updating clients to avoid compatibility issues.
+
+- **Install.sh update**: Follow the [Install.sh Update Guide](https://docs.aliasvault.net/installation/script/update)
+- **Docker update**: Follow the [Docker Update Guide](https://docs.aliasvault.net/installation/docker/update)
+
+## 🛣️ 6. What's Coming Next
+
+The next release will continue focusing on expanding the core data model to support additional credential types such as identities, credit cards, and more, building on the foundation laid in this release.
+
+Explore the full changelog on [GitHub](https://github.com/aliasvault/aliasvault/releases/tag/0.24.0)
+
+<GitHubRelease version="0.24.0" />
+
