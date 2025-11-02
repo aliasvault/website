@@ -1,0 +1,94 @@
+---
+title: "AliasVault 0.24.0 uitgebracht"
+description: "Ondersteuning voor passkeys, nieuwe talen en cross-platform verbeteringen"
+date: "2025-11-05"
+image: "/images/blog/headers/0.24.0.jpg"
+author:
+  name: "Leendert de Borst"
+  image: "/images/founder/founder.jpg"
+  designation: "Founder"
+tags:
+  - release
+---
+
+Ik ben trots om aan te kondigen dat de nieuwste AliasVault **versie 0.24.0** is uitgebracht!
+
+Deze nieuwe versie biedt nu ondersteuning voor **passkeys (WebAuthn Level 2)**. Daarnaast zijn er **drie nieuwe taalopties** toegevoegd (Braziliaans Portugees, Russisch en Pools), en zijn er **cross-platform verbeteringen** doorgevoerd voor web, mobiel en browser extensie apps. Deze release bevat ook belangrijke bugfixes en prestatie-updates op alle platforms.
+
+> 🚨 **Belangrijke opmerking:** Deze release bevat een vault datamodel update. Na het upgraden kun je je vault alleen nog openen via v0.24.0+ client versies. Voor self-hosting gebruikers: zorg ervoor dat je je server update om compatibiliteitsproblemen te voorkomen.
+
+<ClickableImage
+ src="/images/blog/releases/0.24.0.jpg"
+ alt="AliasVault 0.24.0-release"
+ caption="Passkey ondersteuning, nieuwe talen, cross-platform verbeteringen, verbeterde autofill"
+/>
+
+## 🔐 1. Passkey ondersteuning (WebAuthn Level 2)
+
+AliasVault ondersteunt nu het inloggen met **passkeys** op websites en apps. Deze langverwachte functie maakt het mogelijk om wachtwoordloos in te loggen.
+
+### Belangrijke functies:
+- **Cross-platform ondersteuning**: Passkeys werken via de AliasVault browser extensie, iOS app en Android app
+- **Veilige opslag**: Passkeys worden veilig opgeslagen in je versleutelde vault en automatisch gesynchroniseerd naar al je apparaten
+- **WebAuthn Level 2 compliance**: Volledige ondersteuning voor de nieuwste WebAuthn standaarden
+
+Passkeys bieden een veiligere en handigere alternatief voor traditionele wachtwoorden, met behulp van cryptografische sleutels die op je apparaten zijn opgeslagen. Mocht je bugs of problemen tegenkomen bij het gebruik van passkeys, neem dan contact met ons op via Discord of maak een issue aan op GitHub.
+
+## 🌍 2. Nieuwe taalopties
+
+AliasVault is nu beschikbaar in **drie extra talen**, waardoor veilig wachtwoordbeheer beschikbaar komt voor nog meer gebruikers wereldwijd:
+
+- **Braziliaans Portugees (pt-BR)**
+- **Russisch (ru)**
+- **Pools (pl)**
+
+Dankjewel naar onze bijdragers op Crowdin! Wil je helpen met het verbeteren van vertalingen? Bekijk het [AliasVault project op Crowdin](https://crowdin.com/project/aliasvault) en wordt lid van het project.
+
+## 🚀 3. Algemene verbeteringen
+
+### Mobiele app
+- **Handmatige offline modus**: Gebruikers kunnen nu handmatig kluizen openen in offline modus als de server te lang duurt om te reageren (handig bij slechte internetverbinding)
+- **Afbeelding zoom ondersteuning**: Zoom functionaliteit toegevoegd voor attachment previews in mobiele apps
+- **Verbeterde zoekfunctie**: Verbeterde zoeklogica met AND/OR operatoren standaard voor flexibeler zoeken naar credentials
+- **Filtering**: Nieuwe credential filter optie
+
+### iOS verbeteringen
+- **iOS 26+ Quick Autofill**: De iOS app ondersteunt nu de quick autofill functie, waarbij voorgestelde credential entries direct in het iOS toetsenbord worden getoond voor sneller inloggen
+- **Bijgewerkte iOS layout**: Verbeterde UI layout voor iOS 26+
+- **Minimum iOS versie**: Bijgewerkt van iOS 15.6 naar iOS 17
+
+### Android verbeteringen
+- **Verbeterde dark mode ondersteuning**: Verbeterde dark mode ervaring in de Android app
+- **API URL onthouden**: Aangepaste API URLs blijven nu behouden tijdens logout, waardoor het wisselen tussen accounts eenvoudiger wordt
+
+### Browser extensie updates
+- **Verbeterde zoekfunctie**: Verbeterde zoeklogica met AND/OR operatoren standaard
+- **Betere aangepaste URL instellingen UI**: Herontworpen interface voor aangepaste URL configuratie
+- **Verbeterde autofill**: Verbeterde autofill nauwkeurigheid en velddetectie
+- **Wachtwoordveld autofocus**: Automatische focus op wachtwoordveld bij het ontgrendelen van de kluis
+
+## 🐛 4. Bugfixes en technische verbeteringen
+
+- Opgelost: autofill toont nu minder irrelevante suggesties en verbeterde velddetectie nauwkeurigheid
+- Opgelost: email decryptiefouten die soms voorkomen dat emails laadden
+- Gecorrigeerde handling van private email domeinen en meerdere domein weergaves
+
+## 🔄 5. Upgrade instructies
+
+Deze release bevat een **vault datamodel update**. Na het upgraden kan je vault alleen nog geopend worden door v0.24.0+ client versies.
+
+### Voor self-hosting gebruikers:
+
+**Belangrijk:** Zorg ervoor dat je je server update voordat je clients update om compatibiliteitsproblemen te voorkomen.
+
+- **Install.sh update**: Volg de [Install.sh Update Gids](https://docs.aliasvault.net/installation/script/update)
+- **Docker update**: Volg de [Docker Update Gids](https://docs.aliasvault.net/installation/docker/update)
+
+## 🛣️ 6. Roadmap
+
+De volgende release zal zich richten op het uitbreiden van het core datamodel om extra credential types te ondersteunen zoals identiteiten, creditcards en meer, voortbouwend op de basis die is gelegd in deze release.
+
+Bekijk de volledige changelog op [GitHub](https://github.com/aliasvault/aliasvault/releases/tag/0.24.0)
+
+<GitHubRelease version="0.24.0" />
+

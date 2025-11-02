@@ -275,7 +275,7 @@
     "languageSelector": "Taalkiezer"
   },
   "faq": {
-    "title": "Veelgestelde Vragen",
+    "title": "Veelgestelde vragen",
     "description": "Vind antwoorden op veelvoorkomende vragen over AliasVault's functies, beveiliging en implementatie-opties.",
     "items": {
       "whatIsAliasVault": {
