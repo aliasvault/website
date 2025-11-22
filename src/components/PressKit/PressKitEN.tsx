@@ -294,18 +294,18 @@ const PressKitEN = () => {
                     <div className="flex items-start justify-between">
                       <div className="flex-1">
                         <a
-                          href="https://tweakers.net/downloads/73852/aliasvault-0220.html"
+                          href="https://tweakers.net/downloads/74638/aliasvault-0240.html"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="font-medium text-primary hover:underline"
                         >
-                          Tweakers.nl: AliasVault 0.22.0
+                          Tweakers.nl: AliasVault 0.24.0
                         </a>
                         <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
                           Dutch tech web site
                         </p>
                       </div>
-                      <span className="ml-4 text-xs text-gray-500 dark:text-gray-400">August 2025</span>
+                      <span className="ml-4 text-xs text-gray-500 dark:text-gray-400">November 2025</span>
                     </div>
                   </div>
                   <div className="group">
