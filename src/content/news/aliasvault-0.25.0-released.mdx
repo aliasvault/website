@@ -1,0 +1,76 @@
+---
+title: "AliasVault 0.25.0 Released"
+description: "Login with mobile app, PIN unlock, identity generator improvements and more"
+date: "2025-11-24"
+image: "/images/blog/headers/0.25.0.jpg"
+author:
+  name: "Leendert de Borst"
+  image: "/images/founder/founder.jpg"
+  designation: "Founder"
+tags:
+  - release
+---
+
+I'm happy to share that the latest release of AliasVault, 0.25.0 is out now.
+
+This release now allows you to login to the web app and browser extension using the AliasVault mobile app, which alleviates the requirement of entering your full master password every time you login on or unlock another device.
+
+Furthermore this release adds **PIN unlock support** to the browser extension and the mobile app, adds **2FA management** directly in browser extension and mobile apps, and **identity generator enhancements** including age preference and German language support.
+
+<ClickableImage
+ src="/images/blog/releases/0.25.0.jpg"
+ alt="AliasVault 0.25.0 Release"
+ caption="Login with mobile, PIN unlock, 2FA management, identity generator improvements"
+/>
+
+## 📱 1. Login with Mobile Device
+
+You can now **login to the web app and browser extension using your AliasVault mobile app**. This new authentication method provides a secure and convenient way to access your vault without typing your master password on every device.
+
+### How It Works:
+- **QR code scanning**: Simply scan the QR code displayed on the web app or browser extension with your native smartphone camera or from within the AliasVault app
+- **End-to-end encrypted**: The login process is fully secure with end-to-end encrypted data exchange between your mobile device and browser
+- **Easy access**: The QR code scanner button can be found in the `Settings` tab of the mobile app. But you can also scan the QR code with your default phone camera app, and it will automatically open the AliasVault app for you.
+
+This feature is perfect for scenarios where you want to quickly unlock your vault on a desktop device using your already-authenticated mobile app.
+
+## 🔢 2. PIN Unlock Support
+
+This release adds **optional PIN unlock** to the browser extension and mobile apps, giving you more flexibility in how you access your vault.
+
+### Key Benefits:
+- **Quick access**: Perfect for when you need frequent access without entering your full master password
+- **Privacy option**: Ideal for users who cannot or prefer not to use biometric unlock on their mobile device
+- **Security balance**: Offers a middle ground between full password security and convenience
+
+## 🔐 3. 2FA Management in All Apps
+
+By popular request from our community, you can now **add and edit 2FA (TOTP) codes directly from the browser extension and mobile apps**, making two-factor authentication management more convenient than ever.
+
+### What's New:
+- **Browser extension**: Full 2FA code management without opening the web app
+- **Mobile apps**: Create and edit TOTP codes on-the-go
+- **Seamless sync**: All changes automatically sync across your devices
+
+Previously, 2FA code management was only available in the web app. This update brings that functionality to all platforms for a more unified experience.
+
+## 🆔 4. Identity Generator Enhancements
+
+The identity generator receives two important updates in this release:
+
+### Age Range Preference
+Set a **preferred age range for generated birthdates**, giving you more control over the synthetic identities you create. This is useful when you need generated identities that match specific age requirements.
+
+### German Language Support
+The identity generator now includes **support for German language data generation**, expanding its usefulness for German-speaking users. A big thank you to our community contributors!
+
+**Want to help?** We're looking for contributors to add more language support to the identity generator. Check out the [Identity Generator contributing guide](https://docs.aliasvault.net/contributing/identity-generator.html) to get started.
+
+## 🚀 5. Additional Improvements
+
+Various other improvements have been made, such as: improved the passkey interceptor logic in the browser extension reducing automatic popups. Streamlined credential matching behavior across all platforms, making autofill more accurate.
+Enhanced the admin statistics page with better sorting and additional metrics, making it easier for self-hosters to monitor their instances. Fixed various reported bugs to improve stability and performance across all platforms.
+
+Explore the full changelog on [GitHub](https://github.com/aliasvault/aliasvault/releases/tag/0.25.0)
+
+<GitHubRelease version="0.25.0" />

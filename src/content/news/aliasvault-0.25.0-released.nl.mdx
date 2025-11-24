@@ -1,0 +1,74 @@
+---
+title: "AliasVault 0.25.0 uitgebracht"
+description: "Inloggen met mobiele app, PIN ontgrendeling, identiteitsgenerator verbeteringen en meer"
+date: "2025-11-24"
+image: "/images/blog/headers/0.25.0.jpg"
+author:
+  name: "Leendert de Borst"
+  image: "/images/founder/founder.jpg"
+  designation: "Founder"
+tags:
+  - release
+---
+
+Ik ben blij om te delen dat de nieuwste versie van AliasVault (0.25.0) nu beschikbaar is.
+
+Deze release maakt het mogelijk om in te loggen op de web app en browser extensie met behulp van de AliasVault mobiele app, waardoor je niet elke keer je volledige hoofdwachtwoord hoeft in te voeren wanneer je in wilt loggen op een nieuw apparaat.
+
+Daarnaast voegt deze release **PIN ontgrendeling** toe aan de browser extensie en de mobiele app, is **2FA beheer** nu mogelijk op alle platforms, en is de **identiteitsgenerator verbetered** met leeftijdsvoorkeur instellingen en ondersteuning voor de Duitse taal.
+
+<ClickableImage
+ src="/images/blog/releases/0.25.0.jpg"
+ alt="AliasVault 0.25.0-release"
+ caption="Inloggen met mobiel, PIN ontgrendeling, 2FA beheer, identiteitsgenerator verbeteringen"
+/>
+
+## 📱 1. Inloggen met mobiel apparaat
+
+Je kunt nu **inloggen op de web app en browser extensie met behulp van je AliasVault mobiele app**. Deze nieuwe authenticatiemethode biedt een veilige en handige manier om toegang te krijgen tot je vault zonder je hoofdwachtwoord op elk apparaat te hoeven typen.
+
+### Hoe het werkt:
+- **QR-code scannen**: Scan simpelweg de QR-code die wordt weergegeven op de web app of browser extensie met je native smartphone camera of vanuit de AliasVault app
+- **End-to-end versleuteld**: Het inlogproces is volledig veilig met end-to-end versleutelde gegevensuitwisseling tussen je mobiele apparaat en browser
+- **Eenvoudige toegang**: De QR-code scanner knop is te vinden in het `Instellingen` tabblad van de mobiele app. Maar je kunt de QR-code ook scannen met je standaard telefoon camera app, en deze zal automatisch de AliasVault app voor je openen.
+
+Deze functie is perfect voor scenario's waarin je snel je vault wilt ontgrendelen op een desktopapparaat met behulp van je reeds geauthenticeerde mobiele app.
+
+## 🔢 2. PIN ontgrendeling ondersteuning
+
+Deze release voegt **optionele PIN ontgrendeling** toe aan de browser extensie en mobiele apps, waardoor je meer flexibiliteit krijgt in hoe je toegang krijgt tot je vault.
+
+### Belangrijkste voordelen:
+- **Snelle toegang**: Perfect voor wanneer je frequent toegang nodig hebt zonder je volledige hoofdwachtwoord in te voeren
+- **Privacy optie**: Ideaal voor gebruikers die geen biometrische ontgrendeling op hun mobiele apparaat kunnen of willen gebruiken
+- **Beveiligingsbalans**: Biedt een middenweg tussen volledige wachtwoordbeveiliging en gemak
+
+## 🔐 3. 2FA beheer in alle apps
+
+Op populair verzoek van onze community kun je nu **2FA (TOTP) codes direct toevoegen en bewerken vanuit de browser extensie en mobiele apps**, waardoor tweefactorauthenticatie beheer handiger is dan ooit.
+
+### Wat is er nieuw:
+- **Browser extensie**: Volledig 2FA code beheer zonder de web app te openen
+- **Mobiele apps**: Maak en bewerk TOTP codes onderweg
+- **Naadloze synchronisatie**: Alle wijzigingen worden automatisch gesynchroniseerd naar al je apparaten
+
+Voorheen was 2FA code beheer alleen beschikbaar in de web app. Deze update brengt die functionaliteit naar alle platforms voor een meer uniforme ervaring.
+
+## 🆔 4. Identiteitsgenerator verbeteringen
+
+De identiteitsgenerator krijgt twee belangrijke updates in deze release:
+
+### Leeftijdsrange instellen
+Stel een **voorkeursleeftijdsrange in voor gegenereerde identiteiten**, waardoor je meer controle krijgt over de identiteiten die je aanmaakt. Dit is handig wanneer je gegenereerde identiteiten nodig hebt die passen bij een verwachte leeftijd. Standaard genereert AliasVault een willekeurige leeftijd tussen de 21 en 65 jaar.
+
+### Duitse taalondersteuning
+De identiteitsgenerator bevat nu **ondersteuning voor Duitse taal**, waardoor AliasVault nog handiger is voor Duitstalige gebruikers. Een grote dank aan onze community voor het mogelijk maken hiervan!
+
+## 🚀 5. Aanvullende verbeteringen
+
+Verschillende andere verbeteringen zijn aangebracht, zoals: verbeterde passkey interceptor logica in de browser extensie waardoor automatische popups worden verminderd. Verbeterde credential matching gedrag op alle platforms, waardoor autofill nauwkeuriger wordt.
+Verbeterde admin statistieken pagina. Verschillende gemelde bugs opgelost om stabiliteit en prestaties op alle platforms te verbeteren.
+
+Bekijk de volledige changelog op [GitHub](https://github.com/aliasvault/aliasvault/releases/tag/0.25.0)
+
+<GitHubRelease version="0.25.0" />
