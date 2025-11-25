@@ -554,13 +554,13 @@
       "description": "Krijg overal toegang tot je vault met AliasVault's mobiele apps.",
       "imageAlt": "AliasVault Mobiele Apps",
       "features": {
-        "iosApp": {
-          "name": "iOS app",
-          "description": "Krijg toegang tot je vault op je iPhone of iPad met de officiële iOS app. Ondersteunt native autofill en Face ID / Touch ID authenticatie, waardoor je gegevens veilig blijven."
+        "mobileApps": {
+          "name": "iOS & Android apps",
+          "description": "Krijg toegang tot je vault op je iPhone, iPad of Android apparaat met de officiële mobiele apps. Beide apps ondersteunen native autofill en biometrische authenticatie (Face ID, Touch ID, vingerafdruk), waardoor je gegevens veilig blijven. Beschikbaar in de App Store en op Google Play."
         },
-        "androidApp": {
-          "name": "Android app",
-          "description": "Krijg toegang tot je vault op je Android apparaat met de officiële Android app. Ondersteunt native autofill en biometrische authenticatie, waardoor je gegevens veilig blijven. Beschikbaar op Google Play of als handmatige APK via GitHub."
+        "unlockWithMobile": {
+          "name": "Ontgrendelen met mobiel",
+          "description": "Log in of ontgrendel je vault in de web app of browser extensie met behulp van je mobiele apparaat. Scan simpelweg de QR-code met je reeds geauthenticeerde mobiele app, waardoor je niet opnieuw je hoofdwachtwoord hoeft in te voeren. Dit maakt het gemakkelijk om overal toegang te krijgen tot je vault."
         },
         "offlineMode": {
           "name": "Offline modus",

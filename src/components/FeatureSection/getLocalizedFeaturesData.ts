@@ -135,13 +135,13 @@ export function getLocalizedFeaturesData(t: TranslationFunction): FeatureCategor
       imageAlt: t('featuresData.mobileApps.imageAlt'),
       features: [
         {
-          name: t('featuresData.mobileApps.features.iosApp.name'),
-          description: t('featuresData.mobileApps.features.iosApp.description'),
+          name: t('featuresData.mobileApps.features.mobileApps.name'),
+          description: t('featuresData.mobileApps.features.mobileApps.description'),
           status: "available" as const
         },
         {
-          name: t('featuresData.mobileApps.features.androidApp.name'),
-          description: t('featuresData.mobileApps.features.androidApp.description'),
+          name: t('featuresData.mobileApps.features.unlockWithMobile.name'),
+          description: t('featuresData.mobileApps.features.unlockWithMobile.description'),
           status: "available" as const
         },
         {

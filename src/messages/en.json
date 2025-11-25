@@ -521,7 +521,7 @@
           "description": "Unlock your vault using fingerprint or face recognition on supported devices via WebAuthn."
         },
         "autoClipboardClear": {
-          "name": "Automatistic clipboard clearing",
+          "name": "Automatic clipboard clearing",
           "description": "Data copied from AliasVault is automatically cleared from your clipboard after a set time. Works on all platforms."
         },
         "secureNotesAttachments": {
@@ -554,13 +554,13 @@
       "description": "Access your vault from anywhere with AliasVault's mobile apps.",
       "imageAlt": "AliasVault Mobile Apps",
       "features": {
-        "iosApp": {
-          "name": "iOS App",
-          "description": "Access your vault on your iPhone or iPad with the official iOS app. Supports native autofill and Face ID / Touch ID authentication, keeping your data secure."
+        "mobileApps": {
+          "name": "iOS & Android Apps",
+          "description": "Access your vault on your iPhone, iPad, or Android device with the official mobile apps. Both apps support native autofill and biometric authentication (Face ID, Touch ID, fingerprint), keeping your data secure. Available on the App Store, Google Play and F-Droid."
         },
-        "androidApp": {
-          "name": "Android App",
-          "description": "Access your vault on your Android device with the official Android app. Supports native autofill and biometric authentication, keeping your data secure. Available on Google Play or as a manual APK via GitHub."
+        "unlockWithMobile": {
+          "name": "Unlock with Mobile",
+          "description": "Login or unlock your vault in the web app or browser extension using your mobile device. Simply scan the QR code with your already-authenticated mobile app, preventing you from having to re-enter your master password. This makes it easy to access your vault everywhere."
         },
         "offlineMode": {
           "name": "Offline Mode",
