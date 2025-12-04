@@ -165,25 +165,15 @@ const Header = () => {
               ))}
               <li className="py-3">
                 <Link
-                  href="https://discord.gg/DsaXMTEtpF"
-                  className="block text-base text-dark hover:text-primary dark:text-white/70 dark:hover:text-white transition-colors"
+                  href="/contact"
+                  className={`block text-base transition-colors ${
+                    pathname === "/contact"
+                      ? "text-primary dark:text-white"
+                      : "text-dark hover:text-primary dark:text-white/70 dark:hover:text-white"
+                  }`}
                   onClick={() => setNavbarOpen(false)}
                 >
-                  {t('footer.social.discord')}
-                  <svg
-                        className="ml-1 inline-block h-4 w-4"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                        />
-                      </svg>
+                  {t('navigation.contact')}
                 </Link>
               </li>
               <li className="py-3">
