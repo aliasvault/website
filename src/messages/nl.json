@@ -886,22 +886,23 @@
         },
         "2025": {
           "milestones": [
-            { "month": "3", "label": "Q1", "text": "Release van Browserextensies" },
-            { "month": "6", "label": "Q2", "text": "Release van Mobiele Apps" },
-            { "month": "9", "label": "Q3", "text": "Platform Stabiliteit & Optimalisatie" },
-            { "month": "12", "label": "Q4", "text": "v1.0 Stabiele Release + Security Audit" }
+            { "month": "3", "label": "Q1", "text": "Release van browserextensies" },
+            { "month": "6", "label": "Q2", "text": "Release van mobiele apps" },
+            { "month": "9", "label": "Q3", "text": "Meertaligheid en self-host verbeteringen" },
+            { "month": "12", "label": "Q4", "text": "Passkeys en datamodel verbeteringen" }
           ]
         },
         "2026": {
           "milestones": [
-            { "month": "3", "label": "Q1", "text": "Premium functies" },
-            { "month": "6", "label": "Q2", "text": "Gezinsfuncties" },
-            { "month": "9", "label": "Q3/Q4", "text": "Wegwerptelefoonnummers" }
+            { "month": "3", "label": "Q1", "text": "v1.0 stabiele release + security audit" },
+            { "month": "6", "label": "Q2", "text": "Premium functies" },
+            { "month": "9", "label": "Q3", "text": "Gezinsfuncties" },
+            { "month": "12", "label": "Q4", "text": "Wegwerptelefoonnummers" }
           ]
         },
         "2027": {
           "milestones": [
-            { "month": "6", "label": "Medio", "text": "Meer Integraties" }
+            { "month": "6", "label": "Medio", "text": "Meer integraties" }
           ]
         },
         "2028": {

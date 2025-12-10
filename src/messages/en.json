@@ -888,15 +888,16 @@
           "milestones": [
             { "month": "3", "label": "Q1", "text": "Release of Browser Extensions" },
             { "month": "6", "label": "Q2", "text": "Release of Mobile Apps" },
-            { "month": "9", "label": "Q3", "text": "Platform Stability & Maturity" },
-            { "month": "12", "label": "Q4", "text": "v1.0 Stable Release + Security Audit" }
+            { "month": "9", "label": "Q3", "text": "Multi-language, Self-host Improvements" },
+            { "month": "12", "label": "Q4", "text": "Passkeys and Datamodel Improvements" }
           ]
         },
         "2026": {
           "milestones": [
-            { "month": "3", "label": "Q1", "text": "Premium Hosted Features" },
-            { "month": "6", "label": "Q2", "text": "Family Features" },
-            { "month": "9", "label": "Q3/Q4", "text": "Disposable Phone Numbers" }
+            { "month": "3", "label": "Q1", "text": "v1.0 Stable Release + Security Audit" },
+            { "month": "6", "label": "Q2", "text": "Premium Hosted Features" },
+            { "month": "9", "label": "Q3", "text": "Family Features" },
+            { "month": "12", "label": "Q4", "text": "Disposable Phone Numbers" }
           ]
         },
         "2027": {
