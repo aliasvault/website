@@ -469,7 +469,7 @@
       "features": {
         "passwordManager": {
           "name": "Password Manager",
-          "description": "Store all your passwords securely in one place, accessible from any device with industry leading end-to-end encryption. Easily generate strond and unique passwords for each service."
+          "description": "Store all your passwords securely in one place, accessible from any device with industry leading end-to-end encryption. Easily generate strong and unique passwords for each service."
         },
         "passkeySupport": {
           "name": "Passkeys",
