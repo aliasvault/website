@@ -1073,8 +1073,8 @@
     },
     "hallOfFame": {
       "title": "Hall of Fame",
-      "description": "Deze Hall of Fame bestaat uit beveiligingsonderzoekers die AliasVault veiliger hebben gemaakt door in het verleden verantwoordelijk kwetsbaarheden te melden. We erkennen en bedanken deze onderzoekers voor hun waardevolle bijdragen:",
-      "viewAdvisory": "Advisory Bekijken",
+      "description": "Deze Hall of Fame bestaat uit beveiligingsonderzoekers die AliasVault veiliger hebben gemaakt door kwetsbaarheden te melden. We erkennen en bedanken deze onderzoekers voor hun waardevolle bijdragen:",
+      "viewAdvisory": "Advisory bekijken",
       "allPatched": "Alle hieronder vermelde kwetsbaarheden zijn gepatcht en niet langer exploiteerbaar."
     }
   }

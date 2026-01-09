@@ -15,6 +15,17 @@ interface Vulnerability {
 
 const vulnerabilities: Vulnerability[] = [
   {
+    id: "passkey-validation-android-2025",
+    researcher: "Oscar Arnflo",
+    affiliation: "Security Office",
+    date: "2025-12-29",
+    severity: "medium",
+    cve: "CVE-2026-22694",
+    ghsa: "GHSA-mvg4-wvjv-332q",
+    advisoryUrl: "https://github.com/aliasvault/aliasvault/security/advisories/GHSA-mvg4-wvjv-332q",
+    summary: "AliasVault Android versions 0.24.0 through 0.25.2 contained an issue in how passkey requests from Android apps were validated. Under certain local conditions, a malicious app could attempt to obtain a passkey response for a site it was not authorized to access.",
+  },
+  {
     id: "ssrf-favicon-2025",
     researcher: "Filippo Decortes",
     affiliation: "Bitcube Security",
@@ -30,7 +41,7 @@ const vulnerabilities: Vulnerability[] = [
 const severityColors = {
   critical: "bg-red-500 text-white",
   high: "bg-orange-500 text-white",
-  medium: "bg-yellow-500 text-black",
+  medium: "bg-yellow text-black",
   low: "bg-blue-500 text-white",
 };
 
