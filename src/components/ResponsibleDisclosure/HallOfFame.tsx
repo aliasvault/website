@@ -18,7 +18,7 @@ const vulnerabilities: Vulnerability[] = [
     id: "passkey-validation-android-2025",
     researcher: "Oscar Arnflo",
     affiliation: "Security Office",
-    date: "2025-12-29",
+    date: "2026-01-14",
     severity: "medium",
     cve: "CVE-2026-22694",
     ghsa: "GHSA-mvg4-wvjv-332q",
