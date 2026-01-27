@@ -1037,7 +1037,6 @@
       "description": "Security vulnerability disclosure policy and contact information for security researchers."
     },
     "title": "Responsible Disclosure",
-    "subtitle": "Security Vulnerability Reporting",
     "description": "AliasVault takes security seriously and encourages responsible disclosure of security vulnerabilities.",
     "content": {
       "intro": "We appreciate the work of security researchers and ethical hackers who help keep AliasVault and our users secure. If you believe you have discovered a security vulnerability in AliasVault, we encourage you to report it to us responsibly.",
@@ -1051,7 +1050,7 @@
         "acknowledge": "Acknowledge receipt of your report within 48 hours",
         "investigate": "Investigate and validate the reported vulnerability",
         "timeline": "Provide regular updates on our progress",
-        "credit": "Credit you in our security advisory (if desired)",
+        "credit": "Credit you in release notes and/or security advisory (if applicable)",
         "cve": "Submit for CVE assignment when applicable",
         "coordinate": "Coordinate disclosure timeline with you"
       },
@@ -1068,14 +1067,17 @@
       },
       "scope": {
         "title": "Scope",
-        "description": "This policy applies to the AliasVault main application (app.aliasvault.net) and API endpoints. Social engineering, physical attacks, denial of service, spam, and automated scanning without prior approval are typically considered out of scope."
+        "description": "This policy applies to AliasVault server, web client, browser extensions, mobile apps, and core cryptographic libraries. Third-party dependencies, device OS vulnerabilities, hardware compromise, and social engineering attacks are out of scope. See our full SECURITY.md for complete details."
+      },
+      "fullPolicy": {
+        "description": "For complete details on our security policy, vulnerability classification, threat model, and CVE assignment criteria, please refer to our full security policy:",
+        "linkText": "Security Policy (SECURITY.md)"
       }
     },
     "hallOfFame": {
       "title": "Hall of Fame",
       "description": "This Hall of Fame consists of security researchers who have helped make AliasVault more secure by responsibly disclosing vulnerabilities in the past. We recognize and thank these researchers for their valuable contributions:",
-      "viewAdvisory": "View Advisory",
-      "allPatched": "All vulnerabilities listed below have been patched and are no longer exploitable."
+      "viewAdvisory": "View Advisory"
     }
   }
 }

@@ -1037,7 +1037,6 @@
       "description": "Beveiligingskwetsbaarheden melden en contactgegevens voor beveiligingsonderzoekers."
     },
     "title": "Responsible Disclosure",
-    "subtitle": "Beveiligingskwetsbaarheden Melden",
     "description": "AliasVault neemt beveiliging serieus en moedigt responsible disclosure van beveiligingskwetsbaarheden aan.",
     "content": {
       "intro": "We waarderen het werk van beveiligingsonderzoekers en ethische hackers die helpen AliasVault en onze gebruikers veilig te houden. Als je denkt dat je een beveiligingskwetsbaarheid hebt ontdekt in AliasVault, moedigen we je aan om dit op een verantwoordelijke manier te melden.",
@@ -1051,7 +1050,7 @@
         "acknowledge": "Ontvangst van je rapport binnen 48 uur bevestigen",
         "investigate": "De gerapporteerde kwetsbaarheid onderzoeken en valideren",
         "timeline": "Regelmatige updates geven over onze voortgang",
-        "credit": "Je vermelden in onze security advisory (indien gewenst)",
+        "credit": "Je vermelden in release notes en/of security advisory (indien van toepassing)",
         "cve": "CVE-toewijzing aanvragen waar van toepassing",
         "coordinate": "Disclosure tijdlijn met je coördineren"
       },
@@ -1068,14 +1067,17 @@
       },
       "scope": {
         "title": "Scope",
-        "description": "Dit beleid is van toepassing op de AliasVault hoofdapplicatie (app.aliasvault.net) en API endpoints. Social engineering, fysieke aanvallen, denial of service, spam en geautomatiseerd scannen zonder voorafgaande goedkeuring worden doorgaans als buiten scope beschouwd."
+        "description": "Dit beleid is van toepassing op AliasVault server, web client, browser extensies, mobiele apps en core cryptografische bibliotheken. Third-party dependencies, device OS kwetsbaarheden, hardware compromittering en social engineering aanvallen vallen buiten scope. Zie ons volledige beveiligingsbeleid voor complete details."
+      },
+      "fullPolicy": {
+        "description": "Voor volledige details over ons beveiligingsbeleid, kwetsbaarheidsclassificatie, threat model en CVE-toewijzingscriteria, raadpleeg ons volledige beveiligingsbeleid:",
+        "linkText": "Beveiligingsbeleid (SECURITY.md)"
       }
     },
     "hallOfFame": {
       "title": "Hall of Fame",
       "description": "Deze Hall of Fame bestaat uit beveiligingsonderzoekers die AliasVault veiliger hebben gemaakt door kwetsbaarheden te melden. We erkennen en bedanken deze onderzoekers voor hun waardevolle bijdragen:",
-      "viewAdvisory": "Advisory bekijken",
-      "allPatched": "Alle hieronder vermelde kwetsbaarheden zijn gepatcht en niet langer exploiteerbaar."
+      "viewAdvisory": "Advisory bekijken"
     }
   }
 }

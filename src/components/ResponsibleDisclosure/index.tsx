@@ -1,4 +1,5 @@
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 import HallOfFame from "./HallOfFame";
 
 const ResponsibleDisclosureContent = () => {
@@ -13,16 +14,43 @@ const ResponsibleDisclosureContent = () => {
               {t('responsibleDisclosure.content.intro')}
             </p>
 
-            <div className="rounded-lg bg-primary/5 p-6 mb-8">
-              <p className="mb-4 text-base text-body-color dark:text-body-color-dark">
-                {t('responsibleDisclosure.content.email')}
+            <div className="rounded-lg bg-primary/5 dark:bg-primary/10 p-6 mb-8 border border-gray-200/50 dark:border-gray-700/50">
+              <p className="text-lg text-body-color dark:text-body-color-dark">
+                {t('responsibleDisclosure.content.email')}{' '}
+                <a
+                  href="mailto:security@support.aliasvault.net"
+                  className="font-semibold block mt-2 text-primary hover:underline"
+                >
+                  {t('responsibleDisclosure.content.emailAddress')}
+                </a>
               </p>
-              <a
-                href="mailto:security@support.aliasvault.net"
-                className="text-xl font-semibold text-primary hover:underline"
-              >
-                {t('responsibleDisclosure.content.emailAddress')}
-              </a>
+            </div>
+
+            <div className="mb-8">
+              <p className="text-base text-body-color dark:text-body-color-dark">
+                {t('responsibleDisclosure.content.fullPolicy.description')}
+                <Link
+                  href="https://github.com/aliasvault/aliasvault/blob/main/SECURITY.md"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-base font-semibold text-primary hover:underline ml-1"
+                >
+                  {t('responsibleDisclosure.content.fullPolicy.linkText')}
+                  <svg
+                    className="ml-1 h-4 w-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    />
+                  </svg>
+                </Link>
+              </p>
             </div>
 
             <h3 className="mb-6 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
