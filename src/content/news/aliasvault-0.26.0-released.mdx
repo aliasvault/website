@@ -1,0 +1,106 @@
+---
+title: "AliasVault 0.26.0 Released"
+description: "New vault architecture, custom fields, folders, full offline mode, Romanian language and more"
+date: "2026-01-28"
+image: "/images/blog/headers/0.26.0.jpg"
+author:
+  name: "Leendert de Borst"
+  image: "/images/founder/founder.jpg"
+  designation: "Founder"
+tags:
+  - release
+---
+
+I'm happy to share that the latest release of AliasVault, 0.26.0 is out now.
+
+This is one of the biggest releases yet with a **major architecture upgrade** that unlocks long-requested features like **custom fields**, **folders**, **new item types**, **history tracking**, **recently deleted items**, and **true offline vault access and editing** with automatic vault merging.
+
+Alongside these major additions, this release includes security improvements, performance optimizations, and many community-requested fixes.
+
+> 🚨 **Important Note:** This release includes a client vault model update. After upgrading, your vault can only be opened by v0.26.0+ app versions. For self-hosted users: make sure you update your server to avoid compatibility issues.
+
+<ClickableImage
+ src="/images/blog/releases/0.26.0.jpg"
+ alt="AliasVault 0.26.0 Release"
+ caption="Custom fields, folders, history, recently deleted items, full offline mode"
+/>
+
+## 🏗️ 1. New Vault Architecture
+
+We listened to all your feedback in the last months and designed a new architecture to support all of these ideas. Thanks to this major architecture upgrade, AliasVault now supports the following powerful new features:
+
+### New Item Types
+AliasVault now supports **credit card** and **secure note** item types.
+
+### Folder Support
+You can now **group your credentials** using folders, making it easier to organize and find your items.
+
+### Custom Fields
+Store exactly what you need with **custom fields** and easy copy/paste.
+
+### Field History Tracking
+**See previous values** for usernames and passwords. Track when and how your credentials changed over time.
+
+### Recently Deleted Items
+Deleted items are now kept in a **recently deleted** list with the **option to restore** them, so you can recover accidentally removed credentials.
+
+## 📴 2. Full Offline Mode
+
+You now have **full access to your vault even without a server connection**, in both the browser extension and mobile apps.
+
+### Key Benefits:
+- **View and edit your vault completely offline**, no internet required
+- **Changes sync automatically** once you're back online
+- **Built-in conflict merging** across all apps and devices
+- **Field-level merge logic**, e.g. username changed on device A, password on device B → both are preserved
+- **Last-write-wins per field** when conflicts occur
+
+This makes AliasVault truly usable on the go, in areas with poor connectivity, or when you simply prefer to work offline.
+
+## 🌍 3. New Language Options
+
+AliasVault is now also available in **Romanian**, which means AliasVault is now available in a total of **14 languages**! A big thank you to all of our translators who continue to work hard adding translations for all the new and reworked features.
+
+**Want to help?** Do you want to improve translations and/or make AliasVault available in your native language? Check out the AliasVault project on [Crowdin](https://crowdin.com/project/aliasvault/) and contribute.
+
+## 🚀 4. General Improvements
+
+### New Rust Core Library
+We introduced a new **cross-platform core library written in Rust**, improving:
+- Sync merging reliability
+- Autofill matching accuracy
+- Shared logic consistency across all clients
+
+### Passkey Wizard
+When creating a new passkey, the wizard will now **suggest existing credentials** to save the passkey into, instead of creating a second duplicate entry.
+
+### NordPass Importer
+A new **NordPass import method** has been added, making it easier to migrate from NordPass to AliasVault.
+
+### Updated Importers
+All existing importers have been updated to also import **credit cards** and **secure notes** separately, plus **folders** (if there are any).
+
+## 🐞 5. Bug Fixes
+
+- **Large vaults**: Fixed issues where large vaults could throw errors when trying to open them in the browser extension
+- **Favicon deduplication**: Favicon logos are now deduplicated, duplicate credentials for the same website now share the same favicon, resulting in a **smaller vault size**
+- **Self-hosted admin**: Fixed bug where changing username in the self-hosted admin panel could result in login issues
+
+## 🔄 6. Upgrade Instructions
+
+This release includes a **client vault model update**. After upgrading, your vault can only be opened by v0.26.0+ app versions.
+
+### For Self-Hosted Users:
+
+**Important:** Make sure you update your server before updating clients to avoid compatibility issues.
+
+- **Install.sh update**: Follow the [Install.sh Update Guide](https://docs.aliasvault.net/installation/script/update)
+- **Docker update**: Follow the [Docker Update Guide](https://docs.aliasvault.net/installation/docker-compose/update)
+
+---
+
+As with any large update, if you encounter an issue, please report it on [GitHub](https://github.com/aliasvault/aliasvault/issues) or join the AliasVault [Discord](https://discord.gg/DsaXMTEtpF), we actively monitor and respond quickly.
+
+Explore the full changelog on [GitHub](https://github.com/aliasvault/aliasvault/releases/tag/0.26.0)
+
+<GitHubRelease version="0.26.0" />

@@ -1,0 +1,105 @@
+---
+title: "AliasVault 0.26.0 uitgebracht"
+description: "Nieuwe vault-architectuur, aangepaste velden, mappen, volledige offline modus, Roemeens en meer"
+date: "2026-01-28"
+image: "/images/blog/headers/0.26.0.jpg"
+author:
+  name: "Leendert de Borst"
+  image: "/images/founder/founder.jpg"
+  designation: "Founder"
+tags:
+  - release
+---
+
+Ik ben blij om te delen dat de nieuwste release van AliasVault, 0.26.0, nu beschikbaar is.
+
+Dit is een van de grootste releases tot nu toe met een **grote architectuur-upgrade** die langverwachte functies mogelijk maakt: **aangepaste velden**, **mappen**, **nieuwe itemtypes**, **geschiedenis bijhouden**, **recent verwijderde items** en **volledige offline vault-toegang en -bewerking** met automatisch synchronisatie.
+
+Naast deze grote toevoegingen bevat deze release beveiligingsverbeteringen, prestatie-optimalisaties en veel door de community gevraagde fixes.
+
+> 🚨 **Belangrijke opmerking:** Deze release bevat een vault datamodel update. Na het upgraden kun je je vault alleen nog openen via v0.26.0+ app versies. Voor self-hosting gebruikers: zorg ervoor dat je je server update om compatibiliteitsproblemen te voorkomen.
+
+<ClickableImage
+ src="/images/blog/releases/0.26.0.jpg"
+ alt="AliasVault 0.26.0-release"
+ caption="Aangepaste velden, mappen, geschiedenis, recent verwijderde items, volledige offline modus"
+/>
+
+## 🏗️ 1. Nieuwe vault-architectuur
+
+We hebben geluisterd naar al jullie feedback van de afgelopen maanden en een nieuwe architectuur ontworpen om al deze ideeën te ondersteunen. Dankzij deze grote architectuur-upgrade ondersteunt AliasVault nu de volgende krachtige nieuwe functies:
+
+### Nieuwe itemtypes
+AliasVault ondersteunt nu de itemtypes **creditcard** en **beveiligde notitie**.
+
+### Mapondersteuning
+Je kunt je **credentials nu groeperen** met mappen, waardoor het eenvoudiger is om je items te organiseren en te vinden.
+
+### Aangepaste velden
+Sla precies op wat je nodig hebt met **aangepaste velden** en eenvoudig kopiëren/plakken.
+
+### Veldgeschiedenis
+**Bekijk eerdere waarden** voor gebruikersnamen en wachtwoorden. Volg wanneer en hoe je credentials in de loop der tijd zijn gewijzigd.
+
+### Recent verwijderde items
+Verwijderde items worden nu bewaard in een **recent verwijderd**-lijst met de **mogelijkheid om ze te herstellen**, zodat je per ongeluk verwijderde credentials kunt terugzetten.
+
+## 📴 2. Volledige offline modus
+
+Je hebt nu **volledige toegang tot je vault, zelfs zonder internetverbinding**, zowel in de browser extensie als in de mobiele apps.
+
+### Belangrijkste voordelen:
+- **Bekijk en bewerk je vault volledig offline**, geen internet nodig
+- **Wijzigingen synchroniseren automatisch** zodra je weer online bent
+- **Merge logica op veldniveau**, bijv. gebruikersnaam gewijzigd op apparaat A, wachtwoord op apparaat B → beide worden bewaard
+- **Last-write-wins per veld** bij conflicten
+
+Dit maakt AliasVault bruikbaar onderweg, in gebieden met slechte verbinding, of wanneer je simpelweg offline wilt werken.
+
+## 🌍 3. Nieuwe taalopties
+
+AliasVault is nu ook beschikbaar in **Roemeens**, wat betekent dat AliasVault in totaal in **14 talen** beschikbaar is! Een grote dank aan al onze vertalers die hard blijven werken aan vertalingen voor alle nieuwe en herziene functies.
+
+**Wil je meehelpen aan vertalingen?** Bekijk het [AliasVault project op Crowdin](https://crowdin.com/project/aliasvault/).
+
+## 🚀 4. Algemene verbeteringen
+
+### Nieuwe Rust core-bibliotheek
+We hebben een nieuwe **cross-platform core-bibliotheek in Rust** geïntroduceerd, die verbetert:
+- Betrouwbaarheid van sync-samenvoeging
+- Nauwkeurigheid van autofill-matching
+- Consistente gedeelde logica in alle clients
+
+### Passkey-wizard
+Bij het aanmaken van een nieuwe passkey stelt de wizard nu **bestaande credentials** voor om de passkey in op te slaan, in plaats van een tweede dubbele entry aan te maken.
+
+### NordPass-importer
+Een nieuwe **NordPass-importmethode** is toegevoegd, waardoor migreren van NordPass naar AliasVault eenvoudiger wordt.
+
+### Bijgewerkte importers
+Alle bestaande importers zijn bijgewerkt om ook **creditcards** en **beveiligde notities** apart te importeren, plus **mappen** (indien aanwezig).
+
+## 🐞 5. Bugfixes
+
+- **Grote vaults**: Opgelost dat grote vaults fouten konden geven bij het openen in de browser extensie
+- **Favicon-deduplicatie**: Favicon-logo's worden nu gededupliceerd; dubbele credentials voor dezelfde website delen nu dezelfde favicon, wat resulteert in een **kleinere vault**
+- **Self-hosted admin**: Opgelost dat het wijzigen van gebruikersnaam in het self-hosted adminpanel tot inlogproblemen kon leiden
+
+## 🔄 6. Upgrade instructies
+
+Deze release bevat een **vault datamodel update**. Na het upgraden kan je vault alleen nog geopend worden door v0.26.0+ app versies.
+
+### Voor self-hosting gebruikers:
+
+**Belangrijk:** Zorg ervoor dat je je server update voordat je clients update om compatibiliteitsproblemen te voorkomen.
+
+- **Install.sh update**: Volg de [Install.sh update instructies](https://docs.aliasvault.net/installation/script/update)
+- **Docker update**: Volg de [Docker update instructies](https://docs.aliasvault.net/installation/docker-compose/update)
+
+---
+
+Bij een grote update: als je een probleem tegenkomt, meld het dan op [GitHub](https://github.com/aliasvault/aliasvault/issues) of word lid van de AliasVault [Discord](https://discord.gg/DsaXMTEtpF). We monitoren actief en reageren snel.
+
+Bekijk de volledige changelog op [GitHub](https://github.com/aliasvault/aliasvault/releases/tag/0.26.0)
+
+<GitHubRelease version="0.26.0" />
