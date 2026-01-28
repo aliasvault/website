@@ -90,6 +90,10 @@
         "title": "Wachtwoorden & passkeys",
         "description": "Genereer en bewaar al je wachtwoorden en passkeys op één plek, toegankelijk vanaf elk apparaat (desktop, mobiel, tablet)."
       },
+      "emailAliases": {
+        "title": "Alias generator & e-mailserver",
+        "description": "Genereer unieke aliassen (identiteiten) voor verschillende diensten en maak unieke e-mailadressen met AliasVault's ingebouwde e-mailserver. Ontvang e-mails rechtstreeks in AliasVault: geen externe e-mailservice vereist."
+      },
       "aliasGenerator": {
         "title": "Alias generator",
         "description": "AliasVault stelt je in staat om unieke aliassen (identiteiten) te genereren die je kunt gebruiken om je aan te melden voor verschillende diensten, waarbij je echte identiteit verborgen blijft."
@@ -97,6 +101,10 @@
       "emailServer": {
         "title": "Ingebouwde e-mailserver",
         "description": "AliasVault heeft zijn eigen ingebouwde e-mailserver waarmee je unieke e-mailadressen kunt aanmaken en e-mails rechtstreeks in AliasVault kunt ontvangen. Geen externe e-mailservice vereist."
+      },
+      "offlineMode": {
+        "title": "Offline modus",
+        "description": "Volledige offline toegang inclusief lokaal bewerken in de browser extensie en mobiele apps. Bekijk en bewerk je vault zonder internet: wijzigingen synchroniseren automatisch zodra je weer online bent."
       },
       "encryption": {
         "title": "End-to-end versleuteling",
@@ -229,7 +237,7 @@
       "features": {
         "passwordsPasskeys": "Wachtwoorden & Passkeys met native OS integratie",
         "biometric": "Biometrische authenticatie (Face ID / Touch ID)",
-        "offline": "Offline toegang tot je wachtwoorden",
+        "offline": "Volledige offline toegang en lokaal bewerken",
         "integration": "Integratie met mobiele browsers",
         "sync": "Naadloze synchronisatie tussen al je apparaten"
       }
@@ -243,6 +251,7 @@
         "autofill": "Autofillen van wachtwoorden & passkeys",
         "aliases": "Nieuwe e-mailaliassen ter plekke te genereren",
         "access": "Je vault (kluis) rechtstreeks vanuit je browser te benaderen",
+        "offline": "Volledige offline toegang en lokaal bewerken",
         "save": "Nieuwe inloggegevens veilig op te slaan terwijl je browst"
       }
     },
@@ -467,13 +476,13 @@
       "description": "Bewaar, genereer en beheer al je wachtwoorden en passkeys veilig op één plek met AliasVault's krachtige wachtwoord- en passkey functies.",
       "imageAlt": "AliasVault wachtwoordmanager",
       "features": {
-        "passwordManager": {
-          "name": "Wachtwoordmanager",
-          "description": "Bewaar al je wachtwoorden veilig op één plek, toegankelijk vanaf elk apparaat met krachtige end-to-end versleuteling. Genereer eenvoudig sterke en unieke wachtwoorden voor elke service."
+        "passwordManagerAndPasskeys": {
+          "name": "Wachtwoordmanager & passkeys",
+          "description": "Bewaar al je wachtwoorden veilig op één plek met krachtige end-to-end versleuteling. Genereer sterke, unieke wachtwoorden en creëer passkeys via de browser extensie, iOS en Android apps—alles gesynchroniseerd tussen je apparaten."
         },
-        "passkeySupport": {
-          "name": "Passkeys",
-          "description": "Creëer en log in met passkeys via de browser extensie, iOS en Android apps. Passkeys worden veilig opgeslagen in je vault en automatisch gesynchroniseerd tussen al je apparaten."
+        "trulyOfflineAccess": {
+          "name": "Echte offline toegang",
+          "description": "Volledige offline modus inclusief lokaal bewerken—iets wat weinig wachtwoordmanagers bieden. Bekijk en bewerk je vault altijd en overal; wijzigingen synchroniseren automatisch zodra je weer online bent, met ingebouwde conflict-samenvoeging op alle apps en apparaten."
         },
         "builtIn2FA": {
           "name": "Ingebouwde 2FA authenticator",
@@ -544,6 +553,10 @@
           "name": "Autofill van inloggegevens",
           "description": "Gebruikersnamen en wachtwoorden worden automatisch voor je ingevuld met een druk op de knop."
         },
+        "offlineAccess": {
+          "name": "Offline toegang",
+          "description": "Volledige offline toegang en lokaal bewerken in de extensie—bekijk en bewerk je vault zonder internet; wijzigingen synchroniseren automatisch zodra je weer online bent."
+        },
         "emailAliasGenerator": {
           "name": "E-mailalias generator",
           "description": "Genereer (e-mail) aliassen direct vanuit de browser extensie met een simpele klik."
@@ -564,8 +577,8 @@
           "description": "Log in of ontgrendel je vault in de web app of browser extensie met behulp van je mobiele apparaat. Scan simpelweg de QR-code met je reeds geauthenticeerde mobiele app, waardoor je niet opnieuw je hoofdwachtwoord hoeft in te voeren. Dit maakt het gemakkelijk om overal toegang te krijgen tot je vault."
         },
         "offlineMode": {
-          "name": "Offline modus",
-          "description": "Toegang tot je vault zonder internetverbinding of wanneer de server niet bereikbaar is. Ondersteunt CSV-export vanuit de mobiele app zodat toegang tot je inloggegevens altijd gegarandeerd is, waardoor je nooit de toegang tot je wachtwoorden verliest."
+          "name": "Echte offline toegang",
+          "description": "Volledige offline toegang tot je wachtwoorden, inclusief lokaal bewerken. Bekijk en bewerk je vault zonder internet, met automatische synchronisatie zodra je weer online bent. Je hebt altijd toegang tot je inloggegevens waar je ook bent, in gebieden met slechte verbinding of wanneer je liever offline werkt."
         }
       }
     },

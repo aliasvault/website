@@ -149,6 +149,7 @@ const Platforms = () => {
               <li>{t('platforms.browserExtensions.features.autofill')}</li>
               <li>{t('platforms.browserExtensions.features.aliases')}</li>
               <li>{t('platforms.browserExtensions.features.access')}</li>
+              <li>{t('platforms.browserExtensions.features.offline')}</li>
               <li>{t('platforms.browserExtensions.features.save')}</li>
             </ul>
           </div>

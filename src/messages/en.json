@@ -90,6 +90,10 @@
         "title": "Passwords & Passkeys",
         "description": "Generate and store all your passwords and passkeys in one place, and access them from any device (desktop, mobile, tablet)."
       },
+      "emailAliases": {
+        "title": "Alias Generator & Email Server",
+        "description": "Generate unique aliases (identities) for different services and create unique email addresses with AliasVault's built-in email server. Receive emails straight in AliasVault: no third-party email service required."
+      },
       "aliasGenerator": {
         "title": "Alias Generator",
         "description": "AliasVault allows you to generate unique aliases (identities) that you can use to sign up for different services, keeping your real identity hidden."
@@ -97,6 +101,10 @@
       "emailServer": {
         "title": "Built-in Email Server",
         "description": "AliasVault has its own built-in email server that allows you to create unique email addresses and receive emails straight in AliasVault. No third-party email service required."
+      },
+      "offlineMode": {
+        "title": "Offline Mode",
+        "description": "Full offline access including local editing in the browser extension and mobile apps. View and edit your vault without internet: changes sync automatically when you're back online."
       },
       "encryption": {
         "title": "End-To-End Encryption",
@@ -229,7 +237,7 @@
       "features": {
         "passwordsPasskeys": "Passwords & passkeys autofill with native OS integration",
         "biometric": "Biometric authentication (Face ID / Touch ID)",
-        "offline": "Offline access to your passwords",
+        "offline": "Full offline access including local editing",
         "integration": "Integration with mobile browsers",
         "sync": "Seamless sync across all your devices"
       }
@@ -243,6 +251,7 @@
         "autofill": "Autofill passwords & passkeys",
         "aliases": "Generate new email aliases on the fly",
         "access": "Access your vault directly from your browser",
+        "offline": "Full offline access and local editing",
         "save": "Securely save new credentials as you browse"
       }
     },
@@ -467,13 +476,13 @@
       "description": "Securely store, generate, and manage all your passwords and passkeys in one place with AliasVault's powerful password and passkey management features.",
       "imageAlt": "AliasVault Password Management",
       "features": {
-        "passwordManager": {
-          "name": "Password Manager",
-          "description": "Store all your passwords securely in one place, accessible from any device with industry leading end-to-end encryption. Easily generate strong and unique passwords for each service."
+        "passwordManagerAndPasskeys": {
+          "name": "Password Manager & Passkeys",
+          "description": "Store all your passwords securely in one place with industry-leading end-to-end encryption. Generate strong, unique passwords and create passkeys via the browser extension, iOS and Android apps—all synced across your devices."
         },
-        "passkeySupport": {
-          "name": "Passkeys",
-          "description": "Create and login with passkeys via the browser extension, iOS and Android apps. Passkeys are securely stored in your vault and synced across all devices."
+        "trulyOfflineAccess": {
+          "name": "True Offline Access",
+          "description": "Full offline mode including local editing—something few password managers offer. View and edit your vault completely without internet; changes sync automatically when you're back online, with built-in conflict merging across all apps and devices."
         },
         "builtIn2FA": {
           "name": "Built-in 2FA Authenticator",
@@ -544,6 +553,10 @@
           "name": "Autofill Credentials",
           "description": "Seamlessly autofill (user)names and passwords while you browse."
         },
+        "offlineAccess": {
+          "name": "Offline Access",
+          "description": "Full offline access and local editing in the extension—view and edit your vault without internet; changes sync automatically when you're back online."
+        },
         "emailAliasGenerator": {
           "name": "Email Alias Generator",
           "description": "Generate (email) aliases directly from the browser extension with a simple click."
@@ -564,8 +577,8 @@
           "description": "Login or unlock your vault in the web app or browser extension using your mobile device. Simply scan the QR code with your already-authenticated mobile app, preventing you from having to re-enter your master password. This makes it easy to access your vault everywhere."
         },
         "offlineMode": {
-          "name": "Offline Mode",
-          "description": "Access your vault without internet connection or when the server cannot be reached. Supports CSV export from mobile app so access to credentials is always safeguarded, ensuring you never lose access to your passwords."
+          "name": "True Offline Mode",
+          "description": "Full offline access including local editing—view and edit your vault without internet, with automatic sync when you're back online. Always have access to your credentials wherever you are, in areas with poor connectivity or when you prefer to work offline."
         }
       }
     },

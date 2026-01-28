@@ -24,13 +24,13 @@ export function getLocalizedFeaturesData(t: TranslationFunction): FeatureCategor
       imageAlt: t('featuresData.passwordManagement.imageAlt'),
       features: [
         {
-          name: t('featuresData.passwordManagement.features.passwordManager.name'),
-          description: t('featuresData.passwordManagement.features.passwordManager.description'),
+          name: t('featuresData.passwordManagement.features.passwordManagerAndPasskeys.name'),
+          description: t('featuresData.passwordManagement.features.passwordManagerAndPasskeys.description'),
           status: "available" as const
         },
         {
-          name: t('featuresData.passwordManagement.features.passkeySupport.name'),
-          description: t('featuresData.passwordManagement.features.passkeySupport.description'),
+          name: t('featuresData.passwordManagement.features.trulyOfflineAccess.name'),
+          description: t('featuresData.passwordManagement.features.trulyOfflineAccess.description'),
           status: "available" as const
         },
         {
@@ -118,6 +118,11 @@ export function getLocalizedFeaturesData(t: TranslationFunction): FeatureCategor
         {
           name: t('featuresData.browserExtensions.features.autofillCredentials.name'),
           description: t('featuresData.browserExtensions.features.autofillCredentials.description'),
+          status: "available" as const
+        },
+        {
+          name: t('featuresData.browserExtensions.features.offlineAccess.name'),
+          description: t('featuresData.browserExtensions.features.offlineAccess.description'),
           status: "available" as const
         },
         {
