@@ -41,7 +41,7 @@ const Statistics = () => {
         <div className="mx-auto max-w-6xl">
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             <StatisticItem
-              number="1.8k+"
+              number="2.0k"
               label={t("githubStars")}
               icon={
                 <svg className="h-8 w-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
@@ -51,7 +51,7 @@ const Statistics = () => {
             />
 
             <StatisticItem
-              number="8k+"
+              number="10k+"
               label={t("cloudRegistrations")}
               icon={
                 <svg className="h-8 w-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -61,7 +61,7 @@ const Statistics = () => {
             />
 
             <StatisticItem
-              number="30k+"
+              number="40k+"
               label={t("selfHostedDownloads")}
               icon={
                 <svg className="h-8 w-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -71,7 +71,7 @@ const Statistics = () => {
             />
 
             <StatisticItem
-              number="45k+"
+              number="55k+"
               label={t("emailAliasesCreated")}
               icon={
                 <svg className="h-8 w-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
