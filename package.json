@@ -17,6 +17,7 @@
     "aos": "^2.3.4",
     "eslint": "^9.7.0",
     "eslint-config-next": "~16.0.7",
+    "framer-motion": "^12.29.2",
     "gray-matter": "^4.0.3",
     "next": "^15.1.9",
     "next-intl": "^4.3.4",

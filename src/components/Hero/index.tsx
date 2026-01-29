@@ -1,37 +1,130 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import Badge from "../Common/Badge";
 import { useTranslations } from "next-intl";
+import { motion } from "framer-motion";
+import AnimatedBackground from "./AnimatedBackground";
 
 const Hero = () => {
   const t = useTranslations('hero');
+
+  // Animation variants for staggered children
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring" as const,
+        stiffness: 100,
+        damping: 12,
+      },
+    },
+  };
+
+  const imageVariants = {
+    hidden: { opacity: 0, scale: 0.9, y: 20 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: {
+        type: "spring" as const,
+        stiffness: 80,
+        damping: 15,
+        delay: 0.3,
+      },
+    },
+  };
+
+  const badgeContainerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.05,
+        delayChildren: 0.6,
+      },
+    },
+  };
+
+  const badgeVariants = {
+    hidden: { opacity: 0, scale: 0.8, y: 10 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: {
+        type: "spring" as const,
+        stiffness: 150,
+        damping: 10,
+      },
+    },
+  };
+
   return (
     <>
       <section
         id="home"
         className="relative z-10 overflow-hidden bg-white pb-8 pt-[120px] dark:bg-gray-dark md:pb-[140px] md:pt-[150px] xl:pt-[180px]"
       >
+        {/* Animated gradient background */}
+        <AnimatedBackground />
+
         <div className="container relative z-10">
           <div className="-mx-4 flex flex-wrap items-center">
             <div className="w-full px-4 lg:w-1/2">
-              <div className="text-center lg:text-left" data-aos="fade-down" data-aos-delay="0">
-                <h1 className="mb-5 text-3xl font-bold leading-tight text-black dark:text-white sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight">
+              <motion.div
+                className="text-center lg:text-left"
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+              >
+                <motion.h1
+                  className="mb-5 text-3xl font-bold leading-tight text-black dark:text-white sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight"
+                  variants={itemVariants}
+                >
                   {t('title')}
-                </h1>
-                <p className="mb-12 text-base !leading-relaxed text-body-color dark:text-body-color-dark sm:text-lg md:text-xl">
+                </motion.h1>
+                <motion.p
+                  className="mb-12 text-base !leading-relaxed text-body-color dark:text-body-color-dark sm:text-lg md:text-xl"
+                  variants={itemVariants}
+                >
                   {t('description')}
-                </p>
-                <div className="flex flex-col items-center justify-center lg:items-start lg:justify-start space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
+                </motion.p>
+                <motion.div
+                  className="flex flex-col items-center justify-center lg:items-start lg:justify-start space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0"
+                  variants={itemVariants}
+                >
                   <Link
                     href="https://app.aliasvault.net"
                     target="_blank"
-                    className="rounded-3xl bg-primary px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/80"
+                    className="group relative overflow-hidden rounded-3xl bg-primary px-8 py-4 text-base font-semibold text-white transition-all duration-300 ease-out hover:scale-105 hover:shadow-lg hover:shadow-primary/25"
                   >
-                    {t('cta')}
+                    <span className="relative z-10">{t('cta')}</span>
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-r from-primary-600 to-primary-400"
+                      initial={{ x: "-100%" }}
+                      whileHover={{ x: 0 }}
+                      transition={{ duration: 0.3 }}
+                    />
                   </Link>
                   <Link
                     href="https://github.com/aliasvault/aliasvault"
-                    className="inline-flex items-center justify-center py-4 text-base font-semibold duration-300 ease-in-out hover:underline dark:text-white"
+                    className="inline-flex items-center justify-center py-4 text-base font-semibold transition-all duration-300 hover:text-primary dark:text-white dark:hover:text-primary"
                   >
                     <svg
                       className="mr-2 h-5 w-5"
@@ -48,173 +141,135 @@ const Hero = () => {
                     {t('github')} <Image
                       className="inline-block ml-3"
                       alt={t('alt.githubStars')}
-                      src={`https://img.shields.io/github/stars/aliasvault/aliasvault?${new Date().getTime()}`}
+                      src="https://img.shields.io/github/stars/aliasvault/aliasvault"
                       width={90}
                       height={20}
                       unoptimized
                     />
                   </Link>
-                </div>
-                <div className="mt-6 flex items-center justify-center lg:justify-start space-x-2">
+                </motion.div>
+                <motion.div
+                  className="mt-6 flex items-center justify-center lg:justify-start space-x-2"
+                  variants={badgeContainerVariants}
+                  initial="hidden"
+                  animate="visible"
+                >
                   {/* Apple App Store Badge */}
-                  <Badge
-                    href="https://apps.apple.com/app/id6745490915"
-                    iconLight="/images/app-store/apple-light.svg"
-                    iconDark="/images/app-store/apple-dark.svg"
-                    alt={t('alt.appStore')}
-                  />
+                  <motion.div variants={badgeVariants}>
+                    <Badge
+                      href="https://apps.apple.com/app/id6745490915"
+                      iconLight="/images/app-store/apple-light.svg"
+                      iconDark="/images/app-store/apple-dark.svg"
+                      alt={t('alt.appStore')}
+                    />
+                  </motion.div>
 
                   {/* Android Play Store Badge */}
-                  <Badge
-                    href="https://play.google.com/store/apps/details?id=net.aliasvault.app"
-                    iconLight="/images/app-store/android.svg"
-                    iconDark="/images/app-store/android.svg"
-                    alt={t('alt.android')}
-                  />
+                  <motion.div variants={badgeVariants}>
+                    <Badge
+                      href="https://play.google.com/store/apps/details?id=net.aliasvault.app"
+                      iconLight="/images/app-store/android.svg"
+                      iconDark="/images/app-store/android.svg"
+                      alt={t('alt.android')}
+                    />
+                  </motion.div>
 
                   {/* Chrome Extension Badge */}
-                  <Badge
-                    href="https://chromewebstore.google.com/detail/aliasvault/bmoggiinmnodjphdjnmpcnlleamkfedj"
-                    iconLight="/images/browser-icons/chrome.svg"
-                    iconDark="/images/browser-icons/chrome.svg"
-                    alt={t('alt.chrome')}
-                  />
+                  <motion.div variants={badgeVariants}>
+                    <Badge
+                      href="https://chromewebstore.google.com/detail/aliasvault/bmoggiinmnodjphdjnmpcnlleamkfedj"
+                      iconLight="/images/browser-icons/chrome.svg"
+                      iconDark="/images/browser-icons/chrome.svg"
+                      alt={t('alt.chrome')}
+                    />
+                  </motion.div>
 
                   {/* Firefox Extension Badge */}
-                  <Badge
-                    href="https://addons.mozilla.org/en-US/firefox/addon/aliasvault/"
-                    iconLight="/images/browser-icons/firefox.svg"
-                    iconDark="/images/browser-icons/firefox.svg"
-                    alt={t('alt.firefox')}
-                  />
+                  <motion.div variants={badgeVariants}>
+                    <Badge
+                      href="https://addons.mozilla.org/en-US/firefox/addon/aliasvault/"
+                      iconLight="/images/browser-icons/firefox.svg"
+                      iconDark="/images/browser-icons/firefox.svg"
+                      alt={t('alt.firefox')}
+                    />
+                  </motion.div>
 
                   {/* Microsoft Edge Extension Badge */}
-                  <Badge
-                    href="https://microsoftedge.microsoft.com/addons/detail/aliasvault/kabaanafahnjkfkplbnllebdmppdemfo"
-                    iconLight="/images/browser-icons/edge.svg"
-                    iconDark="/images/browser-icons/edge.svg"
-                    alt={t('alt.edge')}
-                  />
+                  <motion.div variants={badgeVariants}>
+                    <Badge
+                      href="https://microsoftedge.microsoft.com/addons/detail/aliasvault/kabaanafahnjkfkplbnllebdmppdemfo"
+                      iconLight="/images/browser-icons/edge.svg"
+                      iconDark="/images/browser-icons/edge.svg"
+                      alt={t('alt.edge')}
+                    />
+                  </motion.div>
 
                   {/* Safari Extension Badge */}
-                  <Badge
-                    href="https://apps.apple.com/app/id6743163173"
-                    iconLight="/images/browser-icons/safari.svg"
-                    iconDark="/images/browser-icons/safari.svg"
-                    alt={t('alt.safari')}
-                  />
+                  <motion.div variants={badgeVariants}>
+                    <Badge
+                      href="https://apps.apple.com/app/id6743163173"
+                      iconLight="/images/browser-icons/safari.svg"
+                      iconDark="/images/browser-icons/safari.svg"
+                      alt={t('alt.safari')}
+                    />
+                  </motion.div>
 
                   {/* Brave Extension Badge */}
-                  <Badge
-                    href="https://chromewebstore.google.com/detail/aliasvault/bmoggiinmnodjphdjnmpcnlleamkfedj"
-                    iconLight="/images/browser-icons/brave.svg"
-                    iconDark="/images/browser-icons/brave.svg"
-                    alt={t('alt.brave')}
-                  />
+                  <motion.div variants={badgeVariants}>
+                    <Badge
+                      href="https://chromewebstore.google.com/detail/aliasvault/bmoggiinmnodjphdjnmpcnlleamkfedj"
+                      iconLight="/images/browser-icons/brave.svg"
+                      iconDark="/images/browser-icons/brave.svg"
+                      alt={t('alt.brave')}
+                    />
+                  </motion.div>
 
                   {/* Divider */}
-                  <span className="text-gray-400 dark:text-gray-600 flex items-center">-</span>
+                  <motion.span
+                    className="text-gray-400 dark:text-gray-600 flex items-center"
+                    variants={badgeVariants}
+                  >
+                    -
+                  </motion.span>
 
                   {/* Made in NL Badge */}
-                  <div className="flex items-center space-x-2">
+                  <motion.div className="flex items-center space-x-2" variants={badgeVariants}>
                     <Image src="/images/flags/nl.svg" width={24} height={24} alt={t('alt.madeInNL')} title={t('alt.madeInNL')} />
                     <Image src="/images/flags/gdpr.svg" width={24} height={24} alt={t('alt.gdpr')} title={t('alt.gdpr')} />
-                  </div>
-                </div>
-              </div>
+                  </motion.div>
+                </motion.div>
+              </motion.div>
             </div>
             <div className="w-full px-4 lg:w-1/2">
-              <div className="mt-8 text-center lg:mt-0" data-aos="fade-down" data-aos-delay="150">
-                <Image
-                  src="/images/hero/hero-light.png"
-                  alt={t('alt.heroImage')}
-                  width={1000}
-                  height={1000}
-                  className="mx-auto dark:hidden"
-                />
-                <Image
-                  src="/images/hero/hero-dark.png"
-                  alt={t('alt.heroImage')}
-                  width={1000}
-                  height={1000}
-                  className="mx-auto hidden dark:block"
-                />
-              </div>
+              <motion.div
+                className="mt-8 text-center lg:mt-0"
+                variants={imageVariants}
+                initial="hidden"
+                animate="visible"
+              >
+                <motion.div
+                  whileHover={{ scale: 1.02, y: -5 }}
+                  transition={{ type: "spring" as const, stiffness: 300, damping: 20 }}
+                >
+                  <Image
+                    src="/images/hero/hero-light.png"
+                    alt={t('alt.heroImage')}
+                    width={1000}
+                    height={1000}
+                    className="mx-auto dark:hidden"
+                  />
+                  <Image
+                    src="/images/hero/hero-dark.png"
+                    alt={t('alt.heroImage')}
+                    width={1000}
+                    height={1000}
+                    className="mx-auto hidden dark:block"
+                  />
+                </motion.div>
+              </motion.div>
             </div>
           </div>
         </div>
-        <span className="absolute left-0 top-0 z-[-1]">
-            <svg
-              width="287"
-              height="254"
-              viewBox="0 0 287 254"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                opacity="0.1"
-                d="M286.5 0.5L-14.5 254.5V69.5L286.5 0.5Z"
-                fill="url(#paint0_linear_111:578)"
-              />
-              <defs>
-                <linearGradient
-                  id="paint0_linear_111:578"
-                  x1="-40.5"
-                  y1="117"
-                  x2="301.926"
-                  y2="-97.1485"
-                  gradientUnits="userSpaceOnUse"
-                >
-                  <stop stopColor="#d68338" />
-                  <stop offset="1" stopColor="#d68338" stopOpacity="0" />
-                </linearGradient>
-              </defs>
-            </svg>
-          </span>
-        <span className="absolute right-0 top-0 z-[-1]">
-          <svg
-            width="628"
-            height="258"
-            viewBox="0 0 628 258"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              opacity="0.1"
-              d="M669.125 257.002L345.875 31.9983L524.571 -15.8832L669.125 257.002Z"
-              fill="url(#paint0_linear_0:1)"
-            />
-            <path
-              opacity="0.1"
-              d="M0.0716344 182.78L101.988 -15.0769L142.154 81.4093L0.0716344 182.78Z"
-              fill="url(#paint1_linear_0:1)"
-            />
-            <defs>
-              <linearGradient
-                id="paint0_linear_0:1"
-                x1="644"
-                y1="221"
-                x2="429.946"
-                y2="37.0429"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#d68338" />
-                <stop offset="1" stopColor="#d68338" stopOpacity="0" />
-              </linearGradient>
-              <linearGradient
-                id="paint1_linear_0:1"
-                x1="18.3648"
-                y1="166.016"
-                x2="105.377"
-                y2="32.3398"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#d68338" />
-                <stop offset="1" stopColor="#d68338" stopOpacity="0" />
-              </linearGradient>
-            </defs>
-          </svg>
-        </span>
       </section>
     </>
   );
