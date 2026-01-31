@@ -2,6 +2,32 @@
   "alertBanner": {
     "message": "Are you encountering issues with AliasVault? Please ensure you're using the latest browser extension and app versions. Still experiencing issues? Contact us at"
   },
+  "statusUpdate": {
+    "title": "Service Disruption: App Update to 0.26.1 Required",
+    "summary": "We are currently experiencing login issues on some platforms. Shortly after releasing version 0.26.0, an issue was discovered related to a data migration. To prevent data issues, older app versions have been temporarily disabled. You need version 0.26.1 to login. If you see \"Client version not supported\", this is why. Logging in to the web app works in the meantime and gives you access to all your credentials.",
+    "platformStatus": {
+      "title": "Platform Status",
+      "platforms": {
+        "android": { "name": "Android", "status": "live" },
+        "ios": { "name": "iOS", "status": "pending" },
+        "chrome": { "name": "Chrome", "status": "live" },
+        "firefox": { "name": "Firefox", "status": "live" },
+        "edge": { "name": "Edge", "status": "pending" },
+        "safari": { "name": "Safari", "status": "pending" }
+      },
+      "live": "Live",
+      "pending": "Awaiting store approval"
+    },
+    "timelineTitle": "Timeline (UTC)",
+    "timeline": {
+      "event1": { "time": "Jan 30, 22:00", "text": "New 0.26.0 update released" },
+      "event2": { "time": "Jan 30, 23:00", "text": "Issue detected, started investigation" },
+      "event3": { "time": "Jan 31, 00:30", "text": "Hotfix 0.26.1 published, submitted to all app stores. Older app versions temporarily disabled." },
+      "event4": { "time": "Jan 31, 01:30", "text": "Android, Chrome, Firefox updates live" },
+      "event5": { "time": "Jan 31, 10:00", "text": "Waiting for: iOS, Safari, Edge (pending store review)" }
+    },
+    "apology": "Our apologies for the inconvenience. We have submitted all updates and are now waiting for Apple (iOS, Safari) and Microsoft (Edge) to approve them. Login will work again once version 0.26.1 is available for your platform."
+  },
   "metadata": {
     "title": "AliasVault - Privacy-First Password & Email Alias Manager",
     "description": "AliasVault is an open-source end-to-end encrypted password and alias manager.",

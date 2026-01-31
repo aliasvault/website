@@ -2,6 +2,32 @@
   "alertBanner": {
     "message": "Heb je problemen met AliasVault? Zorg ervoor dat je de nieuwste versie van de browserextensie en app gebruikt. Nog steeds problemen? Neem contact met ons op via"
   },
+  "statusUpdate": {
+    "title": "Storing: App Update naar 0.26.1 Vereist",
+    "summary": "We ondervinden momenteel inlogproblemen op sommige platforms. Kort na het uitbrengen van versie 0.26.0 werd een probleem ontdekt gerelateerd aan een datamigratie. Om dataproblemen te voorkomen zijn oudere app-versies tijdelijk uitgeschakeld. Je hebt versie 0.26.1 nodig om in te loggen. Als je \"Client version not supported\" ziet, is dit de reden. Inloggen via de web app werkt in de tussentijd wel en geeft je toegang tot al je gegevens.",
+    "platformStatus": {
+      "title": "Platform Status",
+      "platforms": {
+        "android": { "name": "Android", "status": "live" },
+        "ios": { "name": "iOS", "status": "pending" },
+        "chrome": { "name": "Chrome", "status": "live" },
+        "firefox": { "name": "Firefox", "status": "live" },
+        "edge": { "name": "Edge", "status": "pending" },
+        "safari": { "name": "Safari", "status": "pending" }
+      },
+      "live": "Live",
+      "pending": "Wacht op store goedkeuring"
+    },
+    "timelineTitle": "Tijdlijn (UTC)",
+    "timeline": {
+      "event1": { "time": "30 jan, 22:00", "text": "Nieuwe 0.26.0 update uitgebracht" },
+      "event2": { "time": "30 jan, 23:00", "text": "Probleem ontdekt, onderzoek gestart" },
+      "event3": { "time": "31 jan, 00:30", "text": "Hotfix 0.26.1 gepubliceerd en ingediend bij alle app stores. Oudere versies tijdelijk uitgeschakeld." },
+      "event4": { "time": "31 jan, 01:30", "text": "Android, Chrome, Firefox updates live" },
+      "event5": { "time": "31 jan, 10:00", "text": "Wachtend op: iOS, Safari, Edge (wachten op store review)" }
+    },
+    "apology": "Onze excuses voor het ongemak. Alle updates zijn ingediend en we wachten nu op goedkeuring van Apple (iOS, Safari) en Microsoft (Edge). Inloggen werkt weer zodra versie 0.26.1 beschikbaar is voor jouw platform."
+  },
   "metadata": {
     "title": "AliasVault - Privacy-First Wachtwoord & E-mailalias Manager",
     "description": "AliasVault is een open-source end-to-end versleutelde wachtwoord- en aliasmanager.",
