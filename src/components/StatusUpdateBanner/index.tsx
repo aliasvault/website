@@ -13,7 +13,7 @@ const StatusUpdateBanner = () => {
     return null;
   }
 
-  const timelineKeys = ['event1', 'event2', 'event3', 'event4', 'event5'] as const;
+  const timelineKeys = ['event1', 'event2', 'event3', 'event4', 'event5', 'event6'] as const;
   const platformKeys = ['android', 'ios', 'chrome', 'firefox', 'edge', 'safari'] as const;
 
   return (

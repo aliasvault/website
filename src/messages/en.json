@@ -13,7 +13,7 @@
         "chrome": { "name": "Chrome", "status": "live" },
         "firefox": { "name": "Firefox", "status": "live" },
         "edge": { "name": "Edge", "status": "pending" },
-        "safari": { "name": "Safari", "status": "pending" }
+        "safari": { "name": "Safari", "status": "live" }
       },
       "live": "Live",
       "pending": "Awaiting store approval"
@@ -24,7 +24,8 @@
       "event2": { "time": "Jan 30, 23:00", "text": "Issue detected, started investigation" },
       "event3": { "time": "Jan 31, 00:30", "text": "Hotfix 0.26.1 published, submitted to all app stores. Older app versions temporarily disabled." },
       "event4": { "time": "Jan 31, 01:30", "text": "Android, Chrome, Firefox updates live" },
-      "event5": { "time": "Jan 31, 10:00", "text": "Waiting for: iOS, Safari, Edge (pending store review)" }
+      "event5": { "time": "Jan 31, 10:00", "text": "Waiting for: iOS, Safari, Edge (pending store review)" },
+      "event6": { "time": "Jan 31, 18:00", "text": "Safari update approved and live" }
     },
     "apology": "Our apologies for the inconvenience. We have submitted all updates and are now waiting for Apple (iOS, Safari) and Microsoft (Edge) to approve them. Login will work again once version 0.26.1 is available for your platform."
   },

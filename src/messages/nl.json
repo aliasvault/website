@@ -13,7 +13,7 @@
         "chrome": { "name": "Chrome", "status": "live" },
         "firefox": { "name": "Firefox", "status": "live" },
         "edge": { "name": "Edge", "status": "pending" },
-        "safari": { "name": "Safari", "status": "pending" }
+        "safari": { "name": "Safari", "status": "live" }
       },
       "live": "Live",
       "pending": "Wacht op store goedkeuring"
@@ -24,7 +24,8 @@
       "event2": { "time": "30 jan, 23:00", "text": "Probleem ontdekt, onderzoek gestart" },
       "event3": { "time": "31 jan, 00:30", "text": "Hotfix 0.26.1 gepubliceerd en ingediend bij alle app stores. Oudere versies tijdelijk uitgeschakeld." },
       "event4": { "time": "31 jan, 01:30", "text": "Android, Chrome, Firefox updates live" },
-      "event5": { "time": "31 jan, 10:00", "text": "Wachtend op: iOS, Safari, Edge (wachten op store review)" }
+      "event5": { "time": "31 jan, 10:00", "text": "Wachtend op: iOS, Safari, Edge (wachten op store review)" },
+      "event6": { "time": "31 jan, 18:00", "text": "Safari update goedgekeurd en live" }
     },
     "apology": "Onze excuses voor het ongemak. Alle updates zijn ingediend en we wachten nu op goedkeuring van Apple (iOS, Safari) en Microsoft (Edge). Inloggen werkt weer zodra versie 0.26.1 beschikbaar is voor jouw platform."
   },
