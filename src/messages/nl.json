@@ -1,4 +1,7 @@
 {
+  "alertBanner": {
+    "message": "Heb je problemen met AliasVault? Zorg ervoor dat je de nieuwste versie van de browserextensie en app gebruikt. Nog steeds problemen? Neem contact met ons op via"
+  },
   "metadata": {
     "title": "AliasVault - Privacy-First Wachtwoord & E-mailalias Manager",
     "description": "AliasVault is een open-source end-to-end versleutelde wachtwoord- en aliasmanager.",

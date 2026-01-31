@@ -1,5 +1,6 @@
 import Breadcrumb from "@/components/Common/Breadcrumb";
 import ContactContent from "@/components/Contact/index";
+import AlertBanner from "@/components/AlertBanner";
 import { Metadata } from "next";
 import { useTranslations } from "next-intl";
 import { getTranslations } from "next-intl/server";
@@ -27,6 +28,11 @@ const ContactPage = () => {
         pageName={t('contact.title')}
         description={t('contact.description')}
       />
+      <section className="pb-0 pt-8">
+        <div className="container">
+          <AlertBanner />
+        </div>
+      </section>
       <ContactContent />
     </Page>
   );

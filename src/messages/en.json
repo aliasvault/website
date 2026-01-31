@@ -1,4 +1,7 @@
 {
+  "alertBanner": {
+    "message": "Are you encountering issues with AliasVault? Please ensure you're using the latest browser extension and app versions. Still experiencing issues? Contact us at"
+  },
   "metadata": {
     "title": "AliasVault - Privacy-First Password & Email Alias Manager",
     "description": "AliasVault is an open-source end-to-end encrypted password and alias manager.",
