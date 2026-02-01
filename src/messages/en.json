@@ -1,6 +1,6 @@
 {
   "alertBanner": {
-    "message": "Are you encountering issues with AliasVault? Please ensure you're using the latest browser extension and app versions. Still experiencing issues? Contact us at"
+    "message": "Are you encountering issues with using AliasVault? Please ensure you're using the latest browser extension and app versions. Still experiencing issues? Please contact us at"
   },
   "statusUpdate": {
     "title": "Service Disruption: App Update to 0.26.1 Required",

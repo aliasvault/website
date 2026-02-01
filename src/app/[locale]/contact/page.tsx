@@ -31,7 +31,6 @@ const ContactPage = () => {
       />
       <section className="pb-0 pt-8">
         <div className="container">
-          <StatusUpdateBanner />
           <AlertBanner />
         </div>
       </section>
