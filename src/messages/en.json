@@ -71,6 +71,7 @@
       "mission": "Our Mission",
       "features": "Features",
       "platforms": "Platforms",
+      "downloads": "Downloads",
       "documentation": "Documentation",
       "source": "Source code",
       "press_kit": "Press Kit",
@@ -297,6 +298,11 @@
       },
       "roadmapLink": "To track our progress and see what's coming next, check out our",
       "roadmapLinkText": "full roadmap on GitHub"
+    },
+    "downloads": {
+      "title": "Downloads & Manual Installation",
+      "description": "Access the latest AliasVault builds and releases on our downloads site. Here you can find browser extension packages for manual installation and Android APK files if you prefer to install outside of the Play Store.",
+      "linkText": "Visit downloads.aliasvault.net"
     }
   },
   "common": {

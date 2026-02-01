@@ -71,6 +71,7 @@
       "mission": "Onze Missie",
       "features": "Functies",
       "platforms": "Platforms",
+      "downloads": "Downloads",
       "documentation": "Documentatie",
       "source": "Broncode",
       "press_kit": "Perskit",
@@ -297,6 +298,11 @@
       },
       "roadmapLink": "Om de voortgang van AliasVault te volgen en te zien wat er aankomt aan nieuwe functies, bekijk onze",
       "roadmapLinkText": "volledige roadmap op GitHub"
+    },
+    "downloads": {
+      "title": "Downloads & Handmatige Installatie",
+      "description": "Je kunt ook toegang krijgen tot de nieuwste AliasVault builds en releases op onze downloads sub-site. Hier vind je browserextensie packages voor handmatige installatie en Android APK-bestanden als je liever buiten de Play Store om installeert.",
+      "linkText": "Bezoek downloads.aliasvault.net"
     }
   },
   "common": {
