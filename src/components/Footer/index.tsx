@@ -351,6 +351,14 @@ const Footer = () => {
                       {t('footer.links.terms_and_conditions')}
                     </Link>
                   </li>
+                  <li>
+                    <Link
+                      href={`/${locale}/legal-notice`}
+                      className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
+                    >
+                      {t('footer.links.legal_notice')}
+                    </Link>
+                  </li>
                 </ul>
               </div>
             </div>

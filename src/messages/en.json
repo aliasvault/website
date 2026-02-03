@@ -84,7 +84,8 @@
       "responsible_disclosure": "Responsible Disclosure",
       "license": "License",
       "privacy": "Privacy Policy",
-      "terms_and_conditions": "Terms and Conditions"
+      "terms_and_conditions": "Terms and Conditions",
+      "legal_notice": "Legal Notice"
     },
     "social": {
       "github": "GitHub",
@@ -967,6 +968,10 @@
   "termsAndConditions": {
     "title": "Terms and Conditions",
     "description": "Learn about the terms and conditions for using AliasVault's services."
+  },
+  "legalNotice": {
+    "title": "Legal Notice",
+    "description": "Legal notice and imprint information for AliasVault."
   },
   "docs": {
     "title": "Documentation",

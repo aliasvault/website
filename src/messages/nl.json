@@ -84,7 +84,8 @@
       "responsible_disclosure": "Responsible Disclosure",
       "license": "Licentie",
       "privacy": "Privacy Policy",
-      "terms_and_conditions": "Algemene Voorwaarden"
+      "terms_and_conditions": "Algemene Voorwaarden",
+      "legal_notice": "Colofon"
     },
     "social": {
       "github": "GitHub",
@@ -967,6 +968,10 @@
   "termsAndConditions": {
     "title": "Algemene Voorwaarden",
     "description": "Lees meer over de voorwaarden voor het gebruik van AliasVault's diensten."
+  },
+  "legalNotice": {
+    "title": "Colofon",
+    "description": "Colofon en bedrijfsinformatie voor AliasVault."
   },
   "docs": {
     "title": "Documentatie",
