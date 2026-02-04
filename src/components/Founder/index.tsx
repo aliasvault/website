@@ -30,6 +30,9 @@ const Founder = () => {
                 {t('founder.story.paragraph1')}
               </p>
               <p>
+                {t('founder.story.paragraph1b')}
+              </p>
+              <p>
                 {t('founder.story.paragraph2')}
               </p>
               <p>

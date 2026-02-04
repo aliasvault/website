@@ -392,10 +392,11 @@
     "title": "Story behind AliasVault",
     "subtitle": "Meet the founder behind AliasVault and discover what drives our mission",
     "story": {
-      "paragraph1": "As a software developer and architect, I've always been passionate about fighting spam and making privacy accessible. In 2013, I launched asdasd.nl, a Dutch temporary email service that grew into the multilingual SpamOK.com, helping thousands protect themselves from spam and data collection.",
-      "paragraph2": "In 2024, I began building AliasVault. A self-hostable, end-to-end encrypted password and alias manager that puts users in control of their digital identity. It lets you generate unique passwords and email aliases for every site you use, keeping your personal data secure.",
-      "paragraph3": "Since the beta release in December, I've continued to work on AliasVault with frequent updates. New features like browser extensions, 2FA, and imports from other password managers make AliasVault more powerful and accessible with each release.",
-      "paragraph4": "AliasVault is open source and as of right now, entirely self-funded. It's built to be transparent, community-driven, and privacy-first. Optional premium cloud features will support long-term development, but anyone can self-host it or inspect the code. Read more about",
+      "paragraph1": "As a software developer and architect, I've always been passionate about fighting spam and making privacy accessible. Back in 2013, I launched asdasd.nl, a Dutch temporary email service that later grew into SpamOK.com, helping thousands protect themselves from spam and data collection.",
+      "paragraph1b": "Over the years, one thing became clear to me: email protection alone wasn't enough. People needed a way to protect their entire digital identity, not just their inbox. That's why, in 2024, I started building AliasVault.",
+      "paragraph2": "A self-hostable, end-to-end encrypted password and alias manager that puts users in control of their digital identity. It lets you generate unique passwords and email aliases for every site you use, keeping your personal data secure.",
+      "paragraph3": "Since the beta release in December 2024, I've continued to develop AliasVault with frequent updates. We've added browser extensions, mobile apps, full offline mode, multi-language support (14 languages and counting), passkey support, best-in-class self-hosting with comprehensive documentation, and more: making AliasVault more powerful and accessible with every release.",
+      "paragraph4": "AliasVault is open source, entirely self-funded, and proudly independent. The project is built around transparency, community input, and privacy-first principles. Optional premium cloud features will support long-term development, but the core version is free by design and anyone can self-host, inspect the code, and stay in full control. Read more about",
       "missionLink": "our mission",
       "paragraph4End": "to learn what drives this project."
     },
