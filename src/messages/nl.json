@@ -262,9 +262,12 @@
     "mobileApps": {
       "title": "Mobiele apps",
       "description": "AliasVault is beschikbaar als een native iOS en Android app waarmee je je inloggegevens en aliassen onderweg kunt beheren en gebruiken.",
+      "iosLabel": "iOS",
+      "androidLabel": "Android",
       "appStoreAlt": "Download op de App Store",
       "playStoreAlt": "Download op de Play Store",
       "fDroidAlt": "Download op F-Droid",
+      "obtainiumAlt": "Haal op via Obtainium",
       "featuresTitle": "De AliasVault mobiele apps bevatten:",
       "features": {
         "passwordsPasskeys": "Wachtwoorden & Passkeys met native OS integratie",

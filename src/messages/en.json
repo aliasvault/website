@@ -262,9 +262,12 @@
     "mobileApps": {
       "title": "Mobile Apps",
       "description": "AliasVault is available as a native iOS and Android app allowing you to manage and use your credentials and aliases on the go.",
+      "iosLabel": "iOS",
+      "androidLabel": "Android",
       "appStoreAlt": "Download on the App Store",
       "playStoreAlt": "Download on the Play Store",
       "fDroidAlt": "Download on F-Droid",
+      "obtainiumAlt": "Get on Obtainium",
       "featuresTitle": "The AliasVault mobile apps feature:",
       "features": {
         "passwordsPasskeys": "Passwords & passkeys autofill with native OS integration",

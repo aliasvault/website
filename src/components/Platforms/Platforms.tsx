@@ -16,49 +16,77 @@ const Platforms = () => {
             <p className="mb-4 text-base font-medium leading-relaxed text-body-color dark:text-body-color-dark">
               {t('platforms.mobileApps.description')}
             </p>
-            <div className="flex items-center space-x-4 mb-4">
-              <a
-                href="https://apps.apple.com/app/id6745490915"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block"
-              >
-                <Image
-                  src="/images/app-store/download-app-store.svg"
-                  alt={t('platforms.mobileApps.appStoreAlt')}
-                  width={120}
-                  height={40}
-                  className="w-[120px] h-[40px]"
-                />
-              </a>
-              <a
-                href="https://play.google.com/store/apps/details?id=net.aliasvault.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block"
-              >
-                <Image
-                  src="/images/app-store/download-play-store.svg"
-                  alt={t('platforms.mobileApps.playStoreAlt')}
-                  width={120}
-                  height={40}
-                  className="w-[120px] h-[40px]"
-                />
-              </a>
-              <a
-                href="https://f-droid.org/packages/net.aliasvault.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block"
-              >
-                <Image
-                  src="/images/app-store/download-f-droid.svg"
-                  alt={t('platforms.mobileApps.fDroidAlt')}
-                  width={120}
-                  height={40}
-                  className="w-[120px] h-[40px]"
-                />
-              </a>
+            <div className="space-y-6 mb-4">
+              <div>
+                <h4 className="text-sm font-semibold text-body-color dark:text-body-color-dark mb-2">
+                  {t('platforms.mobileApps.iosLabel')}
+                </h4>
+                <div className="flex flex-wrap items-center gap-3">
+                  <a
+                    href="https://apps.apple.com/app/id6745490915"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-shrink-0 inline-flex items-center justify-center min-w-[120px] min-h-[40px] w-[120px] h-[40px]"
+                  >
+                    <Image
+                      src="/images/app-store/download-app-store.svg"
+                      alt={t('platforms.mobileApps.appStoreAlt')}
+                      width={120}
+                      height={40}
+                      className="w-[120px] h-[40px] object-contain object-center"
+                    />
+                  </a>
+                </div>
+              </div>
+              <div>
+                <h4 className="text-sm font-semibold text-body-color dark:text-body-color-dark mb-2">
+                  {t('platforms.mobileApps.androidLabel')}
+                </h4>
+                <div className="flex flex-wrap items-center gap-3">
+                  <a
+                    href="https://play.google.com/store/apps/details?id=net.aliasvault.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-shrink-0 inline-flex items-center justify-center min-w-[120px] min-h-[40px] w-[120px] h-[40px]"
+                  >
+                    <Image
+                      src="/images/app-store/download-play-store.svg"
+                      alt={t('platforms.mobileApps.playStoreAlt')}
+                      width={120}
+                      height={40}
+                      className="w-[120px] h-[40px] object-contain object-center"
+                    />
+                  </a>
+                  <a
+                    href="https://f-droid.org/packages/net.aliasvault.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-shrink-0 inline-flex items-center justify-center min-w-[120px] min-h-[40px] w-[120px] h-[40px]"
+                  >
+                    <Image
+                      src="/images/app-store/download-f-droid.svg"
+                      alt={t('platforms.mobileApps.fDroidAlt')}
+                      width={120}
+                      height={40}
+                      className="w-[120px] h-[40px] object-contain object-center"
+                    />
+                  </a>
+                  <a
+                    href="https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/{%22id%22:%22net.aliasvault.app%22,%22url%22:%22https://github.com/aliasvault/aliasvault%22,%22author%22:%22AliasVault%22,%22name%22:%22AliasVault%22,%22additionalSettings%22:%22{\%22about\%22:\%22Privacy-first%20Password%20Manager%20with%20Built-in%20Email%20Aliasing.\%22}%22}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-shrink-0 inline-flex items-center justify-center min-w-[120px] min-h-[40px] w-[120px] h-[40px]"
+                  >
+                    <Image
+                      src="/images/app-store/download-obtainium.png"
+                      alt={t('platforms.mobileApps.obtainiumAlt')}
+                      width={120}
+                      height={40}
+                      className="w-[120px] h-[40px] object-contain object-center"
+                    />
+                  </a>
+                </div>
+              </div>
             </div>
             <p className="text-base font-medium leading-relaxed text-body-color dark:text-body-color-dark">
               {t('platforms.mobileApps.featuresTitle')}
