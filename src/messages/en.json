@@ -80,10 +80,10 @@
       "alt_proton": "Alternative to Proton Pass",
       "contact": "Contact",
       "report_abuse": "Report Abuse",
-      "support_ticket": "Open Support Ticket",
       "responsible_disclosure": "Responsible Disclosure",
       "license": "License",
       "privacy": "Privacy Policy",
+      "account_deletion": "Account Deletion",
       "terms_and_conditions": "Terms and Conditions",
       "legal_notice": "Legal Notice"
     },
@@ -968,6 +968,56 @@
   "privacyPolicy": {
     "title": "Privacy Policy",
     "description": "AliasVault is an open-source end-to-end encrypted password and alias manager."
+  },
+  "accountDeletion": {
+    "title": "Account Deletion Request",
+    "description": "How to request deletion of your AliasVault account and what happens to your data. Required for Google Play compliance.",
+    "lastUpdated": "Last updated: February 9, 2026",
+    "howToRequest": {
+      "title": "How to request deletion",
+      "intro": "You can delete your account by:",
+      "option1": {
+        "title": "Option 1: Using the in-app setting:",
+        "description": "In the AliasVault web app or mobile app, go to Settings → Security → Delete Account."
+      },
+      "option2": {
+        "title": "Option 2: Emailing us:",
+        "description": "Send an email to",
+        "suffix": " with your username and a request for account deletion."
+      },
+      "permanent": "Any account deleted is permanent and cannot be recovered. All your encrypted data, including backups, is deleted."
+    },
+    "whatIsDeleted": {
+      "title": "What data is deleted",
+      "profile": "Account profile info",
+      "content": "Stored content",
+      "userData": "User-generated data",
+      "identifiers": "Identifiers linked to the account",
+      "backups": "All encrypted data including backups"
+    },
+    "whatMayBeRetained": {
+      "title": "What data may be retained",
+      "fraudPrevention": "Fraud prevention logs",
+      "offsiteBackups": "Offsite backup data (for up to 30 days; see retention period below)"
+    },
+    "retentionPeriod": {
+      "title": "Retention period",
+      "description": "Offsite backup data is automatically erased within 30 days."
+    },
+    "processingTime": {
+      "title": "Processing time",
+      "description": "Requests are processed within 7 days."
+    },
+    "developerInfo": {
+      "title": "Developer info",
+      "description": "This page applies to the app AliasVault by AliasVault."
+    },
+    "whyGoogle": {
+      "title": "Why we provide this page",
+      "description": "Certain app stores (such as Google Play) require apps to clearly explain how users can delete their account and what happens to their data. This page helps you understand your options and our data practices."
+    },
+    "moreInfo": "For more information about how we handle your data, see our",
+    "privacyPolicyLink": "Privacy Policy"
   },
   "termsAndConditions": {
     "title": "Terms and Conditions",

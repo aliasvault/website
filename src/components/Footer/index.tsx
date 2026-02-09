@@ -312,15 +312,6 @@ const Footer = () => {
                   </li>
                   <li>
                     <Link
-                      href="https://github.com/aliasvault/aliasvault/issues"
-                      target="_blank"
-                      className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
-                    >
-                      {t('footer.links.support_ticket')}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
                         href={`/${locale}/report-abuse`}
                         className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                     >
@@ -341,6 +332,14 @@ const Footer = () => {
                       className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                     >
                       {t('footer.links.privacy')}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href={`/${locale}/account-deletion`}
+                      className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
+                    >
+                      {t('footer.links.account_deletion')}
                     </Link>
                   </li>
                   <li>

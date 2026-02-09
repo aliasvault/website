@@ -19,6 +19,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         '/press-kit',
         '/report-abuse',
         '/privacy-policy',
+        '/account-deletion',
         '/alternative-to/bitwarden',
         '/alternative-to/simplelogin',
         '/alternative-to/proton-pass'

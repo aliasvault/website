@@ -79,11 +79,11 @@
       "alt_bitwarden": "Alternatief voor Bitwarden",
       "alt_proton": "Alternatief voor Proton Pass",
       "contact": "Contact",
-      "report_abuse": "Report Abuse",
-      "support_ticket": "Support Ticket Openen",
+      "report_abuse": "Misbruik Melden",
       "responsible_disclosure": "Responsible Disclosure",
       "license": "Licentie",
       "privacy": "Privacy Policy",
+      "account_deletion": "Accountverwijdering",
       "terms_and_conditions": "Algemene Voorwaarden",
       "legal_notice": "Colofon"
     },
@@ -968,6 +968,56 @@
   "privacyPolicy": {
     "title": "Privacybeleid",
     "description": "AliasVault is een open-source end-to-end versleutelde wachtwoord- en aliasmanager."
+  },
+  "accountDeletion": {
+    "title": "Verzoek tot accountverwijdering",
+    "description": "Hoe je een verzoek kunt indienen om je AliasVault-account te verwijderen en wat er met je gegevens gebeurt. Vereist voor Google Play.",
+    "lastUpdated": "Laatst bijgewerkt: 9 februari 2026",
+    "howToRequest": {
+      "title": "Hoe vraag je verwijdering aan",
+      "intro": "Je kunt je account verwijderen door:",
+      "option1": {
+        "title": "Optie 1: Via de instellingen in de app:",
+        "description": "Ga in de AliasVault webapp of mobiele app naar Instellingen → Beveiliging → Account verwijderen."
+      },
+      "option2": {
+        "title": "Optie 2: Per e-mail:",
+        "description": "Stuur een e-mail naar",
+        "suffix": " met je gebruikersnaam en een verzoek tot accountverwijdering."
+      },
+      "permanent": "Een verwijderd account is permanent en kan niet worden hersteld. Al je versleutelde gegevens, inclusief back-ups, worden verwijderd."
+    },
+    "whatIsDeleted": {
+      "title": "Welke gegevens worden verwijderd",
+      "profile": "Accountprofielgegevens",
+      "content": "Opgeslagen inhoud",
+      "userData": "Door gebruikers gegenereerde gegevens",
+      "identifiers": "Aan het account gekoppelde identificatoren",
+      "backups": "Alle versleutelde gegevens inclusief back-ups"
+    },
+    "whatMayBeRetained": {
+      "title": "Welke gegevens kunnen worden bewaard",
+      "fraudPrevention": "Logs voor fraudepreventie",
+      "offsiteBackups": "Offsite back-upgegevens (tot 30 dagen; zie bewaartermijn hieronder)"
+    },
+    "retentionPeriod": {
+      "title": "Bewaartermijn",
+      "description": "Offsite back-upgegevens worden automatisch binnen 30 dagen gewist."
+    },
+    "processingTime": {
+      "title": "Verwerkingstijd",
+      "description": "Verzoeken worden binnen 7 dagen verwerkt."
+    },
+    "developerInfo": {
+      "title": "Ontwikkelaarsinformatie",
+      "description": "Deze pagina is van toepassing op de app AliasVault van AliasVault."
+    },
+    "whyGoogle": {
+      "title": "Waarom we deze pagina bieden",
+      "description": "Bepaalde app stores (zoals Google Play) vereisen dat apps duidelijk uitleggen hoe gebruikers hun account kunnen verwijderen en wat er met hun gegevens gebeurt. Deze pagina helpt je je opties en ons gegevensbeleid te begrijpen."
+    },
+    "moreInfo": "Voor meer informatie over hoe we met je gegevens omgaan, zie ons",
+    "privacyPolicyLink": "Privacybeleid"
   },
   "termsAndConditions": {
     "title": "Algemene Voorwaarden",
