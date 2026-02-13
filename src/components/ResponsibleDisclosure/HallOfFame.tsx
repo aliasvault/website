@@ -1,4 +1,5 @@
 import Link from "next/link";
+import CopyLinkIcon from "@/components/Common/CopyLinkIcon";
 
 interface Vulnerability {
   id: string;
@@ -89,9 +90,10 @@ const severityColors: Record<Vulnerability["severity"], string> = {
 
 const HallOfFame = () => {
   return (
-    <div className="mt-16">
-      <h3 className="mb-8 text-2xl font-bold text-black dark:text-white sm:text-3xl lg:text-2xl xl:text-3xl">
+    <div className="mt-16 scroll-mt-24" id="hall-of-fame">
+      <h3 className="mb-8 flex items-center gap-2 text-2xl font-bold text-black dark:text-white sm:text-3xl lg:text-2xl xl:text-3xl">
         Hall of Fame
+        <CopyLinkIcon sectionId="hall-of-fame" label="Copy link to Hall of Fame" />
       </h3>
 
       <p className="mb-8 text-base text-body-color dark:text-body-color-dark">
