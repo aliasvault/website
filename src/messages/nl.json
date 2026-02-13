@@ -1181,11 +1181,6 @@
         "description": "Voor volledige details over ons beveiligingsbeleid, kwetsbaarheidsclassificatie, threat model en CVE-toewijzingscriteria, raadpleeg ons volledige beveiligingsbeleid:",
         "linkText": "Beveiligingsbeleid (SECURITY.md)"
       }
-    },
-    "hallOfFame": {
-      "title": "Hall of Fame",
-      "description": "Deze Hall of Fame bestaat uit beveiligingsonderzoekers die AliasVault veiliger hebben gemaakt door kwetsbaarheden te melden. We erkennen en bedanken deze onderzoekers voor hun waardevolle bijdragen:",
-      "viewAdvisory": "Advisory bekijken"
     }
   }
 }

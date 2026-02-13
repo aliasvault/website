@@ -1181,11 +1181,6 @@
         "description": "For complete details on our security policy, vulnerability classification, threat model, and CVE assignment criteria, please refer to our full security policy:",
         "linkText": "Security Policy (SECURITY.md)"
       }
-    },
-    "hallOfFame": {
-      "title": "Hall of Fame",
-      "description": "This Hall of Fame consists of security researchers who have helped make AliasVault more secure by responsibly disclosing vulnerabilities in the past. We recognize and thank these researchers for their valuable contributions:",
-      "viewAdvisory": "View Advisory"
     }
   }
 }
