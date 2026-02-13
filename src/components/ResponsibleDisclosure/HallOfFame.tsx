@@ -1,16 +1,5 @@
 import Link from "next/link";
 
-const HALL_OF_FAME_EN = {
-  title: "Hall of Fame",
-  description:
-    "This Hall of Fame consists of security researchers who have helped make AliasVault more secure by responsibly disclosing vulnerabilities in the past. We recognize and thank these researchers for their valuable contributions:",
-  viewAdvisory: "View Advisory",
-  severityHardening: "Security hardening",
-  hardeningDescription: "{issue} {versionPhrase} as part of security hardening.",
-  hardeningVersionSingle: "It was fixed in version {version}",
-  hardeningVersionMultiple: "It was fixed in versions {version}",
-} as const;
-
 interface Vulnerability {
   id: string;
   researcher: string;
@@ -102,11 +91,11 @@ const HallOfFame = () => {
   return (
     <div className="mt-16">
       <h3 className="mb-8 text-2xl font-bold text-black dark:text-white sm:text-3xl lg:text-2xl xl:text-3xl">
-        {HALL_OF_FAME_EN.title}
+        Hall of Fame
       </h3>
 
       <p className="mb-8 text-base text-body-color dark:text-body-color-dark">
-        {HALL_OF_FAME_EN.description}
+        This Hall of Fame consists of security researchers who have helped make AliasVault more secure by responsibly disclosing vulnerabilities in the past. We recognize and thank these researchers for their valuable contributions:
       </p>
 
       <div className="space-y-6">
@@ -114,9 +103,7 @@ const HallOfFame = () => {
           .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
           .map((vuln) => {
           const isHardening = vuln.severity === "hardening" && !vuln.advisoryUrl && !vuln.cve;
-          const severityLabel = vuln.severity === "hardening"
-            ? HALL_OF_FAME_EN.severityHardening
-            : vuln.severity;
+          const severityLabel = vuln.severity === "hardening" ? "Security hardening" : vuln.severity;
 
           return (
             <div
@@ -186,27 +173,13 @@ const HallOfFame = () => {
 
               <div className="text-sm text-body-color dark:text-body-color-dark">
                 {isHardening && vuln.fixedInVersion ? (
-                  <>
-                    <p className="mb-2">
-                      {HALL_OF_FAME_EN.hardeningDescription
-                        .replace(
-                          "{issue}",
-                          vuln.summary
-                        )
-                        .replace(
-                          "{versionPhrase}",
-                          vuln.fixedInVersion.includes(" and ")
-                            ? HALL_OF_FAME_EN.hardeningVersionMultiple.replace(
-                                "{version}",
-                                vuln.fixedInVersion
-                              )
-                            : HALL_OF_FAME_EN.hardeningVersionSingle.replace(
-                                "{version}",
-                                vuln.fixedInVersion
-                              )
-                        )}
-                    </p>
-                  </>
+                  <p className="mb-2">
+                    {vuln.summary}{" "}
+                    {vuln.fixedInVersion.includes(" and ")
+                      ? `It was fixed in versions ${vuln.fixedInVersion}`
+                      : `It was fixed in version ${vuln.fixedInVersion}`}{" "}
+                    as part of security hardening.
+                  </p>
                 ) : (
                   <p className={vuln.advisoryUrl || vuln.ghsa ? "mb-4" : undefined}>
                     {vuln.summary}
@@ -223,7 +196,7 @@ const HallOfFame = () => {
                       rel="noopener noreferrer"
                       className="inline-flex items-center text-sm font-medium text-primary hover:underline"
                     >
-                      {HALL_OF_FAME_EN.viewAdvisory}
+                      View Advisory
                       <svg
                         className="ml-1 h-4 w-4"
                         fill="none"
