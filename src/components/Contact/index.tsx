@@ -9,6 +9,33 @@ const ContactContent = () => {
     <section className="pb-16 pt-8">
       <div className="container">
         <div className="mx-auto">
+          <div className="mb-12 rounded-lg border border-body-color/20 bg-body-color/5 p-6 dark:border-body-color-dark/20 dark:bg-body-color-dark/5">
+            <h3 className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
+              {t('contact.content.main.title')}
+            </h3>
+            <p className="mb-6 text-base text-body-color dark:text-body-color-dark">
+              {t('contact.content.intro')}{" "}
+              <a
+                href="https://github.com/lanedirt"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                {t('contact.content.founder')}
+              </a>{" "}
+              {t('contact.content.location')}
+            </p>
+            <p className="text-base text-body-color dark:text-body-color-dark">
+              {t('contact.content.main.contactBlurb')}{" "}
+              <a
+                href="mailto:contact@support.aliasvault.net"
+                className="text-primary hover:underline"
+              >
+                contact@support.aliasvault.net
+              </a>
+            </p>
+          </div>
+
           <div className="mb-12">
             <h3 className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
               {t('contact.content.faq.title')}
@@ -114,30 +141,6 @@ const ContactContent = () => {
                 {t('contact.content.security.links.email')}
               </a>
             </div>
-          </div>
-
-          <div className="mb-12">
-            <p className="mb-4 text-base text-body-color dark:text-body-color-dark">
-              {t('contact.content.intro')}{" "}
-              <a
-                href="https://github.com/lanedirt"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary hover:underline"
-              >
-                {t('contact.content.founder')}
-              </a>{" "}
-              {t('contact.content.location')}
-            </p>
-            <p className="mb-4 text-base text-body-color dark:text-body-color-dark">
-              {t('contact.content.inquiries')}{" "}
-              <a
-                href="mailto:contact@support.aliasvault.net"
-                className="text-primary hover:underline"
-              >
-                contact@support.aliasvault.net
-              </a>
-            </p>
           </div>
 
           <div className="mt-12">

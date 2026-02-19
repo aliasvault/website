@@ -201,10 +201,14 @@
     "subtitle": "Get in touch",
     "description": "Have questions or need support? We're here to help.",
     "content": {
-      "intro": "AliasVault is an open-source project founded and maintained by",
+      "main": {
+        "title": "Contact",
+        "contactBlurb": "If you have any questions, please read our FAQ or check our documentation below. If you wish to contact us instead or need help, send an email to"
+      },
+      "intro": "AliasVault is an open-source project founded by",
       "founder": "Leendert de Borst",
-      "location": "and operates from the Netherlands. We offer an official cloud-hosted version, with our own dedicated servers located in Germany, fully compliant with European GDPR regulations.",
-      "inquiries": "For inquiries regarding our cloud-hosted service, commercial licensing, or enterprise support, please contact:",
+      "location": "and operates from the Netherlands. We offer an official cloud-hosted version with dedicated servers in Germany, fully compliant with European GDPR regulations.",
+      "inquiries": "For questions about our cloud-hosted service or other inquiries, please contact:",
       "support": {
         "title": "Support & Bug Reports",
         "description": "For bug reports please use our GitHub repository. For technical discussions about the open-source project, join our Discord community:",

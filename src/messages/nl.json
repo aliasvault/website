@@ -201,10 +201,14 @@
     "subtitle": "Neem contact met ons op",
     "description": "Heb je vragen of heb je ondersteuning nodig? Zie hieronder hoe je contact kunt opnemen.",
     "content": {
+      "main": {
+        "title": "Contact",
+        "contactBlurb": "Als je vragen hebt, lees dan eerst onze FAQ of bekijk de documentatie hieronder. Heb je algemene vragen of heb je hulp nodig, stuur dan een e-mail naar"
+      },
       "intro": "AliasVault is een open-source project opgericht door",
       "founder": "Leendert de Borst",
-      "location": "en wordt vanuit Nederland onderhouden. We bieden een officiële cloud-gehoste versie, met onze eigen dedicated servers in Duitsland, volledig conform de Europese GDPR-regelgeving.",
-      "inquiries": "Voor vragen betreffende onze cloud-gehoste service, commerciële licenties of enterprise ondersteuning, neem contact op:",
+      "location": "en wordt vanuit Nederland onderhouden. De officiële cloud-gehoste versie draait op onze eigen dedicated servers in Duitsland, volledig conform de Europese GDPR-regelgeving.",
+      "inquiries": "Voor vragen over onze cloud-gehoste dienst of andere onderwerpen, neem contact op:",
       "support": {
         "title": "Ondersteuning & Bugs",
         "description": "Voor het melden van bugs, gebruik onze GitHub repository. Voor technische discussies of vragen over het open-source project kun je terecht in onze online Discord community:",
