@@ -944,23 +944,25 @@
         },
         "2025": {
           "milestones": [
-            { "month": "3", "label": "Q1", "text": "Release van browserextensies" },
-            { "month": "6", "label": "Q2", "text": "Release van mobiele apps" },
-            { "month": "9", "label": "Q3", "text": "Meertaligheid en self-host verbeteringen" },
-            { "month": "12", "label": "Q4", "text": "Passkeys en datamodel verbeteringen" }
+            { "month": "3", "label": "Q1", "text": "Release van Browserextensies" },
+            { "month": "6", "label": "Q2", "text": "Release van Mobiele Apps" },
+            { "month": "9", "label": "Q3", "text": "Meertaligheid en Self-host Verbeteringen" },
+            { "month": "12", "label": "Q4", "text": "Passkeys & Aanmelden via Mobiel" }
           ]
         },
         "2026": {
           "milestones": [
-            { "month": "3", "label": "Q1", "text": "v1.0 stabiele release + security audit" },
-            { "month": "6", "label": "Q2", "text": "Premium functies" },
-            { "month": "9", "label": "Q3", "text": "Gezinsfuncties" },
-            { "month": "12", "label": "Q4", "text": "Wegwerptelefoonnummers" }
+            { "month": "3", "label": "Q1", "text": "Datamodel-updates en UI verbeteringen" },
+            { "month": "6", "label": "Q2", "text": "Wachtwoorden/Vaults delen, FIDO-auth" },
+            { "month": "9", "label": "Q3", "text": "Security Audit + v1.0 Release" },
+            { "month": "12", "label": "Q4", "text": "Premium Functies" }
           ]
         },
         "2027": {
           "milestones": [
-            { "month": "6", "label": "Medio", "text": "Meer integraties" }
+            { "month": "3", "label": "Q1", "text": "Gezinsfuncties" },
+            { "month": "6", "label": "Q2", "text": "Wegwerptelefoonnummers" },
+            { "month": "9", "label": "Medio", "text": "Meer Integraties" }
           ]
         },
         "2028": {
