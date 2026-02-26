@@ -1,11 +1,21 @@
 import Image from 'next/image'
 import { GitHubRelease } from '@/components/Common/GitHubRelease'
 import ClickableImage from './ClickableImage'
+import FeatureBlock from './FeatureBlock'
+import FeatureSpotlight from './FeatureSpotlight'
+import FeatureGrid from './FeatureGrid'
+import UpdateSection from './UpdateSection'
+import Callout from './Callout'
 import { ComponentProps } from 'react'
 
 export const components = {
   GitHubRelease,
   ClickableImage,
+  FeatureBlock,
+  FeatureSpotlight,
+  FeatureGrid,
+  UpdateSection,
+  Callout,
   a: (props: ComponentProps<'a'>) => (
     <a
       className="text-primary transition-all duration-300 hover:underline"

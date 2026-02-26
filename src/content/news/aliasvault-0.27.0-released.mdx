@@ -1,0 +1,56 @@
+---
+title: "AliasVault 0.27.0 Released"
+description: "Save credentials while browsing, 2FA autofill, add 2FA via QR code scanner and more"
+date: "2026-02-26"
+image: "/images/blog/headers/0.27.0.jpg"
+author:
+  name: "Leendert de Borst"
+  image: "/images/founder/founder.jpg"
+  designation: "Founder"
+tags:
+  - release
+---
+
+I'm happy to share that AliasVault **0.27.0** is now available. This release focuses on making the browser extension more powerful in daily use: save credentials as you browse, autofill 2FA codes, add for the mobile app: add 2FA via QR scanner. It also includes search improvements, and many bugfixes across all apps that were reported by our community.
+
+<ClickableImage
+  src="/images/blog/releases/0.27.0.jpg"
+  alt="AliasVault 0.27.0 Release"
+  caption="Save credentials while browsing, 2FA autofill, add 2FA via QR code scanner"
+/>
+
+## Browser extension
+
+### Save and update credentials while you browse
+
+When you manually log in to a new website, AliasVault can now **prompt you to save those credentials** and **update the URL** on an existing login. This feature was first added in 0.26.4, has since been improved, and is **now enabled by default**.
+
+### 2FA in the extension
+
+You can now **autofill 2FA TOTP codes** directly from the browser extension. No need to open the extension manually to copy a code. In addition, you can **edit 2FA TOTP entries after creation** and **view the secret QR code** (this applies to web app, extension, and mobile), so you can re-scan or migrate codes when needed.
+
+### Day-to-day improvements
+
+- **Matching credentials on open:** When you open the extension, it immediately shows any credentials that match the current website. This allows for quickly making changes with as few clicks as possible.
+- **Search is remembered:** Type a search query, open a credential, then click back: your search query is preserved.
+- **Better autofill:** Autofill field detection has been improved so it works reliably on more websites.
+
+## Other improvements
+
+- **Mobile: add 2FA via QR scanner.** You can now add 2FA TOTP codes in the mobile app using a new **built-in QR code scanner**, without leaving the app.
+- **Search** has been improved across the web app, browser extension, and mobile apps.
+- This release also **fixes many reported bugs** in the web app, browser extension, and mobile apps and self-hosted setups.
+
+## Also in 0.26.x
+
+Since the last 0.26.0 release publication, we also added multiple improvements in recent minor releases (0.26.1–0.26.6) which added features like: **custom field reorder** by drag-and-drop, **password generator** up to 256 characters, new **importers** (RoboForm, Microsoft Edge, Enpass), **TLS for email**, new languages: **Danish** and **Swedish** (and more languages in the identity generator), **showing all items regardless of folders**, server apps upgraded to **.NET 10**, and various stability and UX tweaks across all platforms.
+
+## Try it now
+
+Now is a perfect time to try out AliasVault if you haven't already. [Sign up for free](https://app.aliasvault.net) on the web app, and grab the browser extension and mobile app to get started. Prefer to self-host AliasVault? That's also possible! See the [installation docs](https://docs.aliasvault.net/installation/) for Docker and install script options. Read up on our [mission](/mission) and roadmap to see what AliasVault will get next.
+
+---
+
+If you encounter any issues or have suggestions for improvements, please report them on [GitHub](https://github.com/aliasvault/aliasvault/issues) or join us on [Discord](https://discord.gg/DsaXMTEtpF).
+
+<GitHubRelease version="0.27.0" />

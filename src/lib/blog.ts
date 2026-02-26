@@ -9,6 +9,8 @@ export interface ContentPost {
   description: string
   date: string
   image?: string
+  /** Blog only: 'full' = no sidebar (news-style), omit or 'default' = with sidebar */
+  layout?: 'default' | 'full'
   author: {
     name: string
     image: string
