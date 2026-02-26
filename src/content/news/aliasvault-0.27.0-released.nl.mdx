@@ -1,0 +1,56 @@
+---
+title: "AliasVault 0.27.0 uitgebracht"
+description: "Credentials opslaan tijdens het browsen, 2FA-autofill, 2FA toevoegen via QR-scanner en meer"
+date: "2026-02-26"
+image: "/images/blog/headers/0.27.0.jpg"
+author:
+  name: "Leendert de Borst"
+  image: "/images/founder/founder.jpg"
+  designation: "Founder"
+tags:
+  - release
+---
+
+Ik ben blij om te delen dat AliasVault **0.27.0** nu beschikbaar is. Deze release richt zich op het nog beter maken van de browser-extensie voor dagelijks gebruik: credentials opslaan terwijl je browst, 2FA-codes autofillen, en voor de mobiele app: 2FA toevoegen via de QR-scanner. Verder bevat deze release verbeteringen in het zoeken en veel bugfixes (in alle apps) die door onze community zijn gemeld.
+
+<ClickableImage
+  src="/images/blog/releases/0.27.0.jpg"
+  alt="AliasVault 0.27.0-release"
+  caption="Credentials opslaan tijdens het browsen, 2FA-autofill, 2FA toevoegen via QR-scanner"
+/>
+
+## Browser-extensie
+
+### Credentials opslaan en bijwerken terwijl je browset
+
+Wanneer je handmatig inlogt op een nieuwe website, kan AliasVault je nu **vragen om de credentials automatisch op te slaan** en de **URL bij te werken** bij een bestaande login. Deze functie werd in 0.26.4 toegevoegd, is sindsdien verbeterd en staat **nu standaard aan**.
+
+### 2FA in de extensie
+
+Je kunt **2FA TOTP-codes nu direct autofillen** vanuit de browser-extensie. Je hoeft nu niet meer de extensie handmatig te openen om een code te kopiëren. Daarnaast kun je **2FA TOTP-entries na aanmaak bewerken** en de **secret QR-code bekijken** (dit geldt voor webapp, extensie en mobiel), zodat je codes opnieuw kunt scannen of migreren wanneer nodig.
+
+### Verbeteringen voor dagelijks gebruik
+
+- **Matchende credentials bij openen:** Wanneer je de extensie opent, worden direct credentials getoond die bij de huidige website horen. Zo kun je snel wijzigingen maken met zo min mogelijk klikken.
+- **Zoekopdracht onthouden:** Typ een zoekopdracht, open een credential, ga terug: je zoekopdracht blijft bewaard.
+- **Betere autofill:** De detectie van autofill-velden is verbeterd zodat het op nog meer websites betrouwbaar werkt.
+
+## Overige verbeteringen
+
+- **Mobiel: 2FA toevoegen via QR-scanner.** Je kunt 2FA TOTP-codes nu in de mobiele app toevoegen met een nieuwe **ingebouwde QR-code-scanner**, zonder handmatig codes te moeten kopieeren.
+- **Zoeken** is verbeterd in de webapp, browser-extensie en mobiele apps.
+- Deze release **lost ook veel gemelde bugs op** in de webapp, browser-extensie, mobiele apps en self-hosted setups.
+
+## Ook in 0.26.x
+
+Sinds de publicatie van de 0.26.0-release hebben we in de recente minor releases (0.26.1–0.26.6) meerdere verbeteringen toegevoegd, zoals: **aangepaste velden volgorde wijzigen** via drag-and-drop, **wachtwoordgenerator** tot 256 tekens, nieuwe **importers** (RoboForm, Microsoft Edge, Enpass), **TLS voor e-mail**, nieuwe talen **Deens** en **Zweeds** (en meer talen in de identiteitsgenerator), **alle items tonen ongeacht mappen**, server-apps bijgewerkt naar de nieuwste **.NET 10**, en diverse stabiliteits- en UX-verbeteringen op alle platforms.
+
+## Probeer het nu
+
+Dit is het perfecte moment om AliasVault te proberen als je dat nog niet hebt gedaan. [Registreer je gratis](https://app.aliasvault.net) in de webapp en installeer de browser-extensie en mobiele app om te starten. Liever self-hosten? Dat kan ook! Zie de [installatiedocumentatie](https://docs.aliasvault.net/installation/) voor Docker- en install-scriptopties. Lees meer over onze [missie](/mission) en roadmap om te zien wat er aan komt voor AliasVault.
+
+---
+
+Als je problemen tegenkomt of suggesties voor verbeteringen hebt, meld ze op [GitHub](https://github.com/aliasvault/aliasvault/issues) of word lid van onze [Discord](https://discord.gg/DsaXMTEtpF).
+
+<GitHubRelease version="0.27.0" />
