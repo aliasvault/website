@@ -39,6 +39,17 @@ function MastodonIcon({ className }: { className?: string }) {
 
 const vulnerabilities: Vulnerability[] = [
   {
+    id: "stored-xss-email-rendering-2026",
+    researcher: "Jorian Woltjer",
+    affiliation: "Aikido Security",
+    date: "2026-03-01",
+    severity: "critical",
+    cve: "CVE-2026-26266",
+    ghsa: "GHSA-f65p-p65r-g53q",
+    advisoryUrl: "https://github.com/aliasvault/aliasvault/security/advisories/GHSA-f65p-p65r-g53q",
+    summary: "Stored cross-site scripting (XSS) in the email rendering feature of AliasVault Web Client versions 0.25.3 and lower. Email HTML content was not sufficiently sanitized or isolated before rendering. Fixed in version 0.26.0 (on 2026-01-30) with HTML sanitization (DOMPurify) and iframe sandboxing.",
+  },
+  {
     id: "passkey-validation-android-2025",
     researcher: "Oscar Arnflo",
     affiliation: "Security Office",
