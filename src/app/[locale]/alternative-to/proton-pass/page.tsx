@@ -197,6 +197,11 @@ const ProtonPassPage = async () => {
                 <td className="border border-gray-300 dark:border-gray-700 p-4 text-center">❌</td>
               </tr>
               <tr className="dark:text-white">
+                <td className="border border-gray-300 dark:border-gray-700 p-4">{t('alternativeProtonPass.featureComparison.features.fullOfflineModeIncludingEditing')}</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-4 text-center">✅</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-4 text-center">{t('alternativeProtonPass.featureComparison.protonPassViewingOfflineOnly')}</td>
+              </tr>
+              <tr className="dark:text-white">
                 <td className="border border-gray-300 dark:border-gray-700 p-4">{t('alternativeProtonPass.featureComparison.features.emailAliasManagement')}</td>
                 <td className="border border-gray-300 dark:border-gray-700 p-4 text-center">✅</td>
                 <td className="border border-gray-300 dark:border-gray-700 p-4 text-center">⚠️</td>

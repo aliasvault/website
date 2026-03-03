@@ -696,6 +696,8 @@
       "features": {
         "passwordManagement": "Wachtwoordmanager",
         "passkeySupport": "Passkeys",
+        "free2FAAuthenticator": "Gratis 2FA-authenticator",
+        "fullOfflineModeIncludingEditing": "Volledige offline modus (inclusief bewerken)",
         "emailAliasManagement": "E-mailaliassen",
         "randomIdentityGeneration": "Identiteitgeneratie",
         "openSource": "Open source",
@@ -705,6 +707,8 @@
         "mobileApps": "Mobiele apps",
         "dataStorageLocation": "Gegevensopslag locatie"
       },
+      "bitwardenPremiumOnly": "Alleen premium",
+      "bitwardenViewingOfflineOnly": "Alleen bekijken",
       "storageDetails": {
         "aliasVault": "🇩🇪 Duitsland (EU, eigen servers)",
         "bitwarden": "☁️ Azure Cloud (USA jurisdictie)"
@@ -844,6 +848,7 @@
         "clientsOpenSource": "Clients open-source",
         "serverOpenSource": "Server/Backend open-source",
         "selfHostingCapability": "Self-hosting mogelijkheid",
+        "fullOfflineModeIncludingEditing": "Volledige offline modus (inclusief bewerken)",
         "emailAliasManagement": "E-mailaliassen",
         "endToEndEncryption": "End-to-end versleuteling",
         "easyInstallation": "Eenvoudige installatie",
@@ -851,6 +856,7 @@
         "mobileApps": "Mobiele apps",
         "dataStorageLocation": "Gegevensopslag locatie"
       },
+      "protonPassViewingOfflineOnly": "Alleen bekijken",
       "storageDetails": {
         "aliasVault": "🇪🇺 EU (Duitsland, eigen servers)",
         "protonPass": "🇪🇺 EU (Duitsland, Zwitserland, Noorwegen)"

@@ -696,6 +696,8 @@
       "features": {
         "passwordManagement": "Password Management",
         "passkeySupport": "Passkeys",
+        "free2FAAuthenticator": "Free 2FA authenticator",
+        "fullOfflineModeIncludingEditing": "Full offline mode (including editing)",
         "emailAliasManagement": "Email Alias Management",
         "randomIdentityGeneration": "Random Identity Generation",
         "openSource": "Open Source",
@@ -705,6 +707,8 @@
         "mobileApps": "Mobile Apps",
         "dataStorageLocation": "Data Storage Location"
       },
+      "bitwardenPremiumOnly": "Premium only",
+      "bitwardenViewingOfflineOnly": "Viewing only",
       "storageDetails": {
         "aliasVault": "🇩🇪 Germany (EU, own servers)",
         "bitwarden": "☁️ Azure Cloud (USA jurisdiction)"
@@ -844,6 +848,7 @@
         "clientsOpenSource": "Clients Open Source",
         "serverOpenSource": "Server/Backend Open Source",
         "selfHostingCapability": "Self-hosting Capability",
+        "fullOfflineModeIncludingEditing": "Full offline mode (including editing)",
         "emailAliasManagement": "Email Alias Management",
         "endToEndEncryption": "End-to-End Encryption",
         "easyInstallation": "Easy Installation",
@@ -851,6 +856,7 @@
         "mobileApps": "Mobile Apps",
         "dataStorageLocation": "Data Storage Location"
       },
+      "protonPassViewingOfflineOnly": "Viewing only",
       "storageDetails": {
         "aliasVault": "🇩🇪 EU (Germany, own servers)",
         "protonPass": "🇪🇺 EU (Germany, Norway, Switzerland)"

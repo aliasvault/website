@@ -182,6 +182,16 @@ const BitwardenPage = async () => {
                 <td className="border border-gray-300 dark:border-gray-700 p-4 text-center">✅</td>
               </tr>
               <tr className="dark:text-white">
+                <td className="border border-gray-300 dark:border-gray-700 p-4">{t('alternativeBitwarden.featureComparison.features.free2FAAuthenticator')}</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-4 text-center">✅</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-4 text-center">{t('alternativeBitwarden.featureComparison.bitwardenPremiumOnly')}</td>
+              </tr>
+              <tr className="dark:text-white">
+                <td className="border border-gray-300 dark:border-gray-700 p-4">{t('alternativeBitwarden.featureComparison.features.fullOfflineModeIncludingEditing')}</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-4 text-center">✅</td>
+                <td className="border border-gray-300 dark:border-gray-700 p-4 text-center">{t('alternativeBitwarden.featureComparison.bitwardenViewingOfflineOnly')}</td>
+              </tr>
+              <tr className="dark:text-white">
                 <td className="border border-gray-300 dark:border-gray-700 p-4">{t('alternativeBitwarden.featureComparison.features.emailAliasManagement')}</td>
                 <td className="border border-gray-300 dark:border-gray-700 p-4 text-center">✅</td>
                 <td className="border border-gray-300 dark:border-gray-700 p-4 text-center">❌</td>
