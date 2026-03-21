@@ -342,7 +342,7 @@
       },
       "pricing": {
         "question": "How much does AliasVault cost?",
-        "answer": "The current core version of AliasVault, with all of its features, is completely free to use and will always remain that way. Both for the official cloud-hosted and self-hosted options. \n\nIn the near future, we do plan to introduce optional premium features such as additional storage space, automatic back-ups, and more. These paid options will help support the continued development and costs of the project.\n\nThat said, we are currently focused on developing and refining the basic features of AliasVault to ensure a stable and reliable foundation for all users. Premium features are part of our longer-term roadmap, but our current priority is to deliver a solid core experience.\n\nIf you'd like to support the project in the meantime, we welcome donations — please visit our [contactLink]contact page[/contactLink] for more information."
+        "answer": "The current core version of AliasVault, with all of its features, is completely free to use and will always remain that way. Both for the official cloud-hosted and self-hosted options. \n\nIn the near future, we do plan to introduce optional premium features such as additional storage space, automatic back-ups, and more. These paid options will help support the continued development and costs of the project.\n\nThat said, we are currently focused on developing and refining the basic features of AliasVault to ensure a stable and reliable foundation for all users. Premium features are part of our longer-term roadmap, but our current priority is to deliver a solid core experience.\n\nIf you'd like to support the project in the meantime, we welcome donations. Please visit our [contactLink]contact page[/contactLink] for more information."
       },
       "deviceSupport": {
         "question": "Which devices are supported by AliasVault?",
@@ -423,15 +423,15 @@
         "title": "Founder Quotes for Journalists",
         "description": "Ready-to-use quotes from Leendert de Borst for your articles",
         "quote1": {
-          "text": "If you ask me 'Why AliasVault?', the answer is simple: because every piece of feedback matters — and we're already improving the things people miss in other password managers.",
+          "text": "If you ask me 'Why AliasVault?', the answer is simple: because every piece of feedback matters. And we're already improving the things people miss in other password managers.",
           "context": "On the motivation behind AliasVault"
         },
         "quote2": {
-          "text": "Because it's open source and self-hostable, people trust us — they know we're not just another company selling convenience, but a community listening to real users.",
+          "text": "Because it's open source and self-hostable, people trust us. They know we're not just another company selling convenience, but a community listening to real users.",
           "context": "On AliasVault's open-source approach"
         },
         "quote3": {
-          "text": "Privacy isn't just about hiding data — it's about giving users control over their digital identity. That's why we built AliasVault to be transparent, community-driven, and privacy-first.",
+          "text": "Privacy isn't just about hiding data: it's about giving users control over their digital identity. That's why we built AliasVault to be transparent, community-driven, and privacy-first.",
           "context": "On AliasVault's privacy philosophy"
         }
       }
@@ -523,11 +523,11 @@
       "features": {
         "passwordManagerAndPasskeys": {
           "name": "Password Manager & Passkeys",
-          "description": "Store all your passwords securely in one place with industry-leading end-to-end encryption. Generate strong, unique passwords and create passkeys via the browser extension, iOS and Android apps—all synced across your devices."
+          "description": "Store all your passwords securely in one place with industry-leading end-to-end encryption. Generate strong, unique passwords and create passkeys via the browser extension, iOS and Android apps. All synced across your devices."
         },
         "trulyOfflineAccess": {
           "name": "True Offline Access",
-          "description": "Full offline mode including local editing—something few password managers offer. View and edit your vault completely without internet; changes sync automatically when you're back online, with built-in conflict merging across all apps and devices."
+          "description": "Full offline mode including local editing, something few password managers offer. View and edit your vault completely without internet; changes sync automatically when you're back online, with built-in conflict merging across all apps and devices."
         },
         "builtIn2FA": {
           "name": "Built-in 2FA Authenticator",
@@ -600,7 +600,7 @@
         },
         "offlineAccess": {
           "name": "Offline Access",
-          "description": "Full offline access and local editing in the extension—view and edit your vault without internet; changes sync automatically when you're back online."
+          "description": "Full offline access and local editing in the extension: view and edit your vault without internet; changes sync automatically when you're back online."
         },
         "emailAliasGenerator": {
           "name": "Email Alias Generator",
@@ -623,7 +623,7 @@
         },
         "offlineMode": {
           "name": "True Offline Mode",
-          "description": "Full offline access including local editing—view and edit your vault without internet, with automatic sync when you're back online. Always have access to your credentials wherever you are, in areas with poor connectivity or when you prefer to work offline."
+          "description": "Full offline access including local editing: view and edit your vault without internet, with automatic sync when you're back online. Always have access to your credentials wherever you are, in areas with poor connectivity or when you prefer to work offline."
         }
       }
     },
@@ -920,7 +920,7 @@
         "paragraph1": "Not too long ago, you could live your life without really thinking about privacy. You could buy things, talk to people, and share your thoughts without worrying about who was watching.",
         "paragraph2": "When the internet started, it was a place where you could be whoever you wanted to be. A place to connect with people all over the world in an anonymous way. Today however, the internet has become a place where companies track your every move and sell your data to the highest bidder.",
         "paragraph3": "Take advertising, for example. It used to be shown to millions of people at the same time. It was annoying, but at least it didn’t know who you were. Now due to the internet, companies developed ways to know exactly who you are, what you like, and what you’re looking for, sometimes even before you do. And this doesn’t just affect adults. Even children watching innocent cartoons online are being tracked. Their clicks, their habits, even their preferences are collected and used to build up a profile on them.",
-        "paragraph4": "To put it in perspective: imagine you’re walking through a shopping mall and someone follows you around, writes down everything you do, how long you stay in each store, what you look at (perhaps a specific medicine) — and then shares that with all the other stores, or sells it to the highest bidder. That would be called stalking, harassment, or worse. But on the internet, this has become the norm."
+        "paragraph4": "To put it in perspective: imagine you’re walking through a shopping mall and someone follows you around, writes down everything you do, how long you stay in each store, what you look at (perhaps a specific medicine), and then shares that with all the other stores, or sells it to the highest bidder. That would be called stalking, harassment, or worse. But on the internet, this has become the norm."
       },
       "takingBackControl": {
         "title": "Taking Back Control",
@@ -1127,7 +1127,7 @@
         "context": "On AliasVault's mission and vision"
       },
       {
-        "text": "If someone followed you around in the real world, noting everything you do, we'd call it stalking. Online, that's become normal — and it shouldn't be.",
+        "text": "If someone followed you around in the real world, noting everything you do, we'd call it stalking. Online, that's become normal. And it shouldn't be.",
         "context": "On the state of online privacy"
       },
       {
