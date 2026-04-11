@@ -1,0 +1,57 @@
+---
+title: "AliasVault 0.28.0 Released"
+description: "Nested subfolders, encrypted full vault exports, smarter 2FA autofill and more"
+date: "2026-04-12"
+image: "/images/blog/headers/0.28.0.jpg"
+author:
+  name: "Leendert de Borst"
+  image: "/images/founder/founder.jpg"
+  designation: "Founder"
+tags:
+  - release
+---
+
+I'm happy to share that AliasVault **0.28.0** is now available. This release adds **nested subfolders** across all apps so you can organize credentials the way you want, introduces new **comprehensive vault export formats** for easy manual backups, and ships several quality-of-life improvements.
+
+<ClickableImage
+  src="/images/blog/releases/0.28.0.jpg"
+  alt="AliasVault 0.28.0 Release"
+  caption="Nested folders, full vault exports, password strength indicators"
+/>
+
+## Nested subfolders
+
+You can now create **nested subfolders** in your vault everywhere AliasVault runs. That gives you more flexibility when structuring logins, notes, and identities, and keeps large vaults easier to navigate.
+
+Password **importers** have been updated so imports respect **nested folder** layouts when you bring data in from other managers.
+
+## Full vault export and import (.avex / .avux)
+
+The web app adds new export formats that contain all data from your vault: credentials, passkeys, attachments, favicons, and related data.
+
+- **`.avex` (AliasVault Encrypted eXport)**: an encrypted export you can store safely or move between machines.
+- **`.avux` (AliasVault Unencrypted eXport)**: an unencrypted option when you explicitly need a readable backup.
+
+This makes it easy to create and keep manual encrypted backups,
+
+## Browser extension 2FA copy to clipboard
+After an **autofill** event, the extension can now **copy the 2FA TOTP code to the clipboard automatically**, so you can paste it straight into a confirmation field. **2FA field detection** has also been improved, including better **TOTP code detection** on more sites.
+
+## Other improvements and fixes
+- **Password strength indicator** on **registration** and **password change** in web app.
+- **Load more** for emails in the **mobile app and browser extension**.
+- Local **password unlock** is now **rate-limited**.
+
+---
+
+> **Sneak preview:** We are also working on larger changes behind the scenes. One of the biggest upcoming features is **vault sharing**, which touches many core systems. We are bundling that work in a bigger release soon. **Stay tuned**!
+
+## Try it now
+
+Try AliasVault by [signing up for free](https://app.aliasvault.net), install the **browser extension** and **mobile app**.
+
+---
+
+If you run into any issues or have ideas for improvements, please submit them on [GitHub](https://github.com/aliasvault/aliasvault/issues) or say hello on [Discord](https://discord.gg/DsaXMTEtpF).
+
+<GitHubRelease version="0.28.0" />

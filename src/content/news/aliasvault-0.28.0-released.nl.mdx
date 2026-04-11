@@ -1,0 +1,55 @@
+---
+title: "AliasVault 0.28.0 uitgebracht"
+description: "Submappen, versleutelde vaultexports, slimmere 2FA-autofill en meer"
+date: "2026-04-12"
+image: "/images/blog/headers/0.28.0.jpg"
+author:
+  name: "Leendert de Borst"
+  image: "/images/founder/founder.jpg"
+  designation: "Founder"
+tags:
+  - release
+---
+
+Ik ben trots om aan te kondigen dat AliasVault **0.28.0** nu beschikbaar is. Deze release voegt ondersteuning toe voor **submappen** in alle apps, zodat je credentials kunt ordenen in meerdere map niveaus. Ook introduceert deze release nieuwe **uitgebreide vault-exportformaten** voor eenvoudige handmatige backups, en bevat de release diverse verbeteringen voor het dagelijks gebruik.
+
+<ClickableImage
+  src="/images/blog/releases/0.28.0.jpg"
+  alt="AliasVault 0.28.0-release"
+  caption="Submappen, volledige vaultexports, wachtwoordsterkte-indicatoren"
+/>
+
+## Geneste submappen
+
+Je kunt nu **geneste submappen** aanmaken in je vault. Dat geeft je meer flexibiliteit bij het structureren van logins, notities en identiteiten, en houdt grote vaults beter navigeerbaar.
+
+## Volledige vault-export en -import (.avex / .avux)
+
+De webapp voegt nieuwe exportformaten toe die alle data uit je vault bevatten: credentials, passkeys, bijlagen, favicons en gerelateerde data.
+
+- **`.avex` (AliasVault Encrypted eXport)**: een versleutelde export die je veilig kunt opslaan of tussen machines kunt verplaatsen.
+- **`.avux` (AliasVault Unencrypted eXport)**: een onversleutelde optie wanneer je expliciet een leesbare backup nodig hebt (.zip compatibel).
+
+Zo is het eenvoudig om handmatige backups te maken en te bewaren.
+
+## Browser-extensie: 2FA naar klembord kopiëren
+Na een **autofill**-gebeurtenis kan de browser extensie nu **automatisch de 2FA TOTP-code naar het klembord kopiëren**, zodat je die direct in een tweefactorauthenticatie kunt plakken tijdens het loginproces. **2FA-velddetectie** is ook verbeterd, met betere **TOTP-codedetectie** op meer sites.
+
+## Overige verbeteringen en fixes
+- **Wachtwoordsterkte-indicator** bij **account aanmaken** en **wachtwoord wijzigen** in de webapp.
+- **Meer laden** knoppen toegevoegd voor e-mails in de **mobiele app en browser-extensie**.
+- Lokaal **wachtwoord ontgrendelen** optie bevat nu **rate-limiting**.
+
+---
+
+> **Voorproefje:** We werken achter de schermen aan meerdere grotere verbeteringen. Een van de grootste aankomende functies is het kunnen **delen van vaults**. Dit is iets wat veel kernsystemen raakt. We bundelen dit werk binnenkort in een grotere release. **Binnenkort meer info**!
+
+## Probeer het nu
+
+Probeer AliasVault door [gratis een account aan te maken](https://app.aliasvault.net) en installeer de **browser-extensie** en **mobiele app**.
+
+---
+
+Als je problemen tegenkomt of ideeën voor verbeteringen hebt, dien ze dan in op [GitHub](https://github.com/aliasvault/aliasvault/issues) of join de [Discord](https://discord.gg/DsaXMTEtpF) server.
+
+<GitHubRelease version="0.28.0" />
