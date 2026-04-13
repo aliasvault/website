@@ -1,0 +1,30 @@
+name: Push to Git mirrors
+
+on:
+  push:
+    branches: [main]
+    tags: ['**']
+  workflow_dispatch:
+
+concurrency:
+  group: push-to-git-mirrors
+  cancel-in-progress: false
+
+jobs:
+  codeberg:
+    name: Codeberg
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout full history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Push to Codeberg
+        env:
+          CODEBERG_USERNAME: ${{ secrets.CODEBERG_USERNAME }}
+          CODEBERG_TOKEN: ${{ secrets.CODEBERG_TOKEN }}
+        run: |
+          git remote add codeberg "https://${CODEBERG_USERNAME}:${CODEBERG_TOKEN}@codeberg.org/aliasvault/website.git"
+          git push codeberg --force origin/main:refs/heads/main
+          git push codeberg --tags --force
