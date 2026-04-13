@@ -99,7 +99,9 @@
     },
     "language": "Taal",
     "copyright": "AliasVault. Alle rechten voorbehouden.",
-    "socialAriaLabel": "social-link"
+    "socialAriaLabel": "social-link",
+    "codebergMirror": "Codeberg (GitHub mirror)",
+    "gitlabMirror": "GitLab (GitHub mirror)"
   },
   "features": {
     "metadata": {
@@ -308,9 +310,15 @@
       "roadmapLinkText": "volledige roadmap op GitHub"
     },
     "downloads": {
-      "title": "Downloads & Handmatige Installatie",
+      "title": "Downloads & handmatige installatie",
       "description": "Je kunt ook toegang krijgen tot de nieuwste AliasVault builds en releases op onze downloads sub-site. Hier vind je browserextensie packages voor handmatige installatie en Android APK-bestanden als je liever buiten de Play Store om installeert.",
       "linkText": "Bezoek downloads.aliasvault.net"
+    },
+    "sourceCode": {
+      "title": "Broncode",
+      "description": "AliasVault is volledig open-source. De primaire repository wordt gehost op GitHub. Read-only mirrors worden synchroon gehouden op Codeberg en GitLab voor gebruikers die de voorkeur geven aan alternatieve platforms.",
+      "primaryLabel": "primair",
+      "mirrorLabel": "mirror"
     }
   },
   "common": {

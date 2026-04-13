@@ -1,6 +1,7 @@
 import BrowserBadge from "../Common/Badge";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { SiGithub, SiCodeberg, SiGitlab } from "react-icons/si";
 
 const Platforms = () => {
   const t = useTranslations();
@@ -182,6 +183,46 @@ const Platforms = () => {
             </ul>
           </div>
 
+          <div>
+            <h3 className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
+              {t('platforms.sourceCode.title')}
+            </h3>
+            <p className="mb-4 text-base font-medium leading-relaxed text-body-color dark:text-body-color-dark">
+              {t('platforms.sourceCode.description')}
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <a
+                href="https://github.com/aliasvault/aliasvault"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 border border-gray-200 dark:border-gray-700 rounded-lg text-sm font-medium text-black dark:text-white hover:text-primary dark:hover:text-primary duration-300"
+              >
+                <SiGithub className="h-5 w-5" aria-hidden="true" />
+                <span>GitHub</span>
+                <span className="text-xs text-body-color dark:text-body-color-dark">{t('platforms.sourceCode.primaryLabel')}</span>
+              </a>
+              <a
+                href="https://codeberg.org/aliasvault/aliasvault"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 border border-gray-200 dark:border-gray-700 rounded-lg text-sm font-medium text-black dark:text-white hover:text-primary dark:hover:text-primary duration-300"
+              >
+                <SiCodeberg className="h-5 w-5" aria-hidden="true" />
+                <span>Codeberg</span>
+                <span className="text-xs text-body-color dark:text-body-color-dark">{t('platforms.sourceCode.mirrorLabel')}</span>
+              </a>
+              <a
+                href="https://gitlab.com/aliasvault/aliasvault"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 border border-gray-200 dark:border-gray-700 rounded-lg text-sm font-medium text-black dark:text-white hover:text-primary dark:hover:text-primary duration-300"
+              >
+                <SiGitlab className="h-5 w-5" aria-hidden="true" />
+                <span>GitLab</span>
+                <span className="text-xs text-body-color dark:text-body-color-dark">{t('platforms.sourceCode.mirrorLabel')}</span>
+              </a>
+            </div>
+          </div>
 
           <div>
             <h3 className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
