@@ -268,6 +268,13 @@
     "share": {
       "copyLink": "Kopieer link naar {section}"
     },
+    "webApp": {
+      "title": "Webapp",
+      "description": "Gebruik AliasVault in je browser om je vault, wachtwoorden, passkeys en e-mailaliassen te beheren.",
+      "noInstallNote": "Toegankelijk op elk apparaat met een webbrowser (ook mobiel).",
+      "linkText": "Open de webapp",
+      "selfHostLinkText": "Liever self-hosten? Bekijk de "
+    },
     "mobileApps": {
       "title": "Mobiele apps",
       "description": "AliasVault is beschikbaar als een native iOS en Android app waarmee je je inloggegevens en aliassen onderweg kunt beheren en gebruiken.",
@@ -322,6 +329,29 @@
       "description": "AliasVault is volledig open-source. De primaire repository wordt gehost op GitHub. Read-only mirrors worden synchroon gehouden op Codeberg en GitLab voor gebruikers die de voorkeur geven aan alternatieve platforms.",
       "primaryLabel": "primair",
       "mirrorLabel": "mirror"
+    }
+  },
+  "sourceCode": {
+    "metadata": {
+      "title": "Broncode",
+      "description": "AliasVault is volledig open-source. Bekijk repositories, mirrors en waarom we de broncode publiek houden."
+    },
+    "title": "Broncode",
+    "pageDescription": "Alle AliasVault broncode is publiek voor transparantie, privacy en vertrouwen.",
+    "repositories": {
+      "primary": "primair",
+      "mirror": "mirror"
+    },
+    "sections": {
+      "foss": {
+        "title": "Free & open-source (FOSS)",
+        "paragraph1": "AliasVault is free en open-source software (FOSS). We vinden transparantie essentieel voor privacy en veiligheid: iedereen kan controleren hoe AliasVault werkt, verifiëren hoe data wordt verwerkt en bijdragen aan verbeteringen.",
+        "paragraph2": "Privacy staat centraal in onze missie. Door alle broncode publiek te maken en houden maken we onafhankelijke review mogelijk, zodat gebruikers met een gerust hart op AliasVault kunnen vertrouwen."
+      },
+      "selfHosting": {
+        "paragraph": "AliasVault kan volledig zelf gehost worden door gebruikers met technische ervaring. Als je volledige controle wilt over je infrastructuur, kun je AliasVault zelf deployen met behulp van onze",
+        "installationLinkText": "installatiedocumentatie"
+      }
     }
   },
   "common": {
@@ -1115,7 +1145,7 @@
     "description": "Hoge resolutie screenshots van de AliasVault applicatie interface op web, browserextensies en mobiel",
     "webInterface": {
       "title": "Webapplicatie",
-      "description": "Browser-gebaseerde toegang tot je kluis"
+      "description": "Browser-gebaseerde toegang tot je vault"
     },
     "browserExtension": {
       "title": "Browserextensie",

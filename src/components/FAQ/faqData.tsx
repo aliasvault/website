@@ -19,7 +19,7 @@ const getFAQData = (t: (key: string) => string): FAQItem[] => [
     id: 3,
     question: t('faq.items.pricing.question'),
     answer: t('faq.items.pricing.answer')
-      .replace(/\[contactLink\]/g, "<a href='/contact' rel='noopener noreferrer'>")
+      .replace(/\[contactLink\]/g, "<a href='/contact#donations' rel='noopener noreferrer'>")
       .replace(/\[\/contactLink\]/g, "</a>"),
   },
   {

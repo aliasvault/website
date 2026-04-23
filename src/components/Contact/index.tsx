@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import AnchorHeading from "@/components/Common/AnchorHeading";
 
 const ContactContent = () => {
   const t = useTranslations();
@@ -10,9 +11,14 @@ const ContactContent = () => {
       <div className="container">
         <div className="mx-auto">
           <div className="mb-12 rounded-lg border border-body-color/20 bg-body-color/5 p-6 dark:border-body-color-dark/20 dark:bg-body-color-dark/5">
-            <h3 className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
+            <AnchorHeading
+              as="h3"
+              id="contact"
+              className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl"
+              copyLabel="Copy link"
+            >
               {t('contact.content.main.title')}
-            </h3>
+            </AnchorHeading>
             <p className="mb-6 text-base text-body-color dark:text-body-color-dark">
               {t('contact.content.intro')}{" "}
               <a
@@ -37,9 +43,14 @@ const ContactContent = () => {
           </div>
 
           <div className="mb-12">
-            <h3 className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
+            <AnchorHeading
+              as="h3"
+              id="faq"
+              className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl"
+              copyLabel="Copy link"
+            >
               {t('contact.content.faq.title')}
-            </h3>
+            </AnchorHeading>
             <p className="text-base text-body-color dark:text-body-color-dark">
               {t('contact.content.faq.description')}
             </p>
@@ -61,9 +72,14 @@ const ContactContent = () => {
           </div>
 
           <div className="mb-12">
-            <h3 className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
+            <AnchorHeading
+              as="h3"
+              id="feature-requests"
+              className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl"
+              copyLabel="Copy link"
+            >
               {t('contact.content.features.title')}
-            </h3>
+            </AnchorHeading>
             <p className="text-base text-body-color dark:text-body-color-dark">
               {t('contact.content.features.description')}
             </p>
@@ -89,9 +105,14 @@ const ContactContent = () => {
           </div>
 
           <div className="mb-12">
-            <h3 className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
+            <AnchorHeading
+              as="h3"
+              id="support"
+              className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl"
+              copyLabel="Copy link"
+            >
               {t('contact.content.support.title')}
-            </h3>
+            </AnchorHeading>
             <p className="text-base text-body-color dark:text-body-color-dark">
               {t('contact.content.support.description')}
             </p>
@@ -120,9 +141,14 @@ const ContactContent = () => {
           </div>
 
           <div className="mb-12">
-            <h3 className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
+            <AnchorHeading
+              as="h3"
+              id="security"
+              className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl"
+              copyLabel="Copy link"
+            >
               {t('contact.content.security.title')}
-            </h3>
+            </AnchorHeading>
             <p className="text-base text-body-color dark:text-body-color-dark">
               {t('contact.content.security.description')}
             </p>
@@ -144,9 +170,14 @@ const ContactContent = () => {
           </div>
 
           <div className="mt-12">
-            <h3 className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
+            <AnchorHeading
+              as="h3"
+              id="donations"
+              className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl"
+              copyLabel="Copy link"
+            >
               {t('contact.content.donations.title')}
-            </h3>
+            </AnchorHeading>
             <p className="mb-6 text-base text-body-color dark:text-body-color-dark">
               {t('contact.content.donations.description')}
             </p>

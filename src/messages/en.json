@@ -268,6 +268,13 @@
     "share": {
       "copyLink": "Copy link to {section}"
     },
+    "webApp": {
+      "title": "Web App",
+      "description": "Use AliasVault in your browser to manage your vault, passwords, passkeys, and email aliases.",
+      "noInstallNote": "Accessible on any device with a web browser (including mobile).",
+      "linkText": "Open the web app",
+      "selfHostLinkText": "Prefer to self-host? Read the"
+    },
     "mobileApps": {
       "title": "Mobile Apps",
       "description": "AliasVault is available as a native iOS and Android app allowing you to manage and use your credentials and aliases on the go.",
@@ -322,6 +329,29 @@
       "description": "AliasVault is fully open-source. The canonical repository is hosted on GitHub. Read-only mirrors are kept in sync on Codeberg and GitLab for users who prefer alternative platforms.",
       "primaryLabel": "primary",
       "mirrorLabel": "mirror"
+    }
+  },
+  "sourceCode": {
+    "metadata": {
+      "title": "Source Code",
+      "description": "AliasVault is fully open-source. Explore repositories, mirrors, and why we keep the code public."
+    },
+    "title": "Source Code",
+    "pageDescription": "All AliasVault source code is public for transparency, privacy, and trust.",
+    "repositories": {
+      "primary": "primary",
+      "mirror": "mirror"
+    },
+    "sections": {
+      "foss": {
+        "title": "Free & Open-Source (FOSS)",
+        "paragraph1": "AliasVault is free and open-source software (FOSS). We believe transparency is essential for privacy and security: anyone can inspect how AliasVault works, verify how data is handled, and contribute improvements.",
+        "paragraph2": "Privacy is at the core of our mission. Keeping the source code public helps build trust and enables independent review, so users can rely on AliasVault with confidence."
+      },
+      "selfHosting": {
+        "paragraph": "AliasVault can be fully self-hosted by users with technical experience. If you want full control over your infrastructure, you can deploy AliasVault yourself using our installation documentation",
+        "installationLinkText": "installation docs"
+      }
     }
   },
   "common": {

@@ -167,6 +167,14 @@ const Footer = () => {
                   </li>
                   <li>
                     <Link
+                      className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
+                      href={`/${locale}/source-code`}
+                    >
+                      {t('footer.links.source')}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
                       href="https://docs.aliasvault.net"
                       target="_blank"
                       className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
@@ -195,29 +203,6 @@ const Footer = () => {
                       className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                     >
                       {t('footer.links.downloads')}
-                      <svg
-                        className="ml-1 inline-block h-4 w-4"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                        />
-                      </svg>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="https://github.com/aliasvault/aliasvault"
-                      target="_blank"
-                      className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
-                    >
-                      {t('footer.links.source')}
                       <svg
                         className="ml-1 inline-block h-4 w-4"
                         fill="none"
