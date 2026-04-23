@@ -7,6 +7,7 @@ import FeatureGrid from './FeatureGrid'
 import UpdateSection from './UpdateSection'
 import Callout from './Callout'
 import { ComponentProps } from 'react'
+import AnchorHeading from '@/components/Common/AnchorHeading'
 
 export const components = {
   GitHubRelease,
@@ -33,19 +34,22 @@ export const components = {
     </div>
   ),
   h1: (props: ComponentProps<'h1'>) => (
-    <h1
+    <AnchorHeading
+      as="h1"
       className="mb-12 mt-8 text-2xl font-bold leading-tight text-black dark:text-white sm:text-3xl sm:leading-tight"
       {...props}
     />
   ),
   h2: (props: ComponentProps<'h2'>) => (
-    <h2
+    <AnchorHeading
+      as="h2"
       className="mb-8 mt-12 text-xl font-bold leading-tight text-black dark:text-white sm:text-2xl sm:leading-tight"
       {...props}
     />
   ),
   h3: (props: ComponentProps<'h3'>) => (
-    <h3
+    <AnchorHeading
+      as="h3"
       className="mb-6 mt-8 text-lg font-medium leading-tight text-black dark:text-white sm:text-xl sm:leading-tight"
       {...props}
     />

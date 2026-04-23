@@ -2,6 +2,7 @@ import BrowserBadge from "../Common/Badge";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { SiGithub, SiCodeberg, SiGitlab } from "react-icons/si";
+import AnchorHeading from "@/components/Common/AnchorHeading";
 
 const Platforms = () => {
   const t = useTranslations();
@@ -11,17 +12,27 @@ const Platforms = () => {
       <div className="container">
         <div className="space-y-8">
           <div>
-            <h3 className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
+            <AnchorHeading
+              as="h3"
+              id="mobile-apps"
+              copyLabel={t("platforms.share.copyLink", { section: t("platforms.mobileApps.title") })}
+              className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl"
+            >
               {t('platforms.mobileApps.title')}
-            </h3>
+            </AnchorHeading>
             <p className="mb-4 text-base font-medium leading-relaxed text-body-color dark:text-body-color-dark">
               {t('platforms.mobileApps.description')}
             </p>
             <div className="space-y-6 mb-4">
               <div>
-                <h4 className="text-sm font-semibold text-body-color dark:text-body-color-dark mb-2">
+                <AnchorHeading
+                  as="h4"
+                  id="ios"
+                  copyLabel={t("platforms.share.copyLink", { section: t("platforms.mobileApps.iosLabel") })}
+                  className="text-sm font-semibold text-body-color dark:text-body-color-dark mb-2"
+                >
                   {t('platforms.mobileApps.iosLabel')}
-                </h4>
+                </AnchorHeading>
                 <div className="flex flex-wrap items-center gap-3">
                   <a
                     href="https://apps.apple.com/app/id6745490915"
@@ -40,9 +51,14 @@ const Platforms = () => {
                 </div>
               </div>
               <div>
-                <h4 className="text-sm font-semibold text-body-color dark:text-body-color-dark mb-2">
+                <AnchorHeading
+                  as="h4"
+                  id="android"
+                  copyLabel={t("platforms.share.copyLink", { section: t("platforms.mobileApps.androidLabel") })}
+                  className="text-sm font-semibold text-body-color dark:text-body-color-dark mb-2"
+                >
                   {t('platforms.mobileApps.androidLabel')}
-                </h4>
+                </AnchorHeading>
                 <div className="flex flex-wrap items-center gap-3">
                   <a
                     href="https://play.google.com/store/apps/details?id=net.aliasvault.app"
@@ -102,9 +118,14 @@ const Platforms = () => {
           </div>
 
           <div>
-            <h3 className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
+            <AnchorHeading
+              as="h3"
+              id="browser-extensions"
+              copyLabel={t("platforms.share.copyLink", { section: t("platforms.browserExtensions.title") })}
+              className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl"
+            >
               {t('platforms.browserExtensions.title')}
-            </h3>
+            </AnchorHeading>
             <p className="mb-6 text-base font-medium leading-relaxed text-body-color dark:text-body-color-dark">
               {t('platforms.browserExtensions.description')}
             </p>
@@ -184,9 +205,14 @@ const Platforms = () => {
           </div>
 
           <div>
-            <h3 className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
+            <AnchorHeading
+              as="h3"
+              id="source-code"
+              copyLabel={t("platforms.share.copyLink", { section: t("platforms.sourceCode.title") })}
+              className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl"
+            >
               {t('platforms.sourceCode.title')}
-            </h3>
+            </AnchorHeading>
             <p className="mb-4 text-base font-medium leading-relaxed text-body-color dark:text-body-color-dark">
               {t('platforms.sourceCode.description')}
             </p>
@@ -225,9 +251,14 @@ const Platforms = () => {
           </div>
 
           <div>
-            <h3 className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
+            <AnchorHeading
+              as="h3"
+              id="downloads"
+              copyLabel={t("platforms.share.copyLink", { section: t("platforms.downloads.title") })}
+              className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl"
+            >
               {t('platforms.downloads.title')}
-            </h3>
+            </AnchorHeading>
             <p className="mb-4 text-base font-medium leading-relaxed text-body-color dark:text-body-color-dark">
               {t('platforms.downloads.description')}
             </p>
@@ -256,18 +287,28 @@ const Platforms = () => {
           </div>
 
           <div>
-            <h3 className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
+            <AnchorHeading
+              as="h3"
+              id="roadmap"
+              copyLabel={t("platforms.share.copyLink", { section: t("platforms.roadmap.title") })}
+              className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl"
+            >
               {t('platforms.roadmap.title')}
-            </h3>
+            </AnchorHeading>
             <div className="space-y-4">
               <p className="text-base font-medium leading-relaxed text-body-color dark:text-body-color-dark">
                 {t('platforms.roadmap.description')}
               </p>
 
               <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
-                <h4 className="text-lg font-semibold text-black dark:text-white mb-2">
+                <AnchorHeading
+                  as="h4"
+                  id="roadmap-status"
+                  copyLabel={t("platforms.share.copyLink", { section: t("platforms.roadmap.statusTitle") })}
+                  className="text-lg font-semibold text-black dark:text-white mb-2"
+                >
                   {t('platforms.roadmap.statusTitle')}
-                </h4>
+                </AnchorHeading>
                 <ul className="list-disc pl-6 space-y-2 text-base font-medium text-body-color dark:text-body-color-dark">
                   <li>{t('platforms.roadmap.statusItems.releases')}</li>
                   <li>{t('platforms.roadmap.statusItems.production')}</li>

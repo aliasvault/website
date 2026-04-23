@@ -265,6 +265,9 @@
     "subtitle": "Overal beschikbaar",
     "description": "AliasVault is beschikbaar op alle belangrijke platforms en browsers.",
     "pageDescription": "AliasVault is beschikbaar op alle belangrijke platforms, inclusief web, browser extensies en smartphones.",
+    "share": {
+      "copyLink": "Kopieer link naar {section}"
+    },
     "mobileApps": {
       "title": "Mobiele apps",
       "description": "AliasVault is beschikbaar als een native iOS en Android app waarmee je je inloggegevens en aliassen onderweg kunt beheren en gebruiken.",

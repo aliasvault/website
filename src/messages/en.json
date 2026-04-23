@@ -265,6 +265,9 @@
     "subtitle": "Available everywhere",
     "description": "AliasVault is available on all major platforms and browsers.",
     "pageDescription": "AliasVault is available on all major platforms, including web, desktop, and mobile.",
+    "share": {
+      "copyLink": "Copy link to {section}"
+    },
     "mobileApps": {
       "title": "Mobile Apps",
       "description": "AliasVault is available as a native iOS and Android app allowing you to manage and use your credentials and aliases on the go.",
