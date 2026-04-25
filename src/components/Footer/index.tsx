@@ -231,10 +231,10 @@ const Footer = () => {
                 <ul>
                   <li>
                     <Link
-                      href={`/${locale}/alternative-to/simplelogin`}
+                      href={`/${locale}/alternative-to/1password`}
                       className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                     >
-                      {t('footer.links.alt_simplelogin')}
+                      {t('footer.links.alt_1password')}
                     </Link>
                   </li>
                   <li>
@@ -251,6 +251,14 @@ const Footer = () => {
                       className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                     >
                       {t('footer.links.alt_proton')}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href={`/${locale}/alternative-to/simplelogin`}
+                      className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
+                    >
+                      {t('footer.links.alt_simplelogin')}
                     </Link>
                   </li>
                 </ul>

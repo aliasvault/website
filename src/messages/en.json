@@ -78,6 +78,7 @@
       "alt_simplelogin": "Alternative to SimpleLogin",
       "alt_bitwarden": "Alternative to Bitwarden",
       "alt_proton": "Alternative to Proton Pass",
+      "alt_1password": "Alternative to 1Password",
       "contact": "Contact",
       "report_abuse": "Report Abuse",
       "responsible_disclosure": "Responsible Disclosure",
@@ -692,6 +693,81 @@
       }
     }
   },
+  "alternative1Password": {
+    "metadata": {
+      "title": "Alternative to 1Password",
+      "description": "AliasVault is an open-source end-to-end encrypted password and alias manager."
+    },
+    "hero": {
+      "title": "Looking for a 1Password Alternative?",
+      "description": "AliasVault is a modern password manager with built-in email aliases, fully open-source, a generous free tier, and unique privacy features. Use it in the cloud or self-host it.",
+      "tryButton": "Try AliasVault (free)",
+      "githubButton": "GitHub",
+      "alt": {
+        "hero": "1Password Alternative",
+        "githubStars": "GitHub Repo stars"
+      }
+    },
+    "comparison": {
+      "title": "Why Choose AliasVault over 1Password",
+      "features": {
+        "builtInAliases": {
+          "title": "Built-in aliases and an encrypted email inbox",
+          "description": "While 1Password focuses mostly on passwords, AliasVault includes built-in email aliases without requiring any third-party integrations. AliasVault is designed for individuals, making it simple to use, yet very powerful for privacy protection.",
+          "alt": "Built-in Email Aliases"
+        },
+        "selfHosting": {
+          "title": "Cloud or self-hosted: your choice",
+          "description": "1Password only offers their own cloud-hosted version. AliasVault gives you the choice: use the cloud-hosted version for convenience, or (for people with technical experience) fully self-host AliasVault so you stay in control of where your data lives.",
+          "alt": "Self-hosting Option"
+        },
+        "openSource": {
+          "title": "Built for individuals, not enterprises",
+          "description": "1Password is an excellent choice for businesses and teams. AliasVault however is designed primarily for individuals and families who want a simple and focused experience that protects both your data and privacy: passwords, passkeys, aliases, and identities in one place.",
+          "alt": "Consumer-focused password manager"
+        }
+      }
+    },
+    "featureComparison": {
+      "title": "Feature Comparison",
+      "tableHeaders": {
+        "feature": "Feature",
+        "aliasVault": "AliasVault",
+        "onePassword": "1Password"
+      },
+      "features": {
+        "passwordManagement": "Password Management",
+        "passkeySupport": "Passkeys",
+        "builtIn2FA": "Built-in 2FA authenticator (TOTP)",
+        "emailAliasManagement": "Email Alias Management",
+        "builtInEmailInbox": "Built-in email inbox",
+        "randomIdentityGeneration": "Random Identity Generation",
+        "openSource": "Open Source",
+        "endToEndEncryption": "End-to-End Encryption",
+        "easySelfHosting": "Self-hosting option",
+        "generousFreeTier": "Generous free tier",
+        "enterpriseFeatures": "Enterprise features",
+        "browserExtensions": "Browser Extensions",
+        "mobileApps": "Mobile Apps"
+      }
+    },
+    "limitations": {
+      "title": "Good to Know",
+      "description": "In the spirit of transparency, here are some current limitations of AliasVault compared to 1Password:",
+      "items": {
+        "enterpriseFeatures": {
+          "title": "Enterprise features:",
+          "description": "If you need enterprise administration (SSO, SCIM provisioning, advanced admin controls), 1Password is a better fit. AliasVault is primarily built for consumers and private persons."
+        }
+      }
+    }
+    ,
+    "import": {
+      "title": "Import from 1Password in minutes",
+      "description": "AliasVault offers a built-in import mechanism allowing you to transfer all your data in 1Password to AliasVault in just a few steps. This includes all your credentials, folders, notes, attachments and more. Try it out now.",
+      "cta": "Try it out now"
+    }
+  },
   "alternativeBitwarden": {
     "metadata": {
       "title": "Alternative to Bitwarden",
@@ -764,6 +840,12 @@
           "description": "Bitwarden has been around longer and has a larger user base, which means more community-tested features and integrations."
         }
       }
+    }
+    ,
+    "import": {
+      "title": "Import from Bitwarden in minutes",
+      "description": "AliasVault offers a built-in import mechanism allowing you to transfer all your data in Bitwarden to AliasVault in just a few steps. This includes your credentials, folders, notes, attachments, and more. Try it out now.",
+      "cta": "Try it out now"
     }
   },
   "alternativeSimpleLogin": {
@@ -939,6 +1021,12 @@
         }
       }
     }
+    ,
+    "import": {
+      "title": "Import from Proton Pass in minutes",
+      "description": "AliasVault offers a built-in import mechanism allowing you to transfer all your data in Proton Pass to AliasVault in just a few steps. This includes your credentials, folders, notes, attachments, and more. Try it out now.",
+      "cta": "Try it out now"
+    }
   },
   "mission": {
     "metadata": {
@@ -1086,7 +1174,7 @@
   },
   "statistics": {
     "title": "Statistics",
-    "description": "Key numbers that show AliasVault's growing impact on digital privacy since December 2024.",
+    "description": "Key numbers that show AliasVault's growing impact on digital privacy since May 2026.",
     "githubStars": "GitHub Stars",
     "cloudRegistrations": "Cloud User Registrations",
     "selfHostedDownloads": "Self-hosted Downloads",

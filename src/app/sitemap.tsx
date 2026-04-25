@@ -22,7 +22,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         '/account-deletion',
         '/alternative-to/bitwarden',
         '/alternative-to/simplelogin',
-        '/alternative-to/proton-pass'
+        '/alternative-to/proton-pass',
+        '/alternative-to/1password'
     ]
 
     // Create routes for all locales

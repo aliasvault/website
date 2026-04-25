@@ -78,6 +78,7 @@
       "alt_simplelogin": "Alternatief voor SimpleLogin",
       "alt_bitwarden": "Alternatief voor Bitwarden",
       "alt_proton": "Alternatief voor Proton Pass",
+      "alt_1password": "Alternatief voor 1Password",
       "contact": "Contact",
       "report_abuse": "Misbruik Melden",
       "responsible_disclosure": "Responsible Disclosure",
@@ -692,6 +693,80 @@
       }
     }
   },
+  "alternative1Password": {
+    "metadata": {
+      "title": "Alternatief voor 1Password",
+      "description": "AliasVault is een open-source end-to-end versleutelde wachtwoord- en aliasmanager."
+    },
+    "hero": {
+      "title": "Op zoek naar een 1Password alternatief?",
+      "description": "AliasVault is een Nederlandse wachtwoordmanager met ingebouwde e-mailaliassen, een gratis versie en unieke privacyfuncties. Je kunt de officiële cloud service gebruiken maar ook volledig zelf hosten.",
+      "tryButton": "Probeer AliasVault (gratis)",
+      "githubButton": "GitHub",
+      "alt": {
+        "hero": "1Password alternatief",
+        "githubStars": "GitHub Repo sterren"
+      }
+    },
+    "comparison": {
+      "title": "Waarom AliasVault in plaats van 1Password",
+      "features": {
+        "builtInAliases": {
+          "title": "Ingebouwde aliassen en een versleutelde inbox",
+          "description": "Waar 1Password zich vooral richt op wachtwoorden, biedt AliasVault naast wachtwoordbeheer ook ingebouwde e-mailaliassen zonder integraties met derde partijen. AliasVault is ontworpen voor consumenten en particulieren: eenvoudig in gebruik, maar tegelijk zeer krachtig voor privacybescherming.",
+          "alt": "Ingebouwde e-mailaliassen"
+        },
+        "selfHosting": {
+          "title": "Cloud of zelf hosten: jij kiest",
+          "description": "1Password biedt alleen hun eigen cloud-gehoste versie. AliasVault geeft je de keuze: gebruik de cloudversie voor gemak, of (voor technisch ervaren gebruikers) host AliasVault volledig zelf zodat je zelf bepaalt waar je data staat.",
+          "alt": "Zelf hosten"
+        },
+        "openSource": {
+          "title": "Gebouwd voor privacy",
+          "description": "1Password is een uitstekende keuze voor bedrijven en teams. AliasVault is daarentegen juist ontworpen voor consumenten en particulieren die een eenvoudige ervaring willen die toch krachtig is: wachtwoorden, passkeys, aliassen en identiteiten op één plek.",
+          "alt": "Consumentgerichte wachtwoordmanager"
+        }
+      }
+    },
+    "featureComparison": {
+      "title": "Feature vergelijking",
+      "tableHeaders": {
+        "feature": "Feature",
+        "aliasVault": "AliasVault",
+        "onePassword": "1Password"
+      },
+      "features": {
+        "passwordManagement": "Wachtwoordbeheer",
+        "passkeySupport": "Passkeys",
+        "builtIn2FA": "Ingebouwde 2FA authenticator (TOTP)",
+        "emailAliasManagement": "E-mailalias beheer",
+        "builtInEmailInbox": "Ingebouwde e-mail inbox",
+        "randomIdentityGeneration": "Willekeurige identiteiten",
+        "openSource": "Open source",
+        "endToEndEncryption": "End-to-end versleuteling",
+        "easySelfHosting": "Zelf hosten mogelijk",
+        "generousFreeTier": "Ruime gratis versie",
+        "enterpriseFeatures": "Enterprise functies",
+        "browserExtensions": "Browser extensies",
+        "mobileApps": "Mobiele apps"
+      }
+    },
+    "limitations": {
+      "title": "Goed om te weten",
+      "description": "In de geest van transparantie, hier zijn enkele huidige beperkingen van AliasVault vergeleken met 1Password:",
+      "items": {
+        "enterpriseFeatures": {
+          "title": "Enterprise functies:",
+          "description": "Als je enterprise-beheer nodig hebt (SSO, SCIM provisioning, uitgebreide admin controls), past 1Password beter. AliasVault is vooral gebouwd voor consumenten en particulieren."
+        }
+      }
+    },
+    "import": {
+      "title": "Importeer vanuit 1Password in enkele minuten",
+      "description": "AliasVault biedt een ingebouwde importfunctie waarmee je al je gegevens uit 1Password in een paar stappen kunt overzetten naar AliasVault. Dit omvat al je inloggegevens, mappen, notities, bijlagen en meer. Probeer het nu.",
+      "cta": "Probeer het nu"
+    }
+  },
   "alternativeBitwarden": {
     "metadata": {
       "title": "Alternatief voor Bitwarden",
@@ -699,7 +774,7 @@
     },
     "hero": {
       "title": "Op zoek naar een alternatief voor Bitwarden?",
-      "description": "AliasVault biedt een veilige, open-source oplossing voor wachtwoordmanagement met geïntegreerde e-mailalias functies. Alle beveiliging die je van Bitwarden kent, plus verbeterde privacyfuncties.",
+      "description": "AliasVault is een Nederlandse open-source oplossing voor wachtwoordmanagement met geïntegreerde e-mailalias functies. Alle beveiliging die je van Bitwarden kent, plus verbeterde privacyfuncties.",
       "tryButton": "Probeer AliasVault (gratis)",
       "githubButton": "GitHub",
       "alt": {
@@ -764,6 +839,11 @@
           "description": "Bitwarden bestaat al langer en heeft een grotere gebruikersbasis, wat soms betekent dat het meer integraties heeft met andere diensten."
         }
       }
+    },
+    "import": {
+      "title": "Importeer vanuit Bitwarden in enkele minuten",
+      "description": "AliasVault biedt een ingebouwde importfunctie waarmee je al je gegevens uit Bitwarden in een paar stappen kunt overzetten naar AliasVault. Dit omvat al je inloggegevens, mappen, notities, bijlagen en meer. Probeer het nu.",
+      "cta": "Probeer het nu"
     }
   },
   "alternativeSimpleLogin": {
@@ -773,7 +853,7 @@
     },
     "hero": {
       "title": "Op zoek naar een alternatief voor SimpleLogin?",
-      "description": "AliasVault biedt een veilige, open-source oplossing voor e-mailaliassen met end-to-end versleuteling. Alle functies die je van SimpleLogin kent, plus verbeterde privacy en beveiliging.",
+      "description": "AliasVault is een Nederlandse open-source oplossing voor e-mailaliassen en wachtwoordbeheer met end-to-end versleuteling. Alle functies die je van SimpleLogin kent, plus verbeterde privacy en beveiliging.",
       "tryButton": "Probeer AliasVault (gratis)",
       "githubButton": "GitHub",
       "alt": {
@@ -848,7 +928,7 @@
     },
     "hero": {
       "title": "Op zoek naar een alternatief voor Proton Pass?",
-      "description": "AliasVault biedt volledige transparantie met volledige self-hosting mogelijkheden. Krijg de functies die je van Proton Pass verwacht, maar met volledige controle over je gegevens en complete transparantie met open-source.",
+      "description": "AliasVault is een Nederlandse oplossing die volledige transparantie biedt met volledige self-hosting mogelijkheden. Krijg de functies die je van Proton Pass verwacht, maar met volledige controle over je gegevens en complete transparantie met open-source.",
       "tryButton": "Probeer AliasVault (gratis)",
       "githubButton": "GitHub",
       "alt": {
@@ -938,6 +1018,11 @@
           "description": "Proton Pass integreert makkelijk(er) met andere Proton diensten (Mail, VPN, etc.), als je al een dienst in hun ecosysteem gebruikt."
         }
       }
+    },
+    "import": {
+      "title": "Importeer vanuit Proton Pass in enkele minuten",
+      "description": "AliasVault biedt een ingebouwde importfunctie waarmee je al je gegevens uit Proton Pass in een paar stappen kunt overzetten naar AliasVault. Dit omvat al je inloggegevens, mappen, notities, bijlagen en meer. Probeer het nu.",
+      "cta": "Probeer het nu"
     }
   },
   "mission": {
@@ -1086,7 +1171,7 @@
   },
   "statistics": {
     "title": "Cijfers",
-    "description": "Belangrijke cijfers die AliasVault's groeiende impact op digitale privacy weergeven (sinds de beta release in december 2024).",
+    "description": "Belangrijke cijfers die AliasVault's groeiende impact op digitale privacy weergeven (sinds mei 2026).",
     "githubStars": "GitHub Sterren",
     "cloudRegistrations": "Cloud gebruikers",
     "selfHostedDownloads": "Self-hosted downloads",

@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import CallToAction from "@/components/CallToAction/CallToAction";
+import ImportCallToAction from "@/components/CallToAction/ImportCallToAction";
 import { getTranslations } from "next-intl/server";
 import { generatePageSEOMetadata } from "@/lib/seo-utils";
 import Page from "@/components/Common/Page";
@@ -282,7 +283,7 @@ const ProtonPassPage = async () => {
         </div>
       </div>
 
-      <CallToAction />
+      <ImportCallToAction namespace="alternativeProtonPass.import" />
     </Page>
   );
 };
