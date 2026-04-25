@@ -247,6 +247,24 @@ const PressKitEN = () => {
                     <div className="flex items-start justify-between">
                       <div className="flex-1">
                         <a
+                          href="https://www.youtube.com/watch?v=ebaXqxEuyuA&pp=ygUKYWxpYXN2YXVsdA%3D%3D"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-medium text-primary hover:underline"
+                        >
+                          Email Aliases + Password Manager in ONE App | AliasVault: The Ultimate Privacy Tool
+                        </a>
+                        <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                          Review and demo
+                        </p>
+                      </div>
+                      <span className="ml-4 text-xs text-gray-500 dark:text-gray-400">April 2026</span>
+                    </div>
+                  </div>
+                  <div className="group">
+                    <div className="flex items-start justify-between">
+                      <div className="flex-1">
+                        <a
                           href="https://www.youtube.com/watch?v=BYlDoSGieaM"
                           target="_blank"
                           rel="noopener noreferrer"
@@ -294,18 +312,18 @@ const PressKitEN = () => {
                     <div className="flex items-start justify-between">
                       <div className="flex-1">
                         <a
-                          href="https://tweakers.net/downloads/74638/aliasvault-0240.html"
+                          href="https://tweakers.net/downloads/76602/aliasvault-0280.html"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="font-medium text-primary hover:underline"
                         >
-                          Tweakers.nl: AliasVault 0.24.0
+                          Tweakers.nl: AliasVault 0.28.0
                         </a>
                         <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
                           Dutch tech web site
                         </p>
                       </div>
-                      <span className="ml-4 text-xs text-gray-500 dark:text-gray-400">November 2025</span>
+                      <span className="ml-4 text-xs text-gray-500 dark:text-gray-400">April 2026</span>
                     </div>
                   </div>
                   <div className="group">
@@ -370,7 +388,7 @@ const PressKitEN = () => {
                           AliasVault introduction and discussion
                         </p>
                       </div>
-                      <span className="ml-4 text-xs text-gray-500 dark:text-gray-400">August 2025</span>
+                      <span className="ml-4 text-xs text-gray-500 dark:text-gray-400">April 2026</span>
                     </div>
                   </div>
 
