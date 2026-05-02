@@ -1,0 +1,92 @@
+---
+title: "AliasVault 0.29.0 uitgebracht"
+description: "Importeer complete vault exports, verbeterde autofill en nieuwe self-hosting opties"
+date: "2026-05-02"
+image: "/images/blog/headers/0.29.0.jpg"
+author:
+  name: "Leendert de Borst"
+  image: "/images/founder/founder.jpg"
+  designation: "Founder"
+tags:
+  - release
+---
+
+Welkom bij **AliasVault 0.29.0** 🎉
+
+Deze release maakt het een stuk eenvoudiger om over te stappen naar AliasVault door het importeren van **volledige vault-archieven** (inclusief **bijlagen** en **custom velden**) uit populaire password managers. Ook is de **autofill**-ervaring verbeterd op mobiel en in de browser.
+
+Daarnaast brengt deze update meer flexibiliteit en controle voor **self-hosted deployments**, samen met diverse gebruiksvriendelijkheidsverbeteringen en bugfixes in alle apps.
+
+<ClickableImage
+  src="/images/blog/releases/0.29.0.jpg"
+  alt="AliasVault 0.29.0-release"
+  caption="Volledige vault-archief imports, verbeterde autofill en nieuwe self-hosting opties"
+/>
+
+## Importeer volledige vault-archieven (met bijlagen + custom fields)
+
+Overstappen naar AliasVault gaat nu veel soepeler: je kunt volledige vault-archieven (niet alleen CSV) importeren vanuit:
+
+- **1Password** (`.1pux`)
+- **Bitwarden** (vault `.zip`)
+- **Proton Pass** (vault `.zip`)
+
+Deze bestandsformaten bevatten in tegenstelling tot `.csv` meer complete data zoals:
+
+- **Bijlagen**
+- **Custom velden**
+
+Door het ondersteunen van deze nieuwe importformaten zorgen we ervoor dat al je informatie eenvoudig kan worden overgezet.
+
+## Verbeterde mobiele autofill (linken wanneer er geen match is)
+
+Autofill op iOS en Android is nu slimmer wanneer AliasVault niet meteen een matchende credential kan vinden.
+
+Wanneer er geen match wordt gevonden, krijg je een prompt om een **website-/app-URL te koppelen aan een bestaande credential**. Zo kun je matching één keer corrigeren, en werkt autofill daarna vanzelf.
+
+## Browser-extensie: autofill verbeteringen (velden + 2FA flow)
+
+De browser-extensie heeft meerdere verbeteringen gekregen om autofill betrouwbaarder te maken en minder foutgevoelig:
+
+- Betere **form field detectie**, waardoor er minder false positives zijn
+- Verbeterde **2FA autofill flow**
+- Verbeterde **TOTP prompt**, zodat op de eerste plek de code wordt getoond voor het account waarmee je zojuist bent ingelogd
+
+## iOS klembord: lokaal vs Universal Clipboard
+
+Op iOS kun je nu kiezen of kopieeracties gebruikmaken van:
+
+- Alleen het **lokale klembord**, of
+- **Universal Clipboard** (sync tussen Apple apparaten)
+
+## Meer controle voor self-hosted deployments
+
+Deze release bevat meerdere verbeteringen voor self-hosted gebruikers:
+
+- Ondersteuning voor **custom proxy headers** in de mobiele apps (handig wanneer je AliasVault host achter bijvoorbeeld een VPN zoals Pangolin.)
+- **Trusted proxies** configuratie (voor `set_real_ip_from` in nginx)
+- IP-gebaseerde **`/admin` toegang restricties**
+- **Rate limiting** voor accountregistratie
+- Configureerbare **maximale uploadlimiet**
+
+## UX-verbeteringen in alle apps
+
+Naast de eerder genoemde features bevat 0.29.0 ook een groot aantal andere verbeteringen zoals:
+
+- Verbeterde **item filtering**, inclusief het bijwerken van submap counts
+- Bijgewerkte **iconen** (inclusief dynamische item iconen in web search/table views)
+- Verbeterde **creditcard weergave** in de webapp
+- Verbeterde **delete flows** in de webapp
+
+---
+
+## Probeer het nu
+
+Dit is het perfecte moment om AliasVault te proberen als je dat nog niet hebt gedaan. [Registreer je gratis](https://app.aliasvault.net) in de webapp en installeer de **browser-extensie** en **mobiele app** om te starten. Liever self-hosten? Dat kan ook! Zie de [installatiedocumentatie](https://docs.aliasvault.net/installation/) voor Docker- en install-scriptopties. Lees meer over onze [missie](/mission) en roadmap om te zien wat er aan komt voor AliasVault.
+
+---
+
+Als je problemen tegenkomt of ideeën voor verbeteringen hebt, dien ze dan in op [GitHub](https://github.com/aliasvault/aliasvault/issues) of zeg hallo op [Discord](https://discord.gg/DsaXMTEtpF).
+
+<GitHubRelease version="0.29.0" />
+

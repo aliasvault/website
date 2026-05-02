@@ -1,0 +1,90 @@
+---
+title: "AliasVault 0.29.0 Released"
+description: "Full vault archive imports, improved autofill, and multiple self-hosting improvements"
+date: "2026-05-02"
+image: "/images/blog/headers/0.29.0.jpg"
+author:
+  name: "Leendert de Borst"
+  image: "/images/founder/founder.jpg"
+  designation: "Founder"
+tags:
+  - release
+---
+
+Welcome to **AliasVault 0.29.0** 🎉
+
+This release makes it significantly easier to switch to AliasVault by introducing support for importing **full vault archives** (including **attachments** and **custom fields**) from popular password managers. It also improves the **autofill** experience across mobile and browser.
+
+In addition, this update brings more flexibility and control for **self-hosted deployments**, alongside a range of usability improvements and bug fixes across the apps.
+
+<ClickableImage
+  src="/images/blog/releases/0.29.0.jpg"
+  alt="AliasVault 0.29.0 Release"
+  caption="Full vault archive imports, improved autofill, and new self-hosting controls"
+/>
+
+## Import full vault archives (with attachments + custom fields)
+
+Migrating to AliasVault is now much smoother: you can import full vault archives (not just CSV) from:
+
+- **1Password** (`.1pux`)
+- **Bitwarden** (vault `.zip`)
+- **Proton Pass** (vault `.zip`)
+
+These imports include more of what you actually need when switching:
+
+- **Attachments**
+- **Custom fields**
+
+## Improved mobile autofill (link when there’s no match)
+
+Autofill on iOS and Android is now smarter when AliasVault can’t find a matching credential right away.
+
+When no match is found, you’ll be prompted to **link a website/app URL to an existing credential**. That makes it easier to fix matching once, and have future autofill “just work”.
+
+## Browser extension autofill improvements (fields + 2FA flow)
+
+The browser extension got several improvements to make autofill more reliable and less error-prone:
+
+- Better **form field detection**, reducing false positives
+- Improved **2FA autofill flow**
+- Better **TOTP prompt** so it shows the code for the account you actually used to log in
+
+## iOS clipboard: Local vs Universal Clipboard
+
+On iOS, you can now choose whether copy actions should use:
+
+- The **Local clipboard** only, or
+- **Universal Clipboard** (syncing across Apple devices)
+
+## More control for self-hosted deployments
+
+This release includes multiple improvements for self-hosted users:
+
+- Custom proxy headers support in the mobile apps (useful when hosting AliasVault behind e.g. a VPN such as Pangolin.)
+- Trusted proxies configuration (for `set_real_ip_from` in nginx)
+- IP-based `/admin` access restrictions
+- Account registration rate limiting
+- Configurable maximum upload size limit
+
+## UX improvements across the apps
+
+Alongside the previously mentioned features, 0.29.0 also includes a bunch of smaller improvements:
+
+- Improved **item filtering**, including updating subfolder counts
+- Updated **icons** (including dynamic item icons in web search/table views)
+- Improved **credit card display** in the web app
+- Improved **delete flows** in the web app
+
+---
+
+## Try it now
+
+Now is a perfect time to try out AliasVault if you haven't already. [Sign up for free](https://app.aliasvault.net) on the web app, and grab the **browser extension** and **mobile app** to get started. Prefer to self-host AliasVault? That's also possible! See the [installation docs](https://docs.aliasvault.net/installation/) for Docker and install script options. Read up on our [mission](/mission) and roadmap to see what AliasVault will get next.
+
+---
+
+If you run into any issues or have ideas for improvements, please submit them on [GitHub](https://github.com/aliasvault/aliasvault/issues) or say hello on [Discord](https://discord.gg/DsaXMTEtpF).
+
+<GitHubRelease version="0.29.0" />
+
