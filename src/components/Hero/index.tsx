@@ -4,76 +4,155 @@ import Link from "next/link";
 import Image from "next/image";
 import Badge from "../Common/Badge";
 import { useTranslations } from "next-intl";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
+import { useLayoutEffect, useMemo, useState } from "react";
 import AnimatedBackground from "./AnimatedBackground";
+
+const useNarrowViewport = () => {
+  const [narrow, setNarrow] = useState(false);
+  useLayoutEffect(() => {
+    const mq = window.matchMedia("(max-width: 767px)");
+    const sync = () => setNarrow(mq.matches);
+    sync();
+    mq.addEventListener("change", sync);
+    return () => mq.removeEventListener("change", sync);
+  }, []);
+  return narrow;
+};
 
 const Hero = () => {
   const t = useTranslations('hero');
+  const prefersReducedMotion = useReducedMotion();
+  const narrowViewport = useNarrowViewport();
+  /** Boolean only — `useReducedMotion()` is `null` before subscribe; including raw null in deps recreated variants and could re-trigger the entrance on desktop. */
+  const reduceMotion = prefersReducedMotion === true;
+  // Springs + stagger are noticeably janky on iOS when combined with hero paint cost.
+  const { containerVariants, itemVariants, imageVariants, badgeContainerVariants, badgeVariants } =
+    useMemo(() => {
+      if (reduceMotion) {
+        const instant = { type: "tween" as const, duration: 0.12, ease: "easeOut" as const };
+        return {
+          containerVariants: {
+            hidden: { opacity: 0 },
+            visible: { opacity: 1, transition: { staggerChildren: 0, delayChildren: 0 } },
+          },
+          itemVariants: {
+            hidden: { opacity: 0 },
+            visible: { opacity: 1, y: 0, transition: instant },
+          },
+          imageVariants: {
+            hidden: { opacity: 0 },
+            visible: { opacity: 1, scale: 1, y: 0, transition: instant },
+          },
+          badgeContainerVariants: {
+            hidden: { opacity: 0 },
+            visible: { opacity: 1, transition: { staggerChildren: 0, delayChildren: 0 } },
+          },
+          badgeVariants: {
+            hidden: { opacity: 0 },
+            visible: { opacity: 1, scale: 1, y: 0, transition: instant },
+          },
+        };
+      }
 
-  // Animation variants for staggered children
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.1,
-      },
-    },
-  };
+      if (narrowViewport) {
+        const tween = { type: "tween" as const, duration: 0.22, ease: "easeOut" as const };
+        return {
+          containerVariants: {
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: { staggerChildren: 0.06, delayChildren: 0 },
+            },
+          },
+          itemVariants: {
+            hidden: { opacity: 0, y: 12 },
+            visible: { opacity: 1, y: 0, transition: tween },
+          },
+          imageVariants: {
+            hidden: { opacity: 0, y: 10 },
+            visible: {
+              opacity: 1,
+              y: 0,
+              transition: { ...tween, delay: 0.08 },
+            },
+          },
+          badgeContainerVariants: {
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: { staggerChildren: 0.04, delayChildren: 0.12 },
+            },
+          },
+          badgeVariants: {
+            hidden: { opacity: 0, y: 6 },
+            visible: { opacity: 1, y: 0, transition: tween },
+          },
+        };
+      }
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        type: "spring" as const,
-        stiffness: 100,
-        damping: 12,
-      },
-    },
-  };
-
-  const imageVariants = {
-    hidden: { opacity: 0, scale: 0.9, y: 20 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      y: 0,
-      transition: {
-        type: "spring" as const,
-        stiffness: 80,
-        damping: 15,
-        delay: 0.3,
-      },
-    },
-  };
-
-  const badgeContainerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.05,
-        delayChildren: 0.6,
-      },
-    },
-  };
-
-  const badgeVariants = {
-    hidden: { opacity: 0, scale: 0.8, y: 10 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      y: 0,
-      transition: {
-        type: "spring" as const,
-        stiffness: 150,
-        damping: 10,
-      },
-    },
-  };
+      return {
+        containerVariants: {
+          hidden: { opacity: 0 },
+          visible: {
+            opacity: 1,
+            transition: {
+              staggerChildren: 0.1,
+              delayChildren: 0.05,
+            },
+          },
+        },
+        itemVariants: {
+          hidden: { opacity: 0, y: 30 },
+          visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+              type: "spring" as const,
+              stiffness: 100,
+              damping: 12,
+            },
+          },
+        },
+        imageVariants: {
+          hidden: { opacity: 0, scale: 0.9, y: 20 },
+          visible: {
+            opacity: 1,
+            scale: 1,
+            y: 0,
+            transition: {
+              type: "spring" as const,
+              stiffness: 80,
+              damping: 15,
+              delay: 0.18,
+            },
+          },
+        },
+        badgeContainerVariants: {
+          hidden: { opacity: 0 },
+          visible: {
+            opacity: 1,
+            transition: {
+              staggerChildren: 0.05,
+              delayChildren: 0.28,
+            },
+          },
+        },
+        badgeVariants: {
+          hidden: { opacity: 0, scale: 0.8, y: 10 },
+          visible: {
+            opacity: 1,
+            scale: 1,
+            y: 0,
+            transition: {
+              type: "spring" as const,
+              stiffness: 150,
+              damping: 10,
+            },
+          },
+        },
+      };
+    }, [reduceMotion, narrowViewport]);
 
   return (
     <>
