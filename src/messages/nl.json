@@ -753,7 +753,7 @@
     },
     "limitations": {
       "title": "Goed om te weten",
-      "description": "In de geest van transparantie, hier zijn enkele huidige beperkingen van AliasVault vergeleken met 1Password:",
+      "description": "In het kader van transparantie, hier zijn enkele huidige beperkingen van AliasVault vergeleken met 1Password:",
       "items": {
         "enterpriseFeatures": {
           "title": "Enterprise functies:",
