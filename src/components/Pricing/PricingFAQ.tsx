@@ -22,6 +22,7 @@ const PricingFAQ = ({ className = "" }: { className?: string }) => {
       copyLabel={t("pricing.faq.copyLink")}
       className={className}
       embedded
+      colorMode="onGrayBackground"
     />
   );
 };

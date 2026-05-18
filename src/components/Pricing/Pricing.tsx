@@ -238,13 +238,15 @@ export default function Pricing() {
   const approachKeys = ["freeVersion", "premiumAfterV1"] as const;
 
   return (
-    <section className="pt-9 pb-16 md:pb-20 lg:pb-28">
+    <section className="pt-9">
       <div className="container">
         <div className="mx-auto max-w-6xl space-y-16 md:space-y-20">
           <div className="space-y-6 lg:space-y-8">
             <div className="grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-6">
               {plans.map((plan) => (
-                <PlanCard key={plan.id} plan={plan} t={t} />
+                <div key={plan.id}>
+                  <PlanCard plan={plan} t={t} />
+                </div>
               ))}
             </div>
 
@@ -257,27 +259,38 @@ export default function Pricing() {
             </p>
           </div>
 
-          <section className="space-y-8 border-t border-gray-200 pt-16 dark:border-gray-800 md:pt-20">
-            <h2 className="text-center text-2xl font-bold text-black dark:text-white sm:text-3xl md:text-4xl">
-              {t("approach.title")}
-            </h2>
-            <div className="mx-auto max-w-3xl space-y-8">
-              <p className="whitespace-pre-line text-base font-medium leading-relaxed text-body-color dark:text-body-color-dark">
-                {t("approach.intro")}
-              </p>
-              {approachKeys.map((key) => (
-                <ApproachItem key={key} title={t(`approach.${key}.title`)} body={t(`approach.${key}.body`)} />
-              ))}
-            </div>
-          </section>
+        </div>
+      </div>
 
-          <div className="border-t border-gray-200 pt-16 dark:border-gray-800 md:pt-20">
+      <div className="container mt-16 md:mt-20">
+        <section className="mx-auto max-w-3xl space-y-8 border-t border-gray-200 pt-16 dark:border-gray-800 md:pt-20">
+          <h2 className="text-center text-2xl font-bold text-black dark:text-white sm:text-3xl md:text-4xl">
+            {t("approach.title")}
+          </h2>
+          <p className="whitespace-pre-line text-base font-medium leading-relaxed text-body-color dark:text-body-color-dark">
+            {t("approach.intro")}
+          </p>
+          {approachKeys.map((key) => (
+            <div key={key}>
+              <ApproachItem title={t(`approach.${key}.title`)} body={t(`approach.${key}.body`)} />
+            </div>
+          ))}
+        </section>
+      </div>
+
+      <div className="mt-16 bg-gray-light py-16 dark:bg-bg-color-dark md:mt-20 md:py-20 lg:py-28">
+        <div className="container">
+          <div className="mx-auto max-w-6xl" data-aos="fade-up" data-aos-delay="0">
             <PricingFAQ className="!mb-0" />
           </div>
+        </div>
+      </div>
 
+      <div className="container mt-16 md:mt-20">
+        <div className="mx-auto max-w-6xl">
           <section
             id="support-development"
-            className="mx-auto max-w-3xl scroll-mt-28 space-y-6 border-t border-gray-200 pt-16 text-center dark:border-gray-800 md:pt-20"
+            className="mx-auto max-w-3xl scroll-mt-28 space-y-6 text-center"
           >
             <div className="space-y-3">
               <h2 className="text-2xl font-bold text-black dark:text-white sm:text-3xl md:text-4xl">{t("support.title")}</h2>

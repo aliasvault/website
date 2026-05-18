@@ -9,6 +9,22 @@ export function getFaqItemId(faq: FAQItem) {
   return faq.slug ?? `faq-${faq.id}`;
 }
 
+type FAQColorMode = "default" | "onGrayBackground";
+
+const headerColorClasses: Record<
+  FAQColorMode,
+  { base: string; open: string }
+> = {
+  default: {
+    base: "bg-gray-100/50 hover:bg-gray-200/80 dark:bg-gray-800/50 dark:hover:bg-gray-700/80",
+    open: "bg-gray-200/80 dark:bg-gray-700/80",
+  },
+  onGrayBackground: {
+    base: "bg-white hover:bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700/80",
+    open: "bg-gray-50 dark:bg-gray-700/80",
+  },
+};
+
 type FAQAccordionProps = {
   id?: string;
   title: string;
@@ -18,6 +34,8 @@ type FAQAccordionProps = {
   copyLabel?: string;
   /** Renders inside a parent container (e.g. pricing page) without extra section/container wrappers. */
   embedded?: boolean;
+  /** Use `onGrayBackground` when FAQ sits on a light grey section (e.g. pricing). */
+  colorMode?: FAQColorMode;
 };
 
 const FAQAccordion = ({
@@ -28,7 +46,9 @@ const FAQAccordion = ({
   className = "",
   copyLabel = "Copy link",
   embedded = false,
+  colorMode = "default",
 }: FAQAccordionProps) => {
+  const headerColors = headerColorClasses[colorMode];
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const openFromHash = useCallback(
@@ -88,11 +108,13 @@ const FAQAccordion = ({
           <div
             key={faq.id}
             id={getFaqItemId(faq)}
-            className="mb-4 scroll-mt-28 overflow-hidden rounded-lg border border-gray-200 dark:border-gray-800"
+            className={`mb-4 scroll-mt-28 overflow-hidden rounded-lg border border-gray-200 dark:border-gray-800 ${
+              colorMode === "onGrayBackground" ? "bg-white dark:bg-gray-800" : ""
+            }`}
           >
             <div
-              className={`relative flex w-full items-center gap-2 px-6 py-4 transition-colors duration-200 bg-gray-100/50 hover:bg-gray-200/80 dark:bg-gray-800/50 dark:hover:bg-gray-700/80 ${
-                openIndex === index ? "bg-gray-200/80 dark:bg-gray-700/80" : ""
+              className={`relative flex w-full items-center gap-2 px-6 py-4 transition-colors duration-200 ${headerColors.base} ${
+                openIndex === index ? headerColors.open : ""
               }`}
             >
               <button
