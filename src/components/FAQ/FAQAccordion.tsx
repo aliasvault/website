@@ -31,23 +31,36 @@ const FAQAccordion = ({
 }: FAQAccordionProps) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-  const openFromHash = useCallback(() => {
-    const hash = window.location.hash.slice(1);
-    if (!hash) return;
+  const openFromHash = useCallback(
+    (options: { scroll?: boolean; smooth?: boolean } = {}) => {
+      const hash = window.location.hash.slice(1);
+      if (!hash) return;
 
-    const index = items.findIndex((faq) => getFaqItemId(faq) === hash);
-    if (index < 0) return;
+      const index = items.findIndex((faq) => getFaqItemId(faq) === hash);
+      if (index < 0) return;
 
-    setOpenIndex(index);
-    requestAnimationFrame(() => {
-      document.getElementById(hash)?.scrollIntoView({ behavior: "smooth", block: "start" });
-    });
-  }, [items]);
+      setOpenIndex(index);
+      if (!options.scroll) return;
+
+      const scrollToTarget = () => {
+        document.getElementById(hash)?.scrollIntoView({
+          behavior: options.smooth ? "smooth" : "instant",
+          block: "start",
+        });
+      };
+
+      // Wait for open state to land in the DOM before measuring scroll position.
+      requestAnimationFrame(() => requestAnimationFrame(scrollToTarget));
+    },
+    [items]
+  );
 
   useEffect(() => {
-    openFromHash();
-    window.addEventListener("hashchange", openFromHash);
-    return () => window.removeEventListener("hashchange", openFromHash);
+    const hasHash = Boolean(window.location.hash);
+    openFromHash(hasHash ? { scroll: true, smooth: false } : {});
+    const onHashChange = () => openFromHash({ scroll: true, smooth: true });
+    window.addEventListener("hashchange", onHashChange);
+    return () => window.removeEventListener("hashchange", onHashChange);
   }, [openFromHash]);
 
   const handleToggle = (index: number) => {
@@ -64,7 +77,7 @@ const FAQAccordion = ({
     }
 
     setOpenIndex(index);
-    window.history.replaceState(null, "", `#${itemId}`);
+    // Do not set location.hash on user toggle — browsers scroll to #:id targets; copy links still work via CopyLinkIcon.
   };
 
   const accordion = (
@@ -85,6 +98,7 @@ const FAQAccordion = ({
               <button
                 type="button"
                 className="absolute inset-0 z-0"
+                onMouseDown={(e) => e.preventDefault()}
                 onClick={() => handleToggle(index)}
                 aria-expanded={openIndex === index}
                 aria-labelledby={`faq-question-${faq.id}`}

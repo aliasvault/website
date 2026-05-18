@@ -1,5 +1,6 @@
 "use client";
 
+import { preserveScrollPosition } from "@/lib/preserve-scroll";
 import { useState, useCallback } from "react";
 
 interface CopyLinkIconProps {
@@ -51,7 +52,11 @@ export default function CopyLinkIcon({ sectionId, label = "Copy link", className
   const handleClick = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
     if (typeof window === "undefined") return;
-    const url = `${window.location.origin}${window.location.pathname}#${sectionId}`;
+    const path = `${window.location.pathname}${window.location.search}`;
+    const url = `${window.location.origin}${path}#${sectionId}`;
+    const scrollY = window.scrollY;
+    window.history.replaceState(null, "", `${path}#${sectionId}`);
+    preserveScrollPosition(scrollY);
     void navigator.clipboard.writeText(url).then(() => {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
@@ -61,6 +66,10 @@ export default function CopyLinkIcon({ sectionId, label = "Copy link", className
   return (
     <button
       type="button"
+      onMouseDown={(e) => {
+        e.stopPropagation();
+        e.preventDefault();
+      }}
       onClick={handleClick}
       className={`inline-flex items-center justify-center rounded p-1 text-body-color hover:bg-gray-100 hover:text-black focus:outline-none focus:ring-2 focus:ring-primary dark:text-body-color-dark dark:hover:bg-gray-700 dark:hover:text-white ${className}`}
       aria-label={copied ? "Link copied" : label}
