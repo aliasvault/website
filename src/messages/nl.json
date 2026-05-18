@@ -1304,7 +1304,7 @@
       "items": {
         "whenPremiumAvailable": {
           "question": "Wanneer komen Premium-functies beschikbaar?",
-          "answer": "Premium en Family abonnementen zijn optionele betaalde abonnementen die we in de komende maanden zullen introduceren. Ze zijn bedoeld voor wie meer wil dan fair-use op de gratis tier: hogere limieten op aliassen en e-mailopslag, automatische back-ups, VIP-aliasdomeinen, eigen domeinen en toekomstige geplande extras zoals tijdelijke telefoonnummers.\n\nZe starten zodra onze eerste officiële 1.0-release er is. We kondigen het exacte moment, de prijzen en limieten aan vóór er iets live gaat.\n\nVoorlopig heeft de gratis cloudtier alle functies met fair-use limieten. Self-hosten is ook gratis.\n\nDonaties zijn altijd zeer welkom. Zie [supportLink]Steun de ontwikkeling[/supportLink] hieronder."
+          "answer": "De Premium en Family abonnementen zijn betaalde abonnementen die we in de komende maanden zullen introduceren. Deze zijn bedoeld voor wie meer wil dan fair-use op de gratis tier: hogere limieten op aliassen en e-mailopslag, automatische back-ups, VIP-aliasdomeinen, eigen domeinen en toekomstige geplande extras zoals tijdelijke telefoonnummers.\n\nDe abonnementen zullen worden aangeboden zodra onze eerste officiële 1.0-release er is. We kondigen het exacte moment, de prijzen en limieten aan vóór er iets live gaat.\n\nDe gratis versie heeft ook alle functies maar dan met fair-use limieten. Self-hosten is ook gratis.\n\nDonaties zijn altijd zeer welkom. Zie [supportLink]Steun de ontwikkeling[/supportLink] hieronder."
         },
         "freeTierStays": {
           "question": "Bieden jullie altijd een gratis tier aan?",
@@ -1312,7 +1312,7 @@
         },
         "howCanItBeFree": {
           "question": "Hoe kunnen jullie AliasVault gratis aanbieden?",
-          "answer": "We bieden een gratis tier vanwege onze missie. Wij geloven dat privacy een recht is, geen luxe. Onze missie is om je de controle terug te geven, zodat je veilig en anoniem online kunt blijven.\n\nWe zijn self-funded met voldoende reserves om duurzaam te draaien en hebben AliasVault efficient gebouwd: een klein team, geen grote kantoren, geen investeerders. Geen druk om de gratis tier in te krimpen, je data te verkopen of groei ten koste van gebruikers. Optionele betaalde abonnementen na v1.0 en steun van de community helpen de duurzaamheid op lange termijn; het kernproduct blijft gratis."
+          "answer": "We bieden een gratis tier vanwege onze missie. Wij geloven dat privacy een recht is, geen luxe. Onze missie is om je de controle terug te geven, zodat je veilig en anoniem online kunt blijven.\n\nWe zijn self-funded met voldoende reserves om duurzaam te draaien en hebben AliasVault bewust efficient gebouwd: een klein team, geen grote kantoren, geen investeerders. Geen druk om de gratis tier in te krimpen of groei ten koste van kwaliteit. Optionele betaalde abonnementen na v1.0 en steun van de community helpen de duurzaamheid op lange termijn; het kernproduct blijft echter altijd gratis."
         },
         "selfFunded": {
           "question": "Wie zit er achter AliasVault?",
