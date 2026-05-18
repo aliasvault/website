@@ -36,6 +36,7 @@
   },
   "navigation": {
     "features": "Features",
+    "pricing": "Pricing",
     "platforms": "Platforms",
     "blog": "Blog",
     "contact": "Contact"
@@ -70,6 +71,7 @@
       "about": "About",
       "mission": "Our Mission",
       "features": "Features",
+      "pricing": "Pricing",
       "platforms": "Platforms",
       "downloads": "Downloads",
       "documentation": "Documentation",
@@ -373,6 +375,7 @@
   "faq": {
     "title": "Frequently Asked Questions",
     "description": "Find answers to common questions about AliasVault's features, security, and deployment options.",
+    "copyLink": "Copy link to this question",
     "items": {
       "whatIsAliasVault": {
         "question": "What is AliasVault and who is it for?",
@@ -1109,6 +1112,240 @@
   "privacyPolicy": {
     "title": "Privacy Policy",
     "description": "AliasVault is an open-source end-to-end encrypted password and alias manager."
+  },
+  "pricing": {
+    "title": "Pricing",
+    "description": "Compare AliasVault Free, Premium, and Family cloud plans. Use our official cloud or optionally self-host on your own hardware. Fully open source.",
+    "pageDescription": "Compare Free, Premium, and Family cloud plans. Use our official cloud or optionally self-host on your own hardware. Open source and currently in beta.",
+    "intro": {
+      "lead": "AliasVault is open source and you can use our cloud-hosted service or self-host it on your own hardware.",
+      "body": "AliasVault is currently in beta and is accepting donations. Once AliasVault reaches v1.0 we will start offering premium cloud hosting to sustain the product and aid in future development. We are proudly and entirely self-funded."
+    },
+    "plans": {
+      "free": {
+        "name": "Free",
+        "price": "€0,00",
+        "description": "All AliasVault features, with fair-use limits.",
+        "cta": "Create your free vault",
+        "features": {
+          "allFeatures": "All product features",
+          "passwordManagement": "Password management",
+          "emailAliases": "Email aliases",
+          "builtIn2FA": "Built-in 2FA authenticator",
+          "fullOfflineMode": "Full offline mode",
+          "fairUseAliases": "Fair-use limits on aliases created",
+          "fairUseEmailStorage": "Fair-use email storage",
+          "noAutomaticBackups": "No automatic backups",
+          "sync": "Sync across all your devices"
+        }
+      },
+      "premium": {
+        "name": "Premium",
+        "badge": "Coming soon",
+        "price": "-",
+        "description": "For individuals who need more than fair-use on our cloud.",
+        "comingSoonLabel": "Coming soon",
+        "features": {
+          "allFeatures": "All product features",
+          "higherLimits": "Higher limits on aliases & email storage",
+          "vipAliasDomains": "VIP alias domains (Premium-only domains, more unique and less likely to get blocked)",
+          "automaticBackups": "Automatic backups",
+          "oneAccount": "1 account"
+        }
+      },
+      "family": {
+        "name": "Family",
+        "badge": "Coming soon",
+        "price": "-",
+        "description": "For households that want Premium benefits for everyone.",
+        "comingSoonLabel": "Coming soon",
+        "features": {
+          "allPremium": "Everything in Premium",
+          "higherLimits": "Higher limits on aliases & email storage",
+          "automaticBackups": "Automatic backups",
+          "sixAccounts": "Up to 6 accounts"
+        }
+      }
+    },
+    "selfHost": {
+      "title": "Prefer to self-host?",
+      "body": "AliasVault is fully self-hostable and open source. Run it on your own server or VPS with all product features.",
+      "cta": "View source & docs"
+    },
+    "approach": {
+      "title": "AliasVault's business model",
+      "selfFunded": {
+        "title": "No external investors",
+        "body": "AliasVault is financed by its founders, not venture capital. That means no pressure to chase growth at the expense of privacy, sell your data, or disappear after a quick exit. Long-term sustainability comes from optional paid cloud plans and community support, not from turning users into the product."
+      },
+      "intro": "AliasVault exists to put you in control of your passwords, email aliases, and digital identity. We build open-source, end-to-end encrypted tools so privacy and security are never premium extras. That mission guides what we offer and what stays free.",
+      "freeVersion": {
+        "title": "Always a free tier",
+        "body": "You get a free cloud tier with all product features and a free, open-source self-hosted option. Fair-use limits on shared cloud resources keep hosting sustainable for everyone. They prevent abuse, not lock you out of what matters for everyday privacy."
+      },
+      "premiumAfterV1": {
+        "title": "Optional Premium later",
+        "body": "AliasVault is in beta today, already stable and fully usable, with regular updates as we head toward our first official 1.0 release. After that, optional Premium and Family cloud plans will add extras like higher limits, automatic backups, and more accounts. We are not offering them yet while we focus on a rock-solid core. Paid plans will always be optional."
+      }
+    },
+    "comingLater": {
+      "title": "Planned after v1.0",
+      "subtitle": "Optional paid cloud extras for users who want more convenience, without paywalling the core product.",
+      "note": "Details and pricing will be shared before anything goes live. Self-hosting remains free regardless.",
+      "items": {
+        "customDomains": "Use your own custom domains on our cloud",
+        "moreStorage": "Higher email and vault storage limits",
+        "automaticBackups": "Automatic backups",
+        "premiumAliasDomains": "Premium alias domains",
+        "phoneNumbers": "Temporary phone numbers (planned)"
+      }
+    },
+    "support": {
+      "title": "Support development",
+      "body": "We are entirely self-funded. Donations help us keep building AliasVault independently, without investors pushing for paywalls or data harvesting.",
+      "donateOpenCollective": "Donate via OpenCollective",
+      "donateBuyMeACoffeeAlt": "Buy Me a Coffee",
+      "contactLink": "Contact",
+      "missionLink": "Our mission",
+      "featuresLink": "All features"
+    },
+    "comparison": {
+      "choosePlan": "Plans & features",
+      "featureSection": "Features"
+    },
+    "independence": {
+      "title": "Proudly independent",
+      "description": "AliasVault is entirely self-funded. We have no external investors. Our roadmap and priorities are driven by users, community feedback, and our mission to put privacy first."
+    },
+    "features": {
+      "title": "Compare plans",
+      "subtitle": "A clear overview of what each option includes. Self-hosted gives you everything without cloud limits; cloud free includes all features with fair-use caps; cloud premium adds optional benefits.",
+      "tableHeaders": {
+        "feature": "Feature",
+        "selfHosted": "Self-hosted",
+        "cloudFree": "Cloud (free)",
+        "cloudPremium": "Cloud premium"
+      },
+      "status": {
+        "yes": "Included",
+        "fairUse": "Fair use",
+        "premium": "Enhanced",
+        "comingSoon": "Coming soon",
+        "future": "Planned"
+      },
+      "rows": {
+        "passwordsPasskeys": {
+          "name": "Password manager & passkeys",
+          "note": "Store, generate, and sync across devices."
+        },
+        "builtIn2FA": {
+          "name": "Built-in 2FA authenticator",
+          "note": "TOTP codes stored in your encrypted vault."
+        },
+        "emailAliases": {
+          "name": "Email aliases & built-in inbox",
+          "note": "Receive-only aliases with encrypted email storage."
+        },
+        "secureNotesAttachments": {
+          "name": "Secure notes & attachments",
+          "note": "Store sensitive files and information in your vault."
+        },
+        "vaultStorage": {
+          "name": "Vault & attachment storage",
+          "note": "Encrypted storage for vault data and file attachments."
+        },
+        "backups": {
+          "name": "Backups",
+          "note": "Self-hosted: you manage backups on your infrastructure."
+        },
+        "fullOfflineMode": {
+          "name": "Full offline mode (incl. editing)",
+          "note": "View and edit without internet; sync when back online."
+        },
+        "browserExtensions": {
+          "name": "Browser extensions",
+          "note": "Chrome, Firefox, Edge, Safari, and Chromium-based browsers."
+        },
+        "mobileApps": {
+          "name": "iOS & Android apps",
+          "note": "Native autofill and biometric unlock."
+        },
+        "importExport": {
+          "name": "Import & export",
+          "note": "Migrate from 1Password, Bitwarden, Proton Pass, and more."
+        },
+        "identityGenerator": {
+          "name": "Identity & alias generator",
+          "note": "Generate unique identities and email aliases per site."
+        },
+        "endToEndEncryption": {
+          "name": "End-to-end encryption",
+          "note": "Zero-knowledge design. Your master password never leaves your device."
+        },
+        "customDomain": {
+          "name": "Your own custom domain",
+          "note": "Included when self-hosted; coming soon on cloud premium."
+        },
+        "premiumAliasDomains": {
+          "name": "Premium alias domains",
+          "note": "Additional domains for creating email aliases on our cloud."
+        },
+        "temporaryPhoneNumbers": {
+          "name": "Temporary phone numbers",
+          "note": "Disposable numbers for sign-ups and verification (planned)."
+        },
+        "openSourceSelfHost": {
+          "name": "Open source & self-hostable",
+          "note": "Full source on GitHub; deploy with Docker on your infrastructure."
+        }
+      }
+    },
+    "faq": {
+      "title": "Pricing FAQ",
+      "description": "Find answers to your questions below. Cannot find your answer? [contactLink]Contact us[/contactLink].",
+      "copyLink": "Copy link to this question",
+      "items": {
+        "whenPremiumAvailable": {
+          "question": "When will Premium features become available?",
+          "answer": "Premium and Family are optional paid cloud tiers that we will introduce in the coming months. They are for users who want more than fair-use on the free tier: higher limits on aliases and email storage, automatic backups, VIP alias domains, custom domains, and planned extras such as temporary phone numbers.\n\nThey launch once our first official 1.0 release is out. We will announce exact timing, pricing, and limits before anything goes live.\n\nFor now, the free cloud tier has all features with fair-use limits. Self-hosting is free too.\n\nDonations are welcome before premium launches. See [supportLink]Support development[/supportLink] below."
+        },
+        "freeTierStays": {
+          "question": "Will you always offer a free tier?",
+          "answer": "Yes. We will always offer a free cloud tier and a free, open-source self-hosted option. Features that matter for privacy and security will not go behind a paywall.\n\nFair-use limits on shared cloud resources help keep hosting sustainable. They are not meant to lock you out of core functionality."
+        },
+        "howCanItBeFree": {
+          "question": "How can you offer AliasVault for free?",
+          "answer": "We offer a free tier because of our mission. We believe privacy is a right, not a luxury. Our mission is to put control back into the hands of users, helping them stay secure and anonymous online.\n\nWe are self-funded with enough reserves to run sustainably and built AliasVault lean: a small team, no big offices, no investors. No pressure to shrink the free tier, sell your data, or chase growth at your expense. Optional paid plans after v1.0 and community support help long term; the core product stays free."
+        },
+        "selfFunded": {
+          "question": "Who is behind AliasVault?",
+          "answer": "AliasVault is an open-source project founded by Leendert de Borst and operated from the Netherlands. Our official cloud runs on dedicated servers in Germany, fully compliant with European GDPR regulations.\n\nThe project is self-funded by its founders. We have no external investors or venture capital backing. We answer to users and our [missionLink]mission[/missionLink], and our roadmap follows community needs rather than outside investment pressure. Optional donations and future Premium and Family plans help sustain development. The core open-source product and self-hosted option stay central to what we build.\n\nFor more about who we are and how to reach us, visit our [contactLink]contact page[/contactLink]."
+        },
+        "fairUse": {
+          "question": "What are fair-use limits on the cloud free tier?",
+          "answer": "The cloud free tier includes every product feature: password manager, passkeys, 2FA, email aliases, offline mode, extensions, mobile apps, and more. Fair-use limits apply only to shared cloud resources: how many email aliases you use, how much vault and email storage you consume, and how backups are handled.\n\nThese limits prevent abuse and keep the free tier viable for everyone. Specific numbers will be communicated clearly before any change. Self-hosted users are not subject to our cloud fair-use policy."
+        },
+        "selfHostedVsCloud": {
+          "question": "Should I use the official cloud or self-host?",
+          "answer": "For most people, the official cloud is the simplest choice. There is no server setup, your vault syncs across devices right away, and you are always on the latest version with updates applied for you. All data is end-to-end encrypted at all times.\n\nIf you want everything in your own hands, you can self-host as well. You run AliasVault on your own server or VPS with no limits from us beyond your own hardware, and you can use your own domain on your infrastructure. Experience with Docker is required.\n\nBoth options use the same open-source software. See our [sourceLink]source code & docs[/sourceLink] to get started with self-hosting."
+        },
+        "hereToStay": {
+          "question": "Is AliasVault here for the long term?",
+          "answer": "Yes. We build AliasVault with a long-term vision, not with a quick exit in mind. The product is never \"done\"; we keep developing, improving, and refining AliasVault continuously to give users the best possible experience over the long term.\n\nOur spiritual predecessor, [SpamOK.com](https://spamok.com), has been running since 2013. That is more than 13 years of uninterrupted service helping people fight spam and protect their privacy online. The same long-term mindset applies to AliasVault."
+        }
+      }
+    },
+    "disclaimer": {
+      "title": "Transparency",
+      "paragraph1": "Self-hosting is free and includes the full open-source product with all features, limited only by your own hardware. Our official cloud offers a free tier with all product features and clearly stated fair-use limits on email aliases, storage, and backups.",
+      "paragraph2": "Cloud premium is an optional paid add-on for extra convenience: custom domains, higher storage, automatic backups, premium alias domains, and more. We will announce pricing and limits before launch. The open-source self-hosted option remains available regardless of what we offer in the cloud.",
+      "paragraph3": "Want to support development in the meantime? Donations are welcome and genuinely appreciated.",
+      "donateOpenCollective": "Donate via OpenCollective",
+      "donateBuyMeACoffeeAlt": "Buy Me a Coffee",
+      "contactLink": "Contact",
+      "missionLink": "Our mission",
+      "featuresLink": "All features"
+    }
   },
   "accountDeletion": {
     "title": "Account Deletion Request",

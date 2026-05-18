@@ -27,7 +27,7 @@
       "event5": { "time": "31 jan, 10:00", "text": "Wachtend op: iOS, Safari, Edge (wachten op store review)" },
       "event6": { "time": "31 jan, 18:00", "text": "Safari update goedgekeurd en live" }
     },
-    "apology": "Onze excuses voor het ongemak. Alle updates zijn ingediend en we wachten nu op goedkeuring van Apple (iOS, Safari) en Microsoft (Edge). Inloggen werkt weer zodra versie 0.26.1 beschikbaar is voor jouw platform."
+    "apology": "Onze excuses voor het ongemak. Alle updates zijn ingediend en we wachten nu op goedkeuring van Apple (iOS, Safari) en Microsoft (Edge). Inloggen werkt weer zodra versie 0.26.1 beschikbaar is voor je platform."
   },
   "metadata": {
     "title": "AliasVault - Privacy-First Wachtwoord & E-mailalias Manager",
@@ -36,6 +36,7 @@
   },
   "navigation": {
     "features": "Functies",
+    "pricing": "Prijzen",
     "platforms": "Platforms",
     "blog": "Blog",
     "contact": "Contact"
@@ -70,6 +71,7 @@
       "about": "Over",
       "mission": "Onze Missie",
       "features": "Functies",
+      "pricing": "Prijzen",
       "platforms": "Platforms",
       "downloads": "Downloads",
       "documentation": "Documentatie",
@@ -210,7 +212,7 @@
       },
       "intro": "AliasVault is een open-source project opgericht door",
       "founder": "Leendert de Borst",
-      "location": "en wordt vanuit Nederland onderhouden. De officiële cloud-gehoste versie draait op onze eigen dedicated servers in Duitsland, volledig conform de Europese GDPR-regelgeving.",
+      "location": "en wordt vanuit Nederland beheerd. De officiële cloud-gehoste versie draait op onze eigen dedicated servers in Duitsland, volledig conform de Europese GDPR-regelgeving.",
       "inquiries": "Voor vragen over onze cloud-gehoste dienst of andere onderwerpen, neem contact op:",
       "support": {
         "title": "Ondersteuning & Bugs",
@@ -373,6 +375,7 @@
   "faq": {
     "title": "Veelgestelde vragen",
     "description": "Vind antwoorden op veelvoorkomende vragen over AliasVault's functies, beveiliging en implementatie-opties.",
+    "copyLink": "Kopieer link naar deze vraag",
     "items": {
       "whatIsAliasVault": {
         "question": "Wat is AliasVault en voor wie is het bedoeld?",
@@ -1058,7 +1061,7 @@
         "title": "Onze Visie",
         "paragraph1": "Wij zien een toekomst voor ons waarin mensen volledig de controle hebben over hun eigen privacy.",
         "paragraph2": "Recente wetten zoals de AVG zijn een stap in de goede richting, maar regelgeving alleen is niet genoeg. Echte verandering gebeurt wanneer mensen begrijpen hoe hun gegevens worden gebruikt en eenvoudige, krachtige tools hebben om daar iets aan te doen. Dat is waar AliasVault om de hoek komt.",
-        "paragraph3": "Op dit moment helpt AliasVault je unieke aliassen en wachtwoorden te genereren, zodat je nooit méér informatie hoeft weg te geven dan nodig is. Maar dit is nog maar het begin. We bouwen aan een privacyplatform dat jou en je gezin beschermt, met functies die het eenvoudig maken om je privacy te beschermen.",
+        "paragraph3": "Op dit moment helpt AliasVault je unieke aliassen en wachtwoorden te genereren, zodat je nooit méér informatie hoeft weg te geven dan nodig is. Maar dit is nog maar het begin. We bouwen aan een privacyplatform dat je en je gezin beschermt, met functies die het eenvoudig maken om je privacy te beschermen.",
         "paragraph4": "Alles wat we bij AliasVault doen, ondersteunt één missie: het internet veiliger en meer anoniem te maken. Waar jij beslist wat je deelt en met wie."
       }
     },
@@ -1106,6 +1109,240 @@
   "privacyPolicy": {
     "title": "Privacybeleid",
     "description": "AliasVault is een open-source end-to-end versleutelde wachtwoord- en aliasmanager."
+  },
+  "pricing": {
+    "title": "Prijzen",
+    "description": "Vergelijk AliasVault Free, Premium en Family cloudplannen. Gebruik onze officiële cloud of self-host optioneel op je eigen server. Volledig open source.",
+    "pageDescription": "Vergelijk Free-, Premium- en Family-cloudplannen. Gebruik onze officiële cloud of self-host optioneel op je eigen server. Open source en momenteel in bèta.",
+    "intro": {
+      "lead": "AliasVault is open source en je kunt onze cloud-dienst gebruiken of het zelf hosten op je eigen hardware.",
+      "body": "AliasVault bevindt zich momenteel in bèta en accepteert donaties. Zodra AliasVault v1.0 bereikt, bieden we premium cloud hosting aan om het product duurzaam te houden en verdere ontwikkeling te ondersteunen. We zijn trots en volledig self-funded."
+    },
+    "plans": {
+      "free": {
+        "name": "Free",
+        "price": "€0,00",
+        "description": "Alle AliasVault-functies, met fair-use limieten.",
+        "cta": "Maak je gratis vault",
+        "features": {
+          "allFeatures": "Alle productfuncties",
+          "passwordManagement": "Wachtwoordbeheer",
+          "emailAliases": "E-mailaliassen",
+          "builtIn2FA": "Ingebouwde 2FA-authenticator",
+          "fullOfflineMode": "Volledige offline modus",
+          "fairUseAliases": "Fair-use limieten op aangemaakte aliassen",
+          "fairUseEmailStorage": "Fair-use e-mailopslag",
+          "noAutomaticBackups": "Geen automatische back-ups",
+          "sync": "Synchroniseer met al je apparaten"
+        }
+      },
+      "premium": {
+        "name": "Premium",
+        "badge": "Binnenkort",
+        "price": "-",
+        "description": "Voor individuen die meer nodig hebben dan fair-use op onze cloud.",
+        "comingSoonLabel": "Binnenkort",
+        "features": {
+          "allFeatures": "Alle productfuncties",
+          "higherLimits": "Hogere limieten op aliassen & e-mailopslag",
+          "vipAliasDomains": "VIP-aliasdomeinen (alleen Premium, unieker en minder snel geblokkeerd)",
+          "automaticBackups": "Automatische back-ups",
+          "oneAccount": "1 account"
+        }
+      },
+      "family": {
+        "name": "Family",
+        "badge": "Binnenkort",
+        "price": "-",
+        "description": "Voor huishoudens die Premium-voordelen voor iedereen willen.",
+        "comingSoonLabel": "Binnenkort",
+        "features": {
+          "allPremium": "Alles uit Premium",
+          "higherLimits": "Hogere limieten op aliassen & e-mailopslag",
+          "automaticBackups": "Automatische back-ups",
+          "sixAccounts": "Tot 6 accounts"
+        }
+      }
+    },
+    "selfHost": {
+      "title": "Liever self-hosten?",
+      "body": "AliasVault is volledig self-hostable en open source. Draai het op je eigen server of VPS met alle productfuncties.",
+      "cta": "Broncode & docs"
+    },
+    "approach": {
+      "title": "Het bedrijfsmodel van AliasVault",
+      "selfFunded": {
+        "title": "Geen externe investeerders",
+        "body": "AliasVault wordt gefinancierd door de oprichters, niet door durfkapitaal. Geen druk om te groeien ten koste van privacy, je data te verkopen of na een snelle exit te verdwijnen. Duurzaamheid op lange termijn komt uit optionele betaalde cloudplannen en steun van de community, niet door van gebruikers het product te maken."
+      },
+      "intro": "AliasVault bestaat om je controle te geven over je wachtwoorden, e-mailaliassen en digitale identiteit. We bouwen open-source tools met end-to-end encryptie, zodat privacy en veiligheid nooit premium-extras zijn. Die missie bepaalt wat we aanbieden en wat gratis blijft.",
+      "freeVersion": {
+        "title": "Altijd een gratis tier",
+        "body": "Je krijgt een gratis cloudtier met alle productfuncties en een gratis, open-source self-hosted optie. Fair-use limieten op gedeelde cloudresources zorgen ervoor dat we dit duurzaam kunnen blijven aanbieden. De gratis variant heeft alles wat je nodig hebt voor dagelijkse privacy."
+      },
+      "premiumAfterV1": {
+        "title": "Optioneel Premium later",
+        "body": "AliasVault is op dit moment in beta, maar wel al stabiel en volledig bruikbaar, met regelmatige updates terwijl we toewerken naar onze eerste officiële 1.0-release. Na de officiele release introduceren we de optionele Premium- en Family-cloudplannen met extras zoals hogere limieten, automatische back-ups en meer accounts."
+      }
+    },
+    "comingLater": {
+      "title": "Gepland na v1.0",
+      "subtitle": "Optionele betaalde cloudextras voor gebruikers die meer gemak willen, zonder het kernproduct achter een betaalmuur te zetten.",
+      "note": "Details en prijzen worden gedeeld vóór er iets live gaat. Self-hosting blijft gratis, ongeacht wat we in de cloud aanbieden.",
+      "items": {
+        "customDomains": "Eigen domeinen op onze cloud",
+        "moreStorage": "Hogere limieten voor e-mail- en vaultopslag",
+        "automaticBackups": "Automatische back-ups",
+        "premiumAliasDomains": "Premium aliasdomeinen",
+        "phoneNumbers": "Tijdelijke telefoonnummers (gepland)"
+      }
+    },
+    "support": {
+      "title": "Steun de ontwikkeling",
+      "body": "We zijn volledig self-funded. Donaties helpen ons AliasVault onafhankelijk te blijven bouwen, zonder investeerders die betaalmuren of dataverzameling afdwingen.",
+      "donateOpenCollective": "Doneer via OpenCollective",
+      "donateBuyMeACoffeeAlt": "Buy Me a Coffee",
+      "contactLink": "Contact",
+      "missionLink": "Onze missie",
+      "featuresLink": "Alle functies"
+    },
+    "comparison": {
+      "choosePlan": "Plannen & functies",
+      "featureSection": "Functies"
+    },
+    "independence": {
+      "title": "Trots onafhankelijk",
+      "description": "AliasVault is volledig self-funded. We hebben geen externe investeerders. Onze roadmap en prioriteiten worden bepaald door gebruikers, community-feedback en onze missie om privacy voorop te stellen."
+    },
+    "features": {
+      "title": "Vergelijk plannen",
+      "subtitle": "Een helder overzicht van wat elke optie biedt. Self-hosted geeft je alles zonder cloudlimieten; cloud gratis bevat alle functies met fair-use caps; cloud premium voegt optionele voordelen toe.",
+      "tableHeaders": {
+        "feature": "Functie",
+        "selfHosted": "Self-hosted",
+        "cloudFree": "Cloud (gratis)",
+        "cloudPremium": "Cloud premium"
+      },
+      "status": {
+        "yes": "Inbegrepen",
+        "fairUse": "Fair use",
+        "premium": "Uitgebreid",
+        "comingSoon": "Binnenkort",
+        "future": "Gepland"
+      },
+      "rows": {
+        "passwordsPasskeys": {
+          "name": "Wachtwoordbeheer & passkeys",
+          "note": "Opslaan, genereren en synchroniseren op apparaten."
+        },
+        "builtIn2FA": {
+          "name": "Ingebouwde 2FA-authenticator",
+          "note": "TOTP-codes in je versleutelde vault."
+        },
+        "emailAliases": {
+          "name": "E-mailaliassen & ingebouwde inbox",
+          "note": "Alleen-ontvangen aliassen met versleutelde e-mailopslag."
+        },
+        "secureNotesAttachments": {
+          "name": "Veilige notities & bijlagen",
+          "note": "Bewaar gevoelige bestanden en informatie in je vault."
+        },
+        "vaultStorage": {
+          "name": "Vault- & bijlageopslag",
+          "note": "Versleutelde opslag voor vaultdata en bestandsbijlagen."
+        },
+        "backups": {
+          "name": "Back-ups",
+          "note": "Self-hosted: je beheert back-ups op je eigen infrastructuur."
+        },
+        "fullOfflineMode": {
+          "name": "Volledige offline modus (incl. bewerken)",
+          "note": "Bekijk en bewerk zonder internet; sync bij verbinding."
+        },
+        "browserExtensions": {
+          "name": "Browserextensies",
+          "note": "Chrome, Firefox, Edge, Safari en Chromium-browsers."
+        },
+        "mobileApps": {
+          "name": "iOS- & Android-apps",
+          "note": "Native autofill en biometrische ontgrendeling."
+        },
+        "importExport": {
+          "name": "Importeren & exporteren",
+          "note": "Migreer van 1Password, Bitwarden, Proton Pass en meer."
+        },
+        "identityGenerator": {
+          "name": "Identiteits- & aliasgenerator",
+          "note": "Genereer unieke identiteiten en e-mailaliassen per site."
+        },
+        "endToEndEncryption": {
+          "name": "End-to-end encryptie",
+          "note": "Zero-knowledge. Je hoofdwachtwoord verlaat je apparaat nooit."
+        },
+        "customDomain": {
+          "name": "Eigen domein",
+          "note": "Inbegrepen bij self-hosting; binnenkort op cloud premium."
+        },
+        "premiumAliasDomains": {
+          "name": "Premium aliasdomeinen",
+          "note": "Extra domeinen voor e-mailaliassen op onze cloud."
+        },
+        "temporaryPhoneNumbers": {
+          "name": "Tijdelijke telefoonnummers",
+          "note": "Wegwerpnummer voor aanmeldingen en verificatie (gepland)."
+        },
+        "openSourceSelfHost": {
+          "name": "Open source & self-hostable",
+          "note": "Volledige bron op GitHub; deploy met Docker op je infrastructuur."
+        }
+      }
+    },
+    "faq": {
+      "title": "Veelgestelde vragen",
+      "description": "Vind hieronder antwoorden op je vragen. Staat je vraag er niet bij? [contactLink]Neem contact met ons op[/contactLink].",
+      "copyLink": "Kopieer link naar deze vraag",
+      "items": {
+        "whenPremiumAvailable": {
+          "question": "Wanneer komen Premium-functies beschikbaar?",
+          "answer": "Premium en Family abonnementen zijn optionele betaalde abonnementen die we in de komende maanden zullen introduceren. Ze zijn bedoeld voor wie meer wil dan fair-use op de gratis tier: hogere limieten op aliassen en e-mailopslag, automatische back-ups, VIP-aliasdomeinen, eigen domeinen en toekomstige geplande extras zoals tijdelijke telefoonnummers.\n\nZe starten zodra onze eerste officiële 1.0-release er is. We kondigen het exacte moment, de prijzen en limieten aan vóór er iets live gaat.\n\nVoorlopig heeft de gratis cloudtier alle functies met fair-use limieten. Self-hosten is ook gratis.\n\nDonaties zijn altijd zeer welkom. Zie [supportLink]Steun de ontwikkeling[/supportLink] hieronder."
+        },
+        "freeTierStays": {
+          "question": "Bieden jullie altijd een gratis tier aan?",
+          "answer": "Ja. We bieden altijd een gratis cloudtier en een gratis, open-source self-hosted optie aan. Functies die belangrijk zijn voor privacy en veiligheid komen niet achter een betaalmuur.\n\nFair-use limieten op gedeelde cloudresources zorgen ervoor dat we dit duurzaam kunnen aanbieden."
+        },
+        "howCanItBeFree": {
+          "question": "Hoe kunnen jullie AliasVault gratis aanbieden?",
+          "answer": "We bieden een gratis tier vanwege onze missie. Wij geloven dat privacy een recht is, geen luxe. Onze missie is om je de controle terug te geven, zodat je veilig en anoniem online kunt blijven.\n\nWe zijn self-funded met voldoende reserves om duurzaam te draaien en hebben AliasVault efficient gebouwd: een klein team, geen grote kantoren, geen investeerders. Geen druk om de gratis tier in te krimpen, je data te verkopen of groei ten koste van gebruikers. Optionele betaalde abonnementen na v1.0 en steun van de community helpen de duurzaamheid op lange termijn; het kernproduct blijft gratis."
+        },
+        "selfFunded": {
+          "question": "Wie zit er achter AliasVault?",
+          "answer": "AliasVault is een open-source project opgericht door Leendert de Borst en wordt vanuit Nederland beheerd. De officiële cloud draait op dedicated servers in Duitsland, volledig conform de Europese GDPR-regelgeving.\n\nHet project is zelf gefinancierd door de oprichters. We hebben geen externe investeerders en geen durfkapitaal. We zijn alleen verantwoording verschuldigd aan onze gebruikers en onze [missionLink]missie[/missionLink]; onze roadmap volgt wat de community nodig heeft, niet druk van buitenaf. Optionele donaties en toekomstige Premium- en Family-abonnementen helpen de ontwikkeling te ondersteunen. Het open-source product en de self-hosted optie blijven centraal in wat we bouwen.\n\nMeer over wie we zijn en hoe je ons bereikt vind je op onze [contactLink]contactpagina[/contactLink]."
+        },
+        "fairUse": {
+          "question": "Wat zijn fair-use limieten op de gratis cloudtier?",
+          "answer": "De gratis cloudtier bevat alle productfuncties: wachtwoordbeheer, passkeys, 2FA, e-mailaliassen, offline modus, extensies, mobiele apps en meer. Fair-use limieten gelden alleen voor gedeelde cloudresources: hoeveel e-mailaliassen je gebruikt, hoeveel vault- en e-mailopslag je verbruikt, en hoe back-ups worden afgehandeld.\n\nDeze limieten voorkomen misbruik en houden de gratis tier haalbaar voor iedereen. Specifieke getallen worden duidelijk gecommuniceerd vóór elke wijziging. Self-hosted gebruikers vallen niet onder ons cloud fair-use beleid."
+        },
+        "selfHostedVsCloud": {
+          "question": "Moet ik de officiële cloud gebruiken of self-hosten?",
+          "answer": "Voor de meeste mensen is de officiële cloud de eenvoudigste keuze. Geen server-setup, je vault synchroniseert direct op al je apparaten, en je zit altijd op de nieuwste versie met updates die voor je worden uitgerold. Alle data is altijd end-to-end versleuteld.\n\nWil je alles zelf in handen houden, dan kun je ook self-hosten. Je draait AliasVault op je eigen server of VPS zonder limieten van ons, alleen die van je eigen hardware, en je kunt je eigen domein op je infrastructuur gebruiken. Ervaring met Docker is vereist.\n\nBeide opties gebruiken dezelfde open-source software. Bekijk onze [sourceLink]broncode & docs[/sourceLink] om te starten met self-hosting."
+        },
+        "hereToStay": {
+          "question": "Is AliasVault er voor de lange termijn?",
+          "answer": "Ja. We bouwen aan AliasVault met een langetermijnvisie, niet met het oog op een snelle exit. Het product is nooit “af”; we blijven AliasVault continu doorontwikkelen, verbeteren en verfijnen om gebruikers op de lange termijn de best mogelijke ervaring te bieden.\n\nOnze spirituele voorganger, [SpamOK.nl](https://spamok.nl), bieden we al aan sinds 2013. Dat is meer dan 13 jaar ononderbroken service om mensen te helpen spam te bestrijden en hun privacy online te beschermen. Dezelfde langetermijnmentaliteit geldt voor AliasVault."
+        }
+      }
+    },
+    "disclaimer": {
+      "title": "Transparantie",
+      "paragraph1": "Self-hosting is gratis en bevat het volledige open-source product met alle functies, beperkt alleen door je eigen hardware. Onze officiële cloud biedt een gratis tier met alle productfuncties en duidelijk vermelde fair-use limieten op e-mailaliassen, opslag en back-ups.",
+      "paragraph2": "Cloud premium is een optionele betaalde uitbreiding voor extra gemak: eigen domeinen, meer opslag, automatische back-ups, premium aliasdomeinen en meer. We kondigen prijzen en limieten aan vóór lancering. De open-source self-hosted optie blijft beschikbaar, ongeacht wat we in de cloud aanbieden.",
+      "paragraph3": "Wil je de ontwikkeling ondersteunen? Donaties zijn welkom en worden op prijs gesteld.",
+      "donateOpenCollective": "Doneer via OpenCollective",
+      "donateBuyMeACoffeeAlt": "Buy Me a Coffee",
+      "contactLink": "Contact",
+      "missionLink": "Onze missie",
+      "featuresLink": "Alle functies"
+    }
   },
   "accountDeletion": {
     "title": "Verzoek tot accountverwijdering",

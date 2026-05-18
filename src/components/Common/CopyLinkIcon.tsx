@@ -48,7 +48,8 @@ function CheckIcon({ className }: { className?: string }) {
 export default function CopyLinkIcon({ sectionId, label = "Copy link", className = "" }: CopyLinkIconProps) {
   const [copied, setCopied] = useState(false);
 
-  const handleClick = useCallback(() => {
+  const handleClick = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
+    e.stopPropagation();
     if (typeof window === "undefined") return;
     const url = `${window.location.origin}${window.location.pathname}#${sectionId}`;
     void navigator.clipboard.writeText(url).then(() => {

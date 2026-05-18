@@ -9,12 +9,18 @@ const getMenuData = (t: (key: string) => string): Menu[] => [
   },
   {
     id: 2,
+    title: t('navigation.pricing'),
+    path: "/pricing",
+    newTab: false,
+  },
+  {
+    id: 3,
     title: t('navigation.platforms'),
     path: "/platforms",
     newTab: false,
   },
   {
-    id: 3,
+    id: 4,
     title: t('navigation.blog'),
     path: "/blog",
     newTab: false,

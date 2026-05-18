@@ -151,6 +151,14 @@ const Footer = () => {
                   </li>
                   <li>
                     <Link
+                      href={`/${locale}/pricing`}
+                      className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
+                    >
+                      {t('footer.links.pricing')}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
                       href={`/${locale}/platforms`}
                       className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                     >
