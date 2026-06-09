@@ -1,0 +1,112 @@
+---
+title: "AliasVault turns 2-years old"
+description: "Celebrating two years of AliasVault, reflecting on how far we've come and where v1.0 is heading"
+date: "2026-06-12"
+image: "/images/blog/headers/aliasvault-two-years.jpg"
+author:
+  name: "Leendert de Borst"
+  image: "/images/founder/founder.jpg"
+  designation: "Founder"
+tags:
+  - blog
+---
+
+Two years ago, AliasVault started as a prototype: a privacy-first vault to manage passwords, email aliases and digital identities, all in one place, open-source, self-hostable, and end-to-end encrypted.
+
+Today, more than **16,000 cloud users and thousands of self-hosters** rely on AliasVault every day. The very first public commit was made [on GitHub on May 31, 2024](https://github.com/aliasvault/aliasvault/commit/0a3d35c603218d6a2dc030018a1e84e7030946b8), and since then it has grown into a mature, full-featured, cross-platform tool with a growing global community.
+
+Last year I [reflected on AliasVault's first year](/blog/aliasvault-turns-one). Today, I want to look back on year two. The last 12 months, we introduced major new features, acted on community feedback, and continued laying the foundation for a stable and complete v1.0 release.
+
+## Why people choose AliasVault
+
+In comparison to many other password managers, AliasVault combines:
+
+- Password management
+- Email alias management
+- Passkeys
+- Built-in 2FA authenticator
+- Full offline mode
+- Open-source self-hosting
+
+into a single encrypted vault. Our [mission](/mission) is not to build just a password manager, but an all-in-one platform that helps to protect your privacy and keep you safe online.
+
+## Highlights from the second year
+
+In year two of building AliasVault, we shipped **12 feature releases and 26 patch releases**. A few of the additions we introduced in just the last 12 months:
+
+- **Multi-language** (0.21.0): AliasVault started to be available in both English and Dutch, with more languages added soon after.
+- **Self-host improvements** (0.22.0): We shipped a lot of new self-host improvements requested by the community: notable an easy to install all-in-one Docker image and various new settings to customize your server.
+- **Passkeys arrived** (0.24.0): AliasVault became a full WebAuthn passkey provider across the browser extension, iOS, and Android.
+- **Login with mobile + PIN unlock** (0.25.0): Login to the web app or browser extension with your mobile phone, as well as unlock the browser extension and mobile app with a custom PIN code.
+- **A whole new vault architecture** (0.26.0) brought custom fields, new item types like credit cards and secure notes, folders, field history, recently-deleted with restore, and a new cross-platform Rust core.
+
+## 📊 Numbers so far
+
+A lot has happened in the numbers too. Two years in, AliasVault has grown to:
+
+- 📦 75 official releases (4,800+ commits and counting)
+- 🔀 1,100+ pull requests opened
+- 🐛 300+ reported issues fixed
+- ☁️ 16,000+ cloud users
+- 💾 175,000+ self-hosted downloads
+- ⭐️ 2,750+ GitHub stars
+
+And the pace is still accelerating.
+
+## Self-hosting continues to grow
+
+From the beginning, self-hosting has been a core part of AliasVault. Over the past two years, the project has surpassed **175,000 self-hosted downloads**. To support that growth, we introduced:
+
+- A simplified all-in-one Docker image
+- Additional server configuration options
+- Better deployment documentation
+- Numerous stability and upgrade improvements
+
+Self-hosting isn't an afterthought, it's a first-class way to run AliasVault entirely on your own terms, and has been actively supported since day 1.
+
+## 🚀 A growing community
+
+One of the most unexpected milestones of year two was localization. AliasVault is now available in **more than 15 languages thanks to over 40 volunteer translators** from around the world, something that was never part of the original v1.0 plan.
+
+Seeing people invest their own time to make AliasVault accessible to others is very heartwarming. The feedback, contributions, and trust people place in AliasVault keep growing, and so do our GitHub stars, which crossed 2,750 just this week:
+
+<ClickableImage
+  src="/images/blog/large/aliasvault-turns-two-stars.png"
+  alt="GitHub stars growth chart"
+  caption="GitHub star history over the past two years"
+/>
+
+## Building for the long term
+
+One question we increasingly receive is: how will AliasVault sustain itself?
+
+AliasVault remains fully self-funded. We have no venture capital, no external investors, and no pressure to optimize for growth at the expense of users. The project will continue offering:
+
+- A free cloud tier
+- A fully open-source self-hosted option
+- Optional Premium and Family plans in the future
+
+Our goal is simple: build a sustainable privacy-focused product that answers to its users rather than outside investors.
+
+## The road to v1.0
+
+In last year's update I estimated v1.0 would be ready by the end of 2025. We didn't hit that date, in part because we (positively!) ended up delivering far more than we originally planned. Most of the original v1.0 roadmap did actually ship in the last 12 months, and on top of it we added a huge amount that was never part of the plan, much of it driven directly by community feedback:
+
+- **Dramatically improved autofill:** every reported issue with specific websites was investigated individually and the underlying algorithms improved, resulting in a far more stable experience. Features like 2FA autofill and auto-copying 2FA codes to the clipboard make day-to-day use smoother.
+- **Full offline mode,** something genuinely unique among cloud-synced password managers. Making sure that your vault keeps working, even if you don't have internet access (temporarily).
+- **Many new import options,** now supporting over 15 different formats from various password managers.
+- **Subfolder support** for organizing your vault exactly how you want.
+- **Auto-save credentials** while browsing.
+- **Login with your mobile device** via QR code, plus PIN unlock.
+- **Extensive self-hosting improvements,** with many new configuration options requested by the community.
+- **Many security hardening improvements.**
+
+We also hold ourselves to a simple commitment: reported bugs and workflow limitations always get fixed before we build anything new. That commitment is a big part of why some things take longer than originally planned, but in the end it's the right thing. Thanks to all the feature and stability improvements made, AliasVault can already be fully used and trusted today. The upcoming 1.0 label isn't only about versioning, it's about our promise: that everything a general user could reasonably want simply works.
+
+### What's still ahead
+
+A few headline items remain before v1.0, most notably **vault/family sharing with end-to-end encryption**, which we teased in 0.28.0. Beyond that, the roadmap still has plenty other new features included: better identity management, hardware key as a primary vault password, emergency contact, duress mode, and more. The full roadmap with all things planned and under consideration can be found on GitHub: [AliasVault v1.0 Roadmap](https://github.com/aliasvault/aliasvault/issues/731). A comprehensive audit is also planned and will be started once we are near v1.0.
+
+Thank you to all our users, everyone who shared their input, suggested feature improvements, reported bugs, self-hosted AliasVault, and helped other users in the community. Also thanks a lot to everyone who donated to the project. You all help to uniquely make and shape AliasVault into what it is today!
+
+– Leendert
