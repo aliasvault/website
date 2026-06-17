@@ -1,13 +1,18 @@
 import Link from "next/link";
 import CopyLinkIcon from "@/components/Common/CopyLinkIcon";
 
+type SocialPlatform = "x" | "mastodon" | "github";
+
+interface Social {
+  platform: SocialPlatform;
+  url: string;
+}
+
 interface Vulnerability {
   id: string;
   researcher: string;
-  /** Optional X (Twitter) profile URL; shown as icon after name */
-  xUrl?: string;
-  /** Optional Mastodon profile URL; shown as icon after name */
-  mastodonUrl?: string;
+  /** Optional social profile links; shown as icons after the name */
+  socials?: Social[];
   affiliation?: string;
   date: string;
   severity: "critical" | "high" | "medium" | "low" | "hardening";
@@ -37,7 +42,34 @@ function MastodonIcon({ className }: { className?: string }) {
   );
 }
 
+function GitHubIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+      <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12z" />
+    </svg>
+  );
+}
+
+const socialMeta: Record<SocialPlatform, { Icon: ({ className }: { className?: string }) => JSX.Element; label: string }> = {
+  x: { Icon: XIcon, label: "X (Twitter)" },
+  mastodon: { Icon: MastodonIcon, label: "Mastodon" },
+  github: { Icon: GitHubIcon, label: "GitHub" },
+};
+
 const vulnerabilities: Vulnerability[] = [
+  {
+    id: "passkey-origin-rp-validation-extension-2026",
+    researcher: "Amar Begovic",
+    socials: [
+      { platform: "github", url: "https://github.com/AmarBego" },
+    ],
+    date: "2026-06-04",
+    severity: "high",
+    cve: "CVE-2026-55587",
+    ghsa: "GHSA-f99p-jfhr-6ffc",
+    advisoryUrl: "https://github.com/aliasvault/aliasvault/security/advisories/GHSA-f99p-jfhr-6ffc",
+    summary: "AliasVault browser extension versions 0.29.3 and earlier did not fully validate origin and relying party (RP) information during passkey (WebAuthn) requests. A malicious website could forge these values so that, if the user approved the prompt, the extension generated a valid WebAuthn assertion for a different website, weakening phishing resistance. Fixed in version 0.29.4 on 2026-06-04.",
+  },
   {
     id: "stored-xss-email-rendering-2026",
     researcher: "Jorian Woltjer",
@@ -74,7 +106,7 @@ const vulnerabilities: Vulnerability[] = [
   {
     id: "stored-self-xss-notes-alias-2026",
     researcher: "Rohit Tiwari",
-    xUrl: "https://x.com/dedrknex",
+    socials: [{ platform: "x", url: "https://x.com/dedrknex" }],
     date: "2026-01-30",
     severity: "hardening",
     summary: "An issue was reported with stored self-XSS (safe rendering of decrypted vault content).",
@@ -132,30 +164,23 @@ const HallOfFame = () => {
                         ({vuln.affiliation})
                       </span>
                     )}
-                    {(vuln.xUrl || vuln.mastodonUrl) && (
+                    {vuln.socials && vuln.socials.length > 0 && (
                       <span className="inline-flex items-center gap-1">
-                        {vuln.xUrl && (
-                          <a
-                            href={vuln.xUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-body-color hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
-                            title="X (Twitter)"
-                          >
-                            <XIcon className="h-4 w-4" />
-                          </a>
-                        )}
-                        {vuln.mastodonUrl && (
-                          <a
-                            href={vuln.mastodonUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-body-color hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
-                            title="Mastodon"
-                          >
-                            <MastodonIcon className="h-4 w-4" />
-                          </a>
-                        )}
+                        {vuln.socials.map((social) => {
+                          const { Icon, label } = socialMeta[social.platform];
+                          return (
+                            <a
+                              key={social.platform}
+                              href={social.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-body-color hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
+                              title={label}
+                            >
+                              <Icon className="h-4 w-4" />
+                            </a>
+                          );
+                        })}
                       </span>
                     )}
                   </h4>
