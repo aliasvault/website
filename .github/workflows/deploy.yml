@@ -30,6 +30,7 @@ jobs:
             --exclude ".github" \
             --exclude "node_modules" \
             --exclude ".env" \
+            --exclude "docker-compose.override.yml" \
             -e "ssh -i ~/.ssh/deploy_key -p 22" \
             ./ ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:/opt/website/
 
