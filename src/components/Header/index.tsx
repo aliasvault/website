@@ -310,7 +310,8 @@ const Header = () => {
                 href="https://app.aliasvault.net/user/login"
                 className="hidden md:flex h-10 items-center justify-center rounded-md border border-primary px-4 py-2 font-medium text-primary hover:bg-primary hover:text-white active:bg-primary-dark transition-colors"
               >
-                {t('header.loginButtonFull')}
+                <span className="2xl:hidden">{t('header.loginButton')}</span>
+                <span className="hidden 2xl:inline">{t('header.loginButtonFull')}</span>
               </Link>
             </div>
           </div>

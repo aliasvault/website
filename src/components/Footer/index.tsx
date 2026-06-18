@@ -33,14 +33,14 @@ const Footer = () => {
                 <p className="mb-9 text-base leading-relaxed text-body-color dark:text-body-color-dark">
                   {t('footer.description')}
                 </p>
-                <div className="flex items-center">
+                <div className="flex flex-wrap items-center gap-x-5 gap-y-3">
                   <a
                     href="https://github.com/aliasvault/aliasvault"
                     aria-label="GitHub"
                     title="GitHub"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mr-6 text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
+                    className="text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                   >
                     <SiGithub className="h-5 w-5" aria-hidden="true" />
                   </a>
@@ -50,7 +50,7 @@ const Footer = () => {
                     title={t('footer.codebergMirror')}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mr-6 text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
+                    className="text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                   >
                     <SiCodeberg className="h-5 w-5" aria-hidden="true" />
                   </a>
@@ -60,7 +60,7 @@ const Footer = () => {
                     title={t('footer.gitlabMirror')}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mr-6 text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
+                    className="text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                   >
                     <SiGitlab className="h-5 w-5" aria-hidden="true" />
                   </a>
@@ -70,7 +70,7 @@ const Footer = () => {
                     title="Discord"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mr-6 text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
+                    className="text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                   >
                     <SiDiscord className="h-5 w-5" aria-hidden="true" />
                   </a>
@@ -80,7 +80,7 @@ const Footer = () => {
                     title="Mastodon"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mr-6 text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
+                    className="text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                   >
                     <SiMastodon className="h-5 w-5" aria-hidden="true" />
                   </a>
@@ -91,7 +91,7 @@ const Footer = () => {
                     title="X"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mr-6 text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
+                    className="text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                   >
                     <SiX className="h-5 w-5" aria-hidden="true" />
                   </a>
@@ -101,7 +101,7 @@ const Footer = () => {
                     title="YouTube"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mr-6 text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
+                    className="text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                   >
                     <SiYoutube className="h-5 w-5" aria-hidden="true" />
                   </a>
@@ -111,7 +111,7 @@ const Footer = () => {
                     title="Facebook"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mr-6 text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
+                    className="text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                   >
                     <SiFacebook className="h-5 w-5" aria-hidden="true" />
                   </a>
