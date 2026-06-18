@@ -34,25 +34,25 @@ export function generateSEOMetadata({
   // For content that's in English but might be on different locale routes,
   // we need to set the canonical URL to the English version
   const canonicalUrl = actualContentLanguage === 'en' 
-    ? `https://aliasvault.net${path}`
+    ? `https://www.aliasvault.com${path}`
     : locale === defaultLocale 
-      ? `https://aliasvault.net${path}`
-      : `https://aliasvault.net/${locale}${path}`;
+      ? `https://www.aliasvault.com${path}`
+      : `https://www.aliasvault.com/${locale}${path}`;
 
   // Generate alternate language URLs
   const alternateUrls: Record<string, string> = {};
   
   // For content that's actually in English (like blog posts), both URLs point to the same content
   if (actualContentLanguage === 'en') {
-    alternateUrls['en'] = `https://aliasvault.net${path}`;
-    alternateUrls['nl'] = `https://aliasvault.net/nl${path}`;
+    alternateUrls['en'] = `https://www.aliasvault.com${path}`;
+    alternateUrls['nl'] = `https://www.aliasvault.com/nl${path}`;
   } else {
     // For regular pages, generate URLs based on locale
     locales.forEach((loc) => {
       if (loc === defaultLocale) {
-        alternateUrls[loc] = `https://aliasvault.net${path}`;
+        alternateUrls[loc] = `https://www.aliasvault.com${path}`;
       } else {
-        alternateUrls[loc] = `https://aliasvault.net/${loc}${path}`;
+        alternateUrls[loc] = `https://www.aliasvault.com/${loc}${path}`;
       }
     });
   }
@@ -62,7 +62,7 @@ export function generateSEOMetadata({
   const ogLocales = actualContentLanguage === 'en' ? ['nl_NL'] : ['en_US'];
 
   const metadata: Metadata = {
-    metadataBase: new URL('https://aliasvault.net'),
+    metadataBase: new URL('https://www.aliasvault.com'),
     title,
     description,
     alternates: {

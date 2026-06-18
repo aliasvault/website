@@ -504,7 +504,7 @@ const PressKitEN = () => {
             {/* Add more coverage note */}
             <div className="mt-8 rounded-lg bg-gray-50 p-6 text-center dark:bg-gray-800/50">
               <p className="text-sm text-gray-600 dark:text-gray-400">
-                Have you covered AliasVault? <a href="mailto:contact@support.aliasvault.net" className="text-primary hover:underline">Let us know</a> to be featured here.
+                Have you covered AliasVault? <a href="mailto:support@aliasvault.com" className="text-primary hover:underline">Let us know</a> to be featured here.
               </p>
             </div>
           </div>

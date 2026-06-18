@@ -10,10 +10,10 @@ const AlertBanner = () => {
         <span className="text-dark dark:text-white">
           {t('alertBanner.message')}
           <a
-          href="mailto:contact@support.aliasvault.net"
+          href="mailto:support@aliasvault.com"
           className="text-primary font-semibold hover:underline ml-1"
         >
-          contact@support.aliasvault.net
+          support@aliasvault.com
         </a>
         </span>
 

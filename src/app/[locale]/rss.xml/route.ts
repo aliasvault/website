@@ -30,7 +30,7 @@ export async function GET(
     return new NextResponse('Invalid locale', { status: 400 });
   }
 
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.aliasvault.net';
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.aliasvault.com';
   const posts = getAllBlogAndNewsPosts(locale);
 
   // Process posts to clean up content

@@ -34,10 +34,10 @@ const ContactContent = () => {
             <p className="text-base text-body-color dark:text-body-color-dark">
               {t('contact.content.main.contactBlurb')}{" "}
               <a
-                href="mailto:contact@support.aliasvault.net"
+                href="mailto:support@aliasvault.com"
                 className="text-primary hover:underline"
               >
-                contact@support.aliasvault.net
+                support@aliasvault.com
               </a>
             </p>
           </div>
@@ -161,7 +161,7 @@ const ContactContent = () => {
               </Link>
               {" • "}
               <a
-                  href="mailto:security@support.aliasvault.net"
+                  href="mailto:security@aliasvault.com"
                   className="text-primary hover:underline"
               >
                 {t('contact.content.security.links.email')}

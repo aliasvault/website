@@ -26,7 +26,7 @@ const PressKitContact = () => {
                   {t("contactInfo.founderTitle")}
                 </p>
                 <p className="text-base text-body-color dark:text-body-color-dark">
-                  <strong>{t("contactInfo.email")}</strong> <a href="mailto:contact@support.aliasvault.net" className="text-primary hover:underline">contact@support.aliasvault.net</a>
+                  <strong>{t("contactInfo.email")}</strong> <a href="mailto:support@aliasvault.com" className="text-primary hover:underline">support@aliasvault.com</a>
                 </p>
                 <p className="text-base text-body-color dark:text-body-color-dark">
                   <strong>{t("contactInfo.linkedin")}</strong> <a href="https://www.linkedin.com/in/leendert-de-borst-02a60844/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">https://www.linkedin.com/in/leendert-de-borst-02a60844/</a>

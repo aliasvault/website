@@ -11,7 +11,7 @@ services:
       - ./src/content:/app/src/content
     environment:
       - NODE_ENV=production
-      - NEXT_PUBLIC_BASE_URL=https://www.aliasvault.net
+      - NEXT_PUBLIC_BASE_URL=https://www.aliasvault.com
     healthcheck:
       test: ["CMD", "wget", "--spider", "http://localhost:3000"]
       interval: 30s

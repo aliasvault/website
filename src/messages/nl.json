@@ -235,7 +235,7 @@
         "description": "Als je denkt dat je een beveiligingskwetsbaarheid hebt ontdekt in AliasVault, meld dit dan op verantwoordelijke wijze via ons dedicated security disclosure proces.",
         "links": {
           "disclosure": "Meld Beveiligingskwetsbaarheid",
-          "email": "security@support.aliasvault.net"
+          "email": "security@aliasvault.com"
         }
       },
       "features": {
@@ -557,7 +557,7 @@
     "title": "Report Abuse",
     "description": "Als u of uw service (website, app, etc.) negatief wordt beïnvloed door een e-mailalias van AliasVault, neem dan contact met ons op. We nemen alle abusemeldingen serieus en zullen alle claims onderzoeken.",
     "contactText": "Om een abusemelding te doen, neem direct contact met ons op via",
-    "emailAddress": "contact@support.aliasvault.net",
+    "emailAddress": "support@aliasvault.com",
     "responseTime": "en vermeld de e-mailadressen die onderdeel zijn van het misbruik. We reageren binnen 48 uur."
   },
   "featuresData": {
@@ -1524,7 +1524,7 @@
     "content": {
       "intro": "We waarderen het werk van beveiligingsonderzoekers en ethische hackers die helpen AliasVault en onze gebruikers veilig te houden. Als je denkt dat je een beveiligingskwetsbaarheid hebt ontdekt in AliasVault, moedigen we je aan om dit op een verantwoordelijke manier te melden.",
       "email": "Meld beveiligingskwetsbaarheden aan:",
-      "emailAddress": "security@support.aliasvault.net",
+      "emailAddress": "security@aliasvault.com",
       "commitment": {
         "title": "Commitment",
         "description": "We nemen responsible disclosure van beveiligingskwetsbaarheden serieus. Waar van toepassing zullen we:"

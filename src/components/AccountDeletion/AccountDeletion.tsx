@@ -30,10 +30,10 @@ const AccountDeletion = () => {
                 <strong>{t("howToRequest.option2.title")}</strong>{" "}
                 {t("howToRequest.option2.description")}{" "}
                 <a
-                  href="mailto:contact@support.aliasvault.net"
+                  href="mailto:support@aliasvault.com"
                   className="text-primary hover:underline"
                 >
-                  contact@support.aliasvault.net
+                  support@aliasvault.com
                 </a>
                 {t("howToRequest.option2.suffix")}
               </li>

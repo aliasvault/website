@@ -235,7 +235,7 @@
         "description": "If you believe you have discovered a security vulnerability in AliasVault, please report it responsibly through our dedicated security disclosure process.",
         "links": {
           "disclosure": "Report Security Vulnerability",
-          "email": "security@support.aliasvault.net"
+          "email": "security@aliasvault.com"
         }
       },
       "features": {
@@ -557,7 +557,7 @@
     "title": "Report Abuse",
     "description": "If you or your service (website, app, etc.) is negatively affected by an email alias from AliasVault, please contact us. We take abuse reports seriously and will investigate all legitimate claims.",
     "contactText": "To report abuse, please contact us directly at",
-    "emailAddress": "contact@support.aliasvault.net",
+    "emailAddress": "support@aliasvault.com",
     "responseTime": "and include the email addresses that are part of the abuse. We will respond within 48 hours."
   },
   "featuresData": {
@@ -1527,7 +1527,7 @@
     "content": {
       "intro": "We appreciate the work of security researchers and ethical hackers who help keep AliasVault and our users secure. If you believe you have discovered a security vulnerability in AliasVault, we encourage you to report it to us responsibly.",
       "email": "Please report security vulnerabilities to:",
-      "emailAddress": "security@support.aliasvault.net",
+      "emailAddress": "security@aliasvault.com",
       "commitment": {
         "title": "Commitment",
         "description": "We take responsible disclosure of security vulnerabilities seriously. Where applicable, we will:"

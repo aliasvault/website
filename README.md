@@ -4,7 +4,7 @@
 
 </div>
 
-Welcome to the AliasVault landing page repository. This project contains the source code for the website deployed at [https://www.aliasvault.net](https://www.aliasvault.net).
+Welcome to the AliasVault landing page repository. This project contains the source code for the website deployed at [https://www.aliasvault.com](https://www.aliasvault.com).
 
 For more information about AliasVault, including installation instructions and technical details, please visit the [main repository](https://github.com/aliasvault/aliasvault).
 

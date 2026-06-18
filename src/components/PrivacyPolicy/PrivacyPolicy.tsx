@@ -97,10 +97,10 @@ const PrivacyPolicy = () => {
             <p className="text-base font-medium leading-relaxed text-body-color dark:text-body-color-dark">
               If you have any questions or concerns about this Privacy Policy, please contact us at:{" "}
               <a
-                href="mailto:contact@support.aliasvault.net"
+                href="mailto:support@aliasvault.com"
                 className="text-primary hover:underline"
               >
-                contact@support.aliasvault.net
+                support@aliasvault.com
               </a>
               {" "}or visit our{" "}
               <Link

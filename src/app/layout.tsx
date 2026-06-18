@@ -12,7 +12,7 @@ export default function RootLayout({
     <html suppressHydrationWarning>
       <head>
         <link rel="icon" href="/favicon.png" type="image/png" sizes="32x32" />
-        <Script src="https://plausible.xivi.nl/js/script.js" defer data-domain="aliasvault.net" />
+        <Script src="https://plausible.xivi.nl/js/script.js" defer data-domain="aliasvault.com" />
       </head>
       <body className={`bg-[#FCFCFC] dark:bg-black ${inter.className}`}>
         {children}

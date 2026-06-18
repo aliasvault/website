@@ -504,7 +504,7 @@ const PressKitNL = () => {
             {/* Add more coverage note */}
             <div className="mt-8 rounded-lg bg-gray-50 p-6 text-center dark:bg-gray-800/50">
               <p className="text-sm text-gray-600 dark:text-gray-400">
-                Heb je geschreven over AliasVault? <a href="mailto:contact@support.aliasvault.net" className="text-primary hover:underline">Laat het ons weten</a> om hier te worden gepubliceerd.
+                Heb je geschreven over AliasVault? <a href="mailto:support@aliasvault.com" className="text-primary hover:underline">Laat het ons weten</a> om hier te worden gepubliceerd.
               </p>
             </div>
           </div>

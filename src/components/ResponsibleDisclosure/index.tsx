@@ -18,7 +18,7 @@ const ResponsibleDisclosureContent = () => {
               <p className="text-lg text-body-color dark:text-body-color-dark">
                 {t('responsibleDisclosure.content.email')}{' '}
                 <a
-                  href="mailto:security@support.aliasvault.net"
+                  href="mailto:security@aliasvault.com"
                   className="font-semibold block mt-2 text-primary hover:underline"
                 >
                   {t('responsibleDisclosure.content.emailAddress')}
