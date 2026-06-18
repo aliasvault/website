@@ -19,9 +19,9 @@ jobs:
       - name: Setup SSH
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
+          echo "${{ secrets.DEPLOY_SSH_KEY }}" > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
-          ssh-keyscan -p "${{ secrets.SSH_PORT }}" -H "${{ secrets.SSH_HOST }}" >> ~/.ssh/known_hosts
+          ssh-keyscan -p 22 -H "${{ secrets.DEPLOY_HOST }}" >> ~/.ssh/known_hosts
 
       - name: Rsync files to server
         run: |
@@ -30,11 +30,11 @@ jobs:
             --exclude ".github" \
             --exclude "node_modules" \
             --exclude ".env" \
-            -e "ssh -i ~/.ssh/deploy_key -p ${{ secrets.SSH_PORT }}" \
-            ./ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/opt/website/
+            -e "ssh -i ~/.ssh/deploy_key -p 22" \
+            ./ ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:/opt/website/
 
       - name: Rebuild and restart Docker Compose
         run: |
-          ssh -i ~/.ssh/deploy_key -p "${{ secrets.SSH_PORT }}" \
-            ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} \
+          ssh -i ~/.ssh/deploy_key -p 22 \
+            ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} \
             "cd /opt/website && docker compose up -d --build --force-recreate && docker system prune -af"
