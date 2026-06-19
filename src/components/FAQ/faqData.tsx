@@ -38,7 +38,7 @@ const getFAQData = (t: (key: string) => string): FAQItem[] => [
     slug: "security",
     question: t('faq.items.security.question'),
     answer: t('faq.items.security.answer')
-      .replace(/\[docsLink\]/g, "<a href='https://docs.aliasvault.net/architecture' target='_blank' rel='noopener noreferrer'>")
+      .replace(/\[docsLink\]/g, "<a href='https://docs.aliasvault.com/architecture' target='_blank' rel='noopener noreferrer'>")
       .replace(/\[\/docsLink\]/g, "</a>"),
   },
   {
@@ -52,7 +52,7 @@ const getFAQData = (t: (key: string) => string): FAQItem[] => [
     slug: "self-hosting",
     question: t('faq.items.selfHosting.question'),
     answer: t('faq.items.selfHosting.answer')
-      .replace(/\[docsLink\]/g, "<a href='https://docs.aliasvault.net' target='_blank' rel='noopener noreferrer'>")
+      .replace(/\[docsLink\]/g, "<a href='https://docs.aliasvault.com' target='_blank' rel='noopener noreferrer'>")
       .replace(/\[\/docsLink\]/g, "</a>"),
   },
   {

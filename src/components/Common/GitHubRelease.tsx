@@ -113,7 +113,7 @@ export const GitHubRelease = ({ version = 'latest' }: GitHubReleaseProps) => {
 
         <div className="text-sm text-gray-600 dark:text-gray-400">
           <p>{t('githubRelease.installationInstructions')} <a
-            href="https://docs.aliasvault.net/installation/install.html"
+            href="https://docs.aliasvault.com/installation/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-primary-600 hover:text-primary-800 dark:text-primary-400 dark:hover:text-primary-300"

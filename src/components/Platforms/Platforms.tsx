@@ -34,7 +34,7 @@ const Platforms = () => {
               <div className="text-sm text-body-color dark:text-body-color-dark">
                 {t("platforms.webApp.selfHostLinkText")}{" "}
                 <a
-                  href="https://docs.aliasvault.net/installation/"
+                  href="https://docs.aliasvault.com/installation/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-medium text-primary hover:underline"

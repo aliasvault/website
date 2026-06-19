@@ -12,12 +12,12 @@ const Documentation = () => {
             <p className="text-base font-medium leading-relaxed text-body-color dark:text-body-color-dark">
               For technical documentation about installing and configuring AliasVault on your own server, visit our documentation website at{" "}
               <a
-                href="https://docs.aliasvault.net"
+                href="https://docs.aliasvault.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary hover:underline"
               >
-                docs.aliasvault.net
+                docs.aliasvault.com
               </a>.
             </p>
           </div>

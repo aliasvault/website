@@ -58,7 +58,7 @@ export default function SourceCode() {
           <p className="pt-2 text-base font-medium leading-relaxed text-body-color dark:text-body-color-dark">
             {t("sourceCode.sections.selfHosting.paragraph")}{" "}
             <a
-              href="https://docs.aliasvault.net/installation/"
+              href="https://docs.aliasvault.com/installation/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-primary hover:underline"
