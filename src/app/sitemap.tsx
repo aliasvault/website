@@ -4,7 +4,7 @@ import { routing } from '@/i18n/routing'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // Get base URL from environment variable or default
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://aliasvault.com'
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.aliasvault.com'
 
     // Static routes that should be included for all locales
     const staticPaths = [
