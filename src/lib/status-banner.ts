@@ -34,6 +34,22 @@ function normalizeBaseUrl(raw: string): string {
   return raw.replace(/\/+$/, "");
 }
 
+// The canonical public status page, used when no NEXT_PUBLIC_STATUS_URL override
+// is configured. Static links (footer, contact page, FAQ) should always resolve
+// to a real page, so they fall back to this rather than disappearing.
+export const DEFAULT_STATUS_PAGE_URL = "https://status.aliasvault.com";
+
+/**
+ * The visitor-facing status page URL for static links. Prefers the configured
+ * NEXT_PUBLIC_STATUS_URL (so local/staging can point elsewhere) and otherwise
+ * falls back to the production status site. Safe to call from client components
+ * (NEXT_PUBLIC_* is inlined at build time).
+ */
+export function getStatusPageUrl(): string {
+  const configured = process.env.NEXT_PUBLIC_STATUS_URL;
+  return configured ? normalizeBaseUrl(configured) : DEFAULT_STATUS_PAGE_URL;
+}
+
 /**
  * Fetch the current status banner, server-side and cached.
  */

@@ -1,3 +1,5 @@
+import { getStatusPageUrl } from "@/lib/status-banner";
+
 export type FAQItem = {
   id: number;
   question: string;
@@ -74,6 +76,16 @@ const getFAQData = (t: (key: string) => string): FAQItem[] => [
     answer: t('faq.items.story.answer')
       .replace(/\[missionLink\]/g, "<a href='/mission' rel='noopener noreferrer'>")
       .replace(/\[\/missionLink\]/g, "</a>"),
+  },
+  {
+    id: 11,
+    slug: "service-status",
+    question: t('faq.items.serviceStatus.question'),
+    answer: t('faq.items.serviceStatus.answer')
+      .replace(/\[statusLink\]/g, `<a href='${getStatusPageUrl()}' target='_blank' rel='noopener noreferrer'>`)
+      .replace(/\[\/statusLink\]/g, "</a>")
+      .replace(/\[contactLink\]/g, "<a href='/contact' rel='noopener noreferrer'>")
+      .replace(/\[\/contactLink\]/g, "</a>"),
   },
 ];
 

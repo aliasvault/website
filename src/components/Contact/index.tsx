@@ -2,9 +2,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import AnchorHeading from "@/components/Common/AnchorHeading";
+import { getStatusPageUrl } from "@/lib/status-banner";
 
 const ContactContent = () => {
   const t = useTranslations();
+  const statusUrl = getStatusPageUrl();
 
   return (
     <section className="pb-16 pt-8">
@@ -28,8 +30,8 @@ const ContactContent = () => {
                 className="text-primary hover:underline"
               >
                 {t('contact.content.founder')}
-              </a>{" "}
-              {t('contact.content.location')}
+              </a>
+              {t('contact.content.team')}
             </p>
             <p className="text-base text-body-color dark:text-body-color-dark">
               {t('contact.content.main.contactBlurb')}{" "}
@@ -40,6 +42,30 @@ const ContactContent = () => {
                 support@aliasvault.com
               </a>
             </p>
+          </div>
+
+          <div className="mb-12">
+            <AnchorHeading
+              as="h3"
+              id="status"
+              className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl"
+              copyLabel="Copy link"
+            >
+              {t('contact.content.status.title')}
+            </AnchorHeading>
+            <p className="text-base text-body-color dark:text-body-color-dark">
+              {t('contact.content.status.description')}
+            </p>
+            <div className="mt-4">
+              <a
+                  href={statusUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline"
+              >
+                {t('contact.content.status.link')}
+              </a>
+            </div>
           </div>
 
           <div className="mb-12">
@@ -68,39 +94,6 @@ const ContactContent = () => {
               >
                 {t('contact.content.faq.links.docs')}
               </Link>
-            </div>
-          </div>
-
-          <div className="mb-12">
-            <AnchorHeading
-              as="h3"
-              id="feature-requests"
-              className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl"
-              copyLabel="Copy link"
-            >
-              {t('contact.content.features.title')}
-            </AnchorHeading>
-            <p className="text-base text-body-color dark:text-body-color-dark">
-              {t('contact.content.features.description')}
-            </p>
-            <div className="mt-4">
-              <a
-                  href="https://github.com/aliasvault/aliasvault/discussions/categories/ideas"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary hover:underline"
-              >
-                {t('contact.content.features.links.submit')}
-              </a>
-              {" • "}
-              <a
-                  href="https://discord.gg/DsaXMTEtpF"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary hover:underline"
-              >
-               {t('contact.content.features.links.discuss')}
-              </a>
             </div>
           </div>
 
@@ -138,6 +131,39 @@ const ContactContent = () => {
                 </a>
               </li>
             </ul>
+          </div>
+
+          <div className="mb-12">
+            <AnchorHeading
+              as="h3"
+              id="feature-requests"
+              className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl"
+              copyLabel="Copy link"
+            >
+              {t('contact.content.features.title')}
+            </AnchorHeading>
+            <p className="text-base text-body-color dark:text-body-color-dark">
+              {t('contact.content.features.description')}
+            </p>
+            <div className="mt-4">
+              <a
+                  href="https://github.com/aliasvault/aliasvault/discussions/categories/ideas"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline"
+              >
+                {t('contact.content.features.links.submit')}
+              </a>
+              {" • "}
+              <a
+                  href="https://discord.gg/DsaXMTEtpF"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline"
+              >
+               {t('contact.content.features.links.discuss')}
+              </a>
+            </div>
           </div>
 
           <div className="mb-12">
@@ -207,6 +233,18 @@ const ContactContent = () => {
                 {t('contact.content.donations.openCollectiveAlt')}
               </a>
             </div>
+          </div>
+
+          <div className="mt-12 border-t border-body-color/20 pt-8 dark:border-body-color-dark/20">
+            <p className="text-base text-body-color dark:text-body-color-dark">
+              {t('contact.content.closing.text')}{" "}
+              <a
+                href="mailto:support@aliasvault.com"
+                className="text-primary hover:underline"
+              >
+                support@aliasvault.com
+              </a>
+            </p>
           </div>
         </div>
       </div>

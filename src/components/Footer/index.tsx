@@ -3,11 +3,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { useTranslations, useLocale } from "next-intl";
 import { SiGithub, SiCodeberg, SiGitlab, SiDiscord, SiMastodon, SiX, SiYoutube, SiFacebook } from "react-icons/si";
+import { FaEnvelope } from "react-icons/fa";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
+import { getStatusPageUrl } from "@/lib/status-banner";
 
 const Footer = () => {
   const t = useTranslations();
   const locale = useLocale();
+  const statusUrl = getStatusPageUrl();
 
   return (
     <>
@@ -30,9 +33,16 @@ const Footer = () => {
                   <h1 className="text-2xl font-bold my-auto">AliasVault</h1>
                 </div>
               </Link>
-                <p className="mb-9 text-base leading-relaxed text-body-color dark:text-body-color-dark">
+                <p className="mb-4 text-base leading-relaxed text-body-color dark:text-body-color-dark">
                   {t('footer.description')}
                 </p>
+                <a
+                  href="mailto:support@aliasvault.com"
+                  className="mb-9 inline-flex items-center gap-2 text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
+                >
+                  <FaEnvelope className="h-4 w-4" aria-hidden="true" />
+                  support@aliasvault.com
+                </a>
                 <div className="flex flex-wrap items-center gap-x-5 gap-y-3">
                   <a
                     href="https://github.com/aliasvault/aliasvault"
@@ -286,6 +296,30 @@ const Footer = () => {
                     >
                       {t('footer.links.contact')}
                     </Link>
+                  </li>
+                  <li>
+                    <a
+                        href={statusUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
+                    >
+                      {t('footer.links.status')}
+                      <svg
+                        className="ml-1 inline-block h-4 w-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                        />
+                      </svg>
+                    </a>
                   </li>
                   <li>
                     <Link

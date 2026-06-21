@@ -25,6 +25,12 @@ const getMenuData = (t: (key: string) => string): Menu[] => [
     path: "/blog",
     newTab: false,
   },
+  {
+    id: 5,
+    title: t('navigation.contact'),
+    path: "/contact",
+    newTab: false,
+  },
 ];
 
 export default getMenuData;

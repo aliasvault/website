@@ -1,4 +1,9 @@
 {
+  "alertBanner": {
+    "message": "Ervaar je problemen met AliasVault? Zorg er eerst voor dat je de nieuwste browserextensie en app-versies gebruikt en bekijk daarna onze",
+    "statusLink": "servicestatuspagina",
+    "contactPrompt": "voor bekende storingen. Kom je er nog niet uit? Neem contact op via"
+  },
   "statusBanner": {
     "incident": "Storing",
     "maintenance": "Onderhoud",
@@ -57,6 +62,7 @@
       "alt_proton": "Alternatief voor Proton Pass",
       "alt_1password": "Alternatief voor 1Password",
       "contact": "Contact",
+      "status": "Servicestatus",
       "report_abuse": "Misbruik Melden",
       "responsible_disclosure": "Responsible Disclosure",
       "license": "Licentie",
@@ -183,11 +189,16 @@
     "content": {
       "main": {
         "title": "Contact",
-        "contactBlurb": "Als je vragen hebt, lees dan eerst onze FAQ of bekijk de documentatie hieronder. Heb je algemene vragen of heb je hulp nodig, stuur dan een e-mail naar"
+        "contactBlurb": "Als je vragen hebt, lees dan onze FAQ of bekijk de documentatie hieronder. Heb je algemene vragen of heb je hulp nodig, stuur dan een e-mail naar"
       },
-      "intro": "AliasVault is een open-source project opgericht door",
+      "status": {
+        "title": "Servicestatus",
+        "description": "Werkt er iets niet? Bekijk voordat je contact opneemt eerst onze statuspagina om te zien of er een lopende storing of gepland onderhoud is dat de clouddienst beïnvloedt.",
+        "link": "Bekijk servicestatus"
+      },
+      "intro": "AliasVault is een open-source wachtwoord- en aliasmanager, opgericht door",
       "founder": "Leendert de Borst",
-      "location": "en wordt vanuit Nederland beheerd. De officiële cloud-gehoste versie draait op onze eigen dedicated servers in Duitsland, volledig conform de Europese GDPR-regelgeving.",
+      "team": ". Het wordt ontwikkeld en beheerd door een klein en toegewijd team vanuit Nederland. Onze officiële cloud-gehoste versie draait op AliasVault's eigen dedicated servers in Duitsland, en is volledig conform de Europese GDPR-regelgeving.",
       "inquiries": "Voor vragen over onze cloud-gehoste dienst of andere onderwerpen, neem contact op:",
       "support": {
         "title": "Ondersteuning & Bugs",
@@ -226,6 +237,9 @@
         "description": "Als je het project wilt steunen dan kan dat via een donatie. Donaties zijn optioneel maar worden zeer gewaardeerd en zullen ons helpen het project te blijven verbeteren!",
         "imageAlt": "Buy Me A Coffee",
         "openCollectiveAlt": "Steun via OpenCollective"
+      },
+      "closing": {
+        "text": "Niet gevonden wat je zocht? Neem contact met ons op via"
       }
     }
   },
@@ -391,6 +405,10 @@
       "story": {
         "question": "Wat is het verhaal achter AliasVault?",
         "answer": "Leendert de Borst, de oprichter van AliasVault, is softwareontwikkelaar en architect met een lange focus op privacy en het tegengaan van spam. In 2013 lanceerde hij asdasd.nl, een Nederlandse tijdelijke e-mailservice die uitgroeide tot de meertalige SpamOK.com, waarmee duizenden mensen zich beschermen tegen spam en gegevensverzameling.\n\nIn de loop der jaren werd duidelijk dat alleen e-mailbescherming niet genoeg was: mensen hadden een manier nodig om hun hele digitale identiteit te beschermen. Dat leidde in 2024 tot de start van de ontwikkeling van AliasVault: een self-hostable, end-to-end versleutelde wachtwoord- en aliasmanager die gebruikers de volledige controle geeft. Je kunt unieke wachtwoorden en e-mailaliassen genereren voor elke site die je gebruikt, zodat je persoonlijke gegevens veilig blijven.\n\nSinds de bètarelease in december 2024 wordt AliasVault continu doorontwikkeld met frequente updates: browserextensies, mobiele apps, volledige offline-modus, meertalige ondersteuning (inmiddels 14+ talen), passkey-ondersteuning en uitstekende self-hosting met uitgebreide documentatie. Met elke release wordt AliasVault krachtiger en toegankelijker.\n\nAliasVault is open source, volledig zelf-gefinancierd en trots onafhankelijk. Het project is gebouwd op transparantie, input van de community en privacy-first principes.\n\nLees meer over [missionLink]onze missie[/missionLink] en wat dit project drijft."
+      },
+      "serviceStatus": {
+        "question": "Is AliasVault offline? Hoe controleer ik de servicestatus?",
+        "answer": "Als de AliasVault-clouddienst niet naar verwachting werkt, kun je de actuele servicestatus en de incidentgeschiedenis bekijken op onze [statusLink]statuspagina[/statusLink]. Daar zie je eventuele lopende storingen of gepland onderhoud. Zijn er geen storingen maar ondervind je toch problemen? Neem contact op via onze [contactLink]contactpagina[/contactLink]."
       }
     }
   },

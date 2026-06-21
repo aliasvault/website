@@ -1,6 +1,8 @@
 {
   "alertBanner": {
-    "message": "Are you encountering issues with using AliasVault? Please ensure you're using the latest browser extension and app versions. Still experiencing issues? Please contact us at"
+    "message": "Are you encountering issues with using AliasVault? First make sure you're using the latest browser extension and app versions, then check our",
+    "statusLink": "service status page",
+    "contactPrompt": "for any known outages. Still experiencing issues? Contact us at"
   },
   "statusBanner": {
     "incident": "Incident",
@@ -60,6 +62,7 @@
       "alt_proton": "Alternative to Proton Pass",
       "alt_1password": "Alternative to 1Password",
       "contact": "Contact",
+      "status": "Service Status",
       "report_abuse": "Report Abuse",
       "responsible_disclosure": "Responsible Disclosure",
       "license": "License",
@@ -188,9 +191,14 @@
         "title": "Contact",
         "contactBlurb": "If you have any questions, please read our FAQ or check our documentation below. If you wish to contact us instead or need help, send an email to"
       },
-      "intro": "AliasVault is an open-source project founded by",
+      "status": {
+        "title": "Service Status",
+        "description": "Something not working? Before reaching out, check our status page to see whether there's an ongoing incident or planned maintenance affecting the cloud service.",
+        "link": "Check service status"
+      },
+      "intro": "AliasVault is an open-source password and alias manager founded by",
       "founder": "Leendert de Borst",
-      "location": "and operates from the Netherlands. We offer an official cloud-hosted version with dedicated servers in Germany, fully compliant with European GDPR regulations.",
+      "team": ". It is developed and operated by a small, dedicated team from The Netherlands. Our official cloud-hosted version runs on AliasVault's own dedicated servers in Germany (EU), and is fully compliant with European GDPR regulations.",
       "inquiries": "For questions about our cloud-hosted service or other inquiries, please contact:",
       "support": {
         "title": "Support & Bug Reports",
@@ -229,6 +237,9 @@
         "description": "If you find AliasVault useful, consider supporting its development. Donations are optional but greatly appreciated and will help us continue to improve the project.",
         "imageAlt": "Buy Me A Coffee",
         "openCollectiveAlt": "Support on OpenCollective"
+      },
+      "closing": {
+        "text": "Didn't find what you were looking for? Contact us at"
       }
     }
   },
@@ -394,6 +405,10 @@
       "story": {
         "question": "What's the story behind AliasVault?",
         "answer": "Leendert de Borst, the founder of AliasVault, is a software developer and architect with a long-standing focus on privacy and fighting spam. In 2013 he launched asdasd.nl, a Dutch temporary email service that grew into the multilingual SpamOK.com, helping thousands protect themselves from spam and data collection.\n\nOver the years it became clear that email protection alone wasn't enough: people needed a way to protect their entire digital identity. That led to the start of development of AliasVault in 2024: a self-hostable, end-to-end encrypted password and alias manager that puts users in control. It lets you generate unique passwords and email aliases for every site you use, keeping your personal data secure.\n\nSince the beta release in December 2024, AliasVault has been developed with frequent updates: browser extensions, mobile apps, full offline mode, multi-language support (14 languages and counting), passkey support, and best-in-class self-hosting with comprehensive documentation. Making it more powerful and accessible with every release.\n\nAliasVault is open source, entirely self-funded, and proudly independent. The project is built around transparency, community input, and privacy-first principles.\n\nLearn more about [missionLink]our mission[/missionLink] and what drives this project."
+      },
+      "serviceStatus": {
+        "question": "Is AliasVault down? How do I check service status?",
+        "answer": "If the AliasVault cloud service isn't working as expected, you can check the real-time service status and incident history on our [statusLink]status page[/statusLink]. It shows any ongoing incidents or planned maintenance. If there are no incidents and you're still experiencing problems, please contact us at [contactLink]support@aliasvault.com[/contactLink]."
       }
     }
   },
@@ -1297,7 +1312,7 @@
         },
         "selfFunded": {
           "question": "Who is behind AliasVault?",
-          "answer": "AliasVault is an open-source project founded by Leendert de Borst and operated from the Netherlands. Our official cloud runs on dedicated servers in Germany, fully compliant with European GDPR regulations.\n\nThe project is self-funded by its founders. We have no external investors or venture capital backing. We answer to users and our [missionLink]mission[/missionLink], and our roadmap follows community needs rather than outside investment pressure. Optional donations and future Premium and Family plans help sustain development. The core open-source product and self-hosted option stay central to what we build.\n\nFor more about who we are and how to reach us, visit our [contactLink]contact page[/contactLink]."
+          "answer": "AliasVault is an open-source project founded by Leendert de Borst and operated from The Netherlands. Our official cloud runs on dedicated servers in Germany, fully compliant with European GDPR regulations.\n\nThe project is self-funded by its founders. We have no external investors or venture capital backing. We answer to users and our [missionLink]mission[/missionLink], and our roadmap follows community needs rather than outside investment pressure. Optional donations and future Premium and Family plans help sustain development. The core open-source product and self-hosted option stay central to what we build.\n\nFor more about who we are and how to reach us, visit our [contactLink]contact page[/contactLink]."
         },
         "fairUse": {
           "question": "What are fair-use limits on the cloud free tier?",

@@ -28,11 +28,6 @@ const ContactPage = () => {
         pageName={t('contact.title')}
         description={t('contact.description')}
       />
-      <section className="pb-0 pt-8">
-        <div className="container">
-          <AlertBanner />
-        </div>
-      </section>
       <ContactContent />
     </Page>
   );

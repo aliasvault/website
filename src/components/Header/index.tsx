@@ -169,19 +169,6 @@ const Header = ({ banner }: { banner?: ReactNode }) => {
               ))}
               <li className="py-3">
                 <Link
-                  href="/contact"
-                  className={`block text-base transition-colors ${
-                    pathname === "/contact"
-                      ? "text-primary dark:text-white"
-                      : "text-dark hover:text-primary dark:text-white/70 dark:hover:text-white"
-                  }`}
-                  onClick={() => setNavbarOpen(false)}
-                >
-                  {t('navigation.contact')}
-                </Link>
-              </li>
-              <li className="py-3">
-                <Link
                   href="https://github.com/aliasvault/aliasvault"
                   className="block text-base text-dark hover:text-primary dark:text-white/70 dark:hover:text-white transition-colors"
                   onClick={() => setNavbarOpen(false)}
@@ -302,13 +289,6 @@ const Header = ({ banner }: { banner?: ReactNode }) => {
             {/* Icons & Buttons */}
             <div className="items-center gap-3 lg:ml-4 hidden lg:flex">
               <ThemeToggler />
-              {/* Contact Button */}
-              <Link
-                href="/contact"
-                className="hidden lg:flex h-10 items-center justify-center rounded-md border border-gray-300 px-4 py-2 text-dark hover:bg-gray-100 active:bg-gray-200 dark:border-gray-600 dark:text-white dark:hover:bg-gray-800 dark:active:bg-gray-700 transition-colors"
-              >
-                {t('navigation.contact')}
-              </Link>
               {/* Desktop Login Button - Shows on medium screens and up */}
               <Link
                 href="https://app.aliasvault.com/user/login"
