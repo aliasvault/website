@@ -2,15 +2,39 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Run dev server",
-            "type": "shell",
-            "command": "npm",
-            "args": ["run", "dev"],
+            "label": "Dev server",
+            "dependsOrder": "sequence",
+            "dependsOn": ["Run dev server", "Open in Chrome"],
             "problemMatcher": [],
             "group": {
                 "kind": "build",
                 "isDefault": true
             }
+        },
+        {
+            "label": "Run dev server",
+            "type": "shell",
+            "command": "npm",
+            "args": ["run", "dev"],
+            "isBackground": true,
+            "problemMatcher": {
+                "owner": "next",
+                "pattern": {
+                    "regexp": "^$"
+                },
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": ".*(Starting|compiling|next dev).*",
+                    "endsPattern": ".*(Ready in|Local:|started server).*"
+                }
+            }
+        },
+        {
+            "label": "Open in Chrome",
+            "type": "shell",
+            "command": "open",
+            "args": ["-a", "Google Chrome", "http://localhost:3100"],
+            "problemMatcher": []
         },
         {
             "label": "Run lint",
