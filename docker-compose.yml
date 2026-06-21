@@ -9,6 +9,11 @@ services:
       - "127.0.0.1:3000:3000"
     volumes:
       - ./src/content:/app/src/content
+    # Load runtime env (STATUS_API_URL, NEXT_PUBLIC_STATUS_URL, …) from .env.
+    # Optional so the stack still starts when no .env is present.
+    env_file:
+      - path: .env
+        required: false
     environment:
       - NODE_ENV=production
       - NEXT_PUBLIC_BASE_URL=https://www.aliasvault.com
