@@ -9,7 +9,7 @@ interface ImportCallToActionProps {
   className?: string;
 }
 
-const ImportCallToAction = ({ namespace, href = "https://app.aliasvault.net", className = "" }: ImportCallToActionProps) => {
+const ImportCallToAction = ({ namespace, href = "https://app.aliasvault.com", className = "" }: ImportCallToActionProps) => {
   const t = useTranslations();
 
   return (

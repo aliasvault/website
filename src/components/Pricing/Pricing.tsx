@@ -208,7 +208,7 @@ export default function Pricing() {
         { key: "fairUseEmailStorage", variant: "limited" },
         { key: "noAutomaticBackups", variant: "excluded" },
       ],
-      cta: { label: t("plans.free.cta"), href: "https://app.aliasvault.net", external: true },
+      cta: { label: t("plans.free.cta"), href: "https://app.aliasvault.com", external: true },
     },
     {
       id: "premium",

@@ -24,7 +24,7 @@ const Platforms = () => {
 
             <div className="flex flex-col items-start gap-3">
               <a
-                href="https://app.aliasvault.net"
+                href="https://app.aliasvault.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex w-full items-center justify-center rounded-xl bg-primary px-5 py-3 text-base font-semibold text-white transition-colors hover:bg-primary/90 sm:w-auto"
@@ -261,7 +261,7 @@ const Platforms = () => {
               {t("platforms.downloads.description")}
             </p>
             <a
-              href="https://downloads.aliasvault.net"
+              href="https://downloads.aliasvault.com"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center text-primary underline decoration-primary/30 underline-offset-4 transition-colors hover:decoration-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-primary/70 dark:focus-visible:ring-offset-gray-900"

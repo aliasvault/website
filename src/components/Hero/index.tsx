@@ -189,7 +189,7 @@ const Hero = () => {
                   variants={itemVariants}
                 >
                   <Link
-                    href="https://app.aliasvault.net"
+                    href="https://app.aliasvault.com"
                     target="_blank"
                     className="group relative overflow-hidden rounded-3xl bg-primary px-8 py-4 text-base font-semibold text-white transition-all duration-300 ease-out hover:scale-105 hover:shadow-lg hover:shadow-primary/25"
                   >

@@ -21,7 +21,7 @@ const CallToAction = ({ className = "" }: CallToActionProps) => {
               {t('callToAction.description')}
             </p>
             <Link
-              href="https://app.aliasvault.net"
+              href="https://app.aliasvault.com"
               className="relative flex items-center justify-center bg-primary-600 px-8 py-4 font-semibold text-white transition-all duration-200 hover:bg-primary-700 hover:scale-105"
             >
               {t('callToAction.buttonText')}

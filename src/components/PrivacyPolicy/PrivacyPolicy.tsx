@@ -43,7 +43,7 @@ const PrivacyPolicy = () => {
               Email Aliases
             </h3>
             <p className="text-base font-medium leading-relaxed text-body-color dark:text-body-color-dark">
-              When you create email aliases on our official cloud service located at app.aliasvault.net, only the alias name is stored on our servers for handling purposes. All incoming emails are encrypted before being saved, ensuring that no one but you can read their contents.
+              When you create email aliases on our official cloud service located at app.aliasvault.com, only the alias name is stored on our servers for handling purposes. All incoming emails are encrypted before being saved, ensuring that no one but you can read their contents.
             </p>
           </div>
 
@@ -70,7 +70,7 @@ const PrivacyPolicy = () => {
               Data Deletion
             </h3>
             <p className="text-base font-medium leading-relaxed text-body-color dark:text-body-color-dark">
-              You have full control over your data and can delete your account at any time through the official AliasVault hosted client at app.aliasvault.net. Upon account deletion, all associated data, including stored emails, will be permanently removed from our servers. Any email aliases you have created will be anonymized and orphaned, which means they will no longer work and no one else will be able to use them in the future. If you prefer to have your data removed by our team, you can submit a deletion request via email to our support team. For detailed instructions and what happens to your data, see our{" "}
+              You have full control over your data and can delete your account at any time through the official AliasVault hosted client at app.aliasvault.com. Upon account deletion, all associated data, including stored emails, will be permanently removed from our servers. Any email aliases you have created will be anonymized and orphaned, which means they will no longer work and no one else will be able to use them in the future. If you prefer to have your data removed by our team, you can submit a deletion request via email to our support team. For detailed instructions and what happens to your data, see our{" "}
               <Link
                 href="/account-deletion"
                 className="text-primary hover:underline"

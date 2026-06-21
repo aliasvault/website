@@ -60,7 +60,7 @@ const Header = () => {
           <div className="absolute right-4 lg:hidden flex items-center space-x-2">
             {/* Mobile Login Button - Shows on medium screens only */}
             <Link
-              href="https://app.aliasvault.net/user/login"
+              href="https://app.aliasvault.com/user/login"
               className="hidden md:flex h-10 items-center justify-center rounded-md border border-primary px-4 py-2 font-medium text-primary hover:bg-primary hover:text-white active:bg-primary-dark transition-colors"
             >
               {t('header.loginButton')}
@@ -201,7 +201,7 @@ const Header = () => {
               </li>
               <li className="py-3">
                 <Link
-                  href="https://app.aliasvault.net/user/login"
+                  href="https://app.aliasvault.com/user/login"
                   className="block text-base font-medium text-primary hover:text-primary-dark dark:text-primary dark:hover:text-primary-light transition-colors"
                   onClick={() => setNavbarOpen(false)}
                 >
@@ -307,7 +307,7 @@ const Header = () => {
               </Link>
               {/* Desktop Login Button - Shows on medium screens and up */}
               <Link
-                href="https://app.aliasvault.net/user/login"
+                href="https://app.aliasvault.com/user/login"
                 className="hidden md:flex h-10 items-center justify-center rounded-md border border-primary px-4 py-2 font-medium text-primary hover:bg-primary hover:text-white active:bg-primary-dark transition-colors"
               >
                 <span className="2xl:hidden">{t('header.loginButton')}</span>
