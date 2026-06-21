@@ -48,7 +48,7 @@ const StatusBannerClient = ({ banner, href, variant = "bar" }: Props) => {
   const isInline = variant === "inline";
   const inner = isInline
     ? "flex flex-wrap items-start gap-x-3 gap-y-1 text-sm"
-    : "mx-auto flex max-w-screen-xl flex-wrap items-center gap-x-3 gap-y-1 px-4 py-2.5 text-sm sm:flex-nowrap";
+    : "container flex flex-wrap items-center gap-x-3 gap-y-1 py-2.5 text-sm sm:flex-nowrap";
 
   return (
     <div role="status" className={container}>
