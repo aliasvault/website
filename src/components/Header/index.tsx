@@ -1,13 +1,16 @@
 "use client";
 import { Link } from "@/i18n/navigation";
 import { usePathname } from "@/i18n/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import ThemeToggler from "./ThemeToggler";
 import getMenuData from "./menuData";
 import { useTranslations } from "next-intl";
 import Logo from "@/components/Common/Logo";
 
-const Header = () => {
+// `banner` is an optional server-rendered slot (the status banner). When active
+// it renders as a full-width strip at the top of the header, growing the header
+// height so the nav stays fully visible rather than being overlapped.
+const Header = ({ banner }: { banner?: ReactNode }) => {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const navbarToggleHandler = () => setNavbarOpen(!navbarOpen);
   const t = useTranslations();
@@ -36,12 +39,13 @@ const Header = () => {
 
   return (
     <header
-      className={`header left-0 top-0 z-40 flex w-full items-center ${
+      className={`header left-0 top-0 z-40 flex w-full flex-col ${
         sticky
           ? "dark:bg-gray-dark dark:shadow-sticky-dark fixed z-[9999] bg-white !bg-opacity-80 shadow-sticky backdrop-blur-sm transition"
           : "absolute dark:border-gray-700"
       }`}
     >
+      {banner}
       <div className="container">
         <div className="relative -mx-4 flex items-center justify-between">
           {/* Logo */}

@@ -1,5 +1,10 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import {
+  StatusBannerProvider,
+  StatusBannerBar,
+  StatusBannerSpacer,
+} from "@/components/StatusBanner";
 import ScrollToTop from "@/components/ScrollToTop";
 import AOSInit from "@/components/AOS/AOSInit";
 import { Providers } from "../providers";
@@ -57,14 +62,20 @@ export default async function RootLayout({
   // Providing all messages to the client
   const messages = await getMessages();
 
+  // The status banner is fetched client-side (StatusBannerProvider) so a slow
+  // status API never blocks this render. The provider feeds both the header bar
+  // and the spacer that pushes content below the absolutely-positioned header.
   return (
     <NextIntlClientProvider messages={messages}>
       <Providers>
         <AOSInit />
-        <Header />
-        {children}
-        <Footer />
-        <ScrollToTop />
+        <StatusBannerProvider>
+          <Header banner={<StatusBannerBar />} />
+          <StatusBannerSpacer />
+          {children}
+          <Footer />
+          <ScrollToTop />
+        </StatusBannerProvider>
       </Providers>
     </NextIntlClientProvider>
   );

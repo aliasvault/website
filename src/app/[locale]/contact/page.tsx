@@ -1,7 +1,6 @@
 import Breadcrumb from "@/components/Common/Breadcrumb";
 import ContactContent from "@/components/Contact/index";
 import AlertBanner from "@/components/AlertBanner";
-import StatusUpdateBanner from "@/components/StatusUpdateBanner";
 import { Metadata } from "next";
 import { useTranslations } from "next-intl";
 import { getTranslations } from "next-intl/server";
