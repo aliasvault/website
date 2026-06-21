@@ -9,16 +9,15 @@ import { useStatusBanner } from "./StatusBannerProvider";
  * duration) so content slides down smoothly instead of jumping.
  */
 export default function StatusBannerSpacer() {
-  const { mounted, shown } = useStatusBanner();
+  const { mounted, shown, contentHeight } = useStatusBanner();
   if (!mounted) {
     return null;
   }
   return (
     <div
       aria-hidden
-      className={`transition-[height] duration-300 ease-out ${
-        shown ? "h-11" : "h-0"
-      }`}
+      className="transition-[height] duration-300 ease-out"
+      style={{ height: shown ? contentHeight : 0 }}
     />
   );
 }

@@ -13,18 +13,25 @@ import type { StatusBanner } from "@/lib/status-banner";
 // - `banner`/`href`: the resolved banner (null when there's nothing to show).
 // - `mounted`: keep the DOM present through the slide-out, not just while active.
 // - `shown`: the transition target — false = collapsed (height 0), true = open.
+// - `contentHeight`/`setContentHeight`: (estimated) height of the banner content.
 export type StatusBannerContextValue = {
   banner: StatusBanner | null;
   href: string | null;
   mounted: boolean;
   shown: boolean;
+  contentHeight: number;
+  setContentHeight: (height: number) => void;
 };
+
+const DEFAULT_CONTENT_HEIGHT = 44;
 
 const StatusBannerContext = createContext<StatusBannerContextValue>({
   banner: null,
   href: null,
   mounted: false,
   shown: false,
+  contentHeight: DEFAULT_CONTENT_HEIGHT,
+  setContentHeight: () => {},
 });
 
 export function useStatusBanner(): StatusBannerContextValue {
@@ -58,6 +65,7 @@ export default function StatusBannerProvider({
   } | null>(null);
   const [mounted, setMounted] = useState(false);
   const [shown, setShown] = useState(false);
+  const [contentHeight, setContentHeight] = useState(DEFAULT_CONTENT_HEIGHT);
 
   useEffect(() => {
     let cancelled = false;
@@ -114,6 +122,8 @@ export default function StatusBannerProvider({
     href: data?.href ?? null,
     mounted,
     shown,
+    contentHeight,
+    setContentHeight,
   };
 
   return (
