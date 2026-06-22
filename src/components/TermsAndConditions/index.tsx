@@ -7,7 +7,7 @@ const TermsAndConditions = () => {
         <div className="space-y-8">
           <div>
             <p className="text-base font-medium leading-relaxed text-body-color dark:text-body-color-dark">
-              Last updated: February 26, 2025
+              Last updated: June 22, 2026
             </p>
           </div>
 
@@ -54,11 +54,17 @@ const TermsAndConditions = () => {
               You are responsible for maintaining the confidentiality of your account and any aliases created through AliasVault. This includes:
             </p>
             <ul className="mt-4 space-y-2 text-base font-medium leading-relaxed text-body-color dark:text-body-color-dark">
-              <li className="ml-6 list-disc">Keeping your master password secure and confidential</li>
+              <li className="ml-6 list-disc">Keeping your username and master password secure and confidential</li>
               <li className="ml-6 list-disc">Monitoring the use of your aliases for any unauthorized activity</li>
               <li className="ml-6 list-disc">Reporting any suspicious activity or potential security breaches</li>
               <li className="ml-6 list-disc">Ensuring that your use of aliases complies with the terms of service of the platforms you use them on</li>
             </ul>
+            <p className="mt-4 text-base font-medium leading-relaxed text-body-color dark:text-body-color-dark">
+              Because AliasVault uses end-to-end encryption, we never have access to your master password, encryption keys, or the contents of your vault.
+            </p>
+            <p className="mt-4 text-base font-medium leading-relaxed text-body-color dark:text-body-color-dark">
+              This means we cannot recover or reset your credentials, or restore access to your data. If you lose your username or master password, you may permanently lose access to your account and everything stored in it.
+            </p>
           </div>
 
           <div>
@@ -66,33 +72,48 @@ const TermsAndConditions = () => {
               3. Fair Use Policy
             </h3>
             <p className="text-base font-medium leading-relaxed text-body-color dark:text-body-color-dark">
-              For free accounts, we implement a fair use policy to prevent abuse and ensure quality service for all users. This policy includes:
+              To prevent abuse and ensure reliable service for all users, AliasVault applies a fair-use policy.
+            </p>
+            <p className="mt-4 text-base font-medium leading-relaxed text-body-color dark:text-body-color-dark">
+              Fair-use monitoring may consider factors including, but not limited to:
             </p>
             <ul className="mt-4 space-y-2 text-base font-medium leading-relaxed text-body-color dark:text-body-color-dark">
-              <li className="ml-6 list-disc">Reasonable limits on the number of aliases created within a given time period</li>
-              <li className="ml-6 list-disc">Monitoring for unusual activity patterns that may indicate automation or abuse</li>
-              <li className="ml-6 list-disc">Review of accounts that create a large number of aliases (e.g., hundreds) in a short period</li>
+              <li className="ml-6 list-disc">The total number of aliases created</li>
+              <li className="ml-6 list-disc">The rate at which aliases are created</li>
+              <li className="ml-6 list-disc">Alias lifecycle patterns, such as large numbers of aliases being disabled shortly after creation</li>
+              <li className="ml-6 list-disc">Usage across multiple accounts</li>
+              <li className="ml-6 list-disc">Other unusual activity patterns that may indicate automation, abuse, or misuse of the service</li>
             </ul>
             <p className="mt-4 text-base font-medium leading-relaxed text-body-color dark:text-body-color-dark">
-              Premium paid plans will be introduced in the coming months, to which the fair use policy will not apply.
+              When automated systems detect usage that significantly exceeds normal levels or presents an elevated risk of abuse, we may temporarily limit account functionality pending review.
+            </p>
+            <p className="mt-4 text-base font-medium leading-relaxed text-body-color dark:text-body-color-dark">
+              Paid plans are subject to higher usage limits. However, all accounts remain subject to abuse-prevention measures and these Terms and Conditions.
             </p>
           </div>
 
           <div>
             <h3 className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
-              4. Account Termination
+              4. Account Restrictions and Termination
             </h3>
             <p className="text-base font-medium leading-relaxed text-body-color dark:text-body-color-dark">
-              AliasVault reserves the right to terminate your account if we suspect any misuse or violation of these terms. This may occur in the following circumstances:
+              AliasVault reserves the right to temporarily restrict, suspend, or terminate accounts if we reasonably suspect misuse, abuse, or violations of these Terms.
+            </p>
+            <p className="mt-4 text-base font-medium leading-relaxed text-body-color dark:text-body-color-dark">
+              Such actions may occur in circumstances including, but not limited to:
             </p>
             <ul className="mt-4 space-y-2 text-base font-medium leading-relaxed text-body-color dark:text-body-color-dark">
-              <li className="ml-6 list-disc">An account is reported by external parties (e.g., websites, platforms, or official authorities) for mass-account creation fraud using AliasVault&apos;s alias system</li>
-              <li className="ml-6 list-disc">Aliases are being used in phishing attempts or scams</li>
-              <li className="ml-6 list-disc">Activity patterns suggest misuse, including violations of the fair-use policy for free accounts</li>
-              <li className="ml-6 list-disc">Any other violation of these terms and conditions</li>
+              <li className="ml-6 list-disc">Reports from external parties (such as websites, platforms, service providers, or authorities) regarding abusive use of AliasVault aliases</li>
+              <li className="ml-6 list-disc">Aliases being used in phishing attempts, scams, spam campaigns, or other malicious activities</li>
+              <li className="ml-6 list-disc">Activity patterns that significantly exceed normal usage and trigger abuse-prevention systems</li>
+              <li className="ml-6 list-disc">Attempts to circumvent fair-use limits or account restrictions</li>
+              <li className="ml-6 list-disc">Any other violation of these Terms and Conditions</li>
             </ul>
             <p className="mt-4 text-base font-medium leading-relaxed text-body-color dark:text-body-color-dark">
-              If an account is blocked as a result of automated checks, users are welcome to contact support to clarify any unusual activity and explain their intended use case, after which a block can be removed.
+              Restrictions may include temporary limitations on alias creation, incoming email delivery, or other account functionality while a review is conducted.
+            </p>
+            <p className="mt-4 text-base font-medium leading-relaxed text-body-color dark:text-body-color-dark">
+              If an account is restricted as a result of automated checks, users are welcome to contact support and provide additional information regarding their use case. AliasVault may remove restrictions if, after review, the activity is determined to be legitimate and consistent with these Terms.
             </p>
           </div>
 
