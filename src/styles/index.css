@@ -31,6 +31,52 @@
   input#checkboxLabel:checked ~ .box span {
     @apply opacity-100;
   }
+
+  .rich-text :where(h1) {
+    @apply mb-6 mt-8 text-2xl font-bold leading-tight text-black dark:text-white sm:text-3xl;
+  }
+  .rich-text :where(h2) {
+    @apply mb-5 mt-12 text-xl font-bold leading-tight text-black dark:text-white sm:text-2xl;
+  }
+  .rich-text :where(h3) {
+    @apply mb-4 mt-8 text-lg font-bold leading-tight text-black dark:text-white sm:text-xl;
+  }
+  .rich-text :where(p) {
+    @apply mb-6 text-base font-medium leading-relaxed text-body-color sm:text-lg;
+  }
+  .rich-text :where(ul) {
+    @apply mb-6 list-disc pl-6;
+  }
+  .rich-text :where(ol) {
+    @apply mb-6 list-decimal pl-6;
+  }
+  .rich-text :where(li) {
+    @apply mb-2 text-base font-medium text-body-color sm:text-lg;
+  }
+  .rich-text :where(a) {
+    @apply text-primary transition-all duration-300 hover:underline;
+  }
+  .rich-text :where(blockquote) {
+    @apply my-8 border-l-4 border-primary bg-primary/5 px-6 py-4 italic text-body-color;
+  }
+  .rich-text :where(code) {
+    @apply rounded bg-black/5 px-1.5 py-0.5 font-mono text-sm dark:bg-white/10;
+  }
+  .rich-text :where(pre) {
+    @apply mb-6 overflow-x-auto rounded-md bg-gray-900 p-4 text-sm text-white;
+  }
+  .rich-text :where(pre code) {
+    @apply bg-transparent p-0;
+  }
+  .rich-text :where(strong) {
+    @apply font-bold text-black dark:text-white;
+  }
+  .rich-text :where(hr) {
+    @apply my-10 border-body-color/20;
+  }
+  .rich-text :where(img) {
+    @apply my-6 rounded-md;
+  }
 }
 
 *[data-aos=fade-down] {

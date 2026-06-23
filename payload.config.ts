@@ -1,0 +1,51 @@
+import path from 'path'
+import { fileURLToPath } from 'url'
+import { buildConfig } from 'payload'
+import { sqliteAdapter } from '@payloadcms/db-sqlite'
+import { lexicalEditor, UploadFeature, BlocksFeature } from '@payloadcms/richtext-lexical'
+import sharp from 'sharp'
+
+import { Users } from './src/payload/collections/Users'
+import { Media } from './src/payload/collections/Media'
+import { Posts } from './src/payload/collections/Posts'
+import { News } from './src/payload/collections/News'
+import { KnowledgeBase } from './src/payload/collections/KnowledgeBase'
+import { GitHubReleaseBlock } from './src/payload/blocks/GitHubReleaseBlock'
+
+const dirname = path.dirname(fileURLToPath(import.meta.url))
+
+export default buildConfig({
+  admin: {
+    user: Users.slug,
+    importMap: { baseDir: path.resolve(dirname) },
+  },
+  // Content first in the sidebar, admin collections last.
+  collections: [KnowledgeBase, Posts, News, Media, Users],
+  // Enable inline uploads (with a caption field) and the GitHubRelease block so
+  // the migrated <ClickableImage>/<GitHubRelease> content validates and renders.
+  editor: lexicalEditor({
+    features: ({ defaultFeatures }) => [
+      ...defaultFeatures,
+      UploadFeature({
+        collections: {
+          media: {
+            fields: [{ name: 'caption', type: 'text' }],
+          },
+        },
+      }),
+      BlocksFeature({ blocks: [GitHubReleaseBlock] }),
+    ],
+  }),
+  secret: process.env.PAYLOAD_SECRET || '',
+  db: sqliteAdapter({
+    client: { url: process.env.DATABASE_URI || 'file:./payload.db' },
+  }),
+  sharp,
+  localization: {
+    locales: ['en', 'nl'],
+    defaultLocale: 'en',
+  },
+  typescript: {
+    outputFile: path.resolve(dirname, 'src/payload-types.ts'),
+  },
+})

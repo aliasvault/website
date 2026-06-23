@@ -1,7 +1,18 @@
 import { getAllBlogAndNewsPosts } from '@/lib/blog';
 import { NextResponse } from 'next/server';
-import { remark } from 'remark';
-import html from 'remark-html';
+
+/** Extract plain text from a Payload Lexical editor state. */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function lexicalToPlainText(content: any): string {
+  const parts: string[] = [];
+  const walk = (node: any) => {
+    if (!node) return;
+    if (typeof node.text === 'string') parts.push(node.text);
+    if (Array.isArray(node.children)) node.children.forEach(walk);
+  };
+  walk(content?.root);
+  return parts.join(' ');
+}
 
 const locales = ['en', 'nl'];
 const localeNames = {
@@ -31,29 +42,13 @@ export async function GET(
   }
 
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.aliasvault.com';
-  const posts = getAllBlogAndNewsPosts(locale);
+  const posts = await getAllBlogAndNewsPosts(locale);
 
-  // Process posts to clean up content
-  const processedPosts = await Promise.all(
-    posts.map(async (post) => {
-      // Convert MDX to plain text with basic formatting
-      const processedContent = await remark()
-        .use(html)
-        .process(post.content);
-
-      // Get first 500 characters of content for description
-      const truncatedContent = processedContent.toString()
-        .replace(/<[^>]*>/g, '') // Remove HTML tags
-        .replace(/\n+/g, ' ') // Replace multiple newlines with space
-        .trim()
-        .slice(0, 500) + '...';
-
-      return {
-        ...post,
-        content: truncatedContent
-      };
-    })
-  );
+  // Build a plain-text excerpt from the Lexical content for each item.
+  const processedPosts = posts.map((post) => ({
+    ...post,
+    content: lexicalToPlainText(post.content).replace(/\s+/g, ' ').trim().slice(0, 500) + '...',
+  }));
   // Generate alternate feed links for all locales except current locale
   const alternateLinks = locales
     .filter(loc => loc !== locale) // Filter out self link

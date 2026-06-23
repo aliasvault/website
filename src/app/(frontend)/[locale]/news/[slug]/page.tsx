@@ -3,8 +3,7 @@ import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import { Link } from '@/i18n/navigation'
 import { Metadata } from 'next'
-import { serialize } from 'next-mdx-remote/serialize'
-import MDXContent from '@/components/MDX/MDXContent'
+import RichText from '@/components/Lexical/RichText'
 import { generatePageSEOMetadata } from '@/lib/seo-utils'
 import { routing } from '@/i18n/routing'
 import { getTranslations } from 'next-intl/server'
@@ -17,7 +16,7 @@ interface NewsArticlePageProps {
 }
 
 export async function generateStaticParams() {
-  const posts = getAllNewsPosts()
+  const posts = await getAllNewsPosts()
   const locales = routing.locales
 
   return posts.flatMap((post) =>
@@ -30,9 +29,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: NewsArticlePageProps): Promise<Metadata> {
   const { slug, locale } = await params
-  const post = getNewsBySlug(slug, locale)
-
-  console.log('Locale', locale)
+  const post = await getNewsBySlug(slug, locale)
 
   if (!post) {
     return {
@@ -59,22 +56,12 @@ export async function generateMetadata({ params }: NewsArticlePageProps): Promis
 
 export default async function NewsArticlePage({ params }: NewsArticlePageProps) {
   const { slug, locale } = await params
-  const post = getNewsBySlug(slug, locale)
+  const post = await getNewsBySlug(slug, locale)
   const t = await getTranslations()
 
   if (!post) {
     notFound()
   }
-
-  const mdxSource = await serialize(post.content, {
-    mdxOptions: {
-      development: process.env.NODE_ENV === 'development',
-      format: 'mdx',
-      rehypePlugins: [],
-      remarkPlugins: [],
-    },
-  })
-
 
   return (
     <section className="pb-[120px] pt-[150px]">
@@ -142,7 +129,7 @@ export default async function NewsArticlePage({ params }: NewsArticlePageProps) 
                 </div>
               </div>
               <div data-aos="fade-up" data-aos-delay="200">
-                <MDXContent source={mdxSource} />
+                <RichText data={post.content} />
               </div>
             </div>
           </div>

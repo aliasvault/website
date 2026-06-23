@@ -8,7 +8,7 @@ export const config = {
   // - … if they start with `/api`, `/trpc`, `/_next` or `/_vercel`
   // - … the ones containing a dot (e.g. `favicon.ico`)
   matcher: [
-    '/((?!api|trpc|_next|_vercel|.*\\..*).*)',
+    '/((?!api|trpc|_next|_vercel|admin|.*\\..*).*)',
 
     '/:locale([a-z]{2})?/rss.xml',
     '/:locale([a-z]{2})?/news/:path*',

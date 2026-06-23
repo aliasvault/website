@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next'
 import { getAllBlogAndNewsPosts } from '@/lib/blog'
+import { getAllKBArticles } from '@/lib/kb'
 import { routing } from '@/i18n/routing'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -15,6 +16,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         '/platforms',
         '/docs',
         '/blog',
+        '/kb',
         '/contact',
         '/mission',
         '/press-kit',
@@ -56,7 +58,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })
 
     // Get all blog and news posts
-    const posts = getAllBlogAndNewsPosts()
+    const posts = await getAllBlogAndNewsPosts()
 
     // Create dynamic routes for blog and news posts (all locales)
     const dynamicRoutes: MetadataRoute.Sitemap = []
@@ -86,5 +88,29 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         })
     })
 
-    return [...staticRoutes, ...dynamicRoutes]
+    // Knowledge base articles
+    const kbRoutes: MetadataRoute.Sitemap = []
+    const kbArticles = await getAllKBArticles()
+
+    routing.locales.forEach(locale => {
+        kbArticles.forEach(article => {
+            const buildUrl = (loc: string) => loc === routing.defaultLocale
+                ? `${baseUrl}/kb/${article.slug}`
+                : `${baseUrl}/${loc}/kb/${article.slug}`
+
+            kbRoutes.push({
+                url: buildUrl(locale),
+                lastModified: article.updated ? new Date(article.updated) : new Date(),
+                changeFrequency: 'monthly',
+                priority: 0.7,
+                alternates: {
+                    languages: Object.fromEntries(
+                        routing.locales.map(loc => [loc, buildUrl(loc)])
+                    )
+                }
+            })
+        })
+    })
+
+    return [...staticRoutes, ...dynamicRoutes, ...kbRoutes]
 }

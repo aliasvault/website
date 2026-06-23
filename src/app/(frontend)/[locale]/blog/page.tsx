@@ -36,7 +36,7 @@ export default async function Blog({ params, searchParams }: BlogPageProps) {
   const { locale } = await params;
   const { page } = await searchParams;
   const currentPage = Number(page) || 1;
-  const allPosts = getAllBlogAndNewsPosts(locale);
+  const allPosts = await getAllBlogAndNewsPosts(locale);
   const totalPages = Math.ceil(allPosts.length / ITEMS_PER_PAGE);
   const t = await getTranslations();
 

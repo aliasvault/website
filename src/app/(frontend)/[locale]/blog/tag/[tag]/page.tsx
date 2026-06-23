@@ -16,7 +16,7 @@ interface TagPageProps {
 
 export async function generateMetadata({ params }: TagPageProps): Promise<Metadata> {
   const { tag, locale } = await params
-  const posts = getBlogPostsByTag(tag, locale)
+  const posts = await getBlogPostsByTag(tag, locale)
   const t = await getTranslations({ locale })
 
   if (posts.length === 0) {
@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: TagPageProps): Promise<Metada
 
 export default async function TagPage({ params }: TagPageProps) {
   const { tag, locale } = await params
-  const posts = getBlogPostsByTag(tag, locale)
+  const posts = await getBlogPostsByTag(tag, locale)
   const t = await getTranslations()
 
   if (posts.length === 0) {

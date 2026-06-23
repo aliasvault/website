@@ -3,8 +3,7 @@ import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import { Link } from '@/i18n/navigation'
 import { Metadata } from 'next'
-import { serialize } from 'next-mdx-remote/serialize'
-import MDXContent from '@/components/MDX/MDXContent'
+import RichText from '@/components/Lexical/RichText'
 import RelatedPost from '@/components/Blog/RelatedPost'
 import TagButton from '@/components/Blog/TagButton'
 import { getTranslations } from 'next-intl/server'
@@ -19,7 +18,7 @@ interface BlogPostPageProps {
 }
 
 export async function generateStaticParams() {
-  const posts = getAllBlogPosts()
+  const posts = await getAllBlogPosts()
   const locales = routing.locales
 
   return posts.flatMap((post) =>
@@ -32,7 +31,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
   const { slug, locale } = await params
-  const post = getBlogPostBySlug(slug, locale)
+  const post = await getBlogPostBySlug(slug, locale)
 
   if (!post) {
     return {
@@ -59,22 +58,13 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { slug, locale } = await params
-  const post = getBlogPostBySlug(slug, locale)
-  const allPosts = getAllBlogPosts(locale)
+  const post = await getBlogPostBySlug(slug, locale)
+  const allPosts = await getAllBlogPosts(locale)
   const t = await getTranslations()
 
   if (!post) {
     notFound()
   }
-
-  const mdxSource = await serialize(post.content, {
-    mdxOptions: {
-      development: process.env.NODE_ENV === 'development',
-      format: 'mdx',
-      rehypePlugins: [],
-      remarkPlugins: [],
-    },
-  })
 
   const useFullLayout = post.layout === 'full'
 
@@ -151,7 +141,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </div>
         </div>
         <div data-aos="fade-up" data-aos-delay="200">
-          <MDXContent source={mdxSource} />
+          <RichText data={post.content} />
         </div>
         {!useFullLayout && (
           <div className="items-center justify-between sm:flex">

@@ -1,5 +1,6 @@
 import createMDX from '@next/mdx'
 import createNextIntlPlugin from 'next-intl/plugin';
+import { withPayload } from '@payloadcms/next/withPayload';
 
 const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
 
@@ -57,7 +58,7 @@ const nextConfig = {
               "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://plausible.xivi.nl",
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
               "font-src 'self' https://fonts.gstatic.com",
-              "img-src 'self' data: blob: https://img.shields.io",
+              "img-src 'self' data: blob: https://img.shields.io https://www.gravatar.com",
               "connect-src 'self' https://api.github.com https://plausible.xivi.nl",
               "frame-src 'self' https://www.youtube.com https://youtube.com",
               "object-src 'none'",
@@ -90,5 +91,5 @@ const withMDX = createMDX({
   // Add markdown plugins here, as desired
 })
 
-// Merge MDX config with Next.js config
-export default withNextIntl(withMDX(nextConfig));
+// Merge MDX + next-intl config, then wrap with Payload.
+export default withPayload(withNextIntl(withMDX(nextConfig)), { devBundleServerPackages: false });

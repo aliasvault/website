@@ -19,7 +19,13 @@
     "pricing": "Prijzen",
     "platforms": "Platforms",
     "blog": "Blog",
-    "contact": "Contact"
+    "contact": "Contact",
+    "knowledgeBase": "Kennisbank"
+  },
+  "kb": {
+    "title": "Kennisbank",
+    "description": "Handleidingen, antwoorden en tips om alles uit AliasVault te halen.",
+    "empty": "Nog geen artikelen gepubliceerd."
   },
   "hero": {
     "title": "Privacy-First Wachtwoord & E-mailalias Manager",

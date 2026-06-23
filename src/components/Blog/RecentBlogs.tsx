@@ -2,15 +2,15 @@ import SingleBlog from "./SingleBlog";
 import { getAllBlogAndNewsPosts } from "@/lib/blog";
 import SingleNews from "./SingleNews";
 import RssIcon from "@/components/Common/RssIcon";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 
 interface RecentBlogAndNewsProps {
   locale: string;
 }
 
-const RecentBlogAndNews = ({ locale }: RecentBlogAndNewsProps) => {
-  const posts = getAllBlogAndNewsPosts(locale);
-  const t = useTranslations();
+const RecentBlogAndNews = async ({ locale }: RecentBlogAndNewsProps) => {
+  const posts = await getAllBlogAndNewsPosts(locale);
+  const t = await getTranslations();
 
   return (
     <section

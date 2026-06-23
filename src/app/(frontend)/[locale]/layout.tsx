@@ -8,7 +8,7 @@ import {
 import ScrollToTop from "@/components/ScrollToTop";
 import AOSInit from "@/components/AOS/AOSInit";
 import { Providers } from "../providers";
-import "../../styles/index.css";
+import "@/styles/index.css";
 import { Metadata } from "next";
 import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { getMessages, getTranslations } from 'next-intl/server';

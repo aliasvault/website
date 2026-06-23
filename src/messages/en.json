@@ -19,7 +19,13 @@
     "pricing": "Pricing",
     "platforms": "Platforms",
     "blog": "Blog",
-    "contact": "Contact"
+    "contact": "Contact",
+    "knowledgeBase": "Knowledge Base"
+  },
+  "kb": {
+    "title": "Knowledge Base",
+    "description": "Guides, answers and tips to help you get the most out of AliasVault.",
+    "empty": "No articles published yet."
   },
   "hero": {
     "title": "Privacy-First Password & Email Alias Manager",
