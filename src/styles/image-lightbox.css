@@ -1,0 +1,22 @@
+/* Fullscreen image lightbox backdrop, used by MDX/ClickableImage via react-modal. */
+@keyframes image-lightbox-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.image-lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000000;
+  cursor: pointer;
+  animation: image-lightbox-fade-in 0.3s ease-out;
+  transition: opacity 0.3s ease-out;
+}

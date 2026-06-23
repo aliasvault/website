@@ -1,20 +1,40 @@
 name: Deploy website
 
+# main push  -> staging
+# tag push   -> production
 on:
   push:
     branches:
       - main
+    tags:
+      - 'v*'
+
+# Avoid two deploys simultaneously on the same environment.
+concurrency:
+  group: deploy-${{ startsWith(github.ref, 'refs/tags/') && 'production' || 'staging' }}
+  cancel-in-progress: false
 
 jobs:
   deploy:
-    name: Deploy to production
+    name: Deploy
     runs-on: ubuntu-latest
+
     environment:
-      name: production
-      url: https://www.aliasvault.com
+      name: ${{ startsWith(github.ref, 'refs/tags/') && 'production' || 'staging' }}
+      url: ${{ vars.DEPLOY_URL }}
+
+    env:
+      DEPLOY_PATH: ${{ vars.DEPLOY_PATH }}
 
     steps:
       - uses: actions/checkout@v4
+
+      - name: Check required config
+        run: |
+          if [ -z "$DEPLOY_PATH" ]; then
+            echo "::error::DEPLOY_PATH variable is not set for the '${{ job.environment.name }}' environment. Configure it under Settings > Environments."
+            exit 1
+          fi
 
       - name: Setup SSH
         run: |
@@ -30,12 +50,13 @@ jobs:
             --exclude ".github" \
             --exclude "node_modules" \
             --exclude ".env" \
+            --exclude "data" \
             --exclude "docker-compose.override.yml" \
             -e "ssh -i ~/.ssh/deploy_key -p 22" \
-            ./ ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:/opt/website/
+            ./ ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:"$DEPLOY_PATH"/
 
       - name: Rebuild and restart Docker Compose
         run: |
           ssh -i ~/.ssh/deploy_key -p 22 \
             ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} \
-            "cd /opt/website && docker compose up -d --build --force-recreate && docker system prune -af"
+            "cd $DEPLOY_PATH && docker compose up -d --build --force-recreate && docker system prune -af"

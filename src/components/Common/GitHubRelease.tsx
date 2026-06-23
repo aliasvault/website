@@ -1,3 +1,5 @@
+'use client';
+
 import { useEffect, useState } from 'react';
 import { FaGithub, FaDownload, FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import { useTranslations } from 'next-intl';

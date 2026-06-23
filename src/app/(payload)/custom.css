@@ -1,0 +1,4 @@
+/* Custom Payload admin styles. AliasVault brand accent for the admin UI. */
+:root {
+  --theme-success-500: #f49541;
+}

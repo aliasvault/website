@@ -19,7 +19,13 @@
     "pricing": "Prijzen",
     "platforms": "Platforms",
     "blog": "Blog",
-    "contact": "Contact"
+    "contact": "Contact",
+    "knowledgeBase": "Kennisbank"
+  },
+  "kb": {
+    "title": "Kennisbank",
+    "description": "Handleidingen, antwoorden en tips om alles uit AliasVault te halen.",
+    "empty": "Nog geen artikelen gepubliceerd."
   },
   "hero": {
     "title": "Privacy-First Wachtwoord & E-mailalias Manager",
@@ -425,6 +431,7 @@
     "title": "AliasVault demo",
     "description": "Bekijk de video hieronder om AliasVault in actie te zien.",
     "playButtonAriaLabel": "video afspeelknop",
+    "closeButtonAriaLabel": "video sluiten",
     "imageAlt": "video afbeelding"
   },
   "callToAction": {

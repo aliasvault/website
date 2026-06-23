@@ -1,6 +1,6 @@
-import fs from 'fs'
-import path from 'path'
-import matter from 'gray-matter'
+import { getPayloadClient } from '@/payload/client'
+import type { User } from '@/payload-types'
+import { resolveAuthor, type ResolvedAuthor } from './authors'
 
 export interface ContentPost {
   type: 'blog' | 'news'
@@ -11,91 +11,117 @@ export interface ContentPost {
   image?: string
   /** Blog only: 'full' = no sidebar (news-style), omit or 'default' = with sidebar */
   layout?: 'default' | 'full'
-  author: {
-    name: string
-    image: string
-    designation: string
-  }
+  /** Resolved from the stored author key via src/lib/authors.ts. */
+  author: ResolvedAuthor
   tags: string[]
-  content: string
+  content: unknown
 }
 
-const postsDirectory = path.join(process.cwd(), 'src/content/blog')
-const newsDirectory = path.join(process.cwd(), 'src/content/news')
-
-function getPostsFromDirectory(directory: string, type: 'blog' | 'news', locale: string = 'en'): ContentPost[] {
-  const fileNames = fs.readdirSync(directory)
-
-  // Get only the base files (without locale suffixes) to avoid duplicates
-  const baseFileNames = fileNames
-    .filter((fileName) => fileName.endsWith('.mdx'))
-    .filter((fileName) => !fileName.match(/\.[a-z]{2}\.mdx$/)) // Filter out any localized files with 2-letter ISO codes
-    .map((fileName) => fileName.replace(/\.mdx$/, ''))
-  return baseFileNames
-    .map((slug) => {
-      const localizedPost = getLocalizedPost(directory, slug, type, locale)
-      return localizedPost
-    })
-    .filter((post): post is ContentPost => post !== null)
+/**
+ * Resolve a Media upload field to a same-origin /uploads/<filename> path that
+ * next/image accepts. Accepts a populated media doc (depth >= 1), a bare id, or
+ * a string path.
+ */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function mediaUrl(value: any): string | undefined {
+  if (!value) return undefined
+  if (typeof value === 'string') return value
+  if (typeof value === 'object' && value.filename) return `/uploads/${value.filename}`
+  return undefined
 }
 
-function getLocalizedPost(directory: string, slug: string, type: 'blog' | 'news', locale: string = 'en'): ContentPost | null {
-  let fullPath: string
-
-  if (locale !== 'en') {
-    const localizedPath = path.join(directory, `${slug}.${locale}.mdx`)
-    if (fs.existsSync(localizedPath)) {
-      fullPath = localizedPath
-    } else {
-      fullPath = path.join(directory, `${slug}.mdx`)
-    }
-  } else {
-    fullPath = path.join(directory, `${slug}.mdx`)
-  }
-
-  try {
-    const fileContents = fs.readFileSync(fullPath, 'utf8')
-    const { data, content } = matter(fileContents)
-
-    return {
-      slug,
-      content,
-      type,
-      ...data,
-    } as ContentPost
-  } catch {
-    return null
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function mapPost(doc: any, type: 'blog' | 'news', locale: string): ContentPost {
+  return {
+    type,
+    slug: doc.slug,
+    title: doc.title,
+    description: doc.description ?? '',
+    date: doc.date ? String(doc.date).slice(0, 10) : '',
+    image: mediaUrl(doc.image),
+    layout: doc.layout ?? undefined,
+    author: resolveAuthor(doc.author, locale),
+    tags: Array.isArray(doc.tags) ? doc.tags : [],
+    content: doc.content,
   }
 }
 
-export function getAllBlogPosts(locale: string = 'en'): ContentPost[] {
-  const posts = getPostsFromDirectory(postsDirectory, 'blog', locale)
-  return posts.sort((a, b) => (a.date < b.date ? 1 : -1))
+async function findAll(collection: 'posts' | 'news', locale: string): Promise<ContentPost[]> {
+  const payload = await getPayloadClient()
+  const res = await payload.find({
+    collection,
+    locale: locale as 'en' | 'nl',
+    where: { _status: { equals: 'published' } },
+    sort: '-date',
+    limit: 1000,
+    depth: 1,
+    overrideAccess: false,
+    // List view only select card field instead of rendering full body.
+    select: {
+      slug: true,
+      title: true,
+      description: true,
+      date: true,
+      image: true,
+      layout: true,
+      author: true,
+      tags: true,
+    },
+  })
+  return res.docs.map((d) => mapPost(d, collection === 'posts' ? 'blog' : 'news', locale))
 }
 
-export function getAllNewsPosts(locale: string = 'en'): ContentPost[] {
-  const posts = getPostsFromDirectory(newsDirectory, 'news', locale)
-  return posts.sort((a, b) => (a.date < b.date ? 1 : -1))
+async function findBySlug(
+  collection: 'posts' | 'news',
+  slug: string,
+  locale: string,
+  { draft = false, user = null }: { draft?: boolean; user?: User | null } = {},
+): Promise<ContentPost | null> {
+  const payload = await getPayloadClient()
+  const res = await payload.find({
+    collection,
+    locale: locale as 'en' | 'nl',
+    draft,
+    where: { slug: { equals: slug } },
+    limit: 1,
+    depth: 2,
+    overrideAccess: false,
+    user,
+  })
+  const doc = res.docs[0]
+  return doc ? mapPost(doc, collection === 'posts' ? 'blog' : 'news', locale) : null
 }
 
-export function getAllBlogAndNewsPosts(locale: string = 'en'): ContentPost[] {
-  const blogPosts = getPostsFromDirectory(postsDirectory, 'blog', locale)
-  const newsPosts = getPostsFromDirectory(newsDirectory, 'news', locale)
-  const allPosts = [...blogPosts, ...newsPosts]
-  return allPosts.sort((a, b) => (a.date < b.date ? 1 : -1))
+export async function getAllBlogPosts(locale: string = 'en'): Promise<ContentPost[]> {
+  return findAll('posts', locale)
 }
 
-export function getBlogPostBySlug(slug: string, locale: string = 'en'): ContentPost | null {
-  return getLocalizedPost(postsDirectory, slug, 'blog', locale)
+export async function getAllNewsPosts(locale: string = 'en'): Promise<ContentPost[]> {
+  return findAll('news', locale)
 }
 
-export function getNewsBySlug(slug: string, locale: string = 'en'): ContentPost | null {
-  return getLocalizedPost(newsDirectory, slug, 'news', locale)
+export async function getAllBlogAndNewsPosts(locale: string = 'en'): Promise<ContentPost[]> {
+  const [blog, news] = await Promise.all([findAll('posts', locale), findAll('news', locale)])
+  return [...blog, ...news].sort((a, b) => (a.date < b.date ? 1 : -1))
 }
 
-export function getBlogPostsByTag(tag: string, locale: string = 'en'): ContentPost[] {
-  const blogPosts = getAllBlogPosts(locale);
-  const newsPosts = getAllNewsPosts(locale);
-  const allPosts = [...blogPosts, ...newsPosts];
-  return allPosts.filter(post => post.tags.includes(tag));
+export async function getBlogPostBySlug(
+  slug: string,
+  locale: string = 'en',
+  opts: { draft?: boolean; user?: User | null } = {},
+): Promise<ContentPost | null> {
+  return findBySlug('posts', slug, locale, opts)
+}
+
+export async function getNewsBySlug(
+  slug: string,
+  locale: string = 'en',
+  opts: { draft?: boolean; user?: User | null } = {},
+): Promise<ContentPost | null> {
+  return findBySlug('news', slug, locale, opts)
+}
+
+export async function getBlogPostsByTag(tag: string, locale: string = 'en'): Promise<ContentPost[]> {
+  const all = await getAllBlogAndNewsPosts(locale)
+  return all.filter((post) => post.tags.includes(tag))
 }

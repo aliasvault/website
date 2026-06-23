@@ -1,3 +1,4 @@
+import type { ReactElement } from "react";
 import Link from "next/link";
 import CopyLinkIcon from "@/components/Common/CopyLinkIcon";
 
@@ -50,7 +51,7 @@ function GitHubIcon({ className }: { className?: string }) {
   );
 }
 
-const socialMeta: Record<SocialPlatform, { Icon: ({ className }: { className?: string }) => JSX.Element; label: string }> = {
+const socialMeta: Record<SocialPlatform, { Icon: ({ className }: { className?: string }) => ReactElement; label: string }> = {
   x: { Icon: XIcon, label: "X (Twitter)" },
   mastodon: { Icon: MastodonIcon, label: "Mastodon" },
   github: { Icon: GitHubIcon, label: "GitHub" },

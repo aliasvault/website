@@ -1,4 +1,6 @@
-FROM node:18-alpine AS base
+FROM node:22-alpine AS base
+
+RUN npm install -g npm@11
 
 # Install dependencies only when needed
 FROM base AS deps
@@ -18,6 +20,17 @@ COPY . .
 # Learn more here: https://nextjs.org/telemetry
 # Uncomment the following line to disable telemetry during the build
 # ENV NEXT_TELEMETRY_DISABLED 1
+
+# Payload boots during `next build` (to generate its admin import map etc.), so
+# it needs a writable database to connect to. Point it at a THROWAWAY db in /tmp
+# so the build doesn't touch the runtime ./data dir (bind-mounted at runtime and
+# excluded from the image). This /tmp db is discarded with the builder stage.
+#
+# The real database is separate: at runtime DATABASE_URI is set by docker-compose
+# to ./data/payload.db, and `prodMigrations` (see payload.config.ts) auto-applies
+# any pending migrations to it on the container's first startup. Each db tracks
+# its own migration state, so the build-time /tmp db does not affect it.
+ENV DATABASE_URI=file:/tmp/payload-build.db
 
 # Make sure your next.config.js has output: 'standalone' set
 RUN npm run build

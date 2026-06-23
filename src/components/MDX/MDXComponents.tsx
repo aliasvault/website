@@ -26,7 +26,7 @@ export const components = {
   img: (props: ComponentProps<'img'>) => (
     <div className="relative aspect-[97/60] w-full sm:aspect-[97/44]">
       <Image
-        src={props.src || ''}
+        src={typeof props.src === 'string' ? props.src : ''}
         alt={props.alt || ''}
         fill
         className="object-cover object-center"

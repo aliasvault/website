@@ -1,0 +1,42 @@
+import { notFound } from 'next/navigation'
+import { Metadata } from 'next'
+import { getTranslations } from 'next-intl/server'
+import { getKBArticleBySlug } from '@/lib/kb'
+import { getCurrentUser } from '@/payload/auth'
+import KBArticleView from '@/components/KB/KBArticleView'
+import RefreshOnSave from '@/components/Lexical/RefreshOnSave'
+
+// Rendered on demand (never statically generated) so reviewers can preview any
+// article — including drafts — in the real site theme, with Payload Live Preview.
+export const dynamic = 'force-dynamic'
+
+interface KBPreviewPageProps {
+  params: Promise<{ slug: string; locale: string }>
+}
+
+export const metadata: Metadata = {
+  robots: { index: false, follow: false },
+}
+
+export default async function KBPreviewPage({ params }: KBPreviewPageProps) {
+  const { slug, locale } = await params
+  const user = await getCurrentUser()
+  if (!user) notFound()
+
+  // draft = true → returns the latest draft (or published) version.
+  const article = await getKBArticleBySlug(slug, locale, { draft: true, user })
+  const t = await getTranslations()
+
+  if (!article) {
+    notFound()
+  }
+
+  const serverURL = process.env.NEXT_PUBLIC_SERVER_URL || 'http://localhost:3100'
+
+  return (
+    <>
+      <RefreshOnSave serverURL={serverURL} />
+      <KBArticleView article={article} locale={locale} kbLabel={t('navigation.knowledgeBase')} isPreview />
+    </>
+  )
+}

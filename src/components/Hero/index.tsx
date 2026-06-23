@@ -313,7 +313,7 @@ const Hero = () => {
 
                   {/* Made in NL Badge */}
                   <motion.div className="flex items-center space-x-2" variants={badgeVariants}>
-                    <Image src="/images/flags/nl.svg" width={24} height={24} alt={t('alt.madeInNL')} title={t('alt.madeInNL')} />
+                    <Image src="/images/flags/nl.svg" width={24} height={16} alt={t('alt.madeInNL')} title={t('alt.madeInNL')} />
                     <Image src="/images/flags/gdpr.svg" width={24} height={24} alt={t('alt.gdpr')} title={t('alt.gdpr')} />
                   </motion.div>
                 </motion.div>
@@ -335,6 +335,9 @@ const Hero = () => {
                     alt={t('alt.heroImage')}
                     width={1000}
                     height={1000}
+                    priority
+                    sizes="(max-width: 992px) 100vw, 50vw"
+                    style={{ width: "100%", height: "auto" }}
                     className="mx-auto dark:hidden"
                   />
                   <Image
@@ -342,6 +345,9 @@ const Hero = () => {
                     alt={t('alt.heroImage')}
                     width={1000}
                     height={1000}
+                    priority
+                    sizes="(max-width: 992px) 100vw, 50vw"
+                    style={{ width: "100%", height: "auto" }}
                     className="mx-auto hidden dark:block"
                   />
                 </motion.div>
