@@ -23,11 +23,23 @@ const jsxConverters = ({ defaultConverters }: any) => ({
     if (!src) return null
     const caption = node.fields?.caption || doc.alt || ''
     const alt = doc.alt || caption || ''
-    return <ClickableImage src={src} alt={alt} caption={caption} />
+    // Wrapped in .rich-text-embed so the .rich-text img margins don't stack on
+    // the component's own card spacing (it brings its own mb-8).
+    return (
+      <div className="rich-text-embed">
+        <ClickableImage src={src} alt={alt} caption={caption} />
+      </div>
+    )
   },
   blocks: {
+    // Wrapped in .rich-text-embed so the .rich-text prose margins don't leak
+    // into the component's own h2/h3/p (it brings its own spacing).
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    githubRelease: ({ node }: any) => <GitHubRelease version={node?.fields?.version || 'latest'} />,
+    githubRelease: ({ node }: any) => (
+      <div className="rich-text-embed">
+        <GitHubRelease version={node?.fields?.version || 'latest'} />
+      </div>
+    ),
   },
 })
 

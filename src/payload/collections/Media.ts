@@ -17,14 +17,5 @@ export const Media: CollectionConfig = {
   },
   fields: [
     { name: 'alt', type: 'text', localized: true },
-    {
-      name: 'sourcePath',
-      type: 'text',
-      index: true,
-      admin: {
-        readOnly: true,
-        description: 'Original /public path imported during migration (dedup key). Leave empty for admin uploads.',
-      },
-    },
   ],
 }

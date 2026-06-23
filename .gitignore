@@ -31,11 +31,9 @@ yarn-error.log*
 # vercel
 .vercel
 
-# payload cms
-payload.db
-payload.db-shm
-payload.db-wal
-/public/uploads
+# payload cms data (db and uploads)
+public/uploads
+/data
 
 # typescript
 *.tsbuildinfo

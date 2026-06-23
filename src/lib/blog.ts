@@ -1,4 +1,5 @@
 import { getPayloadClient } from '@/payload/client'
+import { resolveAuthor, type ResolvedAuthor } from './authors'
 
 export interface ContentPost {
   type: 'blog' | 'news'
@@ -9,11 +10,8 @@ export interface ContentPost {
   image?: string
   /** Blog only: 'full' = no sidebar (news-style), omit or 'default' = with sidebar */
   layout?: 'default' | 'full'
-  author: {
-    name: string
-    image: string
-    designation: string
-  }
+  /** Resolved from the stored author key via src/lib/authors.ts. */
+  author: ResolvedAuthor
   tags: string[]
   content: unknown
 }
@@ -32,7 +30,7 @@ function mediaUrl(value: any): string | undefined {
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-function mapPost(doc: any, type: 'blog' | 'news'): ContentPost {
+function mapPost(doc: any, type: 'blog' | 'news', locale: string): ContentPost {
   return {
     type,
     slug: doc.slug,
@@ -41,11 +39,7 @@ function mapPost(doc: any, type: 'blog' | 'news'): ContentPost {
     date: doc.date ? String(doc.date).slice(0, 10) : '',
     image: mediaUrl(doc.image),
     layout: doc.layout ?? undefined,
-    author: {
-      name: doc.author?.name ?? '',
-      image: mediaUrl(doc.author?.image) ?? '',
-      designation: doc.author?.designation ?? '',
-    },
+    author: resolveAuthor(doc.author, locale),
     tags: Array.isArray(doc.tags) ? doc.tags : [],
     content: doc.content,
   }
@@ -62,7 +56,7 @@ async function findAll(collection: 'posts' | 'news', locale: string): Promise<Co
     depth: 2,
     overrideAccess: true,
   })
-  return res.docs.map((d) => mapPost(d, collection === 'posts' ? 'blog' : 'news'))
+  return res.docs.map((d) => mapPost(d, collection === 'posts' ? 'blog' : 'news', locale))
 }
 
 async function findBySlug(
@@ -84,7 +78,7 @@ async function findBySlug(
     overrideAccess: true,
   })
   const doc = res.docs[0]
-  return doc ? mapPost(doc, collection === 'posts' ? 'blog' : 'news') : null
+  return doc ? mapPost(doc, collection === 'posts' ? 'blog' : 'news', locale) : null
 }
 
 export async function getAllBlogPosts(locale: string = 'en'): Promise<ContentPost[]> {

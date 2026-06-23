@@ -77,6 +77,12 @@
   .rich-text :where(img) {
     @apply my-6 rounded-md;
   }
+  /* Embedded React blocks (e.g. GitHubRelease) supply their own spacing. Cancel
+     the leaked prose margins above on their internal elements — the component's
+     own utility classes (space-y-*, mb-*, p-*) keep winning over this :where reset. */
+  .rich-text :where(.rich-text-embed) :where(h1, h2, h3, h4, h5, h6, p, ul, ol, li, blockquote, pre, hr, img) {
+    @apply m-0;
+  }
 }
 
 *[data-aos=fade-down] {

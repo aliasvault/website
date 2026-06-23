@@ -1,10 +1,8 @@
 import type { Field } from 'payload'
+import { authorSelectOptions } from '@/lib/authors'
 
 /**
- * Fields shared by Posts (blog) and News. Cover and author images are Media
- * uploads (relationTo: 'media'); the migration in src/payload/seed.ts imports
- * the original /public files into the Media collection. The frontend resolves a
- * populated media doc back to a /uploads/<filename> path (see src/lib/blog.ts).
+ * Fields shared by Posts (blog) and News.
  */
 export const articleFields: Field[] = [
   { name: 'title', type: 'text', required: true, localized: true },
@@ -36,12 +34,13 @@ export const articleFields: Field[] = [
   { name: 'tags', type: 'text', hasMany: true },
   {
     name: 'author',
-    type: 'group',
-    fields: [
-      { name: 'name', type: 'text' },
-      { name: 'designation', type: 'text', localized: true },
-      { name: 'image', type: 'upload', relationTo: 'media', admin: { description: 'Author avatar.' } },
-    ],
+    type: 'select',
+    defaultValue: 'leendert',
+    options: authorSelectOptions,
+    admin: {
+      position: 'sidebar',
+      description: 'Byline author. Avatar and title are defined in src/lib/authors.ts.',
+    },
   },
   { name: 'content', type: 'richText', required: true, localized: true },
 ]

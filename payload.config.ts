@@ -38,7 +38,7 @@ export default buildConfig({
   }),
   secret: process.env.PAYLOAD_SECRET || '',
   db: sqliteAdapter({
-    client: { url: process.env.DATABASE_URI || 'file:./payload.db' },
+    client: { url: process.env.DATABASE_URI || 'file:./data/payload.db' },
   }),
   sharp,
   localization: {
