@@ -37,6 +37,13 @@ export default buildConfig({
     ],
   }),
   secret: process.env.PAYLOAD_SECRET || '',
+  ...(process.env.NEXT_PUBLIC_SERVER_URL
+    ? {
+        cors: [process.env.NEXT_PUBLIC_SERVER_URL],
+        csrf: [process.env.NEXT_PUBLIC_SERVER_URL],
+      }
+    : {}),
+  graphQL: { disablePlaygroundInProduction: true },
   db: sqliteAdapter({
     client: { url: process.env.DATABASE_URI || 'file:./data/payload.db' },
   }),
