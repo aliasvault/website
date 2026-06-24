@@ -9,10 +9,12 @@ on:
     tags:
       - '**'
 
-# Avoid two deploys simultaneously on the same environment.
+# One run per environment at a time. Staging (main push) cancels any earlier
+# in-flight run so only the newest commit builds/deploys. Production (tag push)
+# never cancels — extra runs queue and apply in order, so no release is dropped.
 concurrency:
   group: deploy-${{ startsWith(github.ref, 'refs/tags/') && 'production' || 'staging' }}
-  cancel-in-progress: false
+  cancel-in-progress: ${{ !startsWith(github.ref, 'refs/tags/') }}
 
 jobs:
   deploy:
