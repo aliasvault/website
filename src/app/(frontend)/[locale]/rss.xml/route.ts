@@ -1,6 +1,9 @@
 import { getAllBlogAndNewsPosts } from '@/lib/blog';
 import { NextResponse } from 'next/server';
 
+// Built from Payload content, which is only available at runtime.
+export const dynamic = 'force-dynamic';
+
 /** Extract plain text from a Payload Lexical editor state. */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function lexicalToPlainText(content: any): string {

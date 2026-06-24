@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
 import { getTranslations } from 'next-intl/server'
 import { getKBArticleBySlug } from '@/lib/kb'
+import { getCurrentUser } from '@/payload/auth'
 import KBArticleView from '@/components/KB/KBArticleView'
 import RefreshOnSave from '@/components/Lexical/RefreshOnSave'
 
@@ -19,8 +20,11 @@ export const metadata: Metadata = {
 
 export default async function KBPreviewPage({ params }: KBPreviewPageProps) {
   const { slug, locale } = await params
+  const user = await getCurrentUser()
+  if (!user) notFound()
+
   // draft = true → returns the latest draft (or published) version.
-  const article = await getKBArticleBySlug(slug, locale, true)
+  const article = await getKBArticleBySlug(slug, locale, { draft: true, user })
   const t = await getTranslations()
 
   if (!article) {

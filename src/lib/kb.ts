@@ -1,4 +1,5 @@
 import { getPayloadClient } from '@/payload/client'
+import type { User } from '@/payload-types'
 import { routing } from '@/i18n/routing'
 
 export type KBStatus = 'draft' | 'published'
@@ -33,18 +34,17 @@ function mapArticle(doc: any): KBArticle {
 export async function getKBArticleBySlug(
   slug: string,
   locale: string = routing.defaultLocale,
-  draft = false,
+  { draft = false, user = null }: { draft?: boolean; user?: User | null } = {},
 ): Promise<KBArticle | null> {
   const payload = await getPayloadClient()
   const res = await payload.find({
     collection: 'knowledge-base',
     locale: locale as 'en' | 'nl',
     draft,
-    where: draft
-      ? { slug: { equals: slug } }
-      : { and: [{ slug: { equals: slug } }, { _status: { equals: 'published' } }] },
+    where: { slug: { equals: slug } },
     limit: 1,
-    overrideAccess: true,
+    overrideAccess: false,
+    user,
   })
   return res.docs[0] ? mapArticle(res.docs[0]) : null
 }
@@ -56,7 +56,8 @@ export async function getAllKBArticles(locale: string = routing.defaultLocale): 
     locale: locale as 'en' | 'nl',
     where: { _status: { equals: 'published' } },
     limit: 1000,
-    overrideAccess: true,
+    // Backstop: access control forces published-only for anonymous requests.
+    overrideAccess: false,
   })
   return res.docs.map(mapArticle).sort((a, b) => a.title.localeCompare(b.title))
 }

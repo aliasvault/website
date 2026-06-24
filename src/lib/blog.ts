@@ -1,4 +1,5 @@
 import { getPayloadClient } from '@/payload/client'
+import type { User } from '@/payload-types'
 import { resolveAuthor, type ResolvedAuthor } from './authors'
 
 export interface ContentPost {
@@ -54,7 +55,7 @@ async function findAll(collection: 'posts' | 'news', locale: string): Promise<Co
     sort: '-date',
     limit: 1000,
     depth: 1,
-    overrideAccess: true,
+    overrideAccess: false,
     // List view only select card field instead of rendering full body.
     select: {
       slug: true,
@@ -74,19 +75,18 @@ async function findBySlug(
   collection: 'posts' | 'news',
   slug: string,
   locale: string,
-  draft = false,
+  { draft = false, user = null }: { draft?: boolean; user?: User | null } = {},
 ): Promise<ContentPost | null> {
   const payload = await getPayloadClient()
   const res = await payload.find({
     collection,
     locale: locale as 'en' | 'nl',
     draft,
-    where: draft
-      ? { slug: { equals: slug } }
-      : { and: [{ slug: { equals: slug } }, { _status: { equals: 'published' } }] },
+    where: { slug: { equals: slug } },
     limit: 1,
     depth: 2,
-    overrideAccess: true,
+    overrideAccess: false,
+    user,
   })
   const doc = res.docs[0]
   return doc ? mapPost(doc, collection === 'posts' ? 'blog' : 'news', locale) : null
@@ -108,17 +108,17 @@ export async function getAllBlogAndNewsPosts(locale: string = 'en'): Promise<Con
 export async function getBlogPostBySlug(
   slug: string,
   locale: string = 'en',
-  draft = false,
+  opts: { draft?: boolean; user?: User | null } = {},
 ): Promise<ContentPost | null> {
-  return findBySlug('posts', slug, locale, draft)
+  return findBySlug('posts', slug, locale, opts)
 }
 
 export async function getNewsBySlug(
   slug: string,
   locale: string = 'en',
-  draft = false,
+  opts: { draft?: boolean; user?: User | null } = {},
 ): Promise<ContentPost | null> {
-  return findBySlug('news', slug, locale, draft)
+  return findBySlug('news', slug, locale, opts)
 }
 
 export async function getBlogPostsByTag(tag: string, locale: string = 'en'): Promise<ContentPost[]> {

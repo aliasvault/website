@@ -7,6 +7,10 @@ import Breadcrumb from '@/components/Common/Breadcrumb'
 import { getTranslations } from 'next-intl/server'
 import { generatePageSEOMetadata } from '@/lib/seo-utils'
 
+// Tag results are queried from the Payload database (runtime-only) — render per
+// request rather than at build time.
+export const dynamic = 'force-dynamic'
+
 interface TagPageProps {
   params: Promise<{
     tag: string

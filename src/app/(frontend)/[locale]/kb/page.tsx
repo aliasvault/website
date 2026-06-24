@@ -4,6 +4,10 @@ import { Link } from '@/i18n/navigation'
 import { getKBArticlesByCategory } from '@/lib/kb'
 import { generatePageSEOMetadata } from '@/lib/seo-utils'
 
+// KB articles come from the Payload database (runtime-only), so render this
+// index per request instead of prerendering it at build time.
+export const dynamic = 'force-dynamic'
+
 interface KBIndexPageProps {
   params: Promise<{ locale: string }>
 }

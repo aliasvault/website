@@ -12,8 +12,12 @@ import { News } from './src/payload/collections/News'
 import { KnowledgeBase } from './src/payload/collections/KnowledgeBase'
 import { GitHubReleaseBlock } from './src/payload/blocks/GitHubReleaseBlock'
 import { migrations } from './src/migrations'
+import { assertRequiredEnv } from './src/lib/env'
 
 const dirname = path.dirname(fileURLToPath(import.meta.url))
+
+assertRequiredEnv()
+const payloadSecret = process.env.PAYLOAD_SECRET
 
 export default buildConfig({
   admin: {
@@ -37,7 +41,7 @@ export default buildConfig({
       BlocksFeature({ blocks: [GitHubReleaseBlock] }),
     ],
   }),
-  secret: process.env.PAYLOAD_SECRET || '',
+  secret: payloadSecret || '',
   ...(process.env.NEXT_PUBLIC_SERVER_URL
     ? {
         cors: [process.env.NEXT_PUBLIC_SERVER_URL],

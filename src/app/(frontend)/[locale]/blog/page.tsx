@@ -8,6 +8,10 @@ import { getTranslations } from 'next-intl/server';
 import RssIcon from '@/components/Common/RssIcon';
 import { generatePageSEOMetadata } from '@/lib/seo-utils';
 
+// Blog/news posts come from the Payload database (runtime-only), so render this
+// listing per request instead of prerendering it at build time.
+export const dynamic = 'force-dynamic';
+
 export async function generateMetadata({
   params
 }: {

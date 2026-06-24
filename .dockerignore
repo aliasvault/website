@@ -1,0 +1,20 @@
+# Reinstalled / rebuilt inside the image.
+node_modules
+.next
+
+# Runtime-only data: the SQLite database and uploaded media are bind-mounted
+# from the host at runtime (see docker-compose.yml).
+data
+public/uploads
+
+# Local secret (injected at runtime)
+.env*.local
+
+# VCS / editor / tooling noise.
+.git
+.gitignore
+.dockerignore
+.vscode
+.claude
+**/.DS_Store
+npm-debug.log*

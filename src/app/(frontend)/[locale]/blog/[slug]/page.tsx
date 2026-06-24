@@ -8,25 +8,16 @@ import RelatedPost from '@/components/Blog/RelatedPost'
 import TagButton from '@/components/Blog/TagButton'
 import { getTranslations } from 'next-intl/server'
 import { generatePageSEOMetadata } from '@/lib/seo-utils'
-import { routing } from '@/i18n/routing'
+
+// Post content lives in the Payload database (runtime-only), so render on demand
+// at request time rather than prerendering at build.
+export const dynamic = 'force-dynamic'
 
 interface BlogPostPageProps {
   params: Promise<{
     slug: string
     locale: string
   }>
-}
-
-export async function generateStaticParams() {
-  const posts = await getAllBlogPosts()
-  const locales = routing.locales
-
-  return posts.flatMap((post) =>
-    locales.map((locale) => ({
-      slug: post.slug,
-      locale,
-    }))
-  )
 }
 
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {

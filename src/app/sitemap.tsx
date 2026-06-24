@@ -3,6 +3,10 @@ import { getAllBlogAndNewsPosts } from '@/lib/blog'
 import { getAllKBArticles } from '@/lib/kb'
 import { routing } from '@/i18n/routing'
 
+// Generated at request time, not at build: blog/news/KB entries come from the
+// Payload database, which only exists at runtime.
+export const dynamic = 'force-dynamic'
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // Get base URL from environment variable or default
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.aliasvault.com'

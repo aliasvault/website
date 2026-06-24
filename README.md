@@ -10,29 +10,42 @@ For more information about AliasVault, including installation instructions and t
 
 ---
 
-This landing page is built using [Next.js](https://nextjs.org), a powerful React framework.
+The site is built with [Next.js](https://nextjs.org) and uses [Payload CMS](https://payloadcms.com).
 
-
-## Development
-In order to run the development server, run the following command:
+## First-time setup
 
 ```bash
-npm run dev
+git clone <repo-url>
+cd website
+cp .env.example .env
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then edit `.env` and set a `PAYLOAD_SECRET` (required), generate one with:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-## Deploy with Docker
-You can easily deploy the landing page using Docker:
-```
-docker compose up -d
+```bash
+openssl rand -hex 32
 ```
 
-### Updating the Deployment
-To update the deployment, pull the latest changes and rebuild the container:
+## Run with Docker (recommended)
+
+```bash
+docker compose up -d --build
 ```
+
+The site is served at [http://localhost:3000](http://localhost:3000). The CMS database and uploaded media live in `./data`, which is mounted into the container so the content persists across rebuilds.
+
+To update an existing deployment:
+
+```bash
 git pull
 docker compose up -d --build --force-recreate
 ```
+
+## Run locally (development)
+
+```bash
+npm install
+npm run dev
+```
+
+Open [http://localhost:3100](http://localhost:3100). Edit files under `src/` and the page auto-updates.

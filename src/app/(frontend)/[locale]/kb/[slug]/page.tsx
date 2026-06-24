@@ -1,22 +1,16 @@
 import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
 import { getTranslations } from 'next-intl/server'
-import { getKBArticleBySlug, getAllKBArticles } from '@/lib/kb'
+import { getKBArticleBySlug } from '@/lib/kb'
 import { generatePageSEOMetadata } from '@/lib/seo-utils'
-import { routing } from '@/i18n/routing'
 import KBArticleView from '@/components/KB/KBArticleView'
+
+// KB articles live in the Payload database (runtime-only), so render on demand
+// at request time rather than prerendering at build.
+export const dynamic = 'force-dynamic'
 
 interface KBArticlePageProps {
   params: Promise<{ slug: string; locale: string }>
-}
-
-export async function generateStaticParams() {
-  const all = await Promise.all(
-    routing.locales.map(async (locale) =>
-      (await getAllKBArticles(locale)).map((article) => ({ locale, slug: article.slug })),
-    ),
-  )
-  return all.flat()
 }
 
 export async function generateMetadata({ params }: KBArticlePageProps): Promise<Metadata> {

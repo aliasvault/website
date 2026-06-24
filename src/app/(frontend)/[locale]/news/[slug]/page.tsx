@@ -1,30 +1,21 @@
-import { getNewsBySlug, getAllNewsPosts } from '@/lib/blog'
+import { getNewsBySlug } from '@/lib/blog'
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import { Link } from '@/i18n/navigation'
 import { Metadata } from 'next'
 import RichText from '@/components/Lexical/RichText'
 import { generatePageSEOMetadata } from '@/lib/seo-utils'
-import { routing } from '@/i18n/routing'
 import { getTranslations } from 'next-intl/server'
+
+// News content lives in the Payload database (runtime-only), so render on demand
+// at request time rather than prerendering at build.
+export const dynamic = 'force-dynamic'
 
 interface NewsArticlePageProps {
   params: Promise<{
     slug: string
     locale: string
   }>
-}
-
-export async function generateStaticParams() {
-  const posts = await getAllNewsPosts()
-  const locales = routing.locales
-
-  return posts.flatMap((post) =>
-    locales.map((locale) => ({
-      slug: post.slug,
-      locale,
-    }))
-  )
 }
 
 export async function generateMetadata({ params }: NewsArticlePageProps): Promise<Metadata> {
