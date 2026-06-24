@@ -27,7 +27,7 @@ jobs:
       DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Check required config
         run: |

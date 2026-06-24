@@ -11,12 +11,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v6
 
     - name: Use Node.js
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v6
       with:
-        node-version: '18'
+        node-version: '22'
+
+    # The lockfile is generated with npm 11 (see Dockerfile, which pins npm@11).
+    # npm 10 resolves a peer-dep conflict (@swc/helpers 0.5.15 vs a >=0.5.17
+    # peer) differently and reports the lock as out of sync, so pin npm here too.
+    - name: Pin npm
+      run: npm install -g npm@11
 
     - name: Install dependencies
       run: npm ci
