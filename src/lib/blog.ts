@@ -53,8 +53,19 @@ async function findAll(collection: 'posts' | 'news', locale: string): Promise<Co
     where: { _status: { equals: 'published' } },
     sort: '-date',
     limit: 1000,
-    depth: 2,
+    depth: 1,
     overrideAccess: true,
+    // List view only select card field instead of rendering full body.
+    select: {
+      slug: true,
+      title: true,
+      description: true,
+      date: true,
+      image: true,
+      layout: true,
+      author: true,
+      tags: true,
+    },
   })
   return res.docs.map((d) => mapPost(d, collection === 'posts' ? 'blog' : 'news', locale))
 }
