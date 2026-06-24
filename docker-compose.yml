@@ -3,7 +3,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: aliasvault-landing
     restart: always
     ports:
       - "127.0.0.1:3000:3000"
