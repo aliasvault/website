@@ -84,6 +84,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                     src={post.author.image}
                     alt={post.author.name}
                     fill
+                    sizes="40px"
                   />
                 </div>
               </div>

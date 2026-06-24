@@ -17,6 +17,7 @@ const RelatedPost = ({ title, image, slug, date }: RelatedPostProps) => {
             src={image}
             alt={title}
             fill
+            sizes="100px"
             className="object-cover"
           />
         </div>

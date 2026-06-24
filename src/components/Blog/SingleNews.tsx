@@ -22,6 +22,7 @@ const SingleNews = ({ news }: SingleNewsProps) => {
           src={news.image || "/images/blog/blog-placeholder.jpg"}
           alt={t('blogComponent.alt.image')}
           fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 67vw, (max-width: 1280px) 50vw, 33vw"
           className="object-cover object-center transition group-hover:rotate-6 group-hover:scale-125"
         />
       </Link>
@@ -45,6 +46,7 @@ const SingleNews = ({ news }: SingleNewsProps) => {
                   src={news.author.image}
                   alt={t('blogComponent.alt.author')}
                   fill
+                  sizes="40px"
                 />
               </div>
             </div>

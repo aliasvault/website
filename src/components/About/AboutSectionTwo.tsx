@@ -14,12 +14,14 @@ const AboutSectionTwo = () => {
                 src="/images/about/about-image-2.svg"
                 alt="AliasVault Features"
                 fill
+                sizes="(max-width: 1024px) 100vw, 500px"
                 className="drop-shadow-three dark:hidden dark:drop-shadow-none"
               />
               <Image
                 src="/images/about/about-image-2-dark.svg"
                 alt="AliasVault Features"
                 fill
+                sizes="(max-width: 1024px) 100vw, 500px"
                 className="hidden drop-shadow-three dark:block dark:drop-shadow-none"
               />
             </div>

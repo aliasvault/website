@@ -29,6 +29,7 @@ export const components = {
         src={typeof props.src === 'string' ? props.src : ''}
         alt={props.alt || ''}
         fill
+        sizes="(max-width: 768px) 100vw, 768px"
         className="object-cover object-center"
       />
     </div>

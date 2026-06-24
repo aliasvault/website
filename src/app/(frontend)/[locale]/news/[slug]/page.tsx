@@ -72,6 +72,7 @@ export default async function NewsArticlePage({ params }: NewsArticlePageProps) 
                           src={post.author.image}
                           alt={post.author.name}
                           fill
+                          sizes="40px"
                         />
                       </div>
                     </div>
