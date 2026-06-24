@@ -44,7 +44,12 @@ const Video = () => {
                   onClick={() => setOpen(true)}
                   className="block w-full h-full relative"
                 >
-                  <Image src="/images/video/av-video.jpg" alt={t('video.imageAlt')} fill />
+                  <Image
+                    src="/images/video/av-video.jpg"
+                    alt={t('video.imageAlt')}
+                    fill
+                    sizes="(max-width: 770px) 100vw, 770px"
+                  />
                   <div className="absolute right-0 top-0 flex h-full w-full items-center justify-center">
                     <div className="flex h-[70px] w-[70px] items-center justify-center rounded-full bg-white bg-opacity-75 text-primary transition hover:bg-opacity-100">
                       <svg

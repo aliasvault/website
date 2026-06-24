@@ -99,7 +99,7 @@ const PressKitNL = () => {
               <div className="text-center">
                 <div className="mb-4 flex justify-center">
                   <div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center">
-                    <Image src="/images/flags/nl.svg" alt="Nederland" width={24} height={24} className="inline-block mt-[-5px]" />
+                    <Image src="/images/flags/nl.svg" alt="Nederland" width={24} height={16} className="inline-block mt-[-5px]" />
                   </div>
                 </div>
                 <h4 className="mb-2 text-lg font-semibold text-black dark:text-white">Ontwikkeld in Nederland</h4>
