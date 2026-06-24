@@ -1,15 +1,26 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SectionTitle from "../Common/SectionTitle";
-import ModalVideo from "react-modal-video";
-import "@/styles/modal-video.css";
 import { useTranslations } from "next-intl";
+
+const VIDEO_ID = "T35VHmS8a-A";
 
 const Video = () => {
   const [isOpen, setOpen] = useState(false);
   const t = useTranslations();
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [isOpen]);
 
   return (
     <section className="relative z-10 py-16 md:py-20 lg:py-28">
@@ -53,12 +64,35 @@ const Video = () => {
         </div>
       </div>
 
-      <ModalVideo
-        channel="youtube"
-        isOpen={isOpen}
-        videoId="T35VHmS8a-A"
-        onClose={() => setOpen(false)}
-      />
+      {isOpen && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label={t('video.title')}
+          onClick={() => setOpen(false)}
+          className="fixed inset-0 z-[1000000] flex items-center justify-center bg-black bg-opacity-80 p-4 sm:p-10"
+        >
+          <button
+            aria-label={t('video.closeButtonAriaLabel')}
+            onClick={() => setOpen(false)}
+            className="absolute right-4 top-4 text-3xl leading-none text-white"
+          >
+            &times;
+          </button>
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="aspect-video w-full max-w-[960px]"
+          >
+            <iframe
+              className="h-full w-full rounded-md"
+              src={`https://www.youtube.com/embed/${VIDEO_ID}?autoplay=1&rel=0`}
+              title={t('video.title')}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+        </div>
+      )}
 
       <div className="absolute bottom-0 left-0 right-0 z-[-1] h-full w-full bg-[url(/images/video/shape.svg)] bg-cover bg-center bg-no-repeat"></div>
     </section>

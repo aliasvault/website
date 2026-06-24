@@ -431,6 +431,7 @@
     "title": "AliasVault demo",
     "description": "Bekijk de video hieronder om AliasVault in actie te zien.",
     "playButtonAriaLabel": "video afspeelknop",
+    "closeButtonAriaLabel": "video sluiten",
     "imageAlt": "video afbeelding"
   },
   "callToAction": {

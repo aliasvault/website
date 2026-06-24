@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import Modal from 'react-modal'
-import '@/styles/modal-video.css'
+import '@/styles/image-lightbox.css'
 
 interface ClickableImageProps {
   src: string
@@ -53,8 +53,8 @@ const ClickableImage = ({ src, alt, caption }: ClickableImageProps) => {
       <Modal
         isOpen={isOpen}
         onRequestClose={() => setIsOpen(false)}
-        className="modal-video"
-        overlayClassName="modal-video-overlay"
+        className="image-lightbox"
+        overlayClassName="image-lightbox-overlay"
         contentLabel={alt}
         ariaHideApp={true}
       >
