@@ -24,7 +24,7 @@ jobs:
       url: ${{ vars.DEPLOY_URL }}
 
     env:
-      DEPLOY_PATH: ${{ vars.DEPLOY_PATH }}
+      DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
 
     steps:
       - uses: actions/checkout@v4
@@ -32,7 +32,7 @@ jobs:
       - name: Check required config
         run: |
           if [ -z "$DEPLOY_PATH" ]; then
-            echo "::error::DEPLOY_PATH variable is not set for the '${{ startsWith(github.ref, 'refs/tags/') && 'production' || 'staging' }}' environment. Configure it under Settings > Environments."
+            echo "::error::DEPLOY_PATH secret is not set for the '${{ startsWith(github.ref, 'refs/tags/') && 'production' || 'staging' }}' environment. Configure it under Settings > Environments."
             exit 1
           fi
 
