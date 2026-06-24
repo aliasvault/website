@@ -7,7 +7,7 @@ on:
     branches:
       - main
     tags:
-      - 'v*'
+      - '**'
 
 # Avoid two deploys simultaneously on the same environment.
 concurrency:
