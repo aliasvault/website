@@ -11,6 +11,7 @@ import { Posts } from './src/payload/collections/Posts'
 import { News } from './src/payload/collections/News'
 import { KnowledgeBase } from './src/payload/collections/KnowledgeBase'
 import { GitHubReleaseBlock } from './src/payload/blocks/GitHubReleaseBlock'
+import { migrations } from './src/migrations'
 
 const dirname = path.dirname(fileURLToPath(import.meta.url))
 
@@ -46,6 +47,11 @@ export default buildConfig({
   graphQL: { disablePlaygroundInProduction: true },
   db: sqliteAdapter({
     client: { url: process.env.DATABASE_URI || 'file:./data/payload.db' },
+    // Only use explicit migrations, also in dev.
+    push: false,
+    migrationDir: path.resolve(dirname, 'src/migrations'),
+    // Run pending migrations automatically on startup in production.
+    prodMigrations: migrations,
   }),
   sharp,
   localization: {

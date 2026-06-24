@@ -2,13 +2,20 @@
   "name": "aliasvault-landing",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev -p 3100",
     "build": "next build",
     "postbuild": "node scripts/postbuild-standalone.mjs",
     "start": "next start",
     "start:standalone": "node .next/standalone/server.js",
-    "lint": "next lint"
+    "lint": "next lint",
+    "payload": "/opt/homebrew/opt/node@22/bin/node node_modules/payload/bin.js",
+    "migrate:create": "/opt/homebrew/opt/node@22/bin/node node_modules/payload/bin.js migrate:create",
+    "migrate": "/opt/homebrew/opt/node@22/bin/node node_modules/payload/bin.js migrate",
+    "migrate:status": "/opt/homebrew/opt/node@22/bin/node node_modules/payload/bin.js migrate:status",
+    "migrate:down": "/opt/homebrew/opt/node@22/bin/node node_modules/payload/bin.js migrate:down",
+    "migrate:fresh": "/opt/homebrew/opt/node@22/bin/node node_modules/payload/bin.js migrate:fresh"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.0.0",
