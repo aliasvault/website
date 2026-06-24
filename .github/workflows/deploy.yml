@@ -32,7 +32,7 @@ jobs:
       - name: Check required config
         run: |
           if [ -z "$DEPLOY_PATH" ]; then
-            echo "::error::DEPLOY_PATH variable is not set for the '${{ job.environment.name }}' environment. Configure it under Settings > Environments."
+            echo "::error::DEPLOY_PATH variable is not set for the '${{ startsWith(github.ref, 'refs/tags/') && 'production' || 'staging' }}' environment. Configure it under Settings > Environments."
             exit 1
           fi
 
