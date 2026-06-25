@@ -1,7 +1,8 @@
 import { RichText as PayloadRichText } from '@payloadcms/richtext-lexical/react'
 import ClickableImage from '@/components/MDX/ClickableImage'
 import { GitHubRelease } from '@/components/Common/GitHubRelease'
-import { headingId } from '@/lib/lexical'
+import CodeBlock from '@/components/Common/CodeBlock'
+import { headingId, transformCodeBlocks } from '@/lib/lexical'
 
 /**
  * Renders Payload Lexical content using the site theme.
@@ -10,6 +11,8 @@ import { headingId } from '@/lib/lexical'
  * - `upload` nodes render the ClickableImage lightbox (src resolved to the
  *   static /uploads/<filename> path, with caption).
  * - `githubRelease` blocks render the live GitHubRelease download widget.
+ * - `codeblock` nodes (synthesised from literal ```fences``` by
+ *   transformCodeBlocks) render the styled CodeBlock component.
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function headingText(node: any): string {
@@ -31,6 +34,9 @@ const jsxConverters = ({ defaultConverters }: any) => ({
     const id = Tag === 'h2' || Tag === 'h3' ? headingId(headingText(node)) : undefined
     return <Tag id={id}>{children}</Tag>
   },
+  // Styled code block synthesised from raw Markdown fences (see lib/lexical).
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  codeblock: ({ node }: any) => <CodeBlock code={node?.code ?? ''} language={node?.language} />,
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   upload: ({ node }: any) => {
     const doc = node?.value
@@ -61,10 +67,12 @@ const jsxConverters = ({ defaultConverters }: any) => ({
 
 export default function RichText({ data }: { data: unknown }) {
   if (!data) return null
+  // Fold any literal ```fenced``` paragraphs into real code-block nodes first.
+  const prepared = transformCodeBlocks(data)
   return (
     <PayloadRichText
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      data={data as any}
+      data={prepared as any}
       converters={jsxConverters}
       className="rich-text max-w-none"
     />

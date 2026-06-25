@@ -108,6 +108,73 @@ function listToMarkdown(node: any, depth = 0): string {
     .join('\n')
 }
 
+/**
+ * Plain text of a paragraph built from its text + linebreak children, or null if
+ * it contains anything else (links, formatting, etc.).
+ */
+function paragraphPlainText(node: any): string | null {
+  if (node?.type !== 'paragraph' || !Array.isArray(node.children)) return null
+  let out = ''
+  for (const c of node.children) {
+    if (c?.type === 'text') out += c.text ?? ''
+    else if (c?.type === 'linebreak') out += '\n'
+    else return null
+  }
+  return out
+}
+
+/**
+ * Convert paragraphs that contain literal Markdown ```lang … ``` fences (left
+ * behind by the MDX→Lexical migration) into synthetic `codeblock` nodes, so the
+ * renderer can show real code blocks instead of raw backticks. Handles a fence
+ * contained in a single paragraph (linebreak-separated) and a fence spanning
+ * consecutive paragraphs. Only the HTML render uses this; the Markdown twins
+ * already emit correct fences from the raw text.
+ */
+export function transformCodeBlocks(data: any): any {
+  const children = data?.root?.children
+  if (!Array.isArray(children)) return data
+  return { ...data, root: { ...data.root, children: foldFences(children) } }
+}
+
+function foldFences(nodes: any[]): any[] {
+  const out: any[] = []
+  for (let i = 0; i < nodes.length; i++) {
+    const text = paragraphPlainText(nodes[i])
+    if (text != null) {
+      // (a) Complete fence inside one paragraph.
+      const single = text.trim().match(/^```([\w-]*)\n([\s\S]*?)\n?```$/)
+      if (single) {
+        out.push({ type: 'codeblock', language: single[1] || '', code: single[2] })
+        continue
+      }
+      // (b) Fence that opens here and closes in a later paragraph.
+      const open = text.trim().match(/^```([\w-]*)$/)
+      if (open) {
+        const lines: string[] = []
+        let j = i + 1
+        let closed = false
+        for (; j < nodes.length; j++) {
+          const t = paragraphPlainText(nodes[j])
+          if (t == null) break
+          if (t.trim() === '```') {
+            closed = true
+            break
+          }
+          lines.push(t)
+        }
+        if (closed) {
+          out.push({ type: 'codeblock', language: open[1] || '', code: lines.join('\n') })
+          i = j
+          continue
+        }
+      }
+    }
+    out.push(nodes[i])
+  }
+  return out
+}
+
 /** Convert Lexical content to clean Markdown (best-effort, block-level). */
 export function lexicalToMarkdown(data: any): string {
   const blocks: string[] = []
