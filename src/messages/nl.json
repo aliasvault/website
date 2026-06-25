@@ -20,12 +20,33 @@
     "platforms": "Platforms",
     "blog": "Blog",
     "contact": "Contact",
-    "knowledgeBase": "Kennisbank"
+    "help": "Help"
   },
-  "kb": {
-    "title": "Kennisbank",
+  "help": {
+    "title": "Help",
     "description": "Handleidingen, antwoorden en tips om alles uit AliasVault te halen.",
-    "empty": "Nog geen artikelen gepubliceerd."
+    "empty": "Nog geen artikelen gepubliceerd.",
+    "articlesCount": "{count, plural, =0 {Nog geen artikelen} one {# artikel} other {# artikelen}}",
+    "sectionEmpty": "Nog geen artikelen in deze categorie.",
+    "onThisPage": "Op deze pagina",
+    "lastUpdated": "Laatst bijgewerkt",
+    "readMinutes": "{minutes} min lezen",
+    "related": "Gerelateerde artikelen",
+    "faqHeading": "Veelgestelde vragen",
+    "sections": {
+      "get-started": {
+        "title": "Aan de slag",
+        "description": "Nieuw bij AliasVault? Configureer je vault (kluis) en leer de basis."
+      },
+      "using-aliasvault": {
+        "title": "AliasVault gebruiken",
+        "description": "Dagelijkse handleidingen voor aliassen, wachtwoorden en je vault."
+      },
+      "security": {
+        "title": "Beveiliging",
+        "description": "Hoe AliasVault je gegevens privé en end-to-end versleuteld houdt."
+      }
+    }
   },
   "hero": {
     "title": "Privacy-First Wachtwoord & E-mailalias Manager",
@@ -67,6 +88,7 @@
       "alt_bitwarden": "Alternatief voor Bitwarden",
       "alt_proton": "Alternatief voor Proton Pass",
       "alt_1password": "Alternatief voor 1Password",
+      "help": "Help",
       "contact": "Contact",
       "status": "Servicestatus",
       "report_abuse": "Misbruik Melden",

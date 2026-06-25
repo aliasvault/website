@@ -20,12 +20,33 @@
     "platforms": "Platforms",
     "blog": "Blog",
     "contact": "Contact",
-    "knowledgeBase": "Knowledge Base"
+    "help": "Help"
   },
-  "kb": {
-    "title": "Knowledge Base",
+  "help": {
+    "title": "Help",
     "description": "Guides, answers and tips to help you get the most out of AliasVault.",
-    "empty": "No articles published yet."
+    "empty": "No articles published yet.",
+    "articlesCount": "{count, plural, =0 {No articles yet} one {# article} other {# articles}}",
+    "sectionEmpty": "No articles in this category yet.",
+    "onThisPage": "On this page",
+    "lastUpdated": "Last updated",
+    "readMinutes": "{minutes} min read",
+    "related": "Related articles",
+    "faqHeading": "Frequently asked questions",
+    "sections": {
+      "get-started": {
+        "title": "Get Started",
+        "description": "New to AliasVault? Set up your vault and learn the essentials."
+      },
+      "using-aliasvault": {
+        "title": "Using AliasVault",
+        "description": "Day-to-day guides for aliases, passwords and managing your vault."
+      },
+      "security": {
+        "title": "Security",
+        "description": "How AliasVault keeps your data private and end-to-end encrypted."
+      }
+    }
   },
   "hero": {
     "title": "Privacy-First Password & Email Alias Manager",
@@ -67,6 +88,7 @@
       "alt_bitwarden": "Alternative to Bitwarden",
       "alt_proton": "Alternative to Proton Pass",
       "alt_1password": "Alternative to 1Password",
+      "help": "Help",
       "contact": "Contact",
       "status": "Service Status",
       "report_abuse": "Report Abuse",
