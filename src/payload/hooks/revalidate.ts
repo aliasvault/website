@@ -1,7 +1,7 @@
 import type { CollectionAfterChangeHook, CollectionAfterDeleteHook } from 'payload'
 
-const sectionFor = (slug: string): 'kb' | 'blog' | 'news' =>
-  slug === 'posts' ? 'blog' : slug === 'news' ? 'news' : 'kb'
+const sectionFor = (slug: string): 'help' | 'blog' | 'news' =>
+  slug === 'posts' ? 'blog' : slug === 'news' ? 'news' : 'help'
 
 // next-intl `as-needed`: English at root, Dutch under /nl.
 function pathsFor(section: string, slug?: string): string[] {

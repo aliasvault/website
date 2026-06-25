@@ -20,7 +20,7 @@ const localeCode = (locale: LocaleArg): string => {
  * draft-mode preview route which renders the live theme.
  */
 export const previewUrl =
-  (section: 'kb' | 'blog' | 'news') =>
+  (section: 'help' | 'blog' | 'news') =>
   ({ data, locale }: { data?: Record<string, unknown>; locale?: LocaleArg }) => {
     const loc = localeCode(locale)
     const prefix = loc === routing.defaultLocale ? '' : `/${loc}`

@@ -1,9 +1,10 @@
 import { MetadataRoute } from 'next'
 import { getAllBlogAndNewsPosts } from '@/lib/blog'
-import { getAllKBArticles } from '@/lib/kb'
+import { getAllHelpArticles } from '@/lib/help'
+import { helpSectionsSorted } from '@/lib/help-sections'
 import { routing } from '@/i18n/routing'
 
-// Generated at request time, not at build: blog/news/KB entries come from the
+// Generated at request time, not at build: blog/news/help entries come from the
 // Payload database, which only exists at runtime.
 export const dynamic = 'force-dynamic'
 
@@ -20,7 +21,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         '/platforms',
         '/docs',
         '/blog',
-        '/kb',
+        '/help',
+        ...helpSectionsSorted().map((s) => `/help/${s.key}`),
         '/contact',
         '/mission',
         '/press-kit',
@@ -92,15 +94,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         })
     })
 
-    // Knowledge base articles
+    // Help articles
     const kbRoutes: MetadataRoute.Sitemap = []
-    const kbArticles = await getAllKBArticles()
+    const kbArticles = await getAllHelpArticles()
 
     routing.locales.forEach(locale => {
         kbArticles.forEach(article => {
             const buildUrl = (loc: string) => loc === routing.defaultLocale
-                ? `${baseUrl}/kb/${article.slug}`
-                : `${baseUrl}/${loc}/kb/${article.slug}`
+                ? `${baseUrl}/help/${article.slug}`
+                : `${baseUrl}/${loc}/help/${article.slug}`
 
             kbRoutes.push({
                 url: buildUrl(locale),

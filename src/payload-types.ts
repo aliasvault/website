@@ -67,7 +67,7 @@ export interface Config {
   };
   blocks: {};
   collections: {
-    'knowledge-base': KnowledgeBase;
+    'help-articles': HelpArticle;
     posts: Post;
     news: News;
     media: Media;
@@ -79,7 +79,7 @@ export interface Config {
   };
   collectionsJoins: {};
   collectionsSelect: {
-    'knowledge-base': KnowledgeBaseSelect<false> | KnowledgeBaseSelect<true>;
+    'help-articles': HelpArticlesSelect<false> | HelpArticlesSelect<true>;
     posts: PostsSelect<false> | PostsSelect<true>;
     news: NewsSelect<false> | NewsSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
@@ -125,21 +125,62 @@ export interface UserAuthOperations {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "knowledge-base".
+ * via the `definition` "help-articles".
  */
-export interface KnowledgeBase {
+export interface HelpArticle {
   id: number;
   title: string;
   /**
-   * URL segment. Shared across languages (English & Dutch use the same slug).
+   * URL segment (/help/<slug>). Shared across languages. Cannot equal a section key.
    */
   slug: string;
-  category: string;
+  /**
+   * Top-level help section. Defined in code (src/lib/help-sections.ts).
+   */
+  section: 'get-started' | 'using-aliasvault' | 'security';
+  /**
+   * Free-text cluster shown as a heading within the section (e.g. "Getting started", "Browser extension"). Reuse the exact text to group articles together.
+   */
+  group?: string | null;
   /**
    * Shown in listings and used as the SEO meta description.
    */
   description: string;
+  /**
+   * Optional TL;DR (~30–60 words). Rendered as a lead answer at the top of the article and reused for AI/LLM indexing. Falls back to the description.
+   */
+  summary?: string | null;
+  /**
+   * Optional <title> override. Defaults to the article title.
+   */
+  seoTitle?: string | null;
   tags?: string[] | null;
+  /**
+   * Hand-picked related articles. When empty, the page falls back to same-section articles.
+   */
+  related?: (number | HelpArticle)[] | null;
+  /**
+   * Optional Q&A pairs. Rendered at the bottom and emitted as FAQPage structured data.
+   */
+  faq?:
+    | {
+        question: string;
+        answer: string;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Byline author. Avatar and title are defined in src/lib/authors.ts.
+   */
+  author?: 'leendert' | null;
+  /**
+   * Sort order within a group (ascending). Ties break alphabetically.
+   */
+  order?: number | null;
+  /**
+   * Surface near the top of its section.
+   */
+  featured?: boolean | null;
   /**
    * Optional stable id to reuse this answer as an inline help snippet (e.g. in the FAQ).
    */
@@ -353,8 +394,8 @@ export interface PayloadLockedDocument {
   id: number;
   document?:
     | ({
-        relationTo: 'knowledge-base';
-        value: number | KnowledgeBase;
+        relationTo: 'help-articles';
+        value: number | HelpArticle;
       } | null)
     | ({
         relationTo: 'posts';
@@ -416,14 +457,28 @@ export interface PayloadMigration {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "knowledge-base_select".
+ * via the `definition` "help-articles_select".
  */
-export interface KnowledgeBaseSelect<T extends boolean = true> {
+export interface HelpArticlesSelect<T extends boolean = true> {
   title?: T;
   slug?: T;
-  category?: T;
+  section?: T;
+  group?: T;
   description?: T;
+  summary?: T;
+  seoTitle?: T;
   tags?: T;
+  related?: T;
+  faq?:
+    | T
+    | {
+        question?: T;
+        answer?: T;
+        id?: T;
+      };
+  author?: T;
+  order?: T;
+  featured?: T;
   snippetId?: T;
   updated?: T;
   content?: T;

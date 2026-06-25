@@ -1,11 +1,10 @@
 import { RichText as PayloadRichText } from '@payloadcms/richtext-lexical/react'
 import ClickableImage from '@/components/MDX/ClickableImage'
 import { GitHubRelease } from '@/components/Common/GitHubRelease'
+import { headingId } from '@/lib/lexical'
 
 /**
- * Renders Payload Lexical content using the site theme. Element styling lives in
- * the `.rich-text` block in src/styles/index.css (shared by KB, blog and news),
- * replacing the old next-mdx-remote + MDXComponents pipeline.
+ * Renders Payload Lexical content using the site theme.
  *
  * Custom converters:
  * - `upload` nodes render the ClickableImage lightbox (src resolved to the
@@ -13,8 +12,25 @@ import { GitHubRelease } from '@/components/Common/GitHubRelease'
  * - `githubRelease` blocks render the live GitHubRelease download widget.
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
+function headingText(node: any): string {
+  if (typeof node?.text === 'string') return node.text
+  if (Array.isArray(node?.children)) return node.children.map(headingText).join('')
+  return ''
+}
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const jsxConverters = ({ defaultConverters }: any) => ({
   ...defaultConverters,
+  // Inject a stable anchor id on h2/h3 so the "On this page" TOC can link to
+  // them (id slug matches extractHeadings() in lib/lexical). Other tags keep
+  // default rendering; .rich-text CSS styles by element so nothing else changes.
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  heading: ({ node, nodesToJSX }: any) => {
+    const Tag = (node?.tag || 'h2') as 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
+    const children = nodesToJSX({ nodes: node?.children })
+    const id = Tag === 'h2' || Tag === 'h3' ? headingId(headingText(node)) : undefined
+    return <Tag id={id}>{children}</Tag>
+  },
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   upload: ({ node }: any) => {
     const doc = node?.value

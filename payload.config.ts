@@ -9,7 +9,7 @@ import { Users } from './src/payload/collections/Users'
 import { Media } from './src/payload/collections/Media'
 import { Posts } from './src/payload/collections/Posts'
 import { News } from './src/payload/collections/News'
-import { KnowledgeBase } from './src/payload/collections/KnowledgeBase'
+import { HelpArticles } from './src/payload/collections/HelpArticles'
 import { GitHubReleaseBlock } from './src/payload/blocks/GitHubReleaseBlock'
 import { migrations } from './src/migrations'
 import { assertRequiredEnv } from './src/lib/env'
@@ -25,7 +25,7 @@ export default buildConfig({
     importMap: { baseDir: path.resolve(dirname) },
   },
   // Content first in the sidebar, admin collections last.
-  collections: [KnowledgeBase, Posts, News, Media, Users],
+  collections: [HelpArticles, Posts, News, Media, Users],
   // Enable inline uploads (with a caption field) and the GitHubRelease block so
   // the migrated <ClickableImage>/<GitHubRelease> content validates and renders.
   editor: lexicalEditor({

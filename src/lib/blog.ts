@@ -1,6 +1,7 @@
 import { getPayloadClient } from '@/payload/client'
 import type { User } from '@/payload-types'
 import { resolveAuthor, type ResolvedAuthor } from './authors'
+import { lexicalToMarkdown } from './lexical'
 
 export interface ContentPost {
   type: 'blog' | 'news'
@@ -103,6 +104,22 @@ export async function getAllNewsPosts(locale: string = 'en'): Promise<ContentPos
 export async function getAllBlogAndNewsPosts(locale: string = 'en'): Promise<ContentPost[]> {
   const [blog, news] = await Promise.all([findAll('posts', locale), findAll('news', locale)])
   return [...blog, ...news].sort((a, b) => (a.date < b.date ? 1 : -1))
+}
+
+/**
+ * Clean Markdown twin of a blog/news post — title, summary blockquote, a meta
+ * line, then the body. Served at `/blog/<slug>.md` and `/news/<slug>.md` for
+ * LLM crawlers (the body without site layout).
+ */
+export function contentPostToMarkdown(post: ContentPost): string {
+  const parts: string[] = [`# ${post.title}`, '']
+  if (post.description) parts.push(`> ${post.description}`, '')
+  const meta: string[] = []
+  if (post.author?.name) meta.push(`*By ${post.author.name}*`)
+  if (post.date) meta.push(`*Published: ${post.date}*`)
+  if (post.tags?.length) meta.push(`*Tags: ${post.tags.join(', ')}*`)
+  parts.push(...meta, '', '---', '', lexicalToMarkdown(post.content))
+  return parts.join('\n')
 }
 
 export async function getBlogPostBySlug(
