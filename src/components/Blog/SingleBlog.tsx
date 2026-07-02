@@ -35,7 +35,7 @@ const SingleBlog = ({ blog }: SingleBlogProps) => {
             {blog.title}
           </Link>
         </h3>
-        <p className="mb-6 border-b border-body-color border-opacity-10 pb-6 text-base font-medium text-body-color dark:border-white dark:border-opacity-10">
+        <p className="mb-6 border-b border-body-color border-opacity-10 pb-6 text-base font-medium text-body-color dark:border-white dark:border-opacity-10 dark:text-body-color-dark">
           {blog.description}
         </p>
         <div className="flex items-center">
@@ -54,14 +54,14 @@ const SingleBlog = ({ blog }: SingleBlogProps) => {
               <h4 className="mb-1 text-sm font-medium text-dark dark:text-white">
                 {t('blogComponent.by')} {blog.author.name}
               </h4>
-              <p className="text-xs text-body-color">{blog.author.designation}</p>
+              <p className="text-xs text-body-color dark:text-body-color-dark">{blog.author.designation}</p>
             </div>
           </div>
           <div className="inline-block">
             <h4 className="mb-1 text-sm font-medium text-dark dark:text-white">
               {t('blogComponent.date')}
             </h4>
-            <p className="text-xs text-body-color">{blog.date}</p>
+            <p className="text-xs text-body-color dark:text-body-color-dark">{blog.date}</p>
           </div>
         </div>
       </div>

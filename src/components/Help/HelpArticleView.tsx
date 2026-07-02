@@ -67,7 +67,7 @@ export default async function HelpArticleView({ article, locale, isPreview }: He
               {article.title}
             </h1>
 
-            <div className="mb-8 flex flex-wrap items-center gap-x-5 gap-y-2 border-b border-body-color border-opacity-10 pb-6 text-sm text-body-color dark:border-white dark:border-opacity-10">
+            <div className="mb-8 flex flex-wrap items-center gap-x-5 gap-y-2 border-b border-body-color border-opacity-10 pb-6 text-sm text-body-color dark:border-white dark:border-opacity-10 dark:text-body-color-dark">
               <span className="inline-flex items-center gap-1.5">
                 <FiClock className="h-4 w-4" />
                 {t('help.readMinutes', { minutes })}
@@ -102,7 +102,7 @@ export default async function HelpArticleView({ article, locale, isPreview }: He
                       <h3 className="mb-2 text-lg font-semibold text-black dark:text-white">
                         {item.question}
                       </h3>
-                      <p className="text-base text-body-color">{item.answer}</p>
+                      <p className="text-base text-body-color dark:text-body-color-dark">{item.answer}</p>
                     </div>
                   ))}
                 </div>
@@ -119,7 +119,7 @@ export default async function HelpArticleView({ article, locale, isPreview }: He
                     <li key={rel.slug}>
                       <Link
                         href={`/help/${rel.slug}`}
-                        className="group inline-flex items-center gap-2 font-medium text-body-color hover:text-primary"
+                        className="group inline-flex items-center gap-2 font-medium text-body-color hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                       >
                         <FiArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                         {rel.title}

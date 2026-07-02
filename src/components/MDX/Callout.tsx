@@ -12,10 +12,10 @@ export interface CalloutProps {
 
 const typeStyles = {
   released:
-    'border-primary/30 bg-primary/10 text-body-color dark:bg-primary/5 dark:border-primary/20',
+    'border-primary/30 bg-primary/10 text-body-color dark:bg-primary/5 dark:border-primary/20 dark:text-body-color-dark',
   upcoming:
     'border-gray-300 bg-gray-50 text-body-color dark:border-gray-600 dark:bg-gray-800/50 dark:text-body-color-dark',
-  tip: 'border-primary/30 bg-primary/10 text-body-color dark:bg-primary/5 dark:border-primary/20',
+  tip: 'border-primary/30 bg-primary/10 text-body-color dark:bg-primary/5 dark:border-primary/20 dark:text-body-color-dark',
   note: 'border-gray-300 bg-gray-50 text-body-color dark:border-gray-600 dark:bg-gray-800/50 dark:text-body-color-dark',
 }
 

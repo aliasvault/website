@@ -21,7 +21,7 @@ const SectionTitle = ({
           {title}
         </h2>
         <p
-          className="text-base !leading-relaxed text-body-color md:text-lg [&_a]:text-primary [&_a]:underline [&_a]:decoration-primary/30 [&_a]:underline-offset-2 [&_a]:transition-all [&_a]:duration-200 hover:[&_a]:decoration-primary"
+          className="text-base !leading-relaxed text-body-color dark:text-body-color-dark md:text-lg [&_a]:text-primary [&_a]:underline [&_a]:decoration-primary/30 [&_a]:underline-offset-2 [&_a]:transition-all [&_a]:duration-200 hover:[&_a]:decoration-primary"
           dangerouslySetInnerHTML={{ __html: paragraph }}
         />
       </div>

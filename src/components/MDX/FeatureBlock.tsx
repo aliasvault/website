@@ -64,7 +64,7 @@ export default function FeatureBlock({
             {title}
           </h3>
         )}
-        <div className="text-base leading-relaxed text-body-color md:text-lg [&>p]:mb-3 [&>p:last-child]:mb-0 [&>ul]:mb-3 [&>ul]:list-inside [&>ul]:list-disc">
+        <div className="text-base leading-relaxed text-body-color dark:text-body-color-dark md:text-lg [&>p]:mb-3 [&>p:last-child]:mb-0 [&>ul]:mb-3 [&>ul]:list-inside [&>ul]:list-disc">
           {children}
         </div>
       </div>

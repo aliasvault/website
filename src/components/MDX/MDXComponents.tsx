@@ -57,25 +57,25 @@ export const components = {
   ),
   p: (props: ComponentProps<'p'>) => (
     <p
-      className="mb-6 text-base leading-relaxed text-body-color md:text-lg md:leading-relaxed"
+      className="mb-6 text-base leading-relaxed text-body-color dark:text-body-color-dark md:text-lg md:leading-relaxed"
       {...props}
     />
   ),
   ul: (props: ComponentProps<'ul'>) => (
     <ul
-      className="mb-6 list-inside list-disc text-body-color"
+      className="mb-6 list-inside list-disc text-body-color dark:text-body-color-dark"
       {...props}
     />
   ),
   ol: (props: ComponentProps<'ol'>) => (
     <ol
-      className="list-decimal list-inside mb-6 text-body-color"
+      className="list-decimal list-inside mb-6 text-body-color dark:text-body-color-dark"
       {...props}
     />
   ),
   li: (props: ComponentProps<'li'>) => (
     <li
-      className="mb-2 text-base leading-relaxed text-body-color md:text-lg md:leading-relaxed"
+      className="mb-2 text-base leading-relaxed text-body-color dark:text-body-color-dark md:text-lg md:leading-relaxed"
       {...props}
     />
   ),

@@ -9,7 +9,7 @@ export interface Crumb {
 /** Visible breadcrumb trail for Help pages (backs the BreadcrumbList JSON-LD). */
 export default function HelpBreadcrumb({ items }: { items: Crumb[] }) {
   return (
-    <nav aria-label="Breadcrumb" className="mb-6 text-sm text-body-color">
+    <nav aria-label="Breadcrumb" className="mb-6 text-sm text-body-color dark:text-body-color-dark">
       <ol className="flex flex-wrap items-center gap-x-2 gap-y-1">
         {items.map((item, i) => (
           <li key={i} className="flex items-center gap-x-2">

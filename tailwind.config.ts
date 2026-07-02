@@ -56,8 +56,8 @@ const config: Config = {
         yellow: "#FBB040",
         "bg-color-dark": "#171C28",
         "body-color": {
-          DEFAULT: "#788293",
-          dark: "#959CB1",
+          DEFAULT: "rgb(var(--body-color) / <alpha-value>)",
+          dark: "#9FA6B9",
         },
         stroke: {
           stroke: "#E3E8EF",

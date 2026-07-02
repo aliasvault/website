@@ -6,6 +6,16 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    /* Normal body/paragraph text color (space-separated RGB channels so
+       Tailwind opacity modifiers like text-body-color/70 keep working). */
+    --body-color: 106 116 133;
+  }
+
+  .dark {
+    --body-color: 159 166 185;
+  }
+
   body {
     font-family: "Inter", sans-serif;
   }
@@ -42,7 +52,7 @@
     @apply mb-4 mt-8 text-lg font-bold leading-tight text-black dark:text-white sm:text-xl;
   }
   .rich-text :where(p) {
-    @apply mb-6 text-base font-medium leading-relaxed text-body-color sm:text-lg;
+    @apply mb-6 text-base font-medium leading-relaxed text-body-color dark:text-body-color-dark sm:text-lg;
   }
   .rich-text :where(ul) {
     @apply mb-6 list-disc pl-6;
@@ -51,13 +61,13 @@
     @apply mb-6 list-decimal pl-6;
   }
   .rich-text :where(li) {
-    @apply mb-2 text-base font-medium text-body-color sm:text-lg;
+    @apply mb-2 text-base font-medium text-body-color dark:text-body-color-dark sm:text-lg;
   }
   .rich-text :where(a) {
     @apply text-primary transition-all duration-300 hover:underline;
   }
   .rich-text :where(blockquote) {
-    @apply my-8 border-l-4 border-primary bg-primary/5 px-6 py-4 italic text-body-color;
+    @apply my-8 border-l-4 border-primary bg-primary/5 px-6 py-4 italic text-body-color dark:text-body-color-dark;
   }
   .rich-text :where(code) {
     @apply rounded bg-black/5 px-1.5 py-0.5 font-mono text-sm dark:bg-white/10;
