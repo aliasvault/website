@@ -1,13 +1,16 @@
 import Link from "next/link";
+import { getStatusPageUrl } from "@/lib/status-banner";
 
 const TermsAndConditions = () => {
+  const statusUrl = getStatusPageUrl();
+
   return (
     <section className="pt-9 pb-16 md:pb-20 lg:pb-28">
       <div className="container">
         <div className="space-y-8">
           <div>
             <p className="text-base font-medium leading-relaxed text-body-color dark:text-body-color-dark">
-              Last updated: June 22, 2026
+              Last updated: July 9, 2026
             </p>
           </div>
 
@@ -137,7 +140,28 @@ const TermsAndConditions = () => {
 
           <div>
             <h3 className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
-              6. Changes to These Terms
+              6. Maintenance Window
+            </h3>
+            <p className="text-base font-medium leading-relaxed text-body-color dark:text-body-color-dark">
+              We reserve a weekly maintenance window for our cloud infrastructure (servers) every Sunday from 05:00 to 07:00 UTC, used for work such as operating system and security updates or server upgrades. Most work causes no downtime, but short interruptions may occur. Maintenance with expected user impact is announced in advance on our{" "}
+              <a
+                href={statusUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                status page
+              </a>
+              .
+            </p>
+            <p className="mt-4 text-base font-medium leading-relaxed text-body-color dark:text-body-color-dark">
+              Updates to the application itself are rolled out continuously with minimal disruption. Emergency maintenance may occur outside this window when necessary.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
+              7. Changes to These Terms
             </h3>
             <p className="text-base font-medium leading-relaxed text-body-color dark:text-body-color-dark">
               We may update these Terms and Conditions from time to time. Any changes will be posted on this page along with an updated revision date. We encourage you to review these terms periodically to stay informed about how we expect users to use our service.
