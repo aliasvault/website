@@ -10,6 +10,7 @@ export async function generatePageSEOMetadata({
   path,
   locale,
   image,
+  ogBadge,
   type = 'website',
   publishedTime,
   modifiedTime,
@@ -22,6 +23,8 @@ export async function generatePageSEOMetadata({
   path: string;
   locale: string;
   image?: string;
+  /** Short label shown as a pill on the default dynamic OG image (e.g. "Help Center"). */
+  ogBadge?: string;
   type?: 'website' | 'article';
   publishedTime?: string;
   modifiedTime?: string;
@@ -35,6 +38,7 @@ export async function generatePageSEOMetadata({
     path,
     locale,
     image,
+    ogBadge,
     type,
     publishedTime,
     modifiedTime,

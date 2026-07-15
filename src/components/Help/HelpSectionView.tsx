@@ -41,48 +41,50 @@ export default async function HelpSectionView({ section, locale }: HelpSectionVi
         <div className="mx-auto max-w-4xl">
           <HelpBreadcrumb items={[{ label: t('help.title'), href: '/help' }, { label: title }]} />
 
-          <div className="mb-12 flex items-start gap-4">
-            <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+          <div className="mb-12 flex items-start gap-5">
+            <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/15 to-primary/5 text-primary ring-1 ring-inset ring-primary/15">
               <HelpSectionIcon icon={section.icon} className="h-7 w-7" />
             </span>
             <div>
               <h1 className="mb-2 text-3xl font-bold leading-tight text-black dark:text-white sm:text-4xl">
                 {title}
               </h1>
-              <p className="text-base text-body-color">{description}</p>
+              <p className="text-base text-body-color dark:text-body-color-dark">{description}</p>
             </div>
           </div>
 
           {articles.length === 0 ? (
-            <p className="text-body-color">{t('help.sectionEmpty')}</p>
+            <p className="text-body-color dark:text-body-color-dark">{t('help.sectionEmpty')}</p>
           ) : (
             <div className="space-y-12">
               {groups.map((group) => (
                 <div key={group.name || '_ungrouped'}>
                   {group.name && (
-                    <h2 className="mb-5 text-xl font-semibold text-black dark:text-white">
+                    <h2 className="mb-5 flex items-baseline gap-3 text-xl font-semibold text-black dark:text-white">
                       {group.name}
+                      <span className="text-sm font-medium text-body-color dark:text-body-color-dark">
+                        {t('help.articlesCount', { count: group.articles.length })}
+                      </span>
                     </h2>
                   )}
-                  <ul className="space-y-3">
+                  <ul className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-three dark:divide-gray-800 dark:border-gray-800 dark:bg-gray-dark dark:shadow-none divide-y divide-gray-100">
                     {group.articles.map((article) => (
-                      <li
-                        key={article.slug}
-                        className="shadow-three dark:bg-gray-dark rounded-sm bg-white dark:shadow-none"
-                      >
+                      <li key={article.slug}>
                         <Link
                           href={`/help/${article.slug}`}
-                          className="group flex items-center justify-between gap-4 px-6 py-4 hover:text-primary"
+                          className="group flex items-center justify-between gap-4 px-6 py-4 transition-colors hover:bg-primary/[0.04] dark:hover:bg-primary/[0.06]"
                         >
                           <span>
-                            <span className="block font-medium text-black group-hover:text-primary dark:text-white">
+                            <span className="block font-medium text-black transition-colors group-hover:text-primary dark:text-white">
                               {article.title}
                             </span>
-                            <span className="mt-1 block text-sm text-body-color">
-                              {article.description}
-                            </span>
+                            {article.description && (
+                              <span className="mt-1 block text-sm text-body-color dark:text-body-color-dark">
+                                {article.description}
+                              </span>
+                            )}
                           </span>
-                          <FiArrowRight className="h-5 w-5 shrink-0 text-body-color transition-transform group-hover:translate-x-1 group-hover:text-primary" />
+                          <FiArrowRight className="h-5 w-5 shrink-0 text-body-color transition-all group-hover:translate-x-1 group-hover:text-primary dark:text-body-color-dark" />
                         </Link>
                       </li>
                     ))}
@@ -91,6 +93,17 @@ export default async function HelpSectionView({ section, locale }: HelpSectionVi
               ))}
             </div>
           )}
+
+          {/* Cross-navigation to the other help sections. */}
+          <div className="mt-16 border-t border-gray-200 pt-8 dark:border-gray-800">
+            <Link
+              href="/help"
+              className="group inline-flex items-center gap-2 font-medium text-body-color transition-colors hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
+            >
+              <FiArrowRight className="h-4 w-4 rotate-180 transition-transform group-hover:-translate-x-1" />
+              {t('help.backToHelp')}
+            </Link>
+          </div>
         </div>
       </div>
     </section>

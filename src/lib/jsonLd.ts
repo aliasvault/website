@@ -1,25 +1,45 @@
 /**
  * schema.org / JSON-LD builders.
- *
- * We emit TechArticle + BreadcrumbList on every article, FAQPage when an article
- * has Q&A pairs, and a site-wide Organization for SEO purposes.
  */
 import type { HelpArticle, HelpFaqItem } from '@/lib/help'
 
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.aliasvault.com'
+
 const ORG = {
   '@type': 'Organization',
+  '@id': `${BASE_URL}/#organization`,
   name: 'AliasVault',
-  url: 'https://www.aliasvault.com',
-  logo: 'https://www.aliasvault.com/images/logo/logo.svg',
+  url: BASE_URL,
+  logo: `${BASE_URL}/presskit/logo-1024.png`,
   sameAs: [
-    'https://github.com/lanedirt/AliasVault',
+    'https://github.com/aliasvault/aliasvault',
     'https://x.com/AliasVault',
-    'https://www.aliasvault.com',
+    'https://mastodon.social/@aliasvault',
+    'https://www.youtube.com/@AliasVault',
+    'https://www.facebook.com/aliasvault',
   ],
 } as const
 
 export function organizationJsonLd() {
   return { '@context': 'https://schema.org', ...ORG }
+}
+
+/** Site-wide Organization + WebSite graph, injected once in the locale layout. */
+export function siteJsonLd(locale: string) {
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      ORG,
+      {
+        '@type': 'WebSite',
+        '@id': `${BASE_URL}/#website`,
+        name: 'AliasVault',
+        url: BASE_URL,
+        inLanguage: locale,
+        publisher: { '@id': `${BASE_URL}/#organization` },
+      },
+    ],
+  }
 }
 
 export interface BreadcrumbCrumb {
@@ -51,8 +71,7 @@ function faqPage(faq: HelpFaqItem[]) {
 }
 
 /**
- * Full JSON-LD @graph for a Help article page: TechArticle + BreadcrumbList
- * (+ FAQPage when present). `crumbs` should be Home → Section → Article.
+ * Full JSON-LD @graph for a Help article page.
  */
 export function articleJsonLd({
   article,
@@ -67,13 +86,13 @@ export function articleJsonLd({
 }) {
   const graph: Record<string, unknown>[] = [
     {
-      '@type': 'TechArticle',
+      '@type': 'Article',
       headline: article.seoTitle || article.title,
       description: article.summary || article.description,
       inLanguage: locale,
       url,
       mainEntityOfPage: url,
-      ...(article.updated ? { dateModified: article.updated, datePublished: article.updated } : {}),
+      ...(article.updated ? { dateModified: article.updated } : {}),
       author: { '@type': 'Organization', name: 'AliasVault' },
       publisher: ORG,
     },

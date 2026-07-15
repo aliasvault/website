@@ -12,8 +12,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const t = await getTranslations({ locale });
 
   return generatePageSEOMetadata({
-    title: t('alternativeProtonPass.hero.title'),
-    description: t('alternativeProtonPass.hero.description'),
+    title: t('alternativeProtonPass.metadata.title'),
+    description: t('alternativeProtonPass.metadata.description'),
     path: '/alternative-to/proton-pass',
     locale,
   });

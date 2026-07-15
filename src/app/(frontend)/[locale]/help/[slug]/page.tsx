@@ -21,10 +21,11 @@ export async function generateMetadata({ params }: HelpSlugPageProps): Promise<M
   if (isHelpSectionKey(slug)) {
     const t = await getTranslations({ locale })
     return generatePageSEOMetadata({
-      title: `${t(`help.sections.${slug}.title`)} | ${t('help.title')}`,
+      title: t(`help.sections.${slug}.title`),
       description: t(`help.sections.${slug}.description`),
       path: `/help/${slug}`,
       locale,
+      ogBadge: t('help.title'),
     })
   }
 
@@ -32,6 +33,7 @@ export async function generateMetadata({ params }: HelpSlugPageProps): Promise<M
   const article = await getHelpArticleBySlug(slug, locale)
   if (!article) return { title: 'Article Not Found' }
 
+  const t2 = await getTranslations({ locale })
   return generatePageSEOMetadata({
     title: article.seoTitle || article.title,
     description: article.summary || article.description,
@@ -40,6 +42,7 @@ export async function generateMetadata({ params }: HelpSlugPageProps): Promise<M
     type: 'article',
     modifiedTime: article.updated,
     tags: article.tags,
+    ogBadge: t2('help.title'),
   })
 }
 

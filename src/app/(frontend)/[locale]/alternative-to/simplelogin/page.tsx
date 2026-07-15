@@ -11,8 +11,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const t = await getTranslations({ locale });
 
   return generatePageSEOMetadata({
-    title: t('alternativeSimpleLogin.hero.title'),
-    description: t('alternativeSimpleLogin.hero.description'),
+    title: t('alternativeSimpleLogin.metadata.title'),
+    description: t('alternativeSimpleLogin.metadata.description'),
     path: '/alternative-to/simplelogin',
     locale,
   });

@@ -11,7 +11,7 @@
   },
   "metadata": {
     "title": "AliasVault - Privacy-First Wachtwoord & E-mailalias Manager",
-    "description": "AliasVault is een open-source end-to-end versleutelde wachtwoord- en aliasmanager.",
+    "description": "Open-source wachtwoordmanager met end-to-end versleuteling en ingebouwde e-mailaliassen. Maak voor elke website een unieke identiteit: in de cloud of self-hosted.",
     "seoSuffix": "AliasVault"
   },
   "navigation": {
@@ -23,8 +23,13 @@
     "help": "Help"
   },
   "help": {
-    "title": "Help",
-    "description": "Handleidingen, antwoorden en tips om alles uit AliasVault te halen.",
+    "title": "Helpcentrum",
+    "heroTitle": "Waarmee kunnen we je helpen?",
+    "description": "Doorzoek handleidingen, antwoorden en tips om alles uit AliasVault te halen: van het inrichten van je eerste vault tot geavanceerde beveiliging.",
+    "searchPlaceholder": "Zoek in helpartikelen…",
+    "searchLoading": "Laden…",
+    "searchNoResults": "Geen resultaten voor \"{query}\". Probeer een andere zoekterm of blader door de onderwerpen hieronder.",
+    "backToHelp": "Alle helponderwerpen",
     "empty": "Nog geen artikelen gepubliceerd.",
     "articlesCount": "{count, plural, =0 {Nog geen artikelen} one {# artikel} other {# artikelen}}",
     "sectionEmpty": "Nog geen artikelen in deze categorie.",
@@ -76,7 +81,7 @@
     },
     "links": {
       "about": "Over",
-      "mission": "Onze Missie",
+      "mission": "Onze missie",
       "features": "Functies",
       "pricing": "Prijzen",
       "platforms": "Platforms",
@@ -91,12 +96,12 @@
       "help": "Help",
       "contact": "Contact",
       "status": "Servicestatus",
-      "report_abuse": "Misbruik Melden",
-      "responsible_disclosure": "Responsible Disclosure",
+      "report_abuse": "Misbruik melden",
+      "responsible_disclosure": "Responsible disclosure",
       "license": "Licentie",
-      "privacy": "Privacy Policy",
+      "privacy": "Privacybeleid",
       "account_deletion": "Accountverwijdering",
-      "terms_and_conditions": "Algemene Voorwaarden",
+      "terms_and_conditions": "Algemene voorwaarden",
       "legal_notice": "Colofon"
     },
     "social": {
@@ -118,7 +123,7 @@
   "features": {
     "metadata": {
       "title": "Functies",
-      "description": "Ontdek de krachtige functies die AliasVault de ultieme oplossing maken voor wachtwoord- en identiteitsbeheer."
+      "description": "Ontdek de functies van AliasVault: end-to-end versleutelde wachtwoordkluis, onbeperkte e-mailaliassen, identiteitsgenerator, browserextensies en mobiele apps."
     },
     "title": "Functies",
     "subtitle": "Wat maakt AliasVault uniek",
@@ -177,7 +182,7 @@
   "about": {
     "metadata": {
       "title": "Over",
-      "description": "Leer meer over onze missie om veilig, privé wachtwoord- en aliasbeheer te bieden."
+      "description": "Het verhaal en de missie achter AliasVault: privacy-first, open-source wachtwoord- en e-mailaliasbeheer, gebouwd in Nederland."
     },
     "title": "Over AliasVault",
     "subtitle": "Privacy-first wachtwoordmanager",
@@ -209,7 +214,7 @@
   "contact": {
     "metadata": {
       "title": "Neem contact op",
-      "description": "Heb je vragen of heb je ondersteuning nodig? Zie hieronder hoe je contact kunt opnemen."
+      "description": "Vragen over AliasVault? Bereik ons supportteam per e-mail, word lid van de community op Discord of GitHub, of neem contact op voor zakelijke vragen."
     },
     "title": "Neem contact op",
     "subtitle": "Neem contact met ons op",
@@ -279,7 +284,7 @@
   "platforms": {
     "metadata": {
       "title": "Platforms",
-      "description": "AliasVault is beschikbaar op alle belangrijke platforms en browsers."
+      "description": "Gebruik AliasVault op iOS, Android, Windows, macOS en Linux, met browserextensies voor Chrome, Firefox, Safari, Edge en Brave: altijd gesynchroniseerd."
     },
     "title": "Platforms",
     "subtitle": "Overal beschikbaar",
@@ -404,7 +409,7 @@
       },
       "pricing": {
         "question": "Hoeveel kost AliasVault?",
-        "answer": "De huidige basisversie van AliasVault, met alle bestaande functies, is volledig gratis te gebruiken en zal dat altijd blijven. Zowel voor de officiële cloud-gehoste als self-hosted opties.\n\nIn de nabije toekomst zijn we wel van plan om optionele premium functies te introduceren zoals extra opslagruimte, automatische back-ups en meer. Deze betaalde opties zullen ons helpen bij de verdere ontwikkeling en het dragen van de kosten voor het runnen van het project.\n\nDat gezegd hebbende, zijn we momenteel gefocust op het ontwikkelen en verfijnen van de basisfuncties van AliasVault om een stabiele en betrouwbare basis voor alle gebruikers te garanderen. Premium functies maken deel uit van onze langetermijn roadmap, maar onze huidige prioriteit is het leveren van een solide basisversie.\n\nAls je het project in de tussentijd wilt helpen, zijn donaties zeer welkom — bezoek onze [contactLink]contactpagina[/contactLink] voor meer informatie."
+        "answer": "De huidige basisversie van AliasVault, met alle bestaande functies, is volledig gratis te gebruiken en zal dat altijd blijven. Zowel voor de officiële cloud-gehoste als self-hosted opties.\n\nIn de nabije toekomst zijn we wel van plan om optionele premium functies te introduceren zoals extra opslagruimte, automatische back-ups en meer. Deze betaalde opties zullen ons helpen bij de verdere ontwikkeling en het dragen van de kosten voor het runnen van het project.\n\nDat gezegd hebbende, zijn we momenteel gefocust op het ontwikkelen en verfijnen van de basisfuncties van AliasVault om een stabiele en betrouwbare basis voor alle gebruikers te garanderen. Premium functies maken deel uit van onze langetermijn roadmap, maar onze huidige prioriteit is het leveren van een solide basisversie.\n\nAls je het project in de tussentijd wilt helpen, zijn donaties zeer welkom, bezoek onze [contactLink]contactpagina[/contactLink] voor meer informatie."
       },
       "deviceSupport": {
         "question": "Welke apparaten worden ondersteund door AliasVault?",
@@ -490,15 +495,15 @@
         "title": "Oprichter Quotes voor Journalisten",
         "description": "Kant-en-klare quotes van Leendert de Borst voor je artikelen",
         "quote1": {
-          "text": "Als je mij vraagt 'Waarom AliasVault?', is het antwoord simpel: omdat elk stukje feedback ertoe doet — en we verbeteren al de dingen die mensen missen in andere wachtwoordmanagers.",
+          "text": "Als je mij vraagt 'Waarom AliasVault?', is het antwoord simpel: omdat elk stukje feedback ertoe doet, en we verbeteren al de dingen die mensen missen in andere wachtwoordmanagers.",
           "context": "Over de motivatie achter AliasVault"
         },
         "quote2": {
-          "text": "Omdat het open source en self-hostable is, vertrouwen mensen ons — ze weten dat we niet zomaar een ander bedrijf zijn dat gemak verkoopt, maar een community die luistert naar echte gebruikers.",
+          "text": "Omdat het open source en self-hostable is, vertrouwen mensen ons, ze weten dat we niet zomaar een ander bedrijf zijn dat gemak verkoopt, maar een community die luistert naar echte gebruikers.",
           "context": "Over AliasVault's open-source aanpak"
         },
         "quote3": {
-          "text": "Privacy gaat niet alleen over het verbergen van gegevens — het gaat over gebruikers controle geven over hun digitale identiteit. Daarom hebben we AliasVault gebouwd om transparant, community-driven en privacy-first te zijn.",
+          "text": "Privacy gaat niet alleen over het verbergen van gegevens, het gaat over gebruikers controle geven over hun digitale identiteit. Daarom hebben we AliasVault gebouwd om transparant, community-driven en privacy-first te zijn.",
           "context": "Over AliasVault's privacy filosofie"
         }
       }
@@ -545,11 +550,11 @@
   "blogPage": {
     "metadata": {
       "title": "Blog & Recent Nieuws",
-      "description": "Hier vind je de laatste blogposts en nieuws gepubliceerd door AliasVault."
+      "description": "Productupdates, release notes en artikelen over privacy, beveiliging en e-mailaliassen van het AliasVault-team."
     },
     "breadcrumb": {
       "title": "Blog & Recent Nieuws",
-      "description": "Hier vind je de laatste blogposts en nieuws gepubliceerd door AliasVault."
+      "description": "Productupdates, release notes en artikelen over privacy, beveiliging en e-mailaliassen van het AliasVault-team."
     }
   },
   "blogPost": {
@@ -573,11 +578,11 @@
   },
   "reportAbuse": {
     "metadata": {
-      "title": "Report Abuse",
+      "title": "Misbruik melden",
       "description": "Meld misbruik van AliasVault e-mailaliassen."
     },
-    "title": "Report Abuse",
-    "description": "Als u of uw service (website, app, etc.) negatief wordt beïnvloed door een e-mailalias van AliasVault, neem dan contact met ons op. We nemen alle abusemeldingen serieus en zullen alle claims onderzoeken.",
+    "title": "Misbruik melden",
+    "description": "Meld misbruik van AliasVault e-mailaliassen. Wordt jouw website, app of service negatief beïnvloed door een alias? Neem contact op. We onderzoeken elke legitieme melding.",
     "contactText": "Om een abusemelding te doen, neem direct contact met ons op via",
     "emailAddress": "support@aliasvault.com",
     "responseTime": "en vermeld de e-mailadressen die onderdeel zijn van het misbruik. We reageren binnen 48 uur."
@@ -590,11 +595,11 @@
       "features": {
         "passwordManagerAndPasskeys": {
           "name": "Wachtwoordmanager & passkeys",
-          "description": "Bewaar al je wachtwoorden veilig op één plek met krachtige end-to-end versleuteling. Genereer sterke, unieke wachtwoorden en creëer passkeys via de browser extensie, iOS en Android apps—alles gesynchroniseerd tussen je apparaten."
+          "description": "Bewaar al je wachtwoorden veilig op één plek met krachtige end-to-end versleuteling. Genereer sterke, unieke wachtwoorden en creëer passkeys via de browser extensie, iOS en Android apps: alles gesynchroniseerd tussen je apparaten."
         },
         "trulyOfflineAccess": {
           "name": "Echte offline toegang",
-          "description": "Volledige offline modus inclusief lokaal bewerken—iets wat weinig wachtwoordmanagers bieden. Bekijk en bewerk je vault altijd en overal; wijzigingen synchroniseren automatisch zodra je weer online bent, met ingebouwde conflict-samenvoeging op alle apps en apparaten."
+          "description": "Volledige offline modus inclusief lokaal bewerken: iets wat weinig wachtwoordmanagers bieden. Bekijk en bewerk je vault altijd en overal; wijzigingen synchroniseren automatisch zodra je weer online bent, met ingebouwde conflict-samenvoeging op alle apps en apparaten."
         },
         "builtIn2FA": {
           "name": "Ingebouwde 2FA authenticator",
@@ -667,7 +672,7 @@
         },
         "offlineAccess": {
           "name": "Offline toegang",
-          "description": "Volledige offline toegang en lokaal bewerken in de extensie—bekijk en bewerk je vault zonder internet; wijzigingen synchroniseren automatisch zodra je weer online bent."
+          "description": "Volledige offline toegang en lokaal bewerken in de extensie: bekijk en bewerk je vault zonder internet; wijzigingen synchroniseren automatisch zodra je weer online bent."
         },
         "emailAliasGenerator": {
           "name": "E-mailalias generator",
@@ -720,8 +725,8 @@
   },
   "alternative1Password": {
     "metadata": {
-      "title": "Alternatief voor 1Password",
-      "description": "AliasVault is een open-source end-to-end versleutelde wachtwoord- en aliasmanager."
+      "title": "Open-source alternatief voor 1Password",
+      "description": "Vergelijk AliasVault met 1Password: open-source, end-to-end versleuteld, met ingebouwde e-mailaliassen, een royale gratis versie en optionele self-hosting."
     },
     "hero": {
       "title": "Op zoek naar een 1Password alternatief?",
@@ -794,8 +799,8 @@
   },
   "alternativeBitwarden": {
     "metadata": {
-      "title": "Alternatief voor Bitwarden",
-      "description": "AliasVault is een open-source end-to-end versleutelde wachtwoord- en aliasmanager."
+      "title": "Open-source alternatief voor Bitwarden",
+      "description": "Vergelijk AliasVault met Bitwarden: de beveiliging van een open-source wachtwoordmanager, plus ingebouwde e-mailaliassen voor extra privacy bij elke registratie."
     },
     "hero": {
       "title": "Op zoek naar een alternatief voor Bitwarden?",
@@ -873,8 +878,8 @@
   },
   "alternativeSimpleLogin": {
     "metadata": {
-      "title": "Alternatief voor SimpleLogin",
-      "description": "AliasVault is een open-source end-to-end versleutelde wachtwoord- en aliasmanager."
+      "title": "Open-source alternatief voor SimpleLogin",
+      "description": "Vergelijk AliasVault met SimpleLogin: end-to-end versleutelde e-mailaliassen en een volledige wachtwoordmanager in één open-source app, cloud of self-hosted."
     },
     "hero": {
       "title": "Op zoek naar een alternatief voor SimpleLogin?",
@@ -948,8 +953,8 @@
   },
   "alternativeProtonPass": {
     "metadata": {
-      "title": "Alternatief voor Proton Pass",
-      "description": "AliasVault is een volledig open-source end-to-end versleutelde wachtwoord- en aliasmanager die zelf gehost kan worden."
+      "title": "Open-source alternatief voor Proton Pass",
+      "description": "Vergelijk AliasVault met Proton Pass: volledig open-source met self-hosting, end-to-end versleuteling en ingebouwde e-mailaliassen in eigen beheer."
     },
     "hero": {
       "title": "Op zoek naar een alternatief voor Proton Pass?",
@@ -1053,7 +1058,7 @@
   "mission": {
     "metadata": {
       "title": "Missie",
-      "description": "Lees meer over onze missie en visie."
+      "description": "Waarom we AliasVault bouwen: iedereen controle geven over zijn digitale identiteit met open-source, end-to-end versleuteld aliasbeheer."
     },
     "breadcrumb": {
       "title": "Onze Missie",
@@ -1071,7 +1076,7 @@
         "paragraph1": "Nog niet zo lang geleden kon je leven zonder echt na te denken over privacy. Je kon dingen kopen, met mensen praten en je gedachten delen zonder je zorgen te maken over wie er meekeek.",
         "paragraph2": "Toen het internet begon, was het een plek waar je kon zijn wie je maar wilde. Een plek om (anoniem) met mensen over de gehele wereld in contact te komen. Tegenwoordig is het internet echter een plek geworden waar bedrijven elke muisbeweging en actie volgen en je gegevens aan de hoogste bieder verkopen.",
         "paragraph3": "Neem reclame, bijvoorbeeld. Vroeger werd dezelfde reclame aan miljoenen mensen tegelijk getoond. Het was vervelend, maar degene die de reclame maakte wist in ieder geval niet wie jij persoonlijk was. Nu, door het internet, hebben bedrijven manieren ontwikkeld om precies te weten wie je bent, wat je leuk vindt en waar je naar op zoek bent, soms zelfs voordat je het zelf weet. En dit treft niet alleen volwassenen. Zelfs kinderen die onschuldige tekenfilms online kijken, worden al gevolgd. Hun klikken, gewoonten en voorkeuren worden verzameld en gebruikt om een profiel van hen op te bouwen.",
-        "paragraph4": "Om het in perspectief te plaatsen: stel je voor dat je door een winkelcentrum loopt en iemand je overal volgt, alles opschrijft wat je doet, hoe lang je in elke winkel blijft, wat je bekijkt (misschien een bepaald medicijn) — en dat vervolgens deelt met alle andere winkels, of verkoopt aan de hoogste bieder. Dat zou stalking, intimidatie of erger worden genoemd. Maar op het internet is dit 'normaal' geworden."
+        "paragraph4": "Om het in perspectief te plaatsen: stel je voor dat je door een winkelcentrum loopt en iemand je overal volgt, alles opschrijft wat je doet, hoe lang je in elke winkel blijft, wat je bekijkt (misschien een bepaald medicijn)... en dat vervolgens deelt met alle andere winkels, of verkoopt aan de hoogste bieder. Dat zou stalking, intimidatie of erger worden genoemd. Maar op het internet is dit 'normaal' geworden."
       },
       "takingBackControl": {
         "title": "De Controle Terugnemen",
@@ -1130,7 +1135,7 @@
   },
   "privacyPolicy": {
     "title": "Privacybeleid",
-    "description": "AliasVault is een open-source end-to-end versleutelde wachtwoord- en aliasmanager."
+    "description": "Hoe AliasVault met je gegevens omgaat: wat we verzamelen, wat we dankzij end-to-end versleuteling nooit kunnen inzien, en je rechten onder de AVG."
   },
   "pricing": {
     "title": "Prijzen",
@@ -1368,7 +1373,7 @@
   },
   "accountDeletion": {
     "title": "Verzoek tot accountverwijdering",
-    "description": "Hoe je een verzoek kunt indienen om je AliasVault-account te verwijderen en wat er met je gegevens gebeurt. Vereist voor Google Play.",
+    "description": "Hoe je je AliasVault-account permanent verwijdert en wat er daarna gebeurt met je versleutelde gegevens en e-mailaliassen.",
     "lastUpdated": "Laatst bijgewerkt: 9 februari 2026",
     "howToRequest": {
       "title": "Hoe vraag je verwijdering aan",
@@ -1426,7 +1431,7 @@
   },
   "docs": {
     "title": "Documentatie",
-    "description": "AliasVault is een open-source end-to-end versleutelde wachtwoord- en aliasmanager."
+    "description": "Technische documentatie voor AliasVault: installatie, self-hosting, architectuur, API-referentie en geavanceerde configuratiehandleidingen."
   },
   "statistics": {
     "title": "Cijfers",
@@ -1512,7 +1517,7 @@
         "context": "Over AliasVault's missie en visie"
       },
       {
-        "text": "Als iemand je op straat zou volgen en alles zou opschrijven wat je doet, zouden we dat stalking noemen. Online is dat normaal geworden — en dat zou het niet moeten zijn.",
+        "text": "Als iemand je op straat zou volgen en alles zou opschrijven wat je doet, zouden we dat stalking noemen. Online is dat normaal geworden, en dat zou het niet moeten zijn.",
         "context": "Over de staat van online privacy"
       },
       {

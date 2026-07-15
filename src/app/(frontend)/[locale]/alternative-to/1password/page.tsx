@@ -12,8 +12,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const t = await getTranslations({ locale });
 
   return generatePageSEOMetadata({
-    title: t("alternative1Password.hero.title"),
-    description: t("alternative1Password.hero.description"),
+    title: t("alternative1Password.metadata.title"),
+    description: t("alternative1Password.metadata.description"),
     path: "/alternative-to/1password",
     locale,
   });

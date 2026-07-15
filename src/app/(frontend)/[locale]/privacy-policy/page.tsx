@@ -4,6 +4,7 @@ import Breadcrumb from "@/components/Common/Breadcrumb";
 import { generatePageSEOMetadata } from "@/lib/seo-utils";
 import { getTranslations } from "next-intl/server";
 import Page from "@/components/Common/Page";
+import { useTranslations } from "next-intl";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -18,10 +19,12 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 }
 
 const PrivacyPolicyPage = () => {
+  const t = useTranslations();
+
   return (
     <Page>
       <Breadcrumb
-        pageName="Privacy Policy"
+        pageName={t('privacyPolicy.title')}
       />
       <PrivacyPolicy />
     </Page>

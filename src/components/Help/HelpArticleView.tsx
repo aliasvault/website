@@ -1,5 +1,5 @@
 import { getTranslations } from 'next-intl/server'
-import { FiArrowRight, FiClock } from 'react-icons/fi'
+import { FiArrowRight, FiClock, FiRefreshCw, FiUser } from 'react-icons/fi'
 import RichText from '@/components/Lexical/RichText'
 import { Link } from '@/i18n/navigation'
 import { routing } from '@/i18n/routing'
@@ -10,6 +10,7 @@ import { resolveAuthor } from '@/lib/authors'
 import { articleJsonLd, jsonLdScript } from '@/lib/jsonLd'
 import TableOfContents from './TableOfContents'
 import HelpBreadcrumb from './HelpBreadcrumb'
+import HelpSectionIcon from './HelpSectionIcon'
 
 interface HelpArticleViewProps {
   article: HelpArticle
@@ -46,10 +47,10 @@ export default async function HelpArticleView({ article, locale, isPreview }: He
     <section className="pb-[120px] pt-[150px]">
       <div className="container">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdScript(jsonLd) }} />
-        <div className="-mx-4 flex flex-wrap">
-          <div className="w-full px-4 lg:w-8/12">
+        <div className="mx-auto flex max-w-6xl justify-center gap-12">
+          <div className="w-full min-w-0 max-w-3xl">
             {isPreview && (
-              <div className="mb-8 rounded-sm border border-primary bg-primary/10 px-4 py-3 text-sm font-medium text-primary">
+              <div className="mb-8 rounded-xl border border-primary bg-primary/10 px-4 py-3 text-sm font-medium text-primary">
                 Preview — this is how the article will look in the live theme. Status:{' '}
                 <span className="font-semibold">{article.status}</span>.
               </div>
@@ -63,25 +64,39 @@ export default async function HelpArticleView({ article, locale, isPreview }: He
               ]}
             />
 
+            <Link
+              href={`/help/${section.key}`}
+              className="mb-5 inline-flex items-center gap-2 rounded-full bg-primary/10 px-3.5 py-1.5 text-sm font-medium text-primary transition-colors hover:bg-primary/20"
+            >
+              <HelpSectionIcon icon={section.icon} className="h-4 w-4" />
+              {sectionTitle}
+            </Link>
+
             <h1 className="mb-5 text-3xl font-bold leading-tight text-black dark:text-white sm:text-4xl sm:leading-tight">
               {article.title}
             </h1>
 
-            <div className="mb-8 flex flex-wrap items-center gap-x-5 gap-y-2 border-b border-body-color border-opacity-10 pb-6 text-sm text-body-color dark:border-white dark:border-opacity-10 dark:text-body-color-dark">
+            <div className="mb-9 flex flex-wrap items-center gap-x-6 gap-y-2 border-b border-gray-200 pb-6 text-sm text-body-color dark:border-gray-800 dark:text-body-color-dark">
               <span className="inline-flex items-center gap-1.5">
-                <FiClock className="h-4 w-4" />
+                <FiClock className="h-4 w-4 text-primary" />
                 {t('help.readMinutes', { minutes })}
               </span>
-              {author?.name && <span>{author.name}</span>}
+              {author?.name && (
+                <span className="inline-flex items-center gap-1.5">
+                  <FiUser className="h-4 w-4 text-primary" />
+                  {author.name}
+                </span>
+              )}
               {article.updated && (
-                <span>
+                <span className="inline-flex items-center gap-1.5">
+                  <FiRefreshCw className="h-4 w-4 text-primary" />
                   {t('help.lastUpdated')} {article.updated}
                 </span>
               )}
             </div>
 
             {(article.summary || article.description) && (
-              <div className="mb-10 rounded-sm border-l-4 border-primary bg-primary/5 px-5 py-4 text-base leading-relaxed text-black dark:text-white">
+              <div className="mb-10 rounded-xl border border-primary/20 bg-primary/5 px-6 py-5 text-base leading-relaxed text-black dark:border-primary/25 dark:text-white">
                 {article.summary || article.description}
               </div>
             )}
@@ -97,12 +112,14 @@ export default async function HelpArticleView({ article, locale, isPreview }: He
                   {article.faq.map((item, i) => (
                     <div
                       key={i}
-                      className="shadow-three dark:bg-gray-dark rounded-sm bg-white p-5 dark:shadow-none"
+                      className="rounded-xl border border-gray-200 bg-white p-6 shadow-three dark:border-gray-800 dark:bg-gray-dark dark:shadow-none"
                     >
                       <h3 className="mb-2 text-lg font-semibold text-black dark:text-white">
                         {item.question}
                       </h3>
-                      <p className="text-base text-body-color dark:text-body-color-dark">{item.answer}</p>
+                      <p className="text-base leading-relaxed text-body-color dark:text-body-color-dark">
+                        {item.answer}
+                      </p>
                     </div>
                   ))}
                 </div>
@@ -110,19 +127,28 @@ export default async function HelpArticleView({ article, locale, isPreview }: He
             )}
 
             {related.length > 0 && (
-              <div className="mt-14 border-t border-body-color border-opacity-10 pt-8 dark:border-white dark:border-opacity-10">
-                <h2 className="mb-5 text-xl font-semibold text-black dark:text-white">
+              <div className="mt-14 border-t border-gray-200 pt-9 dark:border-gray-800">
+                <h2 className="mb-6 text-xl font-semibold text-black dark:text-white">
                   {t('help.related')}
                 </h2>
-                <ul className="space-y-3">
+                <ul className="grid gap-4 sm:grid-cols-2">
                   {related.map((rel) => (
                     <li key={rel.slug}>
                       <Link
                         href={`/help/${rel.slug}`}
-                        className="group inline-flex items-center gap-2 font-medium text-body-color hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
+                        className="group flex h-full items-start justify-between gap-3 rounded-xl border border-gray-200 bg-white px-5 py-4 shadow-three transition-all duration-200 hover:border-primary/40 dark:border-gray-800 dark:bg-gray-dark dark:shadow-none dark:hover:border-primary/40"
                       >
-                        <FiArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                        {rel.title}
+                        <span className="min-w-0">
+                          <span className="block font-medium text-black transition-colors group-hover:text-primary dark:text-white">
+                            {rel.title}
+                          </span>
+                          {rel.description && (
+                            <span className="mt-1 line-clamp-2 block text-sm text-body-color dark:text-body-color-dark">
+                              {rel.description}
+                            </span>
+                          )}
+                        </span>
+                        <FiArrowRight className="mt-1 h-4 w-4 shrink-0 text-primary opacity-0 transition-all duration-200 group-hover:translate-x-0.5 group-hover:opacity-100" />
                       </Link>
                     </li>
                   ))}
@@ -133,8 +159,8 @@ export default async function HelpArticleView({ article, locale, isPreview }: He
 
           {/* On this page — sticky on large screens. */}
           {headings.length >= 2 && (
-            <aside className="w-full px-4 lg:w-4/12">
-              <div className="sticky top-28 hidden lg:block">
+            <aside className="hidden w-72 shrink-0 lg:block">
+              <div className="sticky top-28">
                 <TableOfContents headings={headings} label={t('help.onThisPage')} />
               </div>
             </aside>

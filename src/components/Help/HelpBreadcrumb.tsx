@@ -1,3 +1,4 @@
+import { FiChevronRight } from 'react-icons/fi'
 import { Link } from '@/i18n/navigation'
 
 export interface Crumb {
@@ -14,13 +15,13 @@ export default function HelpBreadcrumb({ items }: { items: Crumb[] }) {
         {items.map((item, i) => (
           <li key={i} className="flex items-center gap-x-2">
             {item.href ? (
-              <Link href={item.href} className="hover:text-primary">
+              <Link href={item.href} className="transition-colors hover:text-primary">
                 {item.label}
               </Link>
             ) : (
-              <span className="text-black dark:text-white">{item.label}</span>
+              <span className="font-medium text-black dark:text-white">{item.label}</span>
             )}
-            {i < items.length - 1 && <span aria-hidden>/</span>}
+            {i < items.length - 1 && <FiChevronRight aria-hidden className="h-3.5 w-3.5 opacity-60" />}
           </li>
         ))}
       </ol>

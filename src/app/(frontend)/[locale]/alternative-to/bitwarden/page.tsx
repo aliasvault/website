@@ -12,8 +12,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const t = await getTranslations({ locale });
 
   return generatePageSEOMetadata({
-    title: t('alternativeBitwarden.hero.title'),
-    description: t('alternativeBitwarden.hero.description'),
+    title: t('alternativeBitwarden.metadata.title'),
+    description: t('alternativeBitwarden.metadata.description'),
     path: '/alternative-to/bitwarden',
     locale,
   });

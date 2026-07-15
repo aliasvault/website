@@ -15,6 +15,7 @@ import { getMessages, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from "@/i18n/routing";
 import { generateSEOMetadata } from '@/components/SEO/SEOMetadata';
+import { siteJsonLd, jsonLdScript } from '@/lib/jsonLd';
 
 export async function generateMetadata({
   params
@@ -67,6 +68,11 @@ export default async function RootLayout({
   // and the spacer that pushes content below the absolutely-positioned header.
   return (
     <NextIntlClientProvider messages={messages}>
+      {/* Site-wide Organization + WebSite entities for search engines and LLMs. */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: jsonLdScript(siteJsonLd(locale)) }}
+      />
       <Providers>
         <AOSInit />
         <StatusBannerProvider>

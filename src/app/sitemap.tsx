@@ -8,11 +8,15 @@ import { routing } from '@/i18n/routing'
 // Payload database, which only exists at runtime.
 export const dynamic = 'force-dynamic'
 
+/**
+ * Sitemap.
+ */
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-    // Get base URL from environment variable or default
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.aliasvault.com'
+    const urlFor = (locale: string, path: string) =>
+        locale === routing.defaultLocale ? `${baseUrl}${path}` : `${baseUrl}/${locale}${path}`
 
-    // Static routes that should be included for all locales
+    // Static routes, localized (EN at root, NL under /nl).
     const staticPaths = [
         '',
         '/about',
@@ -26,97 +30,39 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         '/contact',
         '/mission',
         '/press-kit',
+        '/source-code',
         '/report-abuse',
         '/privacy-policy',
+        '/terms-and-conditions',
         '/account-deletion',
+        '/responsible-disclosure',
         '/alternative-to/bitwarden',
         '/alternative-to/simplelogin',
         '/alternative-to/proton-pass',
         '/alternative-to/1password'
     ]
 
-    // Create routes for all locales
-    const staticRoutes: MetadataRoute.Sitemap = []
+    const staticRoutes: MetadataRoute.Sitemap = routing.locales.flatMap((locale) =>
+        staticPaths.map((path) => ({ url: urlFor(locale, path) }))
+    )
 
-    routing.locales.forEach(locale => {
-        staticPaths.forEach(path => {
-            const url = locale === routing.defaultLocale
-                ? `${baseUrl}${path}`
-                : `${baseUrl}/${locale}${path}`
-
-            staticRoutes.push({
-                url,
-                lastModified: new Date(),
-                changeFrequency: 'monthly',
-                priority: path === '' ? 1.0 : 0.8,
-                alternates: {
-                    languages: Object.fromEntries(
-                        routing.locales.map(loc => [
-                            loc,
-                            loc === routing.defaultLocale
-                                ? `${baseUrl}${path}`
-                                : `${baseUrl}/${loc}${path}`
-                        ])
-                    )
-                }
-            })
-        })
-    })
-
-    // Get all blog and news posts
+    // Blog and news posts are localized, so both language URLs are listed.
     const posts = await getAllBlogAndNewsPosts()
+    const postRoutes: MetadataRoute.Sitemap = routing.locales.flatMap((locale) =>
+        posts.map((post) => ({
+            url: urlFor(locale, `/${post.type}/${post.slug}`),
+            lastModified: new Date(post.date),
+        }))
+    )
 
-    // Create dynamic routes for blog and news posts (all locales)
-    const dynamicRoutes: MetadataRoute.Sitemap = []
+    // Help articles are localized, so both language URLs are listed.
+    const helpArticles = await getAllHelpArticles()
+    const helpRoutes: MetadataRoute.Sitemap = routing.locales.flatMap((locale) =>
+        helpArticles.map((article) => ({
+            url: urlFor(locale, `/help/${article.slug}`),
+            ...(article.updated ? { lastModified: new Date(article.updated) } : {}),
+        }))
+    )
 
-    routing.locales.forEach(locale => {
-        posts.forEach(post => {
-            const url = locale === routing.defaultLocale
-                ? `${baseUrl}/${post.type}/${post.slug}`
-                : `${baseUrl}/${locale}/${post.type}/${post.slug}`
-
-            dynamicRoutes.push({
-                url,
-                lastModified: new Date(post.date),
-                changeFrequency: 'weekly',
-                priority: 0.7,
-                alternates: {
-                    languages: Object.fromEntries(
-                        routing.locales.map(loc => [
-                            loc,
-                            loc === routing.defaultLocale
-                                ? `${baseUrl}/${post.type}/${post.slug}`
-                                : `${baseUrl}/${loc}/${post.type}/${post.slug}`
-                        ])
-                    )
-                }
-            })
-        })
-    })
-
-    // Help articles
-    const kbRoutes: MetadataRoute.Sitemap = []
-    const kbArticles = await getAllHelpArticles()
-
-    routing.locales.forEach(locale => {
-        kbArticles.forEach(article => {
-            const buildUrl = (loc: string) => loc === routing.defaultLocale
-                ? `${baseUrl}/help/${article.slug}`
-                : `${baseUrl}/${loc}/help/${article.slug}`
-
-            kbRoutes.push({
-                url: buildUrl(locale),
-                lastModified: article.updated ? new Date(article.updated) : new Date(),
-                changeFrequency: 'monthly',
-                priority: 0.7,
-                alternates: {
-                    languages: Object.fromEntries(
-                        routing.locales.map(loc => [loc, buildUrl(loc)])
-                    )
-                }
-            })
-        })
-    })
-
-    return [...staticRoutes, ...dynamicRoutes, ...kbRoutes]
+    return [...staticRoutes, ...postRoutes, ...helpRoutes]
 }

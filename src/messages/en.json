@@ -11,7 +11,7 @@
   },
   "metadata": {
     "title": "AliasVault - Privacy-First Password & Email Alias Manager",
-    "description": "AliasVault is an open-source end-to-end encrypted password and alias manager.",
+    "description": "Open-source, end-to-end encrypted password manager with built-in email aliases. Create a unique identity for every website: in the cloud or self-hosted.",
     "seoSuffix": "AliasVault"
   },
   "navigation": {
@@ -23,8 +23,13 @@
     "help": "Help"
   },
   "help": {
-    "title": "Help",
-    "description": "Guides, answers and tips to help you get the most out of AliasVault.",
+    "title": "Help Center",
+    "heroTitle": "How can we help?",
+    "description": "Search guides, answers and tips to get the most out of AliasVault: from setting up your first vault to advanced security.",
+    "searchPlaceholder": "Search help articles…",
+    "searchLoading": "Loading…",
+    "searchNoResults": "No results for \"{query}\". Try a different term or browse the topics below.",
+    "backToHelp": "All help topics",
     "empty": "No articles published yet.",
     "articlesCount": "{count, plural, =0 {No articles yet} one {# article} other {# articles}}",
     "sectionEmpty": "No articles in this category yet.",
@@ -118,7 +123,7 @@
   "features": {
     "metadata": {
       "title": "Features",
-      "description": "Discover the powerful features that make AliasVault the ultimate solution for password and identity management."
+      "description": "Explore AliasVault's features: end-to-end encrypted password vault, unlimited email aliases, identity generator, browser extensions and mobile apps."
     },
     "title": "Features",
     "subtitle": "What makes AliasVault unique",
@@ -177,7 +182,7 @@
   "about": {
     "metadata": {
       "title": "About",
-      "description": "Learn more about our mission to provide secure, private password and alias management."
+      "description": "The story and mission behind AliasVault: privacy-first, open-source password and email alias management, built in the Netherlands."
     },
     "title": "About AliasVault",
     "subtitle": "Privacy-first password management",
@@ -209,7 +214,7 @@
   "contact": {
     "metadata": {
       "title": "Contact Us",
-      "description": "Have questions or need support? We're here to help."
+      "description": "Questions about AliasVault? Reach our support team by email, join the community on Discord or GitHub, or get in touch for business inquiries."
     },
     "title": "Contact Us",
     "subtitle": "Get in touch",
@@ -279,7 +284,7 @@
   "platforms": {
     "metadata": {
       "title": "Platforms",
-      "description": "AliasVault is available on all major platforms and browsers."
+      "description": "Use AliasVault on iOS, Android, Windows, macOS and Linux, with browser extensions for Chrome, Firefox, Safari, Edge and Brave: always in sync."
     },
     "title": "Platforms",
     "subtitle": "Available everywhere",
@@ -545,11 +550,11 @@
   "blogPage": {
     "metadata": {
       "title": "Blog & Recent News",
-      "description": "Here you can find the latest blog posts and news published by AliasVault."
+      "description": "Product updates, release notes and articles on privacy, security and email aliases from the AliasVault team."
     },
     "breadcrumb": {
       "title": "Blog & Recent News",
-      "description": "Here you can find the latest blog posts and news published by AliasVault."
+      "description": "Product updates, release notes and articles on privacy, security and email aliases from the AliasVault team."
     }
   },
   "blogPost": {
@@ -577,7 +582,7 @@
       "description": "Report abuse of AliasVault email aliases."
     },
     "title": "Report Abuse",
-    "description": "If you or your service (website, app, etc.) is negatively affected by an email alias from AliasVault, please contact us. We take abuse reports seriously and will investigate all legitimate claims.",
+    "description": "Report abuse of AliasVault email aliases. Is your website, app or service negatively affected by an alias? Contact us. We investigate every legitimate claim.",
     "contactText": "To report abuse, please contact us directly at",
     "emailAddress": "support@aliasvault.com",
     "responseTime": "and include the email addresses that are part of the abuse. We will respond within 48 hours."
@@ -720,8 +725,8 @@
   },
   "alternative1Password": {
     "metadata": {
-      "title": "Alternative to 1Password",
-      "description": "AliasVault is an open-source end-to-end encrypted password and alias manager."
+      "title": "Open-Source 1Password Alternative",
+      "description": "Compare AliasVault with 1Password: open-source, end-to-end encrypted, with built-in email aliases, a generous free tier and optional self-hosting."
     },
     "hero": {
       "title": "Looking for a 1Password Alternative?",
@@ -795,8 +800,8 @@
   },
   "alternativeBitwarden": {
     "metadata": {
-      "title": "Alternative to Bitwarden",
-      "description": "AliasVault is an open-source end-to-end encrypted password and alias manager."
+      "title": "Open-Source Bitwarden Alternative",
+      "description": "Compare AliasVault with Bitwarden: the security of an open-source password manager, plus built-in email aliases for extra privacy on every signup."
     },
     "hero": {
       "title": "Looking for a Bitwarden Alternative?",
@@ -875,8 +880,8 @@
   },
   "alternativeSimpleLogin": {
     "metadata": {
-      "title": "Alternative to SimpleLogin",
-      "description": "AliasVault is an open-source end-to-end encrypted password and alias manager."
+      "title": "Open-Source SimpleLogin Alternative",
+      "description": "Compare AliasVault with SimpleLogin: end-to-end encrypted email aliases and a full password manager in one open-source app, cloud or self-hosted."
     },
     "hero": {
       "title": "Looking for a SimpleLogin Alternative?",
@@ -950,8 +955,8 @@
   },
   "alternativeProtonPass": {
     "metadata": {
-      "title": "Alternative to Proton Pass",
-      "description": "AliasVault is a fully open-source end-to-end encrypted password and alias manager that can be self-hosted."
+      "title": "Open-Source Proton Pass Alternative",
+      "description": "Compare AliasVault with Proton Pass: fully open-source with self-hosting, end-to-end encryption and built-in email aliases you fully control."
     },
     "hero": {
       "title": "Looking for a Proton Pass Alternative?",
@@ -1056,7 +1061,7 @@
   "mission": {
     "metadata": {
       "title": "Mission",
-      "description": "Read more about our mission and vision."
+      "description": "Why we're building AliasVault: giving everyone control over their digital identity with open-source, end-to-end encrypted alias management."
     },
     "breadcrumb": {
       "title": "Our Mission",
@@ -1133,7 +1138,7 @@
   },
   "privacyPolicy": {
     "title": "Privacy Policy",
-    "description": "AliasVault is an open-source end-to-end encrypted password and alias manager."
+    "description": "How AliasVault handles your data: what we collect, what we can never see thanks to end-to-end encryption, and your rights under the GDPR."
   },
   "pricing": {
     "title": "Pricing",
@@ -1371,7 +1376,7 @@
   },
   "accountDeletion": {
     "title": "Account Deletion Request",
-    "description": "How to request deletion of your AliasVault account and what happens to your data. Required for Google Play compliance.",
+    "description": "How to permanently delete your AliasVault account and what happens to your encrypted data and email aliases afterwards.",
     "lastUpdated": "Last updated: February 9, 2026",
     "howToRequest": {
       "title": "How to request deletion",
@@ -1429,7 +1434,7 @@
   },
   "docs": {
     "title": "Documentation",
-    "description": "AliasVault is an open-source end-to-end encrypted password and alias manager."
+    "description": "Technical documentation for AliasVault: installation, self-hosting, architecture, API reference and advanced configuration guides."
   },
   "statistics": {
     "title": "Statistics",

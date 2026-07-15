@@ -7,6 +7,7 @@ interface SEOMetadataProps {
   path: string;
   locale: string;
   image?: string;
+  ogBadge?: string;
   type?: 'website' | 'article';
   publishedTime?: string;
   modifiedTime?: string;
@@ -15,12 +16,20 @@ interface SEOMetadataProps {
   contentLanguage?: string;
 }
 
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.aliasvault.com';
+
+const localizedUrl = (loc: string, path: string) =>
+  loc === defaultLocale ? `${BASE_URL}${path}` : `${BASE_URL}/${loc}${path}`;
+
+const OG_LOCALES: Record<string, string> = { en: 'en_US', nl: 'nl_NL' };
+
 export function generateSEOMetadata({
   title,
   description,
   path,
   locale,
-  image = '/images/og/og-header.jpg',
+  image,
+  ogBadge,
   type = 'website',
   publishedTime,
   modifiedTime,
@@ -30,39 +39,35 @@ export function generateSEOMetadata({
 }: SEOMetadataProps): Metadata {
   // Use content language if provided, otherwise use locale
   const actualContentLanguage = contentLanguage || locale;
-  
+
   // For content that's in English but might be on different locale routes,
   // we need to set the canonical URL to the English version
-  const canonicalUrl = actualContentLanguage === 'en' 
-    ? `https://www.aliasvault.com${path}`
-    : locale === defaultLocale 
-      ? `https://www.aliasvault.com${path}`
-      : `https://www.aliasvault.com/${locale}${path}`;
+  const canonicalUrl =
+    actualContentLanguage === 'en' ? `${BASE_URL}${path}` : localizedUrl(locale, path);
 
-  // Generate alternate language URLs
+  // Alternate language URLs + x-default (default-locale version).
   const alternateUrls: Record<string, string> = {};
-  
-  // For content that's actually in English (like blog posts), both URLs point to the same content
-  if (actualContentLanguage === 'en') {
-    alternateUrls['en'] = `https://www.aliasvault.com${path}`;
-    alternateUrls['nl'] = `https://www.aliasvault.com/nl${path}`;
-  } else {
-    // For regular pages, generate URLs based on locale
-    locales.forEach((loc) => {
-      if (loc === defaultLocale) {
-        alternateUrls[loc] = `https://www.aliasvault.com${path}`;
-      } else {
-        alternateUrls[loc] = `https://www.aliasvault.com/${loc}${path}`;
-      }
-    });
-  }
+  locales.forEach((loc) => {
+    alternateUrls[loc] = localizedUrl(loc, path);
+  });
+  alternateUrls['x-default'] = localizedUrl(defaultLocale, path);
 
-  // Generate OpenGraph locale alternatives based on content language
-  const currentOgLocale = actualContentLanguage === 'en' ? 'en_US' : actualContentLanguage === 'nl' ? 'nl_NL' : actualContentLanguage;
-  const ogLocales = actualContentLanguage === 'en' ? ['nl_NL'] : ['en_US'];
+  // Default social image: branded, per-page dynamic OG image (1200x630).
+  const ogImage =
+    image ??
+    `/api/og?${new URLSearchParams({
+      title,
+      ...(description ? { description } : {}),
+      ...(ogBadge ? { badge: ogBadge } : {}),
+    }).toString()}`;
+
+  const currentOgLocale = OG_LOCALES[actualContentLanguage] ?? actualContentLanguage;
+  const ogAlternateLocales = locales
+    .filter((loc) => loc !== actualContentLanguage)
+    .map((loc) => OG_LOCALES[loc] ?? loc);
 
   const metadata: Metadata = {
-    metadataBase: new URL('https://www.aliasvault.com'),
+    metadataBase: new URL(BASE_URL),
     title,
     description,
     alternates: {
@@ -76,10 +81,10 @@ export function generateSEOMetadata({
       title,
       description,
       locale: currentOgLocale,
-      alternateLocale: ogLocales,
+      alternateLocale: ogAlternateLocales,
       images: [
         {
-          url: image,
+          url: ogImage,
           width: 1200,
           height: 630,
           alt: title
@@ -96,7 +101,7 @@ export function generateSEOMetadata({
       description,
       site: '@AliasVault',
       creator: '@AliasVault',
-      images: [image]
+      images: [ogImage]
     },
     robots: {
       index: true,
