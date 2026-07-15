@@ -1,3 +1,5 @@
+import { Link } from "@/i18n/navigation";
+
 const LegalNotice = () => {
   return (
     <section className="pt-9 pb-16 md:pb-20 lg:pb-28">
@@ -37,7 +39,20 @@ const LegalNotice = () => {
               >
                 Hetzner
               </a>
-              . We are fully compliant with European GDPR regulations. All user data is end-to-end encrypted and stored within the EU.
+              , with backup infrastructure in Finland and real-time replication between both locations. This website and our documentation are hosted by Leaseweb in the Netherlands, and our{" "}
+              <a
+                href="https://status.aliasvault.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                status page
+              </a>{" "}
+              is hosted separately with OVHcloud in France. We are fully compliant with European GDPR regulations. All user data is end-to-end encrypted and stored within the EU. For more details, see our{" "}
+              <Link href="/security" className="text-primary hover:underline">
+                Security
+              </Link>{" "}
+              page.
             </p>
           </div>
 

@@ -102,7 +102,8 @@
       "privacy": "Privacy Policy",
       "account_deletion": "Account Deletion",
       "terms_and_conditions": "Terms and Conditions",
-      "legal_notice": "Legal Notice"
+      "legal_notice": "Legal Notice",
+      "trust_security": "Security"
     },
     "social": {
       "github": "GitHub",
@@ -586,6 +587,60 @@
     "contactText": "To report abuse, please contact us directly at",
     "emailAddress": "abuse@aliasvault.com",
     "responseTime": "and include the email addresses that are part of the abuse. We will respond within 48 hours."
+  },
+  "trustAndSecurity": {
+    "metadata": {
+      "title": "Security",
+      "description": "How AliasVault protects your data: end-to-end encryption, EU-based infrastructure with geographic redundancy, encrypted backups and 24/7 monitoring."
+    },
+    "title": "Security",
+    "pageDescription": "How we protect your data, from end-to-end encryption to where our servers physically run.",
+    "encryption": {
+      "title": "End-to-end encryption",
+      "intro": "AliasVault is built as a zero-knowledge system: your vault is encrypted and decrypted locally on your own device, and your master password never leaves it. Our servers only ever store an encrypted vault that is useless without your keys.",
+      "points": {
+        "keys": "Your encryption key is derived from your master password on your device using Argon2id, and your vault is encrypted with AES-256-GCM.",
+        "emails": "Emails received on your aliases are encrypted with your public key before they are stored, so only you can read them.",
+        "server": "Neither our team nor anyone else with access to our servers can read the contents of your vault, we simply do not have the keys."
+      },
+      "docsText": "Want the full technical picture? Read our",
+      "docsLinkText": "architecture documentation"
+    },
+    "infrastructure": {
+      "title": "Cloud infrastructure",
+      "intro": "The AliasVault cloud service runs exclusively on dedicated servers under our own control, located in the European Union and spread across independent providers and countries to separate concerns and avoid single points of failure.",
+      "locations": {
+        "main": {
+          "name": "Main infrastructure",
+          "detail": "Germany, on dedicated servers hosted by Hetzner."
+        },
+        "backup": {
+          "name": "Backup infrastructure",
+          "detail": "Finland, with real-time replication from the main location to cover geographical outages."
+        },
+        "website": {
+          "name": "Website & documentation",
+          "detail": "The Netherlands, hosted by Leaseweb."
+        },
+        "status": {
+          "name": "Status page",
+          "detail": "France, hosted separately with OVHcloud. It monitors all AliasVault infrastructure 24/7 and is where we communicate outages and planned maintenance:"
+        }
+      },
+      "gdpr": "All user data is stored within the EU and we are fully compliant with European GDPR regulations."
+    },
+    "backups": {
+      "title": "Backups & continuity",
+      "intro": "AliasVault utilizes a hardened backup strategy ensuring your data is safeguarded:",
+      "points": {
+        "frequency": "Backups run multiple times per day.",
+        "encrypted": "All backups are fully encrypted, both on-site and off-site.",
+        "offsite": "Backups are stored off-site, in a different location than the primary servers, alongside offline cold-storage copies as a last line of defense.",
+        "replication": "Real-time replication between Germany and Finland keeps a live copy of the service ready in a second geography."
+      },
+      "statusText": "You can follow the health of all our systems in real time on our",
+      "statusLinkText": "status page"
+    }
   },
   "featuresData": {
     "passwordManagement": {

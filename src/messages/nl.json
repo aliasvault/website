@@ -102,7 +102,8 @@
       "privacy": "Privacybeleid",
       "account_deletion": "Accountverwijdering",
       "terms_and_conditions": "Algemene voorwaarden",
-      "legal_notice": "Colofon"
+      "legal_notice": "Colofon",
+      "trust_security": "Beveiliging"
     },
     "social": {
       "github": "GitHub",
@@ -123,7 +124,7 @@
   "features": {
     "metadata": {
       "title": "Functies",
-      "description": "Ontdek de functies van AliasVault: end-to-end versleutelde wachtwoordkluis, onbeperkte e-mailaliassen, identiteitsgenerator, browserextensies en mobiele apps."
+      "description": "Ontdek de functies van AliasVault: end-to-end versleutelde wachtwoordvault, onbeperkte e-mailaliassen, identiteitsgenerator, browserextensies en mobiele apps."
     },
     "title": "Functies",
     "subtitle": "Wat maakt AliasVault uniek",
@@ -586,6 +587,60 @@
     "contactText": "Om een abusemelding te doen, neem direct contact met ons op via",
     "emailAddress": "abuse@aliasvault.com",
     "responseTime": "en vermeld de e-mailadressen die onderdeel zijn van het misbruik. We reageren binnen 48 uur."
+  },
+  "trustAndSecurity": {
+    "metadata": {
+      "title": "Beveiliging",
+      "description": "Hoe AliasVault je gegevens beschermt: end-to-end encryptie, EU-infrastructuur met geografische redundantie, versleutelde back-ups en 24/7 monitoring."
+    },
+    "title": "Beveiliging",
+    "pageDescription": "Hoe we je gegevens beschermen, van end-to-end encryptie tot waar onze servers fysiek draaien.",
+    "encryption": {
+      "title": "End-to-end encryptie",
+      "intro": "AliasVault is gebouwd als een zero-knowledge systeem: je vault wordt lokaal op je eigen apparaat versleuteld en ontsleuteld, en je hoofdwachtwoord verlaat je apparaat nooit. Onze servers slaan alleen een versleutelde vault op die zonder jouw sleutels onbruikbaar is.",
+      "points": {
+        "keys": "Je encryptiesleutel wordt op je apparaat afgeleid van je hoofdwachtwoord met Argon2id, en je vault wordt versleuteld met AES-256-GCM.",
+        "emails": "E-mails die binnenkomen op je aliassen worden versleuteld met je publieke sleutel voordat ze worden opgeslagen, zodat alleen jij ze kunt lezen.",
+        "server": "Ons team kan de inhoud van je vault niet lezen. We hebben de sleutels simpelweg niet."
+      },
+      "docsText": "Wil je het volledige technische verhaal? Lees onze",
+      "docsLinkText": "architectuurdocumentatie"
+    },
+    "infrastructure": {
+      "title": "Cloudinfrastructuur",
+      "intro": "De AliasVault-clouddienst draait uitsluitend op dedicated servers die volledig onder ons eigen beheer staan, gevestigd binnen de Europese Unie en verspreid over onafhankelijke providers en landen om verantwoordelijkheden te scheiden en single points of failure te voorkomen.",
+      "locations": {
+        "main": {
+          "name": "Hoofdinfrastructuur",
+          "detail": "Duitsland, op dedicated servers gehost door Hetzner."
+        },
+        "backup": {
+          "name": "Back-upinfrastructuur",
+          "detail": "Finland, met realtime replicatie vanaf de hoofdlocatie om geografische storingen op te vangen."
+        },
+        "website": {
+          "name": "Website & documentatie",
+          "detail": "Nederland, gehost door Leaseweb."
+        },
+        "status": {
+          "name": "Statuspagina",
+          "detail": "Frankrijk, apart gehost bij OVHcloud. Deze monitort alle AliasVault-infrastructuur 24/7 en is waar we communiceren over storingen en gepland onderhoud:"
+        }
+      },
+      "gdpr": "Alle gebruikersdata wordt binnen de EU opgeslagen en we voldoen volledig aan de Europese AVG (GDPR)."
+    },
+    "backups": {
+      "title": "Back-ups & continuïteit",
+      "intro": "AliasVault hanteert een robuuste back-upstrategie zodat je gegevens veilig zijn gesteld:",
+      "points": {
+        "frequency": "Back-ups draaien meerdere keren per dag.",
+        "encrypted": "Alle back-ups zijn volledig versleuteld, zowel on-site als off-site.",
+        "offsite": "Back-ups worden off-site opgeslagen, op een andere locatie dan de primaire servers, naast offline cold-storage kopieën als laatste verdedigingslinie.",
+        "replication": "Realtime replicatie tussen Duitsland en Finland houdt een live kopie van de dienst klaar in een tweede regio."
+      },
+      "statusText": "Volg de status van al onze systemen in realtime op onze",
+      "statusLinkText": "statuspagina"
+    }
   },
   "featuresData": {
     "passwordManagement": {
