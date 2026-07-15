@@ -71,7 +71,7 @@ export default async function Features() {
               <span className="text-base text-gray-700 dark:text-gray-300">{t('features.legend.available')}</span>
             </div>
             <div className="flex items-center">
-              <div className="mr-3 flex h-[50px] w-[50px] items-center justify-center rounded-md bg-primary-500 bg-opacity-10 text-primary-500">
+              <div className="mr-3 flex h-[50px] w-[50px] items-center justify-center rounded-xl bg-gradient-to-br from-primary/15 to-primary/5 text-primary ring-1 ring-inset ring-primary/15">
                 <svg className="h-6 w-6 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>

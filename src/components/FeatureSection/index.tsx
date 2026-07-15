@@ -95,7 +95,7 @@ const FeatureSection = ({
               <div className="space-y-6">
                 {features.map((feature, index) => (
                   <div key={index} className="flex items-start">
-                    <div className="mr-4 flex h-[45px] w-[45px] items-center justify-center rounded-md bg-primary bg-opacity-10 text-primary flex-shrink-0">
+                    <div className="mr-4 flex h-[45px] w-[45px] items-center justify-center rounded-xl bg-gradient-to-br from-primary/15 to-primary/5 text-primary ring-1 ring-inset ring-primary/15 flex-shrink-0">
                       {feature.status === 'available' ? (
                         <svg className="h-8 w-8 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
