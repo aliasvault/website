@@ -584,7 +584,7 @@
     "title": "Report Abuse",
     "description": "Report abuse of AliasVault email aliases. Is your website, app or service negatively affected by an alias? Contact us. We investigate every legitimate claim.",
     "contactText": "To report abuse, please contact us directly at",
-    "emailAddress": "support@aliasvault.com",
+    "emailAddress": "abuse@aliasvault.com",
     "responseTime": "and include the email addresses that are part of the abuse. We will respond within 48 hours."
   },
   "featuresData": {

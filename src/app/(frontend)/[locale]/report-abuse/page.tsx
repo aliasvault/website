@@ -37,7 +37,7 @@ const ReportAbusePage = async () => {
 
                 <p className="my-6">
                   {t('reportAbuse.contactText')}{" "}
-                  <Link href="mailto:support@aliasvault.com" className="text-primary">
+                  <Link href="mailto:abuse@aliasvault.com" className="text-primary">
                     {t('reportAbuse.emailAddress')}
                   </Link>{" "}
                   {t('reportAbuse.responseTime')}
