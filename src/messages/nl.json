@@ -410,7 +410,7 @@
       },
       "pricing": {
         "question": "Hoeveel kost AliasVault?",
-        "answer": "De huidige basisversie van AliasVault, met alle bestaande functies, is volledig gratis te gebruiken en zal dat altijd blijven. Zowel voor de officiële cloud-gehoste als self-hosted opties.\n\nIn de nabije toekomst zijn we wel van plan om optionele premium functies te introduceren zoals extra opslagruimte, automatische back-ups en meer. Deze betaalde opties zullen ons helpen bij de verdere ontwikkeling en het dragen van de kosten voor het runnen van het project.\n\nDat gezegd hebbende, zijn we momenteel gefocust op het ontwikkelen en verfijnen van de basisfuncties van AliasVault om een stabiele en betrouwbare basis voor alle gebruikers te garanderen. Premium functies maken deel uit van onze langetermijn roadmap, maar onze huidige prioriteit is het leveren van een solide basisversie.\n\nAls je het project in de tussentijd wilt helpen, zijn donaties zeer welkom, bezoek onze [contactLink]contactpagina[/contactLink] voor meer informatie."
+        "answer": "De huidige basisversie van AliasVault, met alle bestaande functies, is volledig gratis te gebruiken en zal dat altijd blijven. Zowel voor de officiële cloud-gehoste als self-hosted opties.\n\nIn de nabije toekomst zijn we wel van plan om optionele premium functies te introduceren zoals extra opslagruimte, automatische snapshots en meer. Deze betaalde opties zullen ons helpen bij de verdere ontwikkeling en het dragen van de kosten voor het runnen van het project.\n\nDat gezegd hebbende, zijn we momenteel gefocust op het ontwikkelen en verfijnen van de basisfuncties van AliasVault om een stabiele en betrouwbare basis voor alle gebruikers te garanderen. Premium functies maken deel uit van onze langetermijn roadmap, maar onze huidige prioriteit is het leveren van een solide basisversie.\n\nAls je het project in de tussentijd wilt helpen, zijn donaties zeer welkom, bezoek onze [contactLink]contactpagina[/contactLink] voor meer informatie."
       },
       "deviceSupport": {
         "question": "Welke apparaten worden ondersteund door AliasVault?",
@@ -1229,7 +1229,6 @@
           "fullOfflineMode": "Volledige offline modus",
           "fairUseAliases": "Fair-use limieten op aangemaakte aliassen",
           "fairUseEmailStorage": "Fair-use e-mailopslag",
-          "noAutomaticBackups": "Geen automatische back-ups",
           "sync": "Synchroniseer met al je apparaten"
         }
       },
@@ -1243,7 +1242,6 @@
           "allFeatures": "Alle productfuncties",
           "higherLimits": "Hogere limieten op aliassen & e-mailopslag",
           "vipAliasDomains": "VIP-aliasdomeinen (alleen Premium, unieker en minder snel geblokkeerd)",
-          "automaticBackups": "Automatische back-ups",
           "oneAccount": "1 account"
         }
       },
@@ -1256,7 +1254,6 @@
         "features": {
           "allPremium": "Alles uit Premium",
           "higherLimits": "Hogere limieten op aliassen & e-mailopslag",
-          "automaticBackups": "Automatische back-ups",
           "sixAccounts": "Tot 6 accounts"
         }
       }
@@ -1279,7 +1276,7 @@
       },
       "premiumAfterV1": {
         "title": "Optioneel Premium later",
-        "body": "AliasVault is op dit moment in beta, maar wel al stabiel en volledig bruikbaar, met regelmatige updates terwijl we toewerken naar onze eerste officiële 1.0-release. Na de officiele release introduceren we de optionele Premium- en Family-cloudplannen met extras zoals hogere limieten, automatische back-ups en meer accounts."
+        "body": "AliasVault is op dit moment in beta, maar wel al stabiel en volledig bruikbaar, met regelmatige updates terwijl we toewerken naar onze eerste officiële 1.0-release. Na de officiele release introduceren we de optionele Premium- en Family-cloudplannen met extras zoals hogere limieten, automatische snapshots en meer accounts."
       }
     },
     "comingLater": {
@@ -1289,7 +1286,6 @@
       "items": {
         "customDomains": "Eigen domeinen op onze cloud",
         "moreStorage": "Hogere limieten voor e-mail- en vaultopslag",
-        "automaticBackups": "Automatische back-ups",
         "premiumAliasDomains": "Premium aliasdomeinen",
         "phoneNumbers": "Tijdelijke telefoonnummers (gepland)"
       }
@@ -1348,10 +1344,6 @@
           "name": "Vault- & bijlageopslag",
           "note": "Versleutelde opslag voor vaultdata en bestandsbijlagen."
         },
-        "backups": {
-          "name": "Back-ups",
-          "note": "Self-hosted: je beheert back-ups op je eigen infrastructuur."
-        },
         "fullOfflineMode": {
           "name": "Volledige offline modus (incl. bewerken)",
           "note": "Bekijk en bewerk zonder internet; sync bij verbinding."
@@ -1401,7 +1393,7 @@
       "items": {
         "whenPremiumAvailable": {
           "question": "Wanneer komen Premium-functies beschikbaar?",
-          "answer": "De Premium en Family abonnementen zijn betaalde abonnementen die we in de komende maanden zullen introduceren. Deze zijn bedoeld voor wie meer wil dan fair-use op de gratis tier: hogere limieten op aliassen en e-mailopslag, automatische back-ups, VIP-aliasdomeinen, eigen domeinen en toekomstige geplande extras zoals tijdelijke telefoonnummers.\n\nDe abonnementen zullen worden aangeboden zodra onze eerste officiële 1.0-release er is. We kondigen het exacte moment, de prijzen en limieten aan vóór er iets live gaat.\n\nDe gratis versie heeft ook alle functies maar dan met fair-use limieten. Self-hosten is ook gratis.\n\nDonaties zijn altijd zeer welkom. Zie [supportLink]Steun de ontwikkeling[/supportLink] hieronder."
+          "answer": "De Premium en Family abonnementen zijn betaalde abonnementen die we in de komende maanden zullen introduceren. Deze zijn bedoeld voor wie meer wil dan fair-use op de gratis tier: hogere limieten op aliassen en e-mailopslag, automatische snapshots, VIP-aliasdomeinen, eigen domeinen en toekomstige geplande extras zoals tijdelijke telefoonnummers.\n\nDe abonnementen zullen worden aangeboden zodra onze eerste officiële 1.0-release er is. We kondigen het exacte moment, de prijzen en limieten aan vóór er iets live gaat.\n\nDe gratis versie heeft ook alle functies maar dan met fair-use limieten. Self-hosten is ook gratis.\n\nDonaties zijn altijd zeer welkom. Zie [supportLink]Steun de ontwikkeling[/supportLink] hieronder."
         },
         "freeTierStays": {
           "question": "Bieden jullie altijd een gratis tier aan?",

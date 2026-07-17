@@ -7,7 +7,6 @@ export const pricingFeatureRows: PricingFeatureRow[] = [
   { id: "emailAliases", selfHosted: "yes", cloudFree: "fairUse", cloudPremium: "premium" },
   { id: "secureNotesAttachments", selfHosted: "yes", cloudFree: "yes", cloudPremium: "yes" },
   { id: "vaultStorage", selfHosted: "yes", cloudFree: "fairUse", cloudPremium: "premium" },
-  { id: "backups", selfHosted: "yes", cloudFree: "fairUse", cloudPremium: "premium" },
   { id: "fullOfflineMode", selfHosted: "yes", cloudFree: "yes", cloudPremium: "yes" },
   { id: "browserExtensions", selfHosted: "yes", cloudFree: "yes", cloudPremium: "yes" },
   { id: "mobileApps", selfHosted: "yes", cloudFree: "yes", cloudPremium: "yes" },

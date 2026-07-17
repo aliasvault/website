@@ -206,7 +206,6 @@ export default function Pricing() {
         { key: "sync", variant: "included" },
         { key: "fairUseAliases", variant: "limited" },
         { key: "fairUseEmailStorage", variant: "limited" },
-        { key: "noAutomaticBackups", variant: "excluded" },
       ],
       cta: { label: t("plans.free.cta"), href: "https://app.aliasvault.com", external: true },
     },
@@ -218,7 +217,6 @@ export default function Pricing() {
         { key: "allFeatures", variant: "included" },
         { key: "higherLimits", variant: "included" },
         { key: "vipAliasDomains", variant: "included" },
-        { key: "automaticBackups", variant: "included" },
         { key: "oneAccount", variant: "included" },
       ],
     },
@@ -229,7 +227,6 @@ export default function Pricing() {
       features: [
         { key: "allPremium", variant: "included" },
         { key: "higherLimits", variant: "included" },
-        { key: "automaticBackups", variant: "included" },
         { key: "sixAccounts", variant: "included" },
       ],
     },

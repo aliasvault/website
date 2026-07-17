@@ -410,7 +410,7 @@
       },
       "pricing": {
         "question": "How much does AliasVault cost?",
-        "answer": "The current core version of AliasVault, with all of its features, is completely free to use and will always remain that way. Both for the official cloud-hosted and self-hosted options. \n\nIn the near future, we do plan to introduce optional premium features such as additional storage space, automatic back-ups, and more. These paid options will help support the continued development and costs of the project.\n\nThat said, we are currently focused on developing and refining the basic features of AliasVault to ensure a stable and reliable foundation for all users. Premium features are part of our longer-term roadmap, but our current priority is to deliver a solid core experience.\n\nIf you'd like to support the project in the meantime, we welcome donations. Please visit our [contactLink]contact page[/contactLink] for more information."
+        "answer": "The current core version of AliasVault, with all of its features, is completely free to use and will always remain that way. Both for the official cloud-hosted and self-hosted options. \n\nIn the near future, we do plan to introduce optional premium features such as additional storage space, automatic snapshots, and more. These paid options will help support the continued development and costs of the project.\n\nThat said, we are currently focused on developing and refining the basic features of AliasVault to ensure a stable and reliable foundation for all users. Premium features are part of our longer-term roadmap, but our current priority is to deliver a solid core experience.\n\nIf you'd like to support the project in the meantime, we welcome donations. Please visit our [contactLink]contact page[/contactLink] for more information."
       },
       "deviceSupport": {
         "question": "Which devices are supported by AliasVault?",
@@ -1232,7 +1232,6 @@
           "fullOfflineMode": "Full offline mode",
           "fairUseAliases": "Fair-use limits on aliases created",
           "fairUseEmailStorage": "Fair-use email storage",
-          "noAutomaticBackups": "No automatic backups",
           "sync": "Sync across all your devices"
         }
       },
@@ -1246,7 +1245,6 @@
           "allFeatures": "All product features",
           "higherLimits": "Higher limits on aliases & email storage",
           "vipAliasDomains": "VIP alias domains (Premium-only domains, more unique and less likely to get blocked)",
-          "automaticBackups": "Automatic backups",
           "oneAccount": "1 account"
         }
       },
@@ -1259,7 +1257,6 @@
         "features": {
           "allPremium": "Everything in Premium",
           "higherLimits": "Higher limits on aliases & email storage",
-          "automaticBackups": "Automatic backups",
           "sixAccounts": "Up to 6 accounts"
         }
       }
@@ -1282,7 +1279,7 @@
       },
       "premiumAfterV1": {
         "title": "Optional Premium later",
-        "body": "AliasVault is in beta today, already stable and fully usable, with regular updates as we head toward our first official 1.0 release. After that, optional Premium and Family cloud plans will add extras like higher limits, automatic backups, and more accounts. We are not offering them yet while we focus on a rock-solid core. Paid plans will always be optional."
+        "body": "AliasVault is in beta today, already stable and fully usable, with regular updates as we head toward our first official 1.0 release. After that, optional Premium and Family cloud plans will add extras like higher limits, automatic snapshots, and more accounts. We are not offering them yet while we focus on a rock-solid core. Paid plans will always be optional."
       }
     },
     "comingLater": {
@@ -1292,7 +1289,6 @@
       "items": {
         "customDomains": "Use your own custom domains on our cloud",
         "moreStorage": "Higher email and vault storage limits",
-        "automaticBackups": "Automatic backups",
         "premiumAliasDomains": "Premium alias domains",
         "phoneNumbers": "Temporary phone numbers (planned)"
       }
@@ -1351,10 +1347,6 @@
           "name": "Vault & attachment storage",
           "note": "Encrypted storage for vault data and file attachments."
         },
-        "backups": {
-          "name": "Backups",
-          "note": "Self-hosted: you manage backups on your infrastructure."
-        },
         "fullOfflineMode": {
           "name": "Full offline mode (incl. editing)",
           "note": "View and edit without internet; sync when back online."
@@ -1404,7 +1396,7 @@
       "items": {
         "whenPremiumAvailable": {
           "question": "When will Premium features become available?",
-          "answer": "Premium and Family are optional paid cloud tiers that we will introduce in the coming months. They are for users who want more than fair-use on the free tier: higher limits on aliases and email storage, automatic backups, VIP alias domains, custom domains, and planned extras such as temporary phone numbers.\n\nThey launch once our first official 1.0 release is out. We will announce exact timing, pricing, and limits before anything goes live.\n\nFor now, the free cloud tier has all features with fair-use limits. Self-hosting is free too.\n\nDonations are welcome before premium launches. See [supportLink]Support development[/supportLink] below."
+          "answer": "Premium and Family are optional paid cloud tiers that we will introduce in the coming months. They are for users who want more than fair-use on the free tier: higher limits on aliases and email storage, automatic snapshots, VIP alias domains, custom domains, and planned extras such as temporary phone numbers.\n\nThey launch once our first official 1.0 release is out. We will announce exact timing, pricing, and limits before anything goes live.\n\nFor now, the free cloud tier has all features with fair-use limits. Self-hosting is free too.\n\nDonations are welcome before premium launches. See [supportLink]Support development[/supportLink] below."
         },
         "freeTierStays": {
           "question": "Will you always offer a free tier?",
