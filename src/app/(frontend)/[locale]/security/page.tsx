@@ -17,7 +17,11 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   });
 }
 
-const LOCATION_KEYS = ["main", "backup", "website", "status"] as const;
+const PROVIDERS = [
+  { key: "hetzner", locations: ["primary", "backup"] },
+  { key: "leaseweb", locations: ["website"] },
+  { key: "ovhcloud", locations: ["status"] },
+] as const;
 
 const TrustAndSecurityPage = () => {
   const t = useTranslations("trustAndSecurity");
@@ -62,30 +66,39 @@ const TrustAndSecurityPage = () => {
               <p className="text-base font-medium leading-relaxed text-body-color dark:text-body-color-dark">
                 {t("infrastructure.intro")}
               </p>
-              <ul className="mt-4 list-disc space-y-2 pl-6 text-base font-medium leading-relaxed text-body-color dark:text-body-color-dark">
-                {LOCATION_KEYS.map((key) => (
-                  <li key={key}>
-                    <span className="font-semibold text-black dark:text-white">
-                      {t(`infrastructure.locations.${key}.name`)}
-                    </span>
-                    {": "}
-                    {t(`infrastructure.locations.${key}.detail`)}
-                    {key === "status" && (
-                      <>
-                        {" "}
-                        <a
-                          href="https://status.aliasvault.com"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-primary hover:underline"
-                        >
-                          status.aliasvault.com
-                        </a>
-                      </>
-                    )}
-                  </li>
+              <div className="mt-4 space-y-4 text-base font-medium leading-relaxed text-body-color dark:text-body-color-dark">
+                {PROVIDERS.map(({ key, locations }) => (
+                  <div key={key}>
+                    <p className="font-semibold text-black dark:text-white">
+                      {t(`infrastructure.providers.${key}.name`)}
+                    </p>
+                    <ul className="mt-2 list-disc space-y-2 pl-6">
+                      {locations.map((location) => (
+                        <li key={location}>
+                          <span className="font-semibold text-black dark:text-white">
+                            {t(`infrastructure.providers.${key}.locations.${location}.name`)}
+                          </span>
+                          {": "}
+                          {t(`infrastructure.providers.${key}.locations.${location}.detail`)}
+                          {location === "status" && (
+                            <>
+                              {" "}
+                              <a
+                                href="https://status.aliasvault.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-primary hover:underline"
+                              >
+                                status.aliasvault.com
+                              </a>
+                            </>
+                          )}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 ))}
-              </ul>
+              </div>
               <p className="mt-4 text-base font-medium leading-relaxed text-body-color dark:text-body-color-dark">
                 {t("infrastructure.gdpr")}
               </p>

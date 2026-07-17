@@ -52,7 +52,7 @@ const PrivacyPolicy = () => {
               Service Options
             </h3>
             <p className="text-base font-medium leading-relaxed text-body-color dark:text-body-color-dark">
-              AliasVault is available as both a cloud service and a self-hosted solution. Our cloud offering is hosted on our own servers in Germany, within the EU, and is fully compliant with GDPR. If you prefer complete control over your data, you can choose to self-host AliasVault on your own server.
+              AliasVault is available as both a cloud service and a self-hosted solution. Our cloud offering is hosted on our own servers in Germany, Finland, the Netherlands, and France, within the EU. Geographically separated to cover single points of failure, and fully compliant with GDPR. If you prefer complete control over your data, you can choose to self-host AliasVault on your own server.
             </p>
           </div>
 

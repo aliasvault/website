@@ -232,7 +232,7 @@
       },
       "intro": "AliasVault is een open-source wachtwoord- en aliasmanager, opgericht door",
       "founder": "Leendert de Borst",
-      "team": ". Het wordt ontwikkeld en beheerd door een klein en toegewijd team vanuit Nederland. Onze officiële cloud-gehoste versie draait op AliasVault's eigen dedicated servers in Duitsland, en is volledig conform de Europese GDPR-regelgeving.",
+      "team": ". Het wordt ontwikkeld en beheerd door een klein en toegewijd team vanuit Nederland. Onze officiële cloud-gehoste versie draait op AliasVault's eigen dedicated servers in Duitsland, Finland, Nederland en Frankrijk. Geografisch gescheiden om single point-of-failures op te vangen, en volledig conform de Europese GDPR-regelgeving.",
       "inquiries": "Voor vragen over onze cloud-gehoste dienst of andere onderwerpen, neem contact op:",
       "support": {
         "title": "Ondersteuning & Bugs",
@@ -609,22 +609,37 @@
     "infrastructure": {
       "title": "Cloudinfrastructuur",
       "intro": "De AliasVault-clouddienst draait uitsluitend op dedicated servers die volledig onder ons eigen beheer staan, gevestigd binnen de Europese Unie en verspreid over onafhankelijke providers en landen om verantwoordelijkheden te scheiden en single points of failure te voorkomen.",
-      "locations": {
-        "main": {
-          "name": "Hoofdinfrastructuur",
-          "detail": "Duitsland, op dedicated servers gehost door Hetzner."
+      "providers": {
+        "hetzner": {
+          "name": "Hetzner",
+          "locations": {
+            "primary": {
+              "name": "Primaire cloudinfrastructuur",
+              "detail": "Duitsland. Dedicated servers onder eigen beheer."
+            },
+            "backup": {
+              "name": "Back-up cloudinfrastructuur",
+              "detail": "Finland. Dedicated servers onder eigen beheer. Realtime volledig gespiegeld met de primaire locatie om geografische storingen op te vangen."
+            }
+          }
         },
-        "backup": {
-          "name": "Back-upinfrastructuur",
-          "detail": "Finland, met realtime replicatie vanaf de hoofdlocatie om geografische storingen op te vangen."
+        "leaseweb": {
+          "name": "Leaseweb",
+          "locations": {
+            "website": {
+              "name": "Website & documentatie",
+              "detail": "Nederland."
+            }
+          }
         },
-        "website": {
-          "name": "Website & documentatie",
-          "detail": "Nederland, gehost door Leaseweb."
-        },
-        "status": {
-          "name": "Statuspagina",
-          "detail": "Frankrijk, apart gehost bij OVHcloud. Deze monitort alle AliasVault-infrastructuur 24/7 en is waar we communiceren over storingen en gepland onderhoud:"
+        "ovhcloud": {
+          "name": "OVHcloud",
+          "locations": {
+            "status": {
+              "name": "Statuspagina",
+              "detail": "Frankrijk. Deze monitort alle AliasVault-infrastructuur 24/7 en is waar we communiceren over storingen en gepland onderhoud:"
+            }
+          }
         }
       },
       "gdpr": "Alle gebruikersdata wordt binnen de EU opgeslagen en we voldoen volledig aan de Europese AVG (GDPR)."
@@ -635,8 +650,8 @@
       "points": {
         "frequency": "Back-ups draaien meerdere keren per dag.",
         "encrypted": "Alle back-ups zijn volledig versleuteld, zowel on-site als off-site.",
-        "offsite": "Back-ups worden off-site opgeslagen, op een andere locatie dan de primaire servers, naast offline cold-storage kopieën als laatste verdedigingslinie.",
-        "replication": "Realtime replicatie tussen Duitsland en Finland houdt een live kopie van de dienst klaar in een tweede regio."
+        "offsite": "Back-ups worden off-site opgeslagen, op een andere locatie dan de primaire infrastructuur. Daarnaast worden er ook periodieke offline back-ups gemaakt welke losgekoppeld worden bewaard.",
+        "replication": "Realtime replicatie tussen onze primaire en back-up infrastructuur houdt een live kopie van alle ge-encrypte data stand-by in een tweede regio."
       },
       "statusText": "Volg de status van al onze systemen in realtime op onze",
       "statusLinkText": "statuspagina"
@@ -911,7 +926,7 @@
       "bitwardenPremiumOnly": "Alleen premium",
       "bitwardenViewingOfflineOnly": "Alleen bekijken",
       "storageDetails": {
-        "aliasVault": "🇩🇪 Duitsland (EU, eigen servers)",
+        "aliasVault": "🇪🇺 EU (Duitsland, Finland, Nederland, Frankrijk)",
         "bitwarden": "☁️ Azure Cloud (USA jurisdictie)"
       }
     },
@@ -987,7 +1002,7 @@
         "dataStorageLocation": "Gegevensopslag locatie"
       },
       "storageDetails": {
-        "aliasVault": "🇪🇺 EU (Duitsland, eigen servers)",
+        "aliasVault": "🇪🇺 EU (Duitsland, Finland, Nederland, Frankrijk)",
         "simpleLogin": "🇪🇺 EU (Proton en UpCloud servers)"
       }
     },
@@ -1064,7 +1079,7 @@
       },
       "protonPassViewingOfflineOnly": "Alleen bekijken",
       "storageDetails": {
-        "aliasVault": "🇪🇺 EU (Duitsland, eigen servers)",
+        "aliasVault": "🇪🇺 EU (Duitsland, Finland, Nederland, Frankrijk)",
         "protonPass": "🇪🇺 EU (Duitsland, Zwitserland, Noorwegen)"
       }
     },
@@ -1398,7 +1413,7 @@
         },
         "selfFunded": {
           "question": "Wie zit er achter AliasVault?",
-          "answer": "AliasVault is een open-source project opgericht door Leendert de Borst en wordt vanuit Nederland beheerd. De officiële cloud draait op dedicated servers in Duitsland, volledig conform de Europese GDPR-regelgeving.\n\nHet project is zelf gefinancierd door de oprichters. We hebben geen externe investeerders en geen durfkapitaal. We zijn alleen verantwoording verschuldigd aan onze gebruikers en onze [missionLink]missie[/missionLink]; onze roadmap volgt wat de community nodig heeft, niet druk van buitenaf. Optionele donaties en toekomstige Premium- en Family-abonnementen helpen de ontwikkeling te ondersteunen. Het open-source product en de self-hosted optie blijven centraal in wat we bouwen.\n\nMeer over wie we zijn en hoe je ons bereikt vind je op onze [contactLink]contactpagina[/contactLink]."
+          "answer": "AliasVault is een open-source project opgericht door Leendert de Borst en wordt vanuit Nederland beheerd. De officiële cloud draait op dedicated servers in Duitsland, Finland, Nederland en Frankrijk. Geografisch gescheiden om single point-of-failures op te vangen, en volledig conform de Europese GDPR-regelgeving.\n\nHet project is zelf gefinancierd door de oprichters. We hebben geen externe investeerders en geen durfkapitaal. We zijn alleen verantwoording verschuldigd aan onze gebruikers en onze [missionLink]missie[/missionLink]; onze roadmap volgt wat de community nodig heeft, niet druk van buitenaf. Optionele donaties en toekomstige Premium- en Family-abonnementen helpen de ontwikkeling te ondersteunen. Het open-source product en de self-hosted optie blijven centraal in wat we bouwen.\n\nMeer over wie we zijn en hoe je ons bereikt vind je op onze [contactLink]contactpagina[/contactLink]."
         },
         "fairUse": {
           "question": "Wat zijn fair-use limieten op de gratis cloudtier?",

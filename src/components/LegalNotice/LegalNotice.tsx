@@ -30,7 +30,7 @@ const LegalNotice = () => {
               Hosting & Data Protection
             </h3>
             <p className="text-base font-medium leading-relaxed text-body-color dark:text-body-color-dark">
-              Our cloud-hosted service runs on dedicated servers located in Germany, hosted by{" "}
+              Our cloud-hosted service runs on dedicated servers in Germany, Finland, the Netherlands, and France. Geographically separated to cover single points of failure. Primary infrastructure is in Germany, hosted by{" "}
               <a
                 href="https://www.hetzner.com"
                 target="_blank"

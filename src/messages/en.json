@@ -232,7 +232,7 @@
       },
       "intro": "AliasVault is an open-source password and alias manager founded by",
       "founder": "Leendert de Borst",
-      "team": ". It is developed and operated by a small, dedicated team from The Netherlands. Our official cloud-hosted version runs on AliasVault's own dedicated servers in Germany (EU), and is fully compliant with European GDPR regulations.",
+      "team": ". It is developed and operated by a small, dedicated team from The Netherlands. Our official cloud-hosted version runs on AliasVault's own dedicated servers in Germany, Finland, the Netherlands, and France. Geographically separated to cover single points of failure, and fully compliant with European GDPR regulations.",
       "inquiries": "For questions about our cloud-hosted service or other inquiries, please contact:",
       "support": {
         "title": "Support & Bug Reports",
@@ -609,22 +609,37 @@
     "infrastructure": {
       "title": "Cloud infrastructure",
       "intro": "The AliasVault cloud service runs exclusively on dedicated servers under our own control, located in the European Union and spread across independent providers and countries to separate concerns and avoid single points of failure.",
-      "locations": {
-        "main": {
-          "name": "Main infrastructure",
-          "detail": "Germany, on dedicated servers hosted by Hetzner."
+      "providers": {
+        "hetzner": {
+          "name": "Hetzner",
+          "locations": {
+            "primary": {
+              "name": "Primary cloud infrastructure",
+              "detail": "Germany. Dedicated servers under our own control."
+            },
+            "backup": {
+              "name": "Backup cloud infrastructure",
+              "detail": "Finland. Dedicated servers under our own control. Realtime fully mirrored with the primary location to cover geographical outages."
+            }
+          }
         },
-        "backup": {
-          "name": "Backup infrastructure",
-          "detail": "Finland, with real-time replication from the main location to cover geographical outages."
+        "leaseweb": {
+          "name": "Leaseweb",
+          "locations": {
+            "website": {
+              "name": "Website & documentation",
+              "detail": "The Netherlands."
+            }
+          }
         },
-        "website": {
-          "name": "Website & documentation",
-          "detail": "The Netherlands, hosted by Leaseweb."
-        },
-        "status": {
-          "name": "Status page",
-          "detail": "France, hosted separately with OVHcloud. It monitors all AliasVault infrastructure 24/7 and is where we communicate outages and planned maintenance:"
+        "ovhcloud": {
+          "name": "OVHcloud",
+          "locations": {
+            "status": {
+              "name": "Status page",
+              "detail": "France. It monitors all AliasVault infrastructure 24/7 and is where we communicate outages and planned maintenance:"
+            }
+          }
         }
       },
       "gdpr": "All user data is stored within the EU and we are fully compliant with European GDPR regulations."
@@ -635,8 +650,8 @@
       "points": {
         "frequency": "Backups run multiple times per day.",
         "encrypted": "All backups are fully encrypted, both on-site and off-site.",
-        "offsite": "Backups are stored off-site, in a different location than the primary servers, alongside offline cold-storage copies as a last line of defense.",
-        "replication": "Real-time replication between Germany and Finland keeps a live copy of the service ready in a second geography."
+        "offsite": "Backups are stored off-site, in a different location than the primary servers, alongside periodic offline backups stored entirely separately.",
+        "replication": "Real-time replication between Germany and Finland keeps a live copy of all encrypted data ready in a second geography."
       },
       "statusText": "You can follow the health of all our systems in real time on our",
       "statusLinkText": "status page"
@@ -912,7 +927,7 @@
       "bitwardenPremiumOnly": "Premium only",
       "bitwardenViewingOfflineOnly": "Viewing only",
       "storageDetails": {
-        "aliasVault": "🇩🇪 Germany (EU, own servers)",
+        "aliasVault": "🇪🇺 EU (Germany, Finland, Netherlands, France)",
         "bitwarden": "☁️ Azure Cloud (USA jurisdiction)"
       }
     },
@@ -989,7 +1004,7 @@
         "dataStorageLocation": "Data Storage Location"
       },
       "storageDetails": {
-        "aliasVault": "🇪🇺 EU (Germany, own servers)",
+        "aliasVault": "🇪🇺 EU (Germany, Finland, Netherlands, France)",
         "simpleLogin": "🇪🇺 EU (Proton and UpCloud servers)"
       }
     },
@@ -1066,7 +1081,7 @@
       },
       "protonPassViewingOfflineOnly": "Viewing only",
       "storageDetails": {
-        "aliasVault": "🇩🇪 EU (Germany, own servers)",
+        "aliasVault": "🇪🇺 EU (Germany, Finland, Netherlands, France)",
         "protonPass": "🇪🇺 EU (Germany, Norway, Switzerland)"
       }
     },
@@ -1401,7 +1416,7 @@
         },
         "selfFunded": {
           "question": "Who is behind AliasVault?",
-          "answer": "AliasVault is an open-source project founded by Leendert de Borst and operated from The Netherlands. Our official cloud runs on dedicated servers in Germany, fully compliant with European GDPR regulations.\n\nThe project is self-funded by its founders. We have no external investors or venture capital backing. We answer to users and our [missionLink]mission[/missionLink], and our roadmap follows community needs rather than outside investment pressure. Optional donations and future Premium and Family plans help sustain development. The core open-source product and self-hosted option stay central to what we build.\n\nFor more about who we are and how to reach us, visit our [contactLink]contact page[/contactLink]."
+          "answer": "AliasVault is an open-source project founded by Leendert de Borst and operated from The Netherlands. Our official cloud runs on dedicated servers in Germany, Finland, the Netherlands, and France. Geographically separated to cover single points of failure, and fully compliant with European GDPR regulations.\n\nThe project is self-funded by its founders. We have no external investors or venture capital backing. We answer to users and our [missionLink]mission[/missionLink], and our roadmap follows community needs rather than outside investment pressure. Optional donations and future Premium and Family plans help sustain development. The core open-source product and self-hosted option stay central to what we build.\n\nFor more about who we are and how to reach us, visit our [contactLink]contact page[/contactLink]."
         },
         "fairUse": {
           "question": "What are fair-use limits on the cloud free tier?",
