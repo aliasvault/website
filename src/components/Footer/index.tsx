@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useTranslations, useLocale } from "next-intl";
 import { SiGithub, SiCodeberg, SiGitlab, SiDiscord, SiMastodon, SiX, SiYoutube, SiFacebook } from "react-icons/si";
-import { FaEnvelope } from "react-icons/fa";
+import { FaEnvelope, FaRedditAlien } from "react-icons/fa";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { getStatusPageUrl } from "@/lib/status-banner";
 
@@ -93,6 +93,16 @@ const Footer = () => {
                     className="text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                   >
                     <SiMastodon className="h-5 w-5" aria-hidden="true" />
+                  </a>
+                  <a
+                    href="https://www.reddit.com/r/AliasVault/"
+                    aria-label="Reddit"
+                    title="Reddit"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
+                  >
+                    <FaRedditAlien className="h-5 w-5" aria-hidden="true" />
                   </a>
 
                   <a
