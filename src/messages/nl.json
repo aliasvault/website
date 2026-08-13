@@ -1186,14 +1186,14 @@
           "milestones": [
             { "month": "3", "label": "Q1", "text": "Offline modus, Aangepaste velden, Mappen, 2FA-autofill" },
             { "month": "6", "label": "Q2", "text": "Wachtwoordzinnen, Submappen, Volledige exports & imports" },
-            { "month": "9", "label": "Q3", "text": "Wachtwoorden/Vaults delen, FIDO-auth" },
-            { "month": "12", "label": "Q4", "text": "Security Audit + v1.0 Release" }
+            { "month": "9", "label": "Q3", "text": "Wachtwoorden/Vaults delen, FIDO-auth", "detail": "Een technische herziening van hoe vaults worden opgeslagen en gesynchroniseerd, zodat vaults veilig tussen accounts gedeeld kunnen worden. Het levert ook flinke snelheidswinst bij synchroniseren op en legt de basis voor toekomstige nieuwe functies." },
+            { "month": "12", "label": "Q4", "text": "Security Audit + v1.0 Release", "detail": "AliasVault wordt door een externe partij ge-audit, ter voorbereiding op de officiële v1.0-release." }
           ]
         },
         "2027": {
           "milestones": [
             { "month": "3", "label": "Q1", "text": "Premium Functies" },
-            { "month": "6", "label": "Q2", "text": "Gezinsfuncties" },
+            { "month": "6", "label": "Q2", "text": "Gezinsfuncties", "detail": "De self-service kant van delen: nodig gezinsleden uit en beheer gedeelde vaults zelf vanuit de apps. Waar het werk in 2026 de technische basis legt, maakt dit het bruikbaar voor iedereen." },
             { "month": "9", "label": "Q3", "text": "Wegwerptelefoonnummers" },
             { "month": "12", "label": "Q4", "text": "Meer Integraties" }
           ]

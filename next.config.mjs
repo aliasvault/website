@@ -21,6 +21,13 @@ const nextConfig = {
   },
   pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
   transpilePackages: ['next-mdx-remote'],
+  // Serve Payload media through Payload's own file route instead of Next's
+  // static public/ handler.
+  async rewrites() {
+    return {
+      beforeFiles: [{ source: '/uploads/:filename', destination: '/api/media/file/:filename' }],
+    }
+  },
   async headers() {
     return [
       {

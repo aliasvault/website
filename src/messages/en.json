@@ -1189,14 +1189,14 @@
           "milestones": [
             { "month": "3", "label": "Q1", "text": "Offline Mode, Custom Fields, Folders, 2FA Autofill" },
             { "month": "6", "label": "Q2", "text": "Passphrases, Subfolders, Full Exports & Imports" },
-            { "month": "9", "label": "Q3", "text": "Password/Vault Sharing, FIDO Login" },
-            { "month": "12", "label": "Q4", "text": "Security Audit + v1.0 Release" }
+            { "month": "9", "label": "Q3", "text": "Password/Vault Sharing, FIDO Login", "detail": "A technical revamp of how vaults are stored and synced, so vaults can be shared securely between accounts. It also brings major sync speed improvements and lays the groundwork for features we want to build later." },
+            { "month": "12", "label": "Q4", "text": "Security Audit + v1.0 Release", "detail": "AliasVault will be audited by an external third party in preparation for the official v1.0 release." }
           ]
         },
         "2027": {
           "milestones": [
             { "month": "3", "label": "Q1", "text": "Premium Hosted Features" },
-            { "month": "6", "label": "Q2", "text": "Family Features" },
+            { "month": "6", "label": "Q2", "text": "Family Features", "detail": "The self-service side of sharing: invite family members and manage shared vaults yourself from the apps. Where the 2026 work builds the technical foundation, this makes it usable for everyone." },
             { "month": "9", "label": "Q3", "text": "Disposable Phone Numbers" },
             { "month": "12", "label": "Q4", "text": "More Integrations" }
           ]
