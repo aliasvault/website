@@ -59,6 +59,18 @@ const socialMeta: Record<SocialPlatform, { Icon: ({ className }: { className?: s
 
 const vulnerabilities: Vulnerability[] = [
   {
+    id: "ssrf-favicon-dns-rebinding-2026",
+    researcher: "Vusal Isayev",
+    socials: [
+      { platform: "github", url: "https://github.com/vusalGIT" },
+    ],
+    date: "2026-08-16",
+    severity: "medium",
+    ghsa: "GHSA-7hm6-fj4m-pf6f",
+    advisoryUrl: "https://github.com/aliasvault/aliasvault/security/advisories/GHSA-7hm6-fj4m-pf6f",
+    summary: "Server-Side Request Forgery (SSRF) in the favicon extraction feature of AliasVault API versions 0.30.2 and earlier, related to CVE-2025-59344: hostname validation and the actual fetch request used two separate DNS lookups, allowing an authenticated user with an attacker-controlled name server to perform internal network scanning and limited data exfiltration via DNS rebinding. Fixed in version 0.30.3 on 2026-08-02.",
+  },
+  {
     id: "passkey-origin-rp-validation-extension-2026",
     researcher: "Amar Begovic",
     socials: [
