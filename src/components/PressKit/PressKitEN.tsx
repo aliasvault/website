@@ -247,6 +247,24 @@ const PressKitEN = () => {
                     <div className="flex items-start justify-between">
                       <div className="flex-1">
                         <a
+                          href="https://www.youtube.com/watch?v=nX_a21yufCg&t=1916s"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-medium text-primary hover:underline"
+                        >
+                          My Self Hosting Journey Part 3! | Jellyfin, Immich, Navidrome, Aliasvault, Adguardhome, Tailscale
+                        </a>
+                        <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                          Self-hosting walkthrough covering AliasVault
+                        </p>
+                      </div>
+                      <span className="ml-4 text-xs text-gray-500 dark:text-gray-400">July 2026</span>
+                    </div>
+                  </div>
+                  <div className="group">
+                    <div className="flex items-start justify-between">
+                      <div className="flex-1">
+                        <a
                           href="https://www.youtube.com/watch?v=ebaXqxEuyuA&pp=ygUKYWxpYXN2YXVsdA%3D%3D"
                           target="_blank"
                           rel="noopener noreferrer"
@@ -312,6 +330,55 @@ const PressKitEN = () => {
                     <div className="flex items-start justify-between">
                       <div className="flex-1">
                         <a
+                          href="https://id.nl/huis-en-entertainment/computer-en-gaming/laptops-en-ultrabooks/aliasvault-voor-elk-account-een-andere-identiteit"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-medium text-primary hover:underline"
+                        >
+                          ID.nl: AliasVault — voor elk account een andere identiteit
+                        </a>
+                        <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                          Dutch consumer tech website
+                        </p>
+                      </div>
+                      <span className="ml-4 text-xs text-gray-500 dark:text-gray-400">Sept 2026</span>
+                    </div>
+                  </div>
+                  <div className="group">
+                    <div className="flex items-start justify-between">
+                      <div className="flex-1">
+                        <span className="font-medium text-black dark:text-white">
+                          Computer Idee nr. 19: 4-page feature article
+                        </span>
+                        <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                          Dutch print magazine
+                        </p>
+                      </div>
+                      <span className="ml-4 text-xs text-gray-500 dark:text-gray-400">Sept 2026</span>
+                    </div>
+                  </div>
+                  <div className="group">
+                    <div className="flex items-start justify-between">
+                      <div className="flex-1">
+                        <a
+                          href="https://itsfoss.com/aliasvault/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-medium text-primary hover:underline"
+                        >
+                          It&apos;s FOSS: AliasVault is The Bitwarden Alternative You Didn&apos;t Know You Needed
+                        </a>
+                        <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                          Open source and Linux news
+                        </p>
+                      </div>
+                      <span className="ml-4 text-xs text-gray-500 dark:text-gray-400">June 2026</span>
+                    </div>
+                  </div>
+                  <div className="group">
+                    <div className="flex items-start justify-between">
+                      <div className="flex-1">
+                        <a
                           href="https://tweakers.net/downloads/76602/aliasvault-0280.html"
                           target="_blank"
                           rel="noopener noreferrer"
@@ -373,6 +440,25 @@ const PressKitEN = () => {
                   </h3>
                 </div>
                 <div className="space-y-4">
+                  <div className="group">
+                    <div className="flex items-start justify-between">
+                      <div className="flex-1">
+                        <a
+                          href="https://www.reddit.com/r/AliasVault/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-medium text-primary hover:underline"
+                        >
+                          Reddit r/AliasVault
+                        </a>
+                        <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                          Official AliasVault community
+                        </p>
+                      </div>
+                      <span className="ml-4 text-xs text-gray-500 dark:text-gray-400">Sept 2026</span>
+                    </div>
+                  </div>
+
                   <div className="group">
                     <div className="flex items-start justify-between">
                       <div className="flex-1">
