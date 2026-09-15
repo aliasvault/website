@@ -1,6 +1,5 @@
 import Breadcrumb from "@/components/Common/Breadcrumb";
-import MissionSection from "@/components/Mission/MissionSection";
-import RoadmapLink from "@/components/Mission/RoadmapLink";
+import Timeline from "@/components/Roadmap/Timeline";
 import { getTranslations } from "next-intl/server";
 import { Metadata } from "next";
 import { generatePageSEOMetadata } from "@/lib/seo-utils";
@@ -11,24 +10,26 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const t = await getTranslations({ locale });
 
   return generatePageSEOMetadata({
-    title: t('mission.metadata.title'),
-    description: t('mission.metadata.description'),
-    path: '/mission',
+    title: t('roadmap.metadata.title'),
+    description: t('roadmap.metadata.description'),
+    path: '/roadmap',
     locale,
   });
 }
 
-export default async function MissionPage() {
+/**
+ * Roadmap page.
+ */
+export default async function RoadmapPage() {
   const t = await getTranslations();
 
   return (
     <Page>
       <Breadcrumb
-        pageName={t('mission.breadcrumb.title')}
-        description={t('mission.breadcrumb.description')}
+        pageName={t('roadmap.breadcrumb.title')}
+        description={t('roadmap.breadcrumb.description')}
       />
-      <MissionSection />
-      <RoadmapLink />
+      <Timeline />
     </Page>
   );
 }

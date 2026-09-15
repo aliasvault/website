@@ -10,6 +10,7 @@ import CallToAction from "@/components/CallToAction/CallToAction";
 import { getTranslations } from "next-intl/server";
 import { generatePageSEOMetadata } from '@/lib/seo-utils';
 import Page from "@/components/Common/Page";
+import { Link } from "@/i18n/navigation";
 
 export async function generateMetadata({
   params
@@ -91,14 +92,9 @@ export default async function Features() {
           <div className="text-center mt-8">
             <p className="text-base text-gray-700 dark:text-gray-300">
               {t('features.legend.roadmapText')}{" "}
-              <a
-                href="https://github.com/aliasvault/aliasvault/issues/731"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary-500 hover:underline"
-              >
+              <Link href="/roadmap" className="text-primary-500 hover:underline">
                 {t('features.legend.roadmapLink')}
-              </a>
+              </Link>
             </p>
           </div>
         </div>

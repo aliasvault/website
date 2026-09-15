@@ -6,6 +6,32 @@ import { SiGithub, SiCodeberg, SiGitlab, SiDiscord, SiMastodon, SiX, SiYoutube, 
 import { FaEnvelope, FaRedditAlien } from "react-icons/fa";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { getStatusPageUrl } from "@/lib/status-banner";
+import { routing } from "@/i18n/routing";
+
+/**
+ * Normalize a pathname between language prefixes.
+ */
+const normalizePath = (path: string) => {
+  const stripped = path.replace(new RegExp(`^/${routing.defaultLocale}(?=/|$)`), "").replace(/\/+$/, "");
+  return stripped || "/";
+};
+
+/**
+ * Clicking a footer link of the current page should scroll to the top instead of doing nothing.
+ */
+const handleFooterLinkClick = (e: React.MouseEvent<HTMLElement>) => {
+  if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+
+  const anchor = (e.target as HTMLElement).closest("a");
+  if (!anchor || anchor.target === "_blank") return;
+
+  const url = new URL(anchor.href, window.location.href);
+  if (url.origin !== window.location.origin || url.hash) return;
+
+  if (normalizePath(url.pathname) === normalizePath(window.location.pathname)) {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+};
 
 const Footer = () => {
   const t = useTranslations();
@@ -14,7 +40,10 @@ const Footer = () => {
 
   return (
     <>
-      <footer className="relative z-10 bg-white pt-16 dark:bg-gray-dark md:pt-20 lg:pt-24">
+      <footer
+        className="relative z-10 bg-white pt-16 dark:bg-gray-dark md:pt-20 lg:pt-24"
+        onClickCapture={handleFooterLinkClick}
+      >
         <div className="container">
           <div className="-mx-4 flex flex-wrap">
             <div className="w-full px-4 md:w-1/2 lg:w-4/12 xl:w-5/12">
@@ -159,6 +188,14 @@ const Footer = () => {
                       className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                     >
                       {t('footer.links.mission')}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href={`/${locale}/roadmap`}
+                      className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
+                    >
+                      {t('footer.links.roadmap')}
                     </Link>
                   </li>
                   <li>

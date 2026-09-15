@@ -1,6 +1,7 @@
 import Image from "next/image";
 import SectionTitle from "../Common/SectionTitle";
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 
 interface FeatureItem {
   name: string;
@@ -114,14 +115,12 @@ const FeatureSection = ({
                       <h3 className="mb-2 text-xl font-bold text-black dark:text-white">
                         {feature.name}
                         {feature.status === 'upcoming' && (
-                          <a
-                            href="https://github.com/aliasvault/aliasvault/issues/731"
-                            target="_blank"
-                            rel="noopener noreferrer"
+                          <Link
+                            href="/roadmap"
                             className="ml-2 text-xs font-normal text-yellow-500 hover:underline"
                           >
                             ({t('featureSection.comingSoon')})
-                          </a>
+                          </Link>
                         )}
                       </h3>
                       <p className="text-base text-body-color dark:text-body-color-dark">

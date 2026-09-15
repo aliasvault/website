@@ -82,6 +82,7 @@
     "links": {
       "about": "About",
       "mission": "Our Mission",
+      "roadmap": "Roadmap",
       "features": "Features",
       "pricing": "Pricing",
       "platforms": "Platforms",
@@ -135,7 +136,7 @@
       "comingSoon": "Coming Soon",
       "notAvailable": "Not Available",
       "roadmapText": "Track our progress and see what's coming next on our",
-      "roadmapLink": "roadmap on GitHub"
+      "roadmapLink": "roadmap"
     },
     "items": {
       "passwordManager": {
@@ -343,7 +344,7 @@
         "feedback": "👥 Strong emphasis on user feedback and testing"
       },
       "roadmapLink": "To track our progress and see what's coming next, check out our",
-      "roadmapLinkText": "full roadmap on GitHub"
+      "roadmapLinkText": "full roadmap"
     },
     "downloads": {
       "title": "Downloads & Manual Installation",
@@ -860,8 +861,7 @@
           "description": "If you need enterprise administration (SSO, SCIM provisioning, advanced admin controls), 1Password is a better fit. AliasVault is primarily built for consumers and private persons."
         }
       }
-    }
-    ,
+    },
     "import": {
       "title": "Import from 1Password in minutes",
       "description": "AliasVault offers a built-in import mechanism allowing you to transfer all your data in 1Password to AliasVault in just a few steps. This includes all your credentials, folders, notes, attachments and more. Try it out now.",
@@ -940,8 +940,7 @@
           "description": "Bitwarden has been around longer and has a larger user base, which means more community-tested features and integrations."
         }
       }
-    }
-    ,
+    },
     "import": {
       "title": "Import from Bitwarden in minutes",
       "description": "AliasVault offers a built-in import mechanism allowing you to transfer all your data in Bitwarden to AliasVault in just a few steps. This includes your credentials, folders, notes, attachments, and more. Try it out now.",
@@ -1120,8 +1119,7 @@
           "description": "Proton Pass integrates with other Proton services (Mail, VPN, etc.) if you're already in their ecosystem."
         }
       }
-    }
-    ,
+    },
     "import": {
       "title": "Import from Proton Pass in minutes",
       "description": "AliasVault offers a built-in import mechanism allowing you to transfer all your data in Proton Pass to AliasVault in just a few steps. This includes your credentials, folders, notes, attachments, and more. Try it out now.",
@@ -1165,44 +1163,153 @@
         "paragraph4": "Everything we do at AliasVault supports one mission: to make the internet a safer and more private place. Where you decide what to share, and with whom."
       }
     },
-    "roadmap": {
+    "roadmapLink": {
       "title": "Our Roadmap",
-      "description": "Below shows a timeline of our planned roadmap. For more details regarding our roadmap, take a look at our",
-      "githubLinkText": "GitHub page",
-      "wereHere": "We're here",
+      "description": "Curious where AliasVault is heading? Our roadmap page shows where we stand today and what is planned next on the road to v1.0.",
+      "viewRoadmap": "View the roadmap"
+    }
+  },
+  "roadmap": {
+    "metadata": {
+      "title": "Roadmap",
+      "description": "See where AliasVault stands today and what is planned next on the road to the v1.0 release, including the independent security audit."
+    },
+    "breadcrumb": {
+      "title": "Roadmap",
+      "description": "What we are working on, what is coming next and what has already been released."
+    },
+    "timeline": {
+      "github": {
+        "title": "More technical details?",
+        "description": "All progress and details about the roadmap are tracked in our public GitHub issue.",
+        "button": "View on GitHub"
+      },
+      "sections": {
+        "now": {
+          "title": "Now",
+          "subtitle": "Things we are actively working on right now."
+        },
+        "next": {
+          "title": "Up next",
+          "subtitle": "Planned for the coming time."
+        },
+        "later": {
+          "title": "Later",
+          "subtitle": "The scope and order of this section may still change."
+        },
+        "shipped": {
+          "title": "Released",
+          "subtitle": "Milestones we have already delivered and are available."
+        }
+      },
+      "empty": "Nothing scheduled here right now.",
       "years": {
         "2024": {
           "milestones": [
-            { "month": "5", "label": "May", "text": "Start of AliasVault Development" },
-            { "month": "12", "label": "December", "text": "Beta Release of AliasVault" }
+            {
+              "month": "5",
+              "label": "May",
+              "status": "shipped",
+              "text": "Start of AliasVault Development"
+            },
+            {
+              "month": "12",
+              "label": "December",
+              "status": "shipped",
+              "text": "Beta Release of AliasVault"
+            }
           ]
         },
         "2025": {
           "milestones": [
-            { "month": "3", "label": "Q1", "text": "Release of Browser Extensions" },
-            { "month": "6", "label": "Q2", "text": "Release of Mobile Apps" },
-            { "month": "9", "label": "Q3", "text": "Multi-language, Self-host Improvements" },
-            { "month": "12", "label": "Q4", "text": "Passkeys & Mobile Login" }
+            {
+              "month": "3",
+              "label": "Q1",
+              "status": "shipped",
+              "text": "Release of Browser Extensions"
+            },
+            {
+              "month": "6",
+              "label": "Q2",
+              "status": "shipped",
+              "text": "Release of Mobile Apps"
+            },
+            {
+              "month": "9",
+              "label": "Q3",
+              "status": "shipped",
+              "text": "Multi-language, Self-host Improvements"
+            },
+            {
+              "month": "12",
+              "label": "Q4",
+              "status": "shipped",
+              "text": "Passkeys & Mobile Login"
+            }
           ]
         },
         "2026": {
           "milestones": [
-            { "month": "3", "label": "Q1", "text": "Offline Mode, Custom Fields, Folders, 2FA Autofill" },
-            { "month": "6", "label": "Q2", "text": "Passphrases, Subfolders, Full Exports & Imports" },
-            { "month": "9", "label": "Q3", "text": "Password/Vault Sharing, FIDO Login", "detail": "A technical revamp of how vaults are stored and synced, so vaults can be shared securely between accounts. It also brings major sync speed improvements and lays the groundwork for features we want to build later." },
-            { "month": "12", "label": "Q4", "text": "Security Audit + v1.0 Release", "detail": "AliasVault will be audited by an external third party in preparation for the official v1.0 release." }
+            {
+              "month": "3",
+              "label": "Q1",
+              "status": "shipped",
+              "text": "Offline Mode, Custom Fields, Folders, 2FA Autofill"
+            },
+            {
+              "month": "6",
+              "label": "Q2",
+              "status": "shipped",
+              "text": "Passphrases, Subfolders, Full Exports & Imports"
+            },
+            {
+              "month": "9",
+              "label": "Q3",
+              "status": "now",
+              "text": "Password/Vault Sharing, FIDO Login",
+              "detail": "A technical revamp of how vaults are stored and synced, so vaults can be shared securely between accounts. It also brings major sync speed improvements and lays the groundwork for features we want to build later."
+            },
+            {
+              "month": "12",
+              "label": "Q4",
+              "status": "next",
+              "text": "Security Audit + v1.0 Release",
+              "detail": "AliasVault will be audited by an external third party in preparation for the official v1.0 release. Scheduled after the vault architecture work is complete, so the audit covers the core functionality that ships in v1.0."
+            }
           ]
         },
         "2027": {
           "milestones": [
-            { "month": "3", "label": "Q1", "text": "Premium Hosted Features" },
-            { "month": "6", "label": "Q2", "text": "Family Features", "detail": "The self-service side of sharing: invite family members and manage shared vaults yourself from the apps. Where the 2026 work builds the technical foundation, this makes it usable for everyone." },
-            { "month": "9", "label": "Q3", "text": "Disposable Phone Numbers" },
-            { "month": "12", "label": "Q4", "text": "More Integrations" }
+            {
+              "month": "3",
+              "label": "Q1/Q2",
+              "status": "next",
+              "text": "Premium Hosted Features"
+            },
+            {
+              "month": "9",
+              "label": "Q3",
+              "status": "later",
+              "text": "Family Features",
+              "detail": "The self-service side of sharing: invite family members and manage shared vaults yourself from the apps. Where the 2026 work builds the technical foundation, this makes it usable for everyone."
+            },
+            {
+              "month": "12",
+              "label": "Q4",
+              "status": "later",
+              "text": "Disposable Phone Numbers"
+            }
           ]
         },
         "2028": {
-          "milestones": []
+          "milestones": [
+            {
+              "month": "3",
+              "label": "Q1",
+              "status": "later",
+              "text": "More Integrations"
+            }
+          ]
         }
       }
     }
@@ -1214,7 +1321,7 @@
   "pricing": {
     "title": "Pricing",
     "description": "Compare AliasVault Free, Premium, and Family cloud plans. Use our official cloud or optionally self-host on your own hardware. Fully open source.",
-    "pageDescription": "Compare Free, Premium, and Family cloud plans. Use our official cloud or optionally self-host on your own hardware. Open source and currently in beta.",
+    "pageDescription": "Compare Free, Premium, and Family cloud plans. Use our official cloud or optionally self-host on your own hardware.",
     "intro": {
       "lead": "AliasVault is open source and you can use our cloud-hosted service or self-host it on your own hardware.",
       "body": "AliasVault is currently in beta and is accepting donations. Once AliasVault reaches v1.0 we will start offering premium cloud hosting to sustain the product and aid in future development. We are proudly and entirely self-funded."

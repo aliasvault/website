@@ -1,6 +1,7 @@
 import { SiCodeberg, SiGithub, SiGitlab } from "react-icons/si";
 import { useTranslations } from "next-intl";
 import AnchorHeading from "@/components/Common/AnchorHeading";
+import { Link } from "@/i18n/navigation";
 
 export default function SourceCode() {
   const t = useTranslations();
@@ -90,14 +91,9 @@ export default function SourceCode() {
 
             <p className="mt-4 text-base font-medium leading-relaxed text-body-color dark:text-body-color-dark">
               {t("platforms.roadmap.roadmapLink")}{" "}
-              <a
-                href="https://github.com/aliasvault/aliasvault/issues/731"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary hover:underline"
-              >
+              <Link href="/roadmap" className="text-primary hover:underline">
                 {t("platforms.roadmap.roadmapLinkText")}
-              </a>
+              </Link>
               .
             </p>
           </div>
