@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import Breadcrumb from "@/components/Common/Breadcrumb";
 import { generatePageSEOMetadata } from "@/lib/seo-utils";
 import { getTranslations } from "next-intl/server";
+import { useTranslations } from "next-intl";
 import Page from "@/components/Common/Page";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -18,10 +19,12 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 }
 
 const TermsAndConditionsPage = () => {
+  const t = useTranslations();
+
   return (
     <Page>
       <Breadcrumb
-        pageName="Terms and Conditions"
+        pageName={t('termsAndConditions.title')}
       />
       <TermsAndConditions />
     </Page>
