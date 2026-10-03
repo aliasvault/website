@@ -1,9 +1,10 @@
-import TermsAndConditions from "@/components/TermsAndConditions";
+import LegalDocument from "@/components/LegalDocument";
+import { termsAndConditions } from "@/lib/legal/terms-and-conditions";
 import { Metadata } from "next";
 import Breadcrumb from "@/components/Common/Breadcrumb";
 import { generatePageSEOMetadata } from "@/lib/seo-utils";
 import { getTranslations } from "next-intl/server";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import Page from "@/components/Common/Page";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -20,13 +21,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 const TermsAndConditionsPage = () => {
   const t = useTranslations();
+  const locale = useLocale();
 
   return (
     <Page>
       <Breadcrumb
         pageName={t('termsAndConditions.title')}
       />
-      <TermsAndConditions />
+      <LegalDocument doc={termsAndConditions} locale={locale} />
     </Page>
   );
 };

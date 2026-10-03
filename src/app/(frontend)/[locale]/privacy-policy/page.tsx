@@ -1,10 +1,11 @@
-import PrivacyPolicy from "@/components/PrivacyPolicy/PrivacyPolicy";
+import LegalDocument from "@/components/LegalDocument";
+import { privacyPolicy } from "@/lib/legal/privacy-policy";
 import { Metadata } from "next";
 import Breadcrumb from "@/components/Common/Breadcrumb";
 import { generatePageSEOMetadata } from "@/lib/seo-utils";
 import { getTranslations } from "next-intl/server";
 import Page from "@/components/Common/Page";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -20,13 +21,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 const PrivacyPolicyPage = () => {
   const t = useTranslations();
+  const locale = useLocale();
 
   return (
     <Page>
       <Breadcrumb
         pageName={t('privacyPolicy.title')}
       />
-      <PrivacyPolicy />
+      <LegalDocument doc={privacyPolicy} locale={locale} />
     </Page>
   );
 };
