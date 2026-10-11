@@ -6,6 +6,7 @@ import PressKitLogos from "@/components/PressKit/components/PressKitLogos";
 import PressKitScreenshots from "@/components/PressKit/components/PressKitScreenshots";
 import PressKitQuotes from "@/components/PressKit/components/PressKitQuotes";
 import PressKitContact from "@/components/PressKit/components/PressKitContact";
+import Card from "@/components/Common/Card";
 
 const PressKitEN = () => {
 
@@ -18,7 +19,7 @@ const PressKitEN = () => {
       <Statistics />
 
       {/* What Makes AliasVault Different */}
-      <div className="py-16 md:py-20 lg:py-24 bg-gray-50 dark:bg-gray-900">
+      <div className="py-16 md:py-20 lg:py-24">
         <div className="container">
           <h2 className="mb-4 text-3xl text-center font-bold !leading-tight text-black dark:text-white sm:text-4xl md:text-[45px]">What Makes AliasVault Unique</h2>
           <p className="mb-8 text-base text-center leading-relaxed text-body-color dark:text-body-color-dark">
@@ -115,7 +116,7 @@ const PressKitEN = () => {
       </div>
 
       {/* About the Founder */}
-      <div className="py-16 md:py-20 lg:py-24 bg-gray-50 dark:bg-gray-900">
+      <div className="py-16 md:py-20 lg:py-24">
         <div className="container">
           <h2 className="mb-4 text-3xl text-center font-bold !leading-tight text-black dark:text-white sm:text-4xl md:text-[45px]">About the Founder</h2>
           <div className="mx-auto max-w-4xl">
@@ -154,7 +155,7 @@ const PressKitEN = () => {
       <PressKitQuotes />
 
       {/* User Testimonials */}
-      <div className="py-12 md:py-16 lg:py-20 bg-gray-50 dark:bg-gray-900">
+      <div className="py-12 md:py-16 lg:py-20">
         <div className="container">
           <h2 className="mb-4 text-3xl text-center font-bold !leading-tight text-black dark:text-white sm:text-4xl md:text-[45px]">
             User Testimonials
@@ -164,7 +165,7 @@ const PressKitEN = () => {
           </p>
           <div className="mx-auto max-w-5xl">
             <div className="grid gap-4 md:grid-cols-2">
-              <div className="rounded-lg border border-gray-200 p-4 dark:border-gray-700 bg-white dark:bg-gray-800">
+              <Card padding="sm">
                 <blockquote className="text-base italic text-body-color dark:text-body-color-dark">
                   &ldquo;Awesome solution to a huge problem!&rdquo;
                 </blockquote>
@@ -174,9 +175,9 @@ const PressKitEN = () => {
                     Reddit r/selfhosted
                   </cite>
                 </div>
-              </div>
+              </Card>
 
-              <div className="rounded-lg border border-gray-200 p-4 dark:border-gray-700 bg-white dark:bg-gray-800">
+              <Card padding="sm">
                 <blockquote className="text-base italic text-body-color dark:text-body-color-dark">
                   &ldquo;The idea of the project is just pure fire…&rdquo;
                 </blockquote>
@@ -186,9 +187,9 @@ const PressKitEN = () => {
                     Hacker News
                   </cite>
                 </div>
-              </div>
+              </Card>
 
-              <div className="rounded-lg border border-gray-200 p-4 dark:border-gray-700 bg-white dark:bg-gray-800">
+              <Card padding="sm">
                 <blockquote className="text-base italic text-body-color dark:text-body-color-dark">
                   &ldquo;First password vault that actually works like how I want a password vault to work!&rdquo;
                 </blockquote>
@@ -198,9 +199,9 @@ const PressKitEN = () => {
                     Discord user
                   </cite>
                 </div>
-              </div>
+              </Card>
 
-              <div className="rounded-lg border border-gray-200 p-4 dark:border-gray-700 bg-white dark:bg-gray-800">
+              <Card padding="sm">
                 <blockquote className="text-base italic text-body-color dark:text-body-color-dark">
                   &ldquo;The only password manager that is also an alias manager and identity generator!&rdquo;
                 </blockquote>
@@ -210,7 +211,7 @@ const PressKitEN = () => {
                     Firefox Add-on Reviews
                   </cite>
                 </div>
-              </div>
+              </Card>
             </div>
           </div>
         </div>
@@ -236,7 +237,7 @@ const PressKitEN = () => {
             <div className="grid gap-8 lg:grid-cols-2">
 
               {/* YouTube Videos Column */}
-              <div className="rounded-lg border border-gray-200 bg-white p-6 dark:border-gray-700 dark:bg-gray-800">
+              <Card>
                 <div className="mb-6 flex items-center justify-between">
                   <h3 className="text-xl font-semibold text-black dark:text-white">
                     <Image src="/images/media/youtube.svg" alt="YouTube" width={24} height={24} className="inline-block mt-[-5px]" /> Video Reviews
@@ -316,10 +317,10 @@ const PressKitEN = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </Card>
 
               {/* News & Tech Media Column */}
-              <div className="rounded-lg border border-gray-200 bg-white p-6 dark:border-gray-700 dark:bg-gray-800">
+              <Card>
                 <div className="mb-6 flex items-center justify-between">
                   <h3 className="text-xl font-semibold text-black dark:text-white">
                     📰 News & Tech Media
@@ -335,7 +336,7 @@ const PressKitEN = () => {
                           rel="noopener noreferrer"
                           className="font-medium text-primary hover:underline"
                         >
-                          ID.nl: AliasVault — voor elk account een andere identiteit
+                          ID.nl: AliasVault: voor elk account een andere identiteit
                         </a>
                         <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
                           Dutch consumer tech website
@@ -430,10 +431,10 @@ const PressKitEN = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </Card>
 
               {/* Community Forums Column */}
-              <div className="rounded-lg border border-gray-200 bg-white p-6 dark:border-gray-700 dark:bg-gray-800">
+              <Card>
                 <div className="mb-6 flex items-center justify-between">
                   <h3 className="text-xl font-semibold text-black dark:text-white">
                     💬 Community Discussions
@@ -516,10 +517,10 @@ const PressKitEN = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </Card>
 
               {/* Directory Listings Column */}
-              <div className="rounded-lg border border-gray-200 bg-white p-6 dark:border-gray-700 dark:bg-gray-800">
+              <Card>
                 <div className="mb-6 flex items-center justify-between">
                   <h3 className="text-xl font-semibold text-black dark:text-white">
                     🔗 Directory Listings
@@ -583,16 +584,16 @@ const PressKitEN = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </Card>
 
             </div>
 
             {/* Add more coverage note */}
-            <div className="mt-8 rounded-lg bg-gray-50 p-6 text-center dark:bg-gray-800/50">
+            <Card className="mt-8 text-center">
               <p className="text-sm text-gray-600 dark:text-gray-400">
                 Have you covered AliasVault? <a href="mailto:press@aliasvault.com" className="text-primary hover:underline">Let us know</a> to be featured here.
               </p>
-            </div>
+            </Card>
           </div>
         </div>
       </div>

@@ -1,12 +1,14 @@
 "use client";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import Card from "@/components/Common/Card";
+import { buttonClasses } from "@/components/Common/Button";
 
 const PressKitScreenshots = () => {
   const t = useTranslations("pressKitScreenshots");
 
   return (
-    <div className="py-16 md:py-20 lg:py-24 bg-gray-50 dark:bg-gray-900">
+    <div className="py-16 md:py-20 lg:py-24 bg-gray-light dark:bg-gray-900">
       <div className="container">
         <h2 className="mb-4 text-3xl text-center font-bold !leading-tight text-black dark:text-white sm:text-4xl md:text-[45px]">
           {t("title")}
@@ -17,9 +19,9 @@ const PressKitScreenshots = () => {
         <div className="mx-auto max-w-6xl">
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             <div className="text-center">
-              <div className="mb-4 rounded-lg border border-gray-200 p-4 dark:border-gray-700">
+              <Card padding="sm" className="mb-4">
                 <Image src="/presskit/screenshot-previews-web.jpg" alt="Web Interface" width={334} height={203} />
-              </div>
+              </Card>
               <h4 className="mb-2 text-lg font-semibold text-black dark:text-white">
                 {t("webInterface.title")}
               </h4>
@@ -29,9 +31,9 @@ const PressKitScreenshots = () => {
             </div>
 
             <div className="text-center">
-              <div className="mb-4 rounded-lg border border-gray-200 p-4 dark:border-gray-700">
+              <Card padding="sm" className="mb-4">
                 <Image src="/presskit/screenshot-previews-browser.jpg" alt="Browser Extension" width={334} height={203} />
-              </div>
+              </Card>
               <h4 className="mb-2 text-lg font-semibold text-black dark:text-white">
                 {t("browserExtension.title")}
               </h4>
@@ -41,9 +43,9 @@ const PressKitScreenshots = () => {
             </div>
 
             <div className="text-center">
-              <div className="mb-4 rounded-lg border border-gray-200 p-4 dark:border-gray-700">
+              <Card padding="sm" className="mb-4">
                 <Image src="/presskit/screenshot-previews-mobile.jpg" alt="Mobile Application" width={334} height={203} />
-              </div>
+              </Card>
               <h4 className="mb-2 text-lg font-semibold text-black dark:text-white">
                 {t("mobileApplication.title")}
               </h4>
@@ -56,9 +58,9 @@ const PressKitScreenshots = () => {
             <a
               href="/presskit/aliasvault-screenshots.zip"
               download
-              className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-medium text-white hover:bg-primary/90"
+              className={buttonClasses()}
             >
-              <svg className="mr-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10" />
               </svg>
               {t("downloadAll")}

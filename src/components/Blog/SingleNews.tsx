@@ -2,6 +2,7 @@ import Image from "next/image";
 import { ContentPost } from "@/lib/blog";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import Card from "@/components/Common/Card";
 
 interface SingleNewsProps {
   news: ContentPost;
@@ -10,7 +11,7 @@ interface SingleNewsProps {
 const SingleNews = ({ news }: SingleNewsProps) => {
   const t = useTranslations();
   return (
-    <div className="mb-8 overflow-hidden rounded-lg bg-white shadow-three dark:bg-gray-dark dark:shadow-none">
+    <Card padding="none" className="mb-8 overflow-hidden">
       <Link
         href={`/news/${news.slug}`}
         className="relative block aspect-[37/22] w-full"
@@ -65,7 +66,7 @@ const SingleNews = ({ news }: SingleNewsProps) => {
           </div>
         </div>
       </div>
-    </div>
+    </Card>
   );
 };
 

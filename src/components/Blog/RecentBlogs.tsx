@@ -15,7 +15,7 @@ const RecentBlogAndNews = async ({ locale }: RecentBlogAndNewsProps) => {
   return (
     <section
       id="blog"
-      className="bg-gray-light dark:bg-bg-color-dark py-16 md:py-20 lg:py-28"
+      className="bg-gray-light py-16 dark:bg-black md:py-20 lg:py-28"
     >
       <div className="container" data-aos="fade-up" data-aos-delay="0">
         <div className="flex flex-col items-center mb-8">

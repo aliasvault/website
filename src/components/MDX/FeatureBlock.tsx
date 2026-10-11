@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import { ReactNode } from 'react'
+import Card from '@/components/Common/Card'
 
 export interface FeatureBlockProps {
   /** Image path (e.g. /images/blog/feature-x.png) */
@@ -41,7 +42,7 @@ export default function FeatureBlock({
             : 'lg:flex-shrink-0 lg:w-[45%]'
         }
       >
-        <div className="relative overflow-hidden rounded-lg border border-gray-200 bg-white shadow-md dark:border-gray-700 dark:bg-gray-dark">
+        <Card padding="none" className="relative overflow-hidden">
           <div className="relative aspect-video w-full">
             <Image
               src={src}
@@ -56,7 +57,7 @@ export default function FeatureBlock({
               {caption}
             </p>
           )}
-        </div>
+        </Card>
       </div>
       <div className="flex-1 min-w-0">
         {title && (

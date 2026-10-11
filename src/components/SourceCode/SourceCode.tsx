@@ -1,7 +1,9 @@
 import { SiCodeberg, SiGithub, SiGitlab } from "react-icons/si";
 import { useTranslations } from "next-intl";
 import AnchorHeading from "@/components/Common/AnchorHeading";
+import Card from "@/components/Common/Card";
 import { Link } from "@/i18n/navigation";
+import { buttonClasses } from "@/components/Common/Button";
 
 export default function SourceCode() {
   const t = useTranslations();
@@ -27,7 +29,7 @@ export default function SourceCode() {
                 href="https://github.com/aliasvault/aliasvault"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-lg border border-gray-200 px-4 py-2 text-sm font-medium text-black transition-colors hover:border-primary/50 hover:text-primary dark:border-gray-800 dark:bg-gray-800/50 dark:text-white dark:hover:border-primary/60 dark:hover:text-primary"
+                className={buttonClasses({ variant: "secondary", size: "sm" })}
               >
                 <SiGithub className="h-5 w-5" aria-hidden="true" />
                 <span>GitHub</span>
@@ -37,7 +39,7 @@ export default function SourceCode() {
                 href="https://codeberg.org/aliasvault/aliasvault"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-lg border border-gray-200 px-4 py-2 text-sm font-medium text-black transition-colors hover:border-primary/50 hover:text-primary dark:border-gray-800 dark:bg-gray-800/50 dark:text-white dark:hover:border-primary/60 dark:hover:text-primary"
+                className={buttonClasses({ variant: "secondary", size: "sm" })}
               >
                 <SiCodeberg className="h-5 w-5" aria-hidden="true" />
                 <span>Codeberg</span>
@@ -47,7 +49,7 @@ export default function SourceCode() {
                 href="https://gitlab.com/aliasvault/aliasvault"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-lg border border-gray-200 px-4 py-2 text-sm font-medium text-black transition-colors hover:border-primary/50 hover:text-primary dark:border-gray-800 dark:bg-gray-800/50 dark:text-white dark:hover:border-primary/60 dark:hover:text-primary"
+                className={buttonClasses({ variant: "secondary", size: "sm" })}
               >
                 <SiGitlab className="h-5 w-5" aria-hidden="true" />
                 <span>GitLab</span>
@@ -77,7 +79,7 @@ export default function SourceCode() {
               {t("platforms.roadmap.description")}
             </p>
 
-            <div className="rounded-xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-gray-800/50">
+            <Card>
               <h3 className="mb-3 text-lg font-semibold text-black dark:text-white">
                 {t("platforms.roadmap.statusTitle")}
               </h3>
@@ -87,7 +89,7 @@ export default function SourceCode() {
                 <li>{t("platforms.roadmap.statusItems.migration")}</li>
                 <li>{t("platforms.roadmap.statusItems.feedback")}</li>
               </ul>
-            </div>
+            </Card>
 
             <p className="mt-4 text-base font-medium leading-relaxed text-body-color dark:text-body-color-dark">
               {t("platforms.roadmap.roadmapLink")}{" "}

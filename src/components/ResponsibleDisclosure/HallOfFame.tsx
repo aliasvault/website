@@ -1,5 +1,6 @@
 import type { ReactElement } from "react";
 import Link from "next/link";
+import Card from "@/components/Common/Card";
 import CopyLinkIcon from "@/components/Common/CopyLinkIcon";
 
 type SocialPlatform = "x" | "mastodon" | "github";
@@ -165,10 +166,7 @@ const HallOfFame = () => {
           const severityLabel = vuln.severity === "hardening" ? "Security hardening" : vuln.severity;
 
           return (
-            <div
-              key={vuln.id}
-              className="rounded-lg border border-gray-200 bg-white p-4 shadow-md transition-all hover:shadow-lg dark:border-gray-700 dark:bg-gray-dark"
-            >
+            <Card key={vuln.id} padding="sm">
               <div className="mb-2 flex flex-wrap items-start justify-between gap-4">
                 <div>
                   <h4 className="flex flex-wrap items-center gap-x-2 text-base font-semibold text-black dark:text-white">
@@ -271,7 +269,7 @@ const HallOfFame = () => {
                   )}
                 </div>
               )}
-            </div>
+            </Card>
           );
         })}
       </div>

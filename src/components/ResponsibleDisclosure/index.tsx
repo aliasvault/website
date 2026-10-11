@@ -1,5 +1,6 @@
 import { useTranslations } from "next-intl";
 import Link from "next/link";
+import Card from "@/components/Common/Card";
 import HallOfFame from "./HallOfFame";
 
 const ResponsibleDisclosureContent = () => {
@@ -14,7 +15,7 @@ const ResponsibleDisclosureContent = () => {
               {t('responsibleDisclosure.content.intro')}
             </p>
 
-            <div className="rounded-lg bg-primary/5 dark:bg-primary/10 p-6 mb-8 border border-gray-200/50 dark:border-gray-700/50">
+            <Card variant="highlight" className="mb-8">
               <p className="text-lg text-body-color dark:text-body-color-dark">
                 {t('responsibleDisclosure.content.email')}{' '}
                 <a
@@ -24,7 +25,7 @@ const ResponsibleDisclosureContent = () => {
                   {t('responsibleDisclosure.content.emailAddress')}
                 </a>
               </p>
-            </div>
+            </Card>
 
             <div className="mb-8">
               <p className="text-base text-body-color dark:text-body-color-dark">

@@ -20,7 +20,7 @@ const ReportAbusePage = async () => {
   const t = await getTranslations();
   return (
     <Page>
-      <section className="pt-[150px] pb-[120px]">
+      <section className="pt-[150px]">
         <div className="container">
           <div className="flex flex-wrap justify-center -mx-4">
             <div className="w-full px-4 lg:w-8/12">

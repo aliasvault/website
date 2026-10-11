@@ -5,6 +5,7 @@ import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import PricingFAQ from "./PricingFAQ";
 import { PREMIUM_AVAILABILITY_FAQ_HASH } from "./pricingFaqData";
+import { buttonClasses } from "@/components/Common/Button";
 
 const PANEL_BASE =
   "rounded-2xl bg-white p-6 shadow-sm dark:bg-gray-800/50 lg:p-8";
@@ -101,9 +102,11 @@ function PlanCard({
   t: ReturnType<typeof useTranslations<"pricing">>;
 }) {
   const planKey = plan.id;
-  const ctaClass = plan.recommended
-    ? "bg-primary text-white hover:bg-primary/90"
-    : "border border-gray-300 text-dark hover:bg-gray-50 dark:border-gray-600 dark:text-white dark:hover:bg-gray-800/50";
+  const ctaClass = buttonClasses({
+    variant: plan.recommended ? "primary" : "secondary",
+    fullWidth: true,
+    className: "mt-6",
+  });
 
   return (
     <div className="flex h-full flex-col">
@@ -144,14 +147,14 @@ function PlanCard({
               href={plan.cta.href}
               target="_blank"
               rel="noopener noreferrer"
-              className={`mt-6 inline-flex w-full items-center justify-center rounded-xl px-5 py-3 text-base font-semibold transition-colors ${ctaClass}`}
+              className={ctaClass}
             >
               {plan.cta.label}
             </a>
           ) : (
             <Link
               href={plan.cta.href}
-              className={`mt-6 inline-flex w-full items-center justify-center rounded-xl px-5 py-3 text-base font-semibold transition-colors ${ctaClass}`}
+              className={ctaClass}
             >
               {plan.cta.label}
             </Link>
@@ -159,7 +162,7 @@ function PlanCard({
         ) : plan.comingSoon ? (
           <a
             href={`#${PREMIUM_AVAILABILITY_FAQ_HASH}`}
-            className="mt-6 flex h-12 items-center justify-center rounded-xl border border-dashed border-primary/35 text-sm font-semibold text-primary transition-colors hover:border-primary/60 hover:bg-primary/5 dark:border-primary/40 dark:hover:bg-primary/10"
+            className="mt-6 flex h-12 items-center justify-center rounded-full border border-dashed border-primary/35 text-sm font-semibold text-primary transition-colors hover:border-primary/60 hover:bg-primary/5 dark:border-primary/40 dark:hover:bg-primary/10"
           >
             {t(`plans.${planKey}.comingSoonLabel`)}
           </a>
@@ -300,7 +303,7 @@ export default function Pricing() {
                 href="https://opencollective.com/aliasvault"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-primary/90"
+                className={buttonClasses()}
               >
                 {t("support.donateOpenCollective")}
               </a>

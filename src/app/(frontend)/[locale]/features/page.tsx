@@ -45,7 +45,7 @@ export default async function Features() {
       <ScrollUp />
 
       {/* Feature Sections */}
-      <div className="bg-gray-50 dark:bg-black">
+      <div>
         {localizedFeatureCategories.map((category, index) => (
           <FeatureSection
             key={index}

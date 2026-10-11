@@ -2,6 +2,7 @@ import Image from "next/image";
 import SectionTitle from "../Common/SectionTitle";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import IconTile from "@/components/Common/IconTile";
 
 interface FeatureItem {
   name: string;
@@ -96,7 +97,7 @@ const FeatureSection = ({
               <div className="space-y-6">
                 {features.map((feature, index) => (
                   <div key={index} className="flex items-start">
-                    <div className="mr-4 flex h-[45px] w-[45px] items-center justify-center rounded-xl bg-gradient-to-br from-primary/15 to-primary/5 text-primary ring-1 ring-inset ring-primary/15 flex-shrink-0">
+                    <IconTile className="mr-4">
                       {feature.status === 'available' ? (
                         <svg className="h-8 w-8 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -110,7 +111,7 @@ const FeatureSection = ({
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                         </svg>
                       )}
-                    </div>
+                    </IconTile>
                     <div>
                       <h3 className="mb-2 text-xl font-bold text-black dark:text-white">
                         {feature.name}

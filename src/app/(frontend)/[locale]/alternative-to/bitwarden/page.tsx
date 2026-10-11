@@ -6,6 +6,7 @@ import ImportCallToAction from "@/components/CallToAction/ImportCallToAction";
 import { getTranslations } from "next-intl/server";
 import { generatePageSEOMetadata } from "@/lib/seo-utils";
 import Page from "@/components/Common/Page";
+import { buttonClasses } from "@/components/Common/Button";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -39,7 +40,7 @@ const BitwardenPage = async () => {
                 <div className="flex flex-col items-center justify-center lg:items-start lg:justify-start space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
                   <Link
                     href="https://app.aliasvault.com"
-                    className="rounded-3xl bg-primary px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/80"
+                    className={buttonClasses({ size: "lg" })}
                   >
                     {t('alternativeBitwarden.hero.tryButton')}
                   </Link>

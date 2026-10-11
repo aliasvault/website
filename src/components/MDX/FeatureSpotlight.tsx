@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import Card from '@/components/Common/Card'
 
 export interface FeatureSpotlightProps {
   /** Image path – use a square or 4:3 for best social previews */
@@ -26,10 +27,7 @@ export default function FeatureSpotlight({
   badge,
 }: FeatureSpotlightProps) {
   return (
-    <figure
-      className="group mb-8 overflow-hidden rounded-xl border border-gray-200 bg-white shadow-md transition-shadow hover:shadow-lg dark:border-gray-700 dark:bg-gray-dark dark:shadow-none dark:hover:shadow-md"
-      data-feature-spotlight
-    >
+    <Card data-feature-spotlight as="figure" padding="none" className="group mb-8 overflow-hidden">
       <div className="relative aspect-[4/3] w-full overflow-hidden">
         <Image
           src={src}
@@ -62,6 +60,6 @@ export default function FeatureSpotlight({
           </p>
         )}
       </figcaption>
-    </figure>
+    </Card>
   )
 }

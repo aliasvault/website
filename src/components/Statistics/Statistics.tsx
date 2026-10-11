@@ -29,7 +29,7 @@ const Statistics = () => {
   const t = useTranslations("statistics");
 
   return (
-    <div className="py-16 md:py-20 lg:py-24 bg-gray-50 dark:bg-gray-900">
+    <div className="py-16 md:py-20 lg:py-24 bg-gray-light dark:bg-gray-900">
       <div className="container">
         <h2 className="mb-4 text-3xl text-center font-bold !leading-tight text-black dark:text-white sm:text-4xl md:text-[45px]">
           {t("title")}

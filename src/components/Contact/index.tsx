@@ -2,6 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import AnchorHeading from "@/components/Common/AnchorHeading";
+import { buttonClasses } from "@/components/Common/Button";
+import Card from "@/components/Common/Card";
 import { getStatusPageUrl } from "@/lib/status-banner";
 
 const ContactContent = () => {
@@ -12,7 +14,7 @@ const ContactContent = () => {
     <section className="pb-16 pt-8">
       <div className="container">
         <div className="mx-auto">
-          <div className="mb-12 rounded-lg border border-body-color/20 bg-body-color/5 p-6 dark:border-body-color-dark/20 dark:bg-body-color-dark/5">
+          <Card padding="lg" className="mb-12">
             <AnchorHeading
               as="h3"
               id="contact"
@@ -42,7 +44,7 @@ const ContactContent = () => {
                 support@aliasvault.com
               </a>
             </p>
-          </div>
+          </Card>
 
           <div className="mb-12">
             <AnchorHeading
@@ -224,9 +226,9 @@ const ContactContent = () => {
                 href="https://opencollective.com/aliasvault"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-lg bg-blue-600 px-6 py-3 text-white hover:bg-blue-700 transition-colors"
+                className={buttonClasses()}
               >
-                <svg className="mr-2 h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 21.6c-5.293 0-9.6-4.307-9.6-9.6S6.707 2.4 12 2.4s9.6 4.307 9.6 9.6-4.307 9.6-9.6 9.6z"/>
                   <path d="M12 6c-3.314 0-6 2.686-6 6s2.686 6 6 6 6-2.686 6-6-2.686-6-6-6zm0 10.8c-2.651 0-4.8-2.149-4.8-4.8s2.149-4.8 4.8-4.8 4.8 2.149 4.8 4.8-2.149 4.8-4.8 4.8z"/>
                 </svg>

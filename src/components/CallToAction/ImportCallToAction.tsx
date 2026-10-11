@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { buttonClasses } from "@/components/Common/Button";
 
 interface ImportCallToActionProps {
   /** Translation namespace, e.g. "alternative1Password.import" */
@@ -25,11 +26,11 @@ const ImportCallToAction = ({ namespace, href = "https://app.aliasvault.com", cl
             </p>
             <Link
               href={href}
-              className="relative flex items-center justify-center bg-primary-600 px-8 py-4 font-semibold text-white transition-all duration-200 hover:bg-primary-700 hover:scale-105"
+              className={buttonClasses({ variant: "primaryStrong", size: "lg" })}
             >
               {t(`${namespace}.cta`)}
               <svg
-                className="ml-2 h-5 w-5"
+                className="h-5 w-5"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"

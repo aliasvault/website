@@ -7,6 +7,8 @@ import type { HelpSection } from '@/lib/help-sections'
 import { sectionJsonLd, jsonLdScript } from '@/lib/jsonLd'
 import HelpSectionIcon from './HelpSectionIcon'
 import HelpBreadcrumb from './HelpBreadcrumb'
+import IconTile from '@/components/Common/IconTile'
+import LinkList from '@/components/Common/LinkList'
 
 interface HelpSectionViewProps {
   section: HelpSection
@@ -42,9 +44,9 @@ export default async function HelpSectionView({ section, locale }: HelpSectionVi
           <HelpBreadcrumb items={[{ label: t('help.title'), href: '/help' }, { label: title }]} />
 
           <div className="mb-12 flex items-start gap-5">
-            <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/15 to-primary/5 text-primary ring-1 ring-inset ring-primary/15">
+            <IconTile size="lg">
               <HelpSectionIcon icon={section.icon} className="h-7 w-7" />
-            </span>
+            </IconTile>
             <div>
               <h1 className="mb-2 text-3xl font-bold leading-tight text-black dark:text-white sm:text-4xl">
                 {title}
@@ -67,28 +69,13 @@ export default async function HelpSectionView({ section, locale }: HelpSectionVi
                       </span>
                     </h2>
                   )}
-                  <ul className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-three dark:divide-gray-800 dark:border-gray-800 dark:bg-gray-dark dark:shadow-none divide-y divide-gray-100">
-                    {group.articles.map((article) => (
-                      <li key={article.slug}>
-                        <Link
-                          href={`/help/${article.slug}`}
-                          className="group flex items-center justify-between gap-4 px-6 py-4 transition-colors hover:bg-primary/[0.04] dark:hover:bg-primary/[0.06]"
-                        >
-                          <span>
-                            <span className="block font-medium text-black transition-colors group-hover:text-primary dark:text-white">
-                              {article.title}
-                            </span>
-                            {article.description && (
-                              <span className="mt-1 block text-sm text-body-color dark:text-body-color-dark">
-                                {article.description}
-                              </span>
-                            )}
-                          </span>
-                          <FiArrowRight className="h-5 w-5 shrink-0 text-body-color transition-all group-hover:translate-x-1 group-hover:text-primary dark:text-body-color-dark" />
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
+                  <LinkList
+                    items={group.articles.map((article) => ({
+                      title: article.title,
+                      description: article.description,
+                      href: `/help/${article.slug}`,
+                    }))}
+                  />
                 </div>
               ))}
             </div>

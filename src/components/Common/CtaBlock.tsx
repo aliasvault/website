@@ -1,6 +1,8 @@
 import type { IconType } from "react-icons";
 import { FiArrowRight } from "react-icons/fi";
 import { Link } from "@/i18n/navigation";
+import Card from "@/components/Common/Card";
+import { buttonClasses } from "@/components/Common/Button";
 
 interface CtaBlockProps {
   title: string;
@@ -30,13 +32,10 @@ const CtaBlock = ({
   headingAs: Heading = "h3",
   className = "",
 }: CtaBlockProps) => {
-  const buttonClassName =
-    "inline-flex shrink-0 items-center justify-center gap-2 rounded-md bg-primary px-6 py-2.5 text-base font-semibold text-white duration-300 hover:bg-primary/90";
+  const buttonClassName = buttonClasses({ className: "shrink-0" });
 
   return (
-    <div
-      className={`flex flex-col gap-4 rounded-xl border border-gray-200 bg-white p-5 dark:border-gray-700 dark:bg-gray-dark sm:flex-row sm:items-center sm:justify-between sm:p-6 ${className}`}
-    >
+    <Card className={`flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between ${className}`}>
       <div className="flex items-center gap-4">
         {Icon && <Icon className="h-8 w-8 shrink-0 text-black dark:text-white" aria-hidden="true" />}
         <div>
@@ -57,7 +56,7 @@ const CtaBlock = ({
           <FiArrowRight className="h-4 w-4" aria-hidden="true" />
         </Link>
       )}
-    </div>
+    </Card>
   );
 };
 

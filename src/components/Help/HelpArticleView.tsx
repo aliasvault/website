@@ -8,6 +8,7 @@ import { getHelpSection, HELP_DEFAULT_SECTION } from '@/lib/help-sections'
 import { extractHeadings, readingTimeMinutes } from '@/lib/lexical'
 import { resolveAuthor } from '@/lib/authors'
 import { articleJsonLd, jsonLdScript } from '@/lib/jsonLd'
+import Card from '@/components/Common/Card'
 import TableOfContents from './TableOfContents'
 import HelpBreadcrumb from './HelpBreadcrumb'
 import HelpSectionIcon from './HelpSectionIcon'
@@ -96,9 +97,9 @@ export default async function HelpArticleView({ article, locale, isPreview }: He
             </div>
 
             {(article.summary || article.description) && (
-              <div className="mb-10 rounded-xl border border-primary/20 bg-primary/5 px-6 py-5 text-base leading-relaxed text-black dark:border-primary/25 dark:text-white">
+              <Card variant="highlight" className="mb-10 text-base leading-relaxed text-black dark:text-white">
                 {article.summary || article.description}
-              </div>
+              </Card>
             )}
 
             <RichText data={article.content} />
@@ -110,17 +111,14 @@ export default async function HelpArticleView({ article, locale, isPreview }: He
                 </h2>
                 <div className="space-y-4">
                   {article.faq.map((item, i) => (
-                    <div
-                      key={i}
-                      className="rounded-xl border border-gray-200 bg-white p-6 shadow-three dark:border-gray-800 dark:bg-gray-dark dark:shadow-none"
-                    >
+                    <Card key={i}>
                       <h3 className="mb-2 text-lg font-semibold text-black dark:text-white">
                         {item.question}
                       </h3>
                       <p className="text-base leading-relaxed text-body-color dark:text-body-color-dark">
                         {item.answer}
                       </p>
-                    </div>
+                    </Card>
                   ))}
                 </div>
               </div>
@@ -134,9 +132,11 @@ export default async function HelpArticleView({ article, locale, isPreview }: He
                 <ul className="grid gap-4 sm:grid-cols-2">
                   {related.map((rel) => (
                     <li key={rel.slug}>
-                      <Link
+                      <Card
                         href={`/help/${rel.slug}`}
-                        className="group flex h-full items-start justify-between gap-3 rounded-xl border border-gray-200 bg-white px-5 py-4 shadow-three transition-all duration-200 hover:border-primary/40 dark:border-gray-800 dark:bg-gray-dark dark:shadow-none dark:hover:border-primary/40"
+                        padding="sm"
+                        interactive
+                        className="group flex h-full items-start justify-between gap-3"
                       >
                         <span className="min-w-0">
                           <span className="block font-medium text-black transition-colors group-hover:text-primary dark:text-white">
@@ -149,7 +149,7 @@ export default async function HelpArticleView({ article, locale, isPreview }: He
                           )}
                         </span>
                         <FiArrowRight className="mt-1 h-4 w-4 shrink-0 text-primary opacity-0 transition-all duration-200 group-hover:translate-x-0.5 group-hover:opacity-100" />
-                      </Link>
+                      </Card>
                     </li>
                   ))}
                 </ul>

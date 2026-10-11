@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
+import Card from "@/components/Common/Card";
 
 const Founder = () => {
   const t = useTranslations();
@@ -20,7 +21,7 @@ const Founder = () => {
 
         <div className="mx-auto">
           {/* Quote content wrapper */}
-          <div className="wow fadeInUp relative bg-white dark:bg-gray-800/50 rounded-2xl p-8 md:p-12 shadow-lg">
+          <Card padding="none" className="wow fadeInUp relative p-8 md:p-12">
             {/* Large quote mark */}
             <span className="absolute -left-4 -top-4 text-7xl text-primary/30 select-none">&quot;</span>
 
@@ -65,7 +66,7 @@ const Founder = () => {
                 <p className="text-sm text-body-color">{t('founder.founderTitle')}</p>
               </div>
             </div>
-          </div>
+          </Card>
         </div>
       </div>
     </section>

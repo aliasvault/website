@@ -1,5 +1,6 @@
 "use client";
 import { useTranslations } from "next-intl";
+import Card from "@/components/Common/Card";
 
 const PressKitAbout = () => {
   const t = useTranslations("pressKitAbout");
@@ -16,7 +17,7 @@ const PressKitAbout = () => {
         <div className="mx-auto max-w-6xl">
           <div className="grid gap-8 md:grid-cols-2">
             {/* Short Version */}
-            <div className="rounded-lg border border-gray-200 p-6 dark:border-gray-700">
+            <Card>
               <h3 className="mb-4 text-xl font-semibold text-black dark:text-white">
                 {t("shortVersion.title")}
               </h3>
@@ -26,10 +27,10 @@ const PressKitAbout = () => {
               <div className="text-sm text-gray-600 dark:text-gray-400">
                 <strong>{t("perfectForTitle")}:</strong> {t("shortVersion.perfectFor")}
               </div>
-            </div>
+            </Card>
 
             {/* Long Version */}
-            <div className="rounded-lg border border-gray-200 p-6 dark:border-gray-700">
+            <Card>
               <h3 className="mb-4 text-xl font-semibold text-black dark:text-white">
                 {t("longVersion.title")}
               </h3>
@@ -41,7 +42,7 @@ const PressKitAbout = () => {
               <div className="mt-4 text-sm text-gray-600 dark:text-gray-400">
                 <strong>{t("perfectForTitle")}:</strong> {t("longVersion.perfectFor")}
               </div>
-            </div>
+            </Card>
           </div>
         </div>
       </div>

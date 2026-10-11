@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { FaGithub, FaDownload, FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import { useTranslations } from 'next-intl';
+import Card from '@/components/Common/Card';
 
 interface GitHubAsset {
   name: string;
@@ -95,7 +96,7 @@ export const GitHubRelease = ({ version = 'latest' }: GitHubReleaseProps) => {
   };
 
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+    <Card>
       <div className="flex items-center gap-4 mb-4">
         <FaGithub className="text-3xl text-gray-900 dark:text-white" />
         <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
@@ -170,6 +171,6 @@ export const GitHubRelease = ({ version = 'latest' }: GitHubReleaseProps) => {
           )}
         </div>
       </div>
-    </div>
+    </Card>
   );
 };

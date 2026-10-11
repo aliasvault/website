@@ -2,6 +2,8 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import SectionTitle from "@/components/Common/SectionTitle";
+import Card from "@/components/Common/Card";
+import { buttonClasses } from "@/components/Common/Button";
 
 const PressKitLogos = () => {
   const t = useTranslations("pressKitLogos");
@@ -18,7 +20,7 @@ const PressKitLogos = () => {
           <div className="grid gap-8 lg:grid-cols-3">
             {/* Square Logo - Left Side */}
             <div className="lg:col-span-1">
-              <div className="rounded-lg border border-gray-200 bg-white p-6 dark:border-gray-700 dark:bg-gray-800 h-full">
+              <Card className="h-full">
                 <div className="flex flex-col items-center justify-center h-full">
                   <div className="mb-6">
                     <Image
@@ -39,9 +41,9 @@ const PressKitLogos = () => {
                     <a
                       href="/presskit/logo.svg"
                       download
-                      className="inline-flex items-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-white hover:bg-primary/90 w-full justify-center"
+                      className={buttonClasses({ size: "sm", fullWidth: true })}
                     >
-                      <svg className="mr-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10" />
                       </svg>
                       {t("downloads.downloadSvg")}
@@ -49,21 +51,21 @@ const PressKitLogos = () => {
                     <a
                       href="/presskit/logo-1024.png"
                       download
-                      className="inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600 w-full justify-center"
+                      className={buttonClasses({ variant: "secondary", size: "sm", fullWidth: true })}
                     >
-                      <svg className="mr-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10" />
                       </svg>
                       {t("downloads.downloadPng")}
                     </a>
                   </div>
                 </div>
-              </div>
+              </Card>
             </div>
 
             {/* Wordmark Preview - Right Side (2 columns) */}
             <div className="lg:col-span-2">
-              <div className="rounded-lg border border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-800 overflow-hidden">
+              <Card padding="none" className="overflow-hidden">
                 <div className="p-6">
                   <h4 className="mb-4 text-lg font-semibold text-black dark:text-white">
                     {t("wordmarkLogos.title")}
@@ -98,7 +100,7 @@ const PressKitLogos = () => {
                   </div>
 
                   {/* Usage Guidelines */}
-                  <div className="mb-6 p-4 bg-gray-50 dark:bg-gray-900 rounded-lg">
+                  <div className="mb-6 rounded-lg bg-gray-light p-4 dark:bg-gray-900">
                     <h5 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                       {t("usageGuidelines.title")}
                     </h5>
@@ -115,9 +117,9 @@ const PressKitLogos = () => {
                     <a
                       href="/presskit/aliasvault-logos.zip"
                       download
-                      className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-medium text-white hover:bg-primary/90 w-full"
+                      className={buttonClasses({ fullWidth: true })}
                     >
-                      <svg className="mr-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10" />
                       </svg>
                       {t("downloads.downloadAll")}
@@ -133,14 +135,14 @@ const PressKitLogos = () => {
                           <a
                             href="/presskit/aliasvault-wordmark-black.svg"
                             download
-                            className="inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-3 py-2 text-xs font-medium text-gray-700 hover:bg-gray-50 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600 flex-1"
+                            className={buttonClasses({ variant: "secondary", size: "xs", className: "flex-1" })}
                           >
                             SVG
                           </a>
                           <a
                             href="/presskit/aliasvault-wordmark-black.png"
                             download
-                            className="inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-3 py-2 text-xs font-medium text-gray-700 hover:bg-gray-50 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600 flex-1"
+                            className={buttonClasses({ variant: "secondary", size: "xs", className: "flex-1" })}
                           >
                             PNG
                           </a>
@@ -154,14 +156,14 @@ const PressKitLogos = () => {
                           <a
                             href="/presskit/aliasvault-wordmark-white.svg"
                             download
-                            className="inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-3 py-2 text-xs font-medium text-gray-700 hover:bg-gray-50 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600 flex-1"
+                            className={buttonClasses({ variant: "secondary", size: "xs", className: "flex-1" })}
                           >
                             SVG
                           </a>
                           <a
                             href="/presskit/aliasvault-wordmark-white.png"
                             download
-                            className="inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-3 py-2 text-xs font-medium text-gray-700 hover:bg-gray-50 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600 flex-1"
+                            className={buttonClasses({ variant: "secondary", size: "xs", className: "flex-1" })}
                           >
                             PNG
                           </a>
@@ -170,12 +172,12 @@ const PressKitLogos = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </Card>
             </div>
           </div>
 
           {/* Brand Colors */}
-          <div className="mt-8 rounded-lg border border-gray-200 bg-white p-6 dark:border-gray-700 dark:bg-gray-800">
+          <Card className="mt-8">
             <h4 className="mb-4 text-lg font-semibold text-black dark:text-white">
               {t("brandColors.title")}
             </h4>
@@ -196,7 +198,7 @@ const PressKitLogos = () => {
                 <p className="text-xs text-gray-600 dark:text-gray-400">#121723</p>
               </div>
             </div>
-          </div>
+          </Card>
         </div>
       </div>
     </div>

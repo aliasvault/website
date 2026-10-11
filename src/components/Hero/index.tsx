@@ -7,6 +7,7 @@ import { useTranslations } from "next-intl";
 import { motion, useReducedMotion } from "framer-motion";
 import { useLayoutEffect, useMemo, useState } from "react";
 import AnimatedBackground from "./AnimatedBackground";
+import { buttonClasses } from "@/components/Common/Button";
 
 const useNarrowViewport = () => {
   const [narrow, setNarrow] = useState(false);
@@ -191,7 +192,7 @@ const Hero = () => {
                   <Link
                     href="https://app.aliasvault.com"
                     target="_blank"
-                    className="group relative overflow-hidden rounded-3xl bg-primary px-8 py-4 text-base font-semibold text-white transition-all duration-300 ease-out hover:scale-105 hover:shadow-lg hover:shadow-primary/25"
+                    className={buttonClasses({ size: "lg", className: "group relative overflow-hidden hover:scale-105" })}
                   >
                     <span className="relative z-10">{t('cta')}</span>
                     <motion.div

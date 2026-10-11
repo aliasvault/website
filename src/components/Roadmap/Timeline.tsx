@@ -1,5 +1,7 @@
+import type { ReactNode } from "react";
 import { getTranslations } from "next-intl/server";
 import { SiGithub } from "react-icons/si";
+import Card from "@/components/Common/Card";
 import CtaBlock from "@/components/Common/CtaBlock";
 
 type Bucket = "now" | "next" | "later";
@@ -37,23 +39,36 @@ function CheckIcon({ className = "" }: { className?: string }) {
   );
 }
 
-const bucketStyles: Record<Bucket, { dot: string; panel: string; card: string }> = {
+const bucketStyles: Record<Bucket, { dot: string; highlight: boolean; card: string }> = {
   now: {
     dot: "bg-primary",
-    panel: "rounded-xl border border-primary/30 bg-primary/5 p-5 dark:bg-primary/10 sm:p-6",
-    card: "border-l-4 border-l-primary border-gray-200 bg-white shadow-sm dark:border-gray-700 dark:border-l-primary dark:bg-gray-dark",
+    highlight: true,
+    card: "border-l-4 border-l-primary dark:border-l-primary",
   },
   next: {
-    dot: "bg-blue-500",
-    panel: "p-0",
-    card: "border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-dark",
+    dot: "bg-primary/40",
+    highlight: false,
+    card: "",
   },
   later: {
     dot: "bg-gray-400 dark:bg-gray-500",
-    panel: "p-0",
-    card: "border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-dark",
+    highlight: false,
+    card: "",
   },
 };
+
+/** "Now" is shown in a highlighted card; the other buckets are plain sections. */
+function BucketWrapper({ id, highlight, children }: { id: string; highlight: boolean; children: ReactNode }) {
+  return highlight ? (
+    <Card as="section" id={id} variant="highlight" className="scroll-mt-24">
+      {children}
+    </Card>
+  ) : (
+    <section id={id} className="scroll-mt-24">
+      {children}
+    </section>
+  );
+}
 
 /**
  * Roadmap bucket component.
@@ -96,7 +111,7 @@ export default async function Timeline() {
             const list = buckets[bucket];
             const compact = bucket === "later";
             return (
-              <section key={bucket} id={bucket} className={`scroll-mt-24 ${style.panel}`}>
+              <BucketWrapper key={bucket} id={bucket} highlight={style.highlight}>
                 <div className="mb-2 flex items-center gap-3">
                   <span className={`h-3 w-3 rounded-full ${style.dot}`} aria-hidden="true" />
                   <h3 className="text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
@@ -108,15 +123,17 @@ export default async function Timeline() {
                 </p>
 
                 {list.length === 0 ? (
-                  <p className="rounded-lg border border-dashed border-gray-300 p-4 text-base text-body-color dark:border-gray-700 dark:text-body-color-dark">
+                  <Card variant="dashed" padding="sm" className="text-base text-body-color dark:text-body-color-dark">
                     {t("roadmap.timeline.empty")}
-                  </p>
+                  </Card>
                 ) : (
                   <ul className="space-y-4">
                     {list.map((item) => (
-                      <li
+                      <Card
+                        as="li"
                         key={`${item.year}-${item.label}`}
-                        className={`rounded-lg border p-4 sm:p-5 ${style.card}`}
+                        padding="sm"
+                        className={style.card}
                       >
                         <p className="mb-1 text-sm font-semibold uppercase tracking-wide text-primary">
                           {item.label} {item.year}
@@ -129,11 +146,11 @@ export default async function Timeline() {
                             {item.detail}
                           </p>
                         )}
-                      </li>
+                      </Card>
                     ))}
                   </ul>
                 )}
-              </section>
+              </BucketWrapper>
             );
           })}
         </div>
@@ -151,10 +168,7 @@ export default async function Timeline() {
 
         {/* Shipped */}
         <div className="mt-16 border-t border-body-color/[.15] pt-16 dark:border-white/[.15]">
-          <section
-            id="shipped"
-            className="scroll-mt-24 rounded-xl bg-gray-light p-5 dark:bg-gray-dark/60 sm:p-8"
-          >
+          <Card as="section" id="shipped" padding="lg" className="scroll-mt-24">
             <div className="mb-2 flex items-center gap-3">
               <span className="flex h-6 w-6 items-center justify-center rounded-full bg-green-500 text-white">
                 <CheckIcon className="h-4 w-4" />
@@ -189,7 +203,7 @@ export default async function Timeline() {
                 </div>
               ))}
             </div>
-          </section>
+          </Card>
         </div>
       </div>
     </section>

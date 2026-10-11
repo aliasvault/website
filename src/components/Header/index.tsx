@@ -6,6 +6,7 @@ import ThemeToggler from "./ThemeToggler";
 import getMenuData from "./menuData";
 import { useTranslations } from "next-intl";
 import Logo from "@/components/Common/Logo";
+import { buttonClasses } from "@/components/Common/Button";
 
 // `banner` is an optional server-rendered slot (the status banner). When active
 // it renders as a full-width strip at the top of the header, growing the header
@@ -65,7 +66,7 @@ const Header = ({ banner }: { banner?: ReactNode }) => {
             {/* Mobile Login Button - Shows on medium screens only */}
             <Link
               href="https://app.aliasvault.com/user/login"
-              className="hidden md:flex h-10 items-center justify-center rounded-md border border-primary px-4 py-2 font-medium text-primary hover:bg-primary hover:text-white active:bg-primary-dark transition-colors"
+              className={buttonClasses({ variant: "outline", size: "nav", className: "hidden h-10 md:flex" })}
             >
               {t('header.loginButton')}
             </Link>
@@ -292,7 +293,7 @@ const Header = ({ banner }: { banner?: ReactNode }) => {
               {/* Desktop Login Button - Shows on medium screens and up */}
               <Link
                 href="https://app.aliasvault.com/user/login"
-                className="hidden md:flex h-10 items-center justify-center rounded-md border border-primary px-4 py-2 font-medium text-primary hover:bg-primary hover:text-white active:bg-primary-dark transition-colors"
+                className={buttonClasses({ variant: "outline", size: "nav", className: "hidden h-10 md:flex" })}
               >
                 <span className="2xl:hidden">{t('header.loginButton')}</span>
                 <span className="hidden 2xl:inline">{t('header.loginButtonFull')}</span>

@@ -1,55 +1,12 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { FiArrowRight, FiDownload, FiGlobe, FiPackage, FiSmartphone } from "react-icons/fi";
+import { FiDownload, FiGlobe, FiPackage, FiSmartphone } from "react-icons/fi";
 import { FaApple, FaGooglePlay } from "react-icons/fa";
 import AnchorHeading from "@/components/Common/AnchorHeading";
-
-const SectionIconTile = ({ children }: { children: React.ReactNode }) => (
-  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary/15 to-primary/5 text-primary ring-1 ring-inset ring-primary/15">
-    {children}
-  </span>
-);
-
-interface PlatformLink {
-  name: string;
-  /** Where the link leads, e.g. the store name — the scannable "available on" info. */
-  sublabel: string;
-  href: string;
-  icon: React.ReactNode;
-  aria?: string;
-  /** Optional anchor id, to keep existing deep links working. */
-  id?: string;
-}
-
-/** Platform link list. */
-const PlatformLinkList = ({ links }: { links: PlatformLink[] }) => (
-  <ul className="divide-y divide-gray-100 overflow-hidden rounded-xl border border-gray-200 bg-white shadow-three dark:divide-white/[0.06] dark:border-gray-700/60 dark:bg-white/[0.03] dark:shadow-none">
-    {links.map((link) => (
-      <li key={link.name} id={link.id}>
-        <a
-          href={link.href}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={link.aria ?? link.name}
-          className="group flex items-center justify-between gap-4 px-5 py-3.5 transition-colors hover:bg-primary/[0.09] focus-visible:bg-primary/[0.09] focus-visible:outline-none dark:hover:bg-primary/[0.06] dark:focus-visible:bg-primary/[0.06]"
-        >
-          <span className="flex min-w-0 items-center gap-4">
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-gray-light dark:bg-white/10">
-              {link.icon}
-            </span>
-            <span className="min-w-0">
-              <span className="block truncate font-semibold text-black dark:text-white">{link.name}</span>
-              <span className="mt-0.5 block truncate text-xs text-body-color dark:text-body-color-dark">
-                {link.sublabel}
-              </span>
-            </span>
-          </span>
-          <FiArrowRight className="h-4 w-4 shrink-0 text-primary opacity-40 transition-all duration-200 group-hover:translate-x-0.5 group-hover:opacity-100" />
-        </a>
-      </li>
-    ))}
-  </ul>
-);
+import Card from "@/components/Common/Card";
+import IconTile from "@/components/Common/IconTile";
+import LinkList from "@/components/Common/LinkList";
+import { buttonClasses } from "@/components/Common/Button";
 
 const browserIcon = (file: string) => (
   <Image src={`/images/browser-icons/${file}`} alt="" width={24} height={24} className="h-6 w-6" />
@@ -62,11 +19,11 @@ const Platforms = () => {
     <section className="pt-9 pb-4">
       <div className="container">
         <div className="space-y-10 lg:space-y-12">
-          <div className="rounded-2xl border border-gray-200 bg-white p-7 shadow-three dark:border-gray-800 dark:bg-gray-dark dark:shadow-none lg:p-8">
+          <Card padding="lg">
             <div className="mb-4 flex items-center gap-4">
-              <SectionIconTile>
+              <IconTile>
                 <FiGlobe className="h-6 w-6" />
-              </SectionIconTile>
+              </IconTile>
               <AnchorHeading
                 as="h3"
                 id="web-app"
@@ -85,7 +42,7 @@ const Platforms = () => {
                 href="https://app.aliasvault.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex w-full items-center justify-center rounded-3xl bg-primary px-7 py-3 text-base font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/25 sm:w-auto"
+                className={buttonClasses({ fullWidth: true, className: "sm:w-auto" })}
               >
                 {t("platforms.webApp.linkText")}
               </a>
@@ -102,15 +59,15 @@ const Platforms = () => {
                 .
               </div>
             </div>
-          </div>
+          </Card>
 
-          <div className="rounded-2xl border border-gray-200 bg-white p-7 shadow-three dark:border-gray-800 dark:bg-gray-dark dark:shadow-none lg:p-8">
+          <Card padding="lg">
             <div className="grid gap-8 xl:grid-cols-2 xl:items-start">
               <div>
                 <div className="mb-4 flex items-center gap-4">
-                  <SectionIconTile>
+                  <IconTile>
                     <FiPackage className="h-6 w-6" />
-                  </SectionIconTile>
+                  </IconTile>
                   <AnchorHeading
                     as="h3"
                     id="browser-extensions"
@@ -135,55 +92,61 @@ const Platforms = () => {
                 </ul>
               </div>
 
-              <PlatformLinkList
-                links={[
+              <LinkList
+                nested
+                items={[
                   {
-                    name: "Chrome",
-                    sublabel: "Chrome Web Store",
+                    title: "Chrome",
+                    description: "Chrome Web Store",
                     href: "https://chromewebstore.google.com/detail/aliasvault/bmoggiinmnodjphdjnmpcnlleamkfedj",
+                    external: true,
                     icon: browserIcon("chrome.svg"),
-                    aria: "Chrome Web Store",
+                    ariaLabel: "Chrome Web Store",
                   },
                   {
-                    name: "Firefox",
-                    sublabel: "Firefox Add-ons",
+                    title: "Firefox",
+                    description: "Firefox Add-ons",
                     href: "https://addons.mozilla.org/en-US/firefox/addon/aliasvault/",
+                    external: true,
                     icon: browserIcon("firefox.svg"),
-                    aria: "Firefox extension",
+                    ariaLabel: "Firefox extension",
                   },
                   {
-                    name: "Edge",
-                    sublabel: "Edge Add-ons",
+                    title: "Edge",
+                    description: "Edge Add-ons",
                     href: "https://microsoftedge.microsoft.com/addons/detail/aliasvault/kabaanafahnjkfkplbnllebdmppdemfo",
+                    external: true,
                     icon: browserIcon("edge.svg"),
-                    aria: "Microsoft Edge extension",
+                    ariaLabel: "Microsoft Edge extension",
                   },
                   {
-                    name: "Safari",
-                    sublabel: "App Store",
+                    title: "Safari",
+                    description: "App Store",
                     href: "https://apps.apple.com/app/id6743163173",
+                    external: true,
                     icon: browserIcon("safari.svg"),
-                    aria: "Safari extension",
+                    ariaLabel: "Safari extension",
                   },
                   {
-                    name: "Brave",
-                    sublabel: "Chrome Web Store",
+                    title: "Brave",
+                    description: "Chrome Web Store",
                     href: "https://chromewebstore.google.com/detail/aliasvault/bmoggiinmnodjphdjnmpcnlleamkfedj",
+                    external: true,
                     icon: browserIcon("brave.svg"),
-                    aria: "Brave extension",
+                    ariaLabel: "Brave extension",
                   },
                 ]}
               />
             </div>
-          </div>
+          </Card>
 
-          <div className="rounded-2xl border border-gray-200 bg-white p-7 shadow-three dark:border-gray-800 dark:bg-gray-dark dark:shadow-none lg:p-8">
+          <Card padding="lg">
             <div className="grid gap-8 xl:grid-cols-2 xl:items-start">
               <div>
                 <div className="mb-4 flex items-center gap-4">
-                  <SectionIconTile>
+                  <IconTile>
                     <FiSmartphone className="h-6 w-6" />
-                  </SectionIconTile>
+                  </IconTile>
                   <AnchorHeading
                     as="h3"
                     id="mobile-apps"
@@ -209,52 +172,57 @@ const Platforms = () => {
                 </ul>
               </div>
 
-              <PlatformLinkList
-                links={[
+              <LinkList
+                nested
+                items={[
                   {
                     id: "ios",
-                    name: "App Store",
-                    sublabel: t("platforms.mobileApps.iosLabel"),
+                    title: "App Store",
+                    description: t("platforms.mobileApps.iosLabel"),
                     href: "https://apps.apple.com/app/id6745490915",
+                    external: true,
                     icon: <FaApple className="h-6 w-6 text-black dark:text-white" />,
-                    aria: t("platforms.mobileApps.appStoreAlt"),
+                    ariaLabel: t("platforms.mobileApps.appStoreAlt"),
                   },
                   {
                     id: "android",
-                    name: "Google Play",
-                    sublabel: t("platforms.mobileApps.androidLabel"),
+                    title: "Google Play",
+                    description: t("platforms.mobileApps.androidLabel"),
                     href: "https://play.google.com/store/apps/details?id=net.aliasvault.app",
+                    external: true,
                     icon: <FaGooglePlay className="h-5 w-5 text-black dark:text-white" />,
-                    aria: t("platforms.mobileApps.playStoreAlt"),
+                    ariaLabel: t("platforms.mobileApps.playStoreAlt"),
                   },
                   {
-                    name: "F-Droid",
-                    sublabel: t("platforms.mobileApps.androidLabel"),
+                    title: "F-Droid",
+                    description: t("platforms.mobileApps.androidLabel"),
                     href: "https://f-droid.org/packages/net.aliasvault.app/",
+                    external: true,
                     icon: (
                       <Image src="/images/store-icons/fdroid.svg" alt="" width={24} height={24} className="h-6 w-6" />
                     ),
-                    aria: t("platforms.mobileApps.fDroidAlt"),
+                    ariaLabel: t("platforms.mobileApps.fDroidAlt"),
                   },
                   {
-                    name: "Obtainium",
-                    sublabel: t("platforms.mobileApps.androidLabel"),
+                    title: "Obtainium",
+                    description: t("platforms.mobileApps.androidLabel"),
                     href: "https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/{%22id%22:%22net.aliasvault.app%22,%22url%22:%22https://github.com/aliasvault/aliasvault%22,%22author%22:%22AliasVault%22,%22name%22:%22AliasVault%22,%22additionalSettings%22:%22{\\%22about\\%22:\\%22Privacy-first%20Password%20Manager%20with%20Built-in%20Email%20Aliasing.\\%22}%22}",
+                    external: true,
                     icon: (
                       <Image src="/images/store-icons/obtainium.png" alt="" width={24} height={24} className="h-6 w-6" />
                     ),
-                    aria: t("platforms.mobileApps.obtainiumAlt"),
+                    ariaLabel: t("platforms.mobileApps.obtainiumAlt"),
                   },
                 ]}
               />
             </div>
-          </div>
+          </Card>
 
-          <div className="rounded-2xl border border-gray-200 bg-white p-7 shadow-three dark:border-gray-800 dark:bg-gray-dark dark:shadow-none lg:p-8">
+          <Card padding="lg">
             <div className="mb-4 flex items-center gap-4">
-              <SectionIconTile>
+              <IconTile>
                 <FiDownload className="h-6 w-6" />
-              </SectionIconTile>
+              </IconTile>
               <AnchorHeading
                 as="h3"
                 id="downloads"
@@ -275,7 +243,7 @@ const Platforms = () => {
             >
               {t("platforms.downloads.linkText")}
             </a>
-          </div>
+          </Card>
         </div>
       </div>
     </section>
