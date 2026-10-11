@@ -1265,9 +1265,15 @@
             {
               "month": "9",
               "label": "Q3",
+              "status": "shipped",
+              "text": "Datamodel-updates, vernieuwde web-app, sneller synchroniseren"
+            },
+            {
+              "month": "9",
+              "label": "Q3/Q4",
               "status": "now",
               "text": "Wachtwoorden/Vaults delen, FIDO-auth",
-              "detail": "Een technische herziening van hoe vaults worden opgeslagen en gesynchroniseerd, zodat vaults veilig tussen accounts gedeeld kunnen worden. Het levert ook flinke snelheidswinst bij synchroniseren op en legt de basis voor toekomstige nieuwe functies."
+              "detail": "Voortbouwend op het nieuwe datamodel voegen we het veilig delen van vaults tussen accounts toe. Dit legt ook de basis voor toekomstige nieuwe functies."
             },
             {
               "month": "12",

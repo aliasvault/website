@@ -1265,9 +1265,15 @@
             {
               "month": "9",
               "label": "Q3",
+              "status": "shipped",
+              "text": "Data Model Updates, Rebuilt Web App, Faster Syncing"
+            },
+            {
+              "month": "9",
+              "label": "Q3/Q4",
               "status": "now",
               "text": "Password/Vault Sharing, FIDO Login",
-              "detail": "A technical revamp of how vaults are stored and synced, so vaults can be shared securely between accounts. It also brings major sync speed improvements and lays the groundwork for features we want to build later."
+              "detail": "Building on the new data model, we are adding secure sharing of vaults between accounts. This also lays the groundwork for features we want to build later."
             },
             {
               "month": "12",
