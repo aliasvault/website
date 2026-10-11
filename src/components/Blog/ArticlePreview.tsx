@@ -1,6 +1,8 @@
 import RichText from '@/components/Lexical/RichText'
 import RefreshOnSave from '@/components/Lexical/RefreshOnSave'
 import type { ContentPost } from '@/lib/blog'
+import SingleBlog from '@/components/Blog/SingleBlog'
+import SingleNews from '@/components/Blog/SingleNews'
 
 /**
  * In-theme preview of a blog/news article (drafts included), used by the Payload
@@ -26,6 +28,21 @@ export default function ArticlePreview({ post }: { post: ContentPost }) {
             <RichText data={post.content} />
           </div>
         </div>
+
+        {/* Collapsed by default so it never obstructs the article. Native <details>
+            keeps its open state across RefreshOnSave's router.refresh(). */}
+        <details className="group/list mt-16 border-t border-body-color border-opacity-10 pt-6 dark:border-white dark:border-opacity-10">
+          <summary className="cursor-pointer select-none text-sm font-medium text-primary">
+            <span className="group-open/list:hidden">Show</span>
+            <span className="hidden group-open/list:inline">Hide</span> list preview
+          </summary>
+          {/* Same column widths as the /blog grid so truncation and image crop match. */}
+          <div className="-mx-4 mt-8 flex flex-wrap">
+            <div className="w-full px-4 md:w-2/3 lg:w-1/2 xl:w-1/3">
+              {post.type === 'blog' ? <SingleBlog blog={post} /> : <SingleNews news={post} />}
+            </div>
+          </div>
+        </details>
       </div>
     </section>
   )

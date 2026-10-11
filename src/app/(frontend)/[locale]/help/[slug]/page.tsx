@@ -6,6 +6,7 @@ import { getHelpSection, isHelpSectionKey } from '@/lib/help-sections'
 import { generatePageSEOMetadata } from '@/lib/seo-utils'
 import HelpArticleView from '@/components/Help/HelpArticleView'
 import HelpSectionView from '@/components/Help/HelpSectionView'
+import AdminEditButton from '@/components/Common/AdminEditButton'
 
 // Help content lives in the Payload database (runtime-only) → render on demand.
 export const dynamic = 'force-dynamic'
@@ -60,5 +61,10 @@ export default async function HelpSlugPage({ params }: HelpSlugPageProps) {
   const article = await getHelpArticleBySlug(slug, locale)
   if (!article) notFound()
 
-  return <HelpArticleView article={article} locale={locale} />
+  return (
+    <>
+      <HelpArticleView article={article} locale={locale} />
+      <AdminEditButton collection="help-articles" id={article.id} locale={locale} />
+    </>
+  )
 }

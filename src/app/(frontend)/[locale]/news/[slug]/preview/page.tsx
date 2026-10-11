@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { getNewsBySlug } from '@/lib/blog'
 import { getCurrentUser } from '@/payload/auth'
 import ArticlePreview from '@/components/Blog/ArticlePreview'
+import AdminEditButton from '@/components/Common/AdminEditButton'
 
 export const dynamic = 'force-dynamic'
 export const metadata: Metadata = { robots: { index: false, follow: false } }
@@ -17,5 +18,10 @@ export default async function NewsPreviewPage({
   if (!user) notFound()
   const post = await getNewsBySlug(slug, locale, { draft: true, user })
   if (!post) notFound()
-  return <ArticlePreview post={post} />
+  return (
+    <>
+      <ArticlePreview post={post} />
+      <AdminEditButton collection="news" id={post.id} locale={locale} />
+    </>
+  )
 }

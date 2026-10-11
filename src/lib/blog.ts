@@ -4,6 +4,8 @@ import { resolveAuthor, type ResolvedAuthor } from './authors'
 import { lexicalToMarkdown } from './lexical'
 
 export interface ContentPost {
+  /** Payload document id, used for the editor-only "Edit in admin" link. */
+  id: string | number
   type: 'blog' | 'news'
   slug: string
   title: string
@@ -34,6 +36,7 @@ function mediaUrl(value: any): string | undefined {
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function mapPost(doc: any, type: 'blog' | 'news', locale: string): ContentPost {
   return {
+    id: doc.id,
     type,
     slug: doc.slug,
     title: doc.title,

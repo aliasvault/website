@@ -2,6 +2,7 @@ import { getNewsBySlug } from '@/lib/blog'
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import { Link } from '@/i18n/navigation'
+import AdminEditButton from '@/components/Common/AdminEditButton'
 import { Metadata } from 'next'
 import RichText from '@/components/Lexical/RichText'
 import { generatePageSEOMetadata } from '@/lib/seo-utils'
@@ -127,6 +128,7 @@ export default async function NewsArticlePage({ params }: NewsArticlePageProps) 
           </div>
         </div>
       </div>
+      <AdminEditButton collection="news" id={post.id} locale={locale} />
     </section>
   )
 }

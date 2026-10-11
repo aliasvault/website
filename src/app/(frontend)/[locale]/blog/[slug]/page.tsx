@@ -2,6 +2,7 @@ import { getBlogPostBySlug, getAllBlogPosts } from '@/lib/blog'
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import { Link } from '@/i18n/navigation'
+import AdminEditButton from '@/components/Common/AdminEditButton'
 import { Metadata } from 'next'
 import RichText from '@/components/Lexical/RichText'
 import RelatedPost from '@/components/Blog/RelatedPost'
@@ -191,6 +192,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           )}
         </div>
       </div>
+      <AdminEditButton collection="posts" id={post.id} locale={locale} />
     </section>
   )
 }

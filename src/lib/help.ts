@@ -20,6 +20,8 @@ export interface HelpArticleRef {
 }
 
 export interface HelpArticle extends HelpArticleRef {
+  /** Payload document id, used for the editor-only "Edit in admin" link. */
+  id: string | number
   summary?: string
   seoTitle?: string
   tags: string[]
@@ -52,6 +54,7 @@ function mapRef(doc: any): HelpArticleRef {
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function mapArticle(doc: any): HelpArticle {
   return {
+    id: doc.id,
     ...mapRef(doc),
     summary: doc.summary || undefined,
     seoTitle: doc.seoTitle || undefined,

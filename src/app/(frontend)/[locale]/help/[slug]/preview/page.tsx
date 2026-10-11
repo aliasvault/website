@@ -4,6 +4,7 @@ import { getHelpArticleBySlug } from '@/lib/help'
 import { getCurrentUser } from '@/payload/auth'
 import HelpArticleView from '@/components/Help/HelpArticleView'
 import RefreshOnSave from '@/components/Lexical/RefreshOnSave'
+import AdminEditButton from '@/components/Common/AdminEditButton'
 
 // Rendered on demand (never statically generated) so reviewers can preview any
 // article — including drafts — in the real site theme, with Payload Live Preview.
@@ -35,6 +36,7 @@ export default async function HelpPreviewPage({ params }: HelpPreviewPageProps) 
     <>
       <RefreshOnSave serverURL={serverURL} />
       <HelpArticleView article={article} locale={locale} isPreview />
+      <AdminEditButton collection="help-articles" id={article.id} locale={locale} />
     </>
   )
 }
