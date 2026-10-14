@@ -1,8 +1,16 @@
 "use client";
 
+import { useCallback, useState } from "react";
 import { useTranslations } from "next-intl";
-import { FaCheckCircle, FaExclamationTriangle, FaTools } from "react-icons/fa";
+import {
+  FaCheckCircle,
+  FaExclamationTriangle,
+  FaInfoCircle,
+  FaTools,
+} from "react-icons/fa";
 import type { StatusBanner } from "@/lib/status-banner";
+import Markdown from "./Markdown";
+import StatusBulletinModal from "./StatusBulletinModal";
 
 // "bar"    → full-width solid strip, used at the top of the site header.
 // "inline" → rounded card that flows inside page content (e.g. /contact).
@@ -19,17 +27,26 @@ type Props = {
  */
 const StatusBannerClient = ({ banner, href, variant = "bar" }: Props) => {
   const t = useTranslations();
+  const [detailsOpen, setDetailsOpen] = useState(false);
+  const closeDetails = useCallback(() => setDetailsOpen(false), []);
 
   const resolved = banner.resolved;
+  // A news bulletin ("notice"): same look, but its details open in a modal on
+  // this site rather than linking out to the status page.
+  const isNotice = banner.type === "notice";
   const Icon = resolved
     ? FaCheckCircle
     : banner.type === "maintenance"
       ? FaTools
-      : FaExclamationTriangle;
+      : isNotice
+        ? FaInfoCircle
+        : FaExclamationTriangle;
   const label =
     banner.type === "maintenance"
       ? t("statusBanner.maintenance")
-      : t("statusBanner.incident");
+      : isNotice
+        ? t("statusBanner.notice")
+        : t("statusBanner.incident");
 
   const tone =
     variant === "inline"
@@ -64,16 +81,31 @@ const StatusBannerClient = ({ banner, href, variant = "bar" }: Props) => {
           {banner.description &&
             (isInline ? (
               <span className="mt-0.5 block opacity-90">
-                {banner.description}
+                <Markdown text={banner.description} />
               </span>
             ) : (
               // Hidden on mobile in the header bar where space is tight.
               <span className="hidden opacity-90 sm:inline">
-                : {banner.description}
+                :{" "}
+                <Markdown
+                  text={banner.description}
+                  linkClassName="underline hover:no-underline"
+                />
               </span>
             ))}
         </span>
-        {href && (
+        {isNotice && (banner.details || !isInline) && (
+          <button
+            type="button"
+            onClick={() => setDetailsOpen(true)}
+            className={`flex-shrink-0 whitespace-nowrap font-semibold underline hover:no-underline ${
+              banner.details ? "" : "sm:hidden"
+            }`}
+          >
+            {t("statusBanner.moreDetails")}
+          </button>
+        )}
+        {!isNotice && href && (
           <a
             href={href}
             target="_blank"
@@ -84,6 +116,13 @@ const StatusBannerClient = ({ banner, href, variant = "bar" }: Props) => {
           </a>
         )}
       </div>
+      {isNotice && (
+        <StatusBulletinModal
+          bulletin={banner}
+          isOpen={detailsOpen}
+          onClose={closeDetails}
+        />
+      )}
     </div>
   );
 };

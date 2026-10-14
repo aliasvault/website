@@ -7,7 +7,9 @@
   "statusBanner": {
     "incident": "Storing",
     "maintenance": "Onderhoud",
-    "viewDetails": "Bekijk statusdetails"
+    "viewDetails": "Bekijk statusdetails",
+    "notice": "Mededeling",
+    "moreDetails": "Meer details"
   },
   "metadata": {
     "title": "AliasVault - Privacy-First Wachtwoord & E-mailalias Manager",
@@ -382,6 +384,7 @@
     }
   },
   "common": {
+    "close": "Sluiten",
     "loading": "Laden...",
     "error": "Fout",
     "tryAgain": "Probeer opnieuw",

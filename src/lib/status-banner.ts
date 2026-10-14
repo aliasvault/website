@@ -4,8 +4,15 @@
 // route handler). The visitor's browser polls that internal route, never the
 // status API directly; we fetch it on the server and cache the response for up
 // to STATUS_BANNER_REVALIDATE_SECONDS.
+type BulletinResponse = {
+  id: number;
+  title: string;
+  summary: string;
+  details: string | null;
+  updatedAt: number;
+};
 
-export type StatusBannerResponse =
+export type StatusBannerResponse = { bulletin?: BulletinResponse | null } & (
   | { active: false }
   | {
       active: true;
@@ -16,10 +23,28 @@ export type StatusBannerResponse =
       status: string;
       updatedAt: number;
       url: string;
-    };
+    }
+);
 
-// The active variant, which is what callers actually render.
-export type StatusBanner = Extract<StatusBannerResponse, { active: true }>;
+// An incident/maintenance notice, linking to the status page for details.
+export type StatusNotice = Omit<
+  Extract<StatusBannerResponse, { active: true }>,
+  "bulletin"
+>;
+
+// A bulletin, normalized to the banner shape. Its details open in a modal on
+// the website itself instead of linking to the status page.
+export type StatusBulletin = {
+  type: "notice";
+  resolved: false;
+  title: string;
+  description: string;
+  details: string | null;
+  updatedAt: number;
+};
+
+// What callers actually render: one banner at a time.
+export type StatusBanner = StatusNotice | StatusBulletin;
 
 // How long a single fetched response is reused across requests.
 const STATUS_BANNER_REVALIDATE_SECONDS = 10;
@@ -51,7 +76,8 @@ export function getStatusPageUrl(): string {
 }
 
 /**
- * Fetch the current status banner, server-side and cached.
+ * Fetch the current status banner, server-side and cached. An active incident
+ * or maintenance notice always wins; otherwise the bulletin (if any) is shown.
  */
 export async function getStatusBanner(): Promise<StatusBanner | null> {
   const baseUrl = process.env.STATUS_API_URL;
@@ -75,7 +101,20 @@ export async function getStatusBanner(): Promise<StatusBanner | null> {
     }
 
     const data = (await res.json()) as StatusBannerResponse;
-    return data.active ? data : null;
+    if (data.active) {
+      return data;
+    }
+    if (data.bulletin) {
+      return {
+        type: "notice",
+        resolved: false,
+        title: data.bulletin.title,
+        description: data.bulletin.summary,
+        details: data.bulletin.details,
+        updatedAt: data.bulletin.updatedAt,
+      };
+    }
+    return null;
   } catch {
     // Network error, timeout, bad JSON — fail closed (no banner).
     return null;

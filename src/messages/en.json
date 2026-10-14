@@ -7,7 +7,9 @@
   "statusBanner": {
     "incident": "Incident",
     "maintenance": "Maintenance",
-    "viewDetails": "View status details"
+    "viewDetails": "View status details",
+    "notice": "Notice",
+    "moreDetails": "More details"
   },
   "metadata": {
     "title": "AliasVault - Privacy-First Password & Email Alias Manager",
@@ -382,6 +384,7 @@
     }
   },
   "common": {
+    "close": "Close",
     "loading": "Loading...",
     "error": "Error",
     "tryAgain": "Try again",

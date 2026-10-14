@@ -12,7 +12,7 @@ import { getStatusBanner, resolveStatusUrl } from "@/lib/status-banner";
 // on the status site.
 export async function GET() {
   const banner = await getStatusBanner();
-  const href = banner ? resolveStatusUrl(banner.url) : null;
+  const href = banner && banner.type !== "notice" ? resolveStatusUrl(banner.url) : null;
 
   return NextResponse.json(
     { banner, href },
