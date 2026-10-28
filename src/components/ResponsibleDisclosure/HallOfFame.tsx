@@ -60,6 +60,18 @@ const socialMeta: Record<SocialPlatform, { Icon: ({ className }: { className?: s
 
 const vulnerabilities: Vulnerability[] = [
   {
+    id: "mobile-login-consent-phishing-2026",
+    researcher: "kta1kri",
+    socials: [
+      { platform: "github", url: "https://github.com/kta1kri" },
+    ],
+    date: "2026-10-28",
+    severity: "high",
+    ghsa: "GHSA-x89w-4x82-7g32",
+    advisoryUrl: "https://github.com/aliasvault/aliasvault/security/advisories/GHSA-x89w-4x82-7g32",
+    summary: "Cross-device consent phishing in the mobile login (QR code login/unlock) flow of AliasVault versions 0.25.0 through 0.30.7: the mobile app's approval screen did not show enough information to verify where a login request came from, and some related checks were less strict than intended. Fixed in version 0.31.0 on 2026-10-14 with number matching, request details, a link-phishing warning and stricter server-side request binding.",
+  },
+  {
     id: "ssrf-favicon-dns-rebinding-2026",
     researcher: "Vusal Isayev",
     socials: [
