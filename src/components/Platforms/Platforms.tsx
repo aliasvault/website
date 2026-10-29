@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { FiDownload, FiGlobe, FiPackage, FiSmartphone } from "react-icons/fi";
-import { FaApple, FaGooglePlay } from "react-icons/fa";
+import { FaApple } from "react-icons/fa";
 import AnchorHeading from "@/components/Common/AnchorHeading";
 import Card from "@/components/Common/Card";
 import IconTile from "@/components/Common/IconTile";
@@ -190,7 +190,7 @@ const Platforms = () => {
                     description: t("platforms.mobileApps.androidLabel"),
                     href: "https://play.google.com/store/apps/details?id=net.aliasvault.app",
                     external: true,
-                    icon: <FaGooglePlay className="h-5 w-5 text-black dark:text-white" />,
+                    icon: <Image src="/images/app-store/android.svg" alt="" width={24} height={24} className="h-6 w-6" />,
                     ariaLabel: t("platforms.mobileApps.playStoreAlt"),
                   },
                   {
