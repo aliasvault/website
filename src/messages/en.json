@@ -56,8 +56,14 @@
     }
   },
   "hero": {
-    "title": "Privacy-First Password & Email Alias Manager",
-    "description": "AliasVault is an end-to-end encrypted password and (email) alias manager that protects your privacy by creating alternative identities, passwords and email addresses for every website you use.",
+    "highlights": {
+      "aliases": "A unique email alias for every website",
+      "inbox": "Receive emails straight in your vault",
+      "devices": "Passwords & passkeys on all your devices"
+    },
+    "title": "The People's Password Manager.",
+    "description": "Built around your <em>personal</em> privacy. Secure your passwords and keep your personal email private with built-in email aliases.",
+    "tagline": "Open source. End-to-end encrypted. Use our managed service, or host it yourself.",
     "cta": "Create your free vault",
     "github": "GitHub",
     "alt": {
@@ -75,7 +81,7 @@
     }
   },
   "footer": {
-    "description": "AliasVault is a privacy-first, open-source, end-to-end encrypted password and (email) alias manager that protects your privacy.",
+    "description": "The people's password manager. Open source, end-to-end encrypted and independent, with built-in email aliases to keep your personal email private.",
     "sections": {
       "aliasvault": "AliasVault",
       "alternatives": "Alternative",
@@ -186,12 +192,12 @@
   "about": {
     "metadata": {
       "title": "About",
-      "description": "The story and mission behind AliasVault: privacy-first, open-source password and email alias management, built in the Netherlands."
+      "description": "The story behind AliasVault, the people's password manager: open source, self-funded and independent, built in the Netherlands."
     },
     "title": "About AliasVault",
-    "subtitle": "Privacy-first password management",
+    "subtitle": "The people's password manager",
     "description": "Learn more about our mission to provide secure, private password and alias management.",
-    "pageDescription": "AliasVault is an open-source end-to-end encrypted password and alias manager. With AliasVault you can create unique identities, passwords and email addresses for every website you use. Keeping you safe online.",
+    "pageDescription": "AliasVault is the people's password manager: open source, end-to-end encrypted, self-funded and independent. Secure your passwords and keep your personal email private with a unique alias for every website. Use our managed service, or host it yourself.",
     "sectionOne": {
       "title": "Your privacy. Protected.",
       "paragraph": "In an ideal world you don't need AliasVault, in reality you do. Many companies track your online activity without your permission or knowledge, creating [shadowProfileLink]shadow profiles[/shadowProfileLink] of you. Even the most reputable companies can fall victim to [dataBreachLink]data breaches[/dataBreachLink], causing your personal information to fall into the wrong hands. AliasVault helps keep you safe online by letting you control how websites see and track you.",

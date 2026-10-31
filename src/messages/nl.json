@@ -56,8 +56,14 @@
     }
   },
   "hero": {
-    "title": "Privacy-First Wachtwoord & E-mailalias Manager",
-    "description": "AliasVault is een Nederlandse end-to-end versleutelde wachtwoord- en (e-mail) aliasmanager die je privacy beschermt door alternatieve identiteiten, wachtwoorden en e-mailadressen aan te maken voor elke website die je gebruikt.",
+    "highlights": {
+      "aliases": "Een uniek e-mailalias voor elke website",
+      "inbox": "Ontvang e-mails direct in je vault",
+      "devices": "Al je wachtwoorden & passkeys, overal"
+    },
+    "title": "De wachtwoordmanager uit Nederland, voor jou.",
+    "description": "Gebouwd rondom jouw <em>persoonlijke</em> privacy. Beveilig je wachtwoorden en houd je persoonlijke e-mailadres privé met ingebouwde e-mailaliassen.",
+    "tagline": "Open source. End-to-end versleuteld. Gebruik onze EU-managed service, of host het zelf.",
     "cta": "Maak je gratis vault",
     "github": "GitHub",
     "alt": {
@@ -75,7 +81,7 @@
     }
   },
   "footer": {
-    "description": "AliasVault is een Nederlandse privacy-first, open-source, end-to-end versleutelde wachtwoord- en (e-mail) aliasmanager die je privacy beschermt.",
+    "description": "De wachtwoordmanager uit Nederland, voor jou. Open source, end-to-end versleuteld en onafhankelijk, met ingebouwde e-mailaliassen om je persoonlijke e-mailadres privé te houden.",
     "sections": {
       "aliasvault": "AliasVault",
       "alternatives": "Alternatief",
@@ -186,12 +192,12 @@
   "about": {
     "metadata": {
       "title": "Over",
-      "description": "Het verhaal en de missie achter AliasVault: privacy-first, open-source wachtwoord- en e-mailaliasbeheer, gebouwd in Nederland."
+      "description": "Het verhaal achter AliasVault, de wachtwoordmanager uit Nederland, voor jou: open source, zelf-gefinancierd en onafhankelijk."
     },
     "title": "Over AliasVault",
-    "subtitle": "Privacy-first wachtwoordmanager",
+    "subtitle": "De wachtwoordmanager uit Nederland, voor jou",
     "description": "Leer meer over onze missie om veilig, privé wachtwoord- en aliasbeheer te bieden.",
-    "pageDescription": "AliasVault is een open-source end-to-end versleutelde wachtwoord- en aliasmanager. Met AliasVault kun je unieke identiteiten, wachtwoorden en e-mailadressen aanmaken voor elke website die je gebruikt.",
+    "pageDescription": "AliasVault is de wachtwoordmanager uit Nederland, voor jou: open source, end-to-end versleuteld, zelf-gefinancierd en onafhankelijk. Beveilig je wachtwoorden en houd je persoonlijke e-mailadres privé met een uniek alias voor elke website. Gebruik onze EU-managed service, of host het zelf.",
     "sectionOne": {
       "title": "Je privacy. Beschermd.",
       "paragraph": "In een ideale wereld heb je AliasVault niet nodig, in werkelijkheid wel. Veel bedrijven volgen je online activiteit zonder je toestemming, en stellen zo gedetailleerde [shadowProfileLink]schaduwprofielen[/shadowProfileLink] over je samen. Zelfs de meest gerenommeerde bedrijven kunnen slachtoffer worden van [dataBreachLink]datalekken[/dataBreachLink], waardoor je persoonlijke informatie in verkeerde handen valt. AliasVault helpt je online veilig te blijven door je controle te geven over hoe websites je zien en volgen.",

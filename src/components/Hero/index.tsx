@@ -23,6 +23,7 @@ const useNarrowViewport = () => {
 
 const Hero = () => {
   const t = useTranslations('hero');
+  const hasLongTitleWord = (t.raw('title') as string).split(/\s+/).some((word) => word.length > 12);
   const prefersReducedMotion = useReducedMotion();
   const narrowViewport = useNarrowViewport();
   /** Boolean only — `useReducedMotion()` is `null` before subscribe; including raw null in deps recreated variants and could re-trigger the entrance on desktop. */
@@ -174,16 +175,48 @@ const Hero = () => {
                 animate="visible"
               >
                 <motion.h1
-                  className="mb-5 text-3xl font-bold leading-tight text-black dark:text-white sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight"
+                  className={`mb-5 text-balance font-bold leading-tight text-black dark:text-white ${
+                    hasLongTitleWord
+                      ? "text-[1.625rem] sm:text-4xl md:text-5xl lg:text-[2.25rem] xl:text-[2.75rem] 2xl:text-5xl"
+                      : "text-3xl sm:text-[2.5rem] md:text-5xl lg:text-[2.5rem] xl:text-[3.25rem] 2xl:text-[3.5rem]"
+                  }`}
                   variants={itemVariants}
                 >
-                  {t('title')}
+                  {t.rich('title', { br: () => <br /> })}
                 </motion.h1>
                 <motion.p
-                  className="mb-12 text-base !leading-relaxed text-body-color dark:text-body-color-dark sm:text-lg md:text-xl"
+                  className="mb-4 text-pretty text-base !leading-relaxed text-body-color dark:text-body-color-dark sm:text-lg md:text-xl"
                   variants={itemVariants}
                 >
-                  {t('description')}
+                  {t.rich('description', {
+                    em: (chunks) => (
+                      <span className="bg-[linear-gradient(transparent_88%,#f4954173_88%)] px-0.5 font-medium text-black dark:text-white">
+                        {chunks}
+                      </span>
+                    ),
+                  })}
+                </motion.p>
+                <motion.ul
+                  className="mb-6 inline-flex flex-col gap-2.5 text-left"
+                  variants={itemVariants}
+                >
+                  {(["devices", "aliases", "inbox"] as const).map((key) => (
+                    <li
+                      key={key}
+                      className="flex items-center gap-3 text-[0.9375rem] sm:text-base text-black dark:text-white"
+                    >
+                      <svg className="h-5 w-5 shrink-0 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      {t(`highlights.${key}`)}
+                    </li>
+                  ))}
+                </motion.ul>
+                <motion.p
+                  className="mb-10 text-pretty text-sm font-medium !leading-relaxed text-black/70 dark:text-white/70 sm:text-base"
+                  variants={itemVariants}
+                >
+                  {t('tagline')}
                 </motion.p>
                 <motion.div
                   className="flex flex-col items-center justify-center lg:items-start lg:justify-start space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0"
