@@ -63,7 +63,7 @@
     },
     "title": "The People's Password Manager.",
     "description": "Built around your <em>personal</em> privacy. Secure your passwords and keep your personal email private with built-in email aliases.",
-    "tagline": "Open source. End-to-end encrypted. Use our managed service, or host it yourself.",
+    "tagline": "Independent. Open source. End-to-end encrypted. Use our managed service, or host it yourself.",
     "cta": "Create your free vault",
     "github": "GitHub",
     "alt": {
@@ -195,8 +195,6 @@
       "description": "The story behind AliasVault, the people's password manager: open source, self-funded and independent, built in the Netherlands."
     },
     "title": "About AliasVault",
-    "subtitle": "The people's password manager",
-    "description": "Learn more about our mission to provide secure, private password and alias management.",
     "pageDescription": "AliasVault is the people's password manager: open source, end-to-end encrypted, self-funded and independent. Secure your passwords and keep your personal email private with a unique alias for every website. Use our managed service, or host it yourself.",
     "sectionOne": {
       "title": "Your privacy. Protected.",
@@ -1391,10 +1389,6 @@
     },
     "approach": {
       "title": "AliasVault's business model",
-      "selfFunded": {
-        "title": "No external investors",
-        "body": "AliasVault is financed by its founders, not venture capital. That means no pressure to chase growth at the expense of privacy, sell your data, or disappear after a quick exit. Long-term sustainability comes from optional paid cloud plans and community support, not from turning users into the product."
-      },
       "intro": "AliasVault exists to put you in control of your passwords, email aliases, and digital identity. We build open-source, end-to-end encrypted tools so privacy and security are never premium extras. That mission guides what we offer and what stays free.",
       "freeVersion": {
         "title": "Always a free tier",
@@ -1428,10 +1422,6 @@
     "comparison": {
       "choosePlan": "Plans & features",
       "featureSection": "Features"
-    },
-    "independence": {
-      "title": "Proudly independent",
-      "description": "AliasVault is entirely self-funded. We have no external investors. Our roadmap and priorities are driven by users, community feedback, and our mission to put privacy first."
     },
     "features": {
       "title": "Compare plans",

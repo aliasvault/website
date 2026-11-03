@@ -63,7 +63,7 @@
     },
     "title": "De wachtwoordmanager uit Nederland, voor jou.",
     "description": "Gebouwd rondom jouw <em>persoonlijke</em> privacy. Beveilig je wachtwoorden en houd je persoonlijke e-mailadres privé met ingebouwde e-mailaliassen.",
-    "tagline": "Open source. End-to-end versleuteld. Gebruik onze EU-managed service, of host het zelf.",
+    "tagline": "Onafhankelijk. Open source. End-to-end versleuteld. Gebruik onze managed service in de EU, of host het zelf.",
     "cta": "Maak je gratis vault",
     "github": "GitHub",
     "alt": {
@@ -195,9 +195,7 @@
       "description": "Het verhaal achter AliasVault, de wachtwoordmanager uit Nederland, voor jou: open source, zelf-gefinancierd en onafhankelijk."
     },
     "title": "Over AliasVault",
-    "subtitle": "De wachtwoordmanager uit Nederland, voor jou",
-    "description": "Leer meer over onze missie om veilig, privé wachtwoord- en aliasbeheer te bieden.",
-    "pageDescription": "AliasVault is de wachtwoordmanager uit Nederland, voor jou: open source, end-to-end versleuteld, zelf-gefinancierd en onafhankelijk. Beveilig je wachtwoorden en houd je persoonlijke e-mailadres privé met een uniek alias voor elke website. Gebruik onze EU-managed service, of host het zelf.",
+    "pageDescription": "AliasVault is de wachtwoordmanager uit Nederland, voor jou: open source, end-to-end versleuteld, zelf-gefinancierd en onafhankelijk. Beveilig je wachtwoorden en houd je persoonlijke e-mailadres privé met een uniek alias voor elke website. Gebruik onze managed service in de EU, of host het zelf.",
     "sectionOne": {
       "title": "Je privacy. Beschermd.",
       "paragraph": "In een ideale wereld heb je AliasVault niet nodig, in werkelijkheid wel. Veel bedrijven volgen je online activiteit zonder je toestemming, en stellen zo gedetailleerde [shadowProfileLink]schaduwprofielen[/shadowProfileLink] over je samen. Zelfs de meest gerenommeerde bedrijven kunnen slachtoffer worden van [dataBreachLink]datalekken[/dataBreachLink], waardoor je persoonlijke informatie in verkeerde handen valt. AliasVault helpt je online veilig te blijven door je controle te geven over hoe websites je zien en volgen.",
@@ -1391,10 +1389,6 @@
     },
     "approach": {
       "title": "Het bedrijfsmodel van AliasVault",
-      "selfFunded": {
-        "title": "Geen externe investeerders",
-        "body": "AliasVault wordt gefinancierd door de oprichters, niet door durfkapitaal. Geen druk om te groeien ten koste van privacy, je data te verkopen of na een snelle exit te verdwijnen. Duurzaamheid op lange termijn komt uit optionele betaalde cloudplannen en steun van de community, niet door van gebruikers het product te maken."
-      },
       "intro": "AliasVault bestaat om je controle te geven over je wachtwoorden, e-mailaliassen en digitale identiteit. We bouwen open-source tools met end-to-end encryptie, zodat privacy en veiligheid nooit premium-extras zijn. Die missie bepaalt wat we aanbieden en wat gratis blijft.",
       "freeVersion": {
         "title": "Altijd een gratis tier",
@@ -1428,10 +1422,6 @@
     "comparison": {
       "choosePlan": "Plannen & functies",
       "featureSection": "Functies"
-    },
-    "independence": {
-      "title": "Trots onafhankelijk",
-      "description": "AliasVault is volledig self-funded. We hebben geen externe investeerders. Onze roadmap en prioriteiten worden bepaald door gebruikers, community-feedback en onze missie om privacy voorop te stellen."
     },
     "features": {
       "title": "Vergelijk plannen",
