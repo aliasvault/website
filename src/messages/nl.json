@@ -1286,7 +1286,7 @@
               "month": "12",
               "label": "Q4",
               "status": "next",
-              "text": "Security audit + v1.0 release",
+              "text": "Security audit",
               "detail": "AliasVault wordt door een externe partij geaudit ter voorbereiding op de officiële v1.0-release. Ingepland nadat het bovenstaande werk aan de vault-architectuur is afgerond, zodat de audit de kernfunctionaliteit dekt die in v1.0 wordt uitgebracht."
             }
           ]
@@ -1295,9 +1295,10 @@
           "milestones": [
             {
               "month": "3",
-              "label": "Q1/Q2",
+              "label": "Q1",
               "status": "next",
-              "text": "Premium functies"
+              "text": "v1.0 release + Premium functies",
+              "detail": "De officiële v1.0-release, voortbouwend op de afgeronde security audit. Tegelijk lanceren we optionele premium functies op onze managed service, voor gebruikers die extra gemak willen. De gratis versie en self-hosting blijven beschikbaar."
             },
             {
               "month": "9",
