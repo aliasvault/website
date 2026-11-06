@@ -125,7 +125,7 @@
       "logo": "logo"
     },
     "language": "Language",
-    "copyright": "AliasVault. All rights reserved.",
+    "copyright": "AliasVault™. All rights reserved.",
     "socialAriaLabel": "social-link",
     "codebergMirror": "Codeberg (GitHub mirror)",
     "gitlabMirror": "GitLab (GitHub mirror)"
@@ -237,7 +237,7 @@
         "description": "Something not working? Before reaching out, check our status page to see whether there's an ongoing incident or planned maintenance affecting the cloud service.",
         "link": "Check service status"
       },
-      "intro": "AliasVault is an open-source password and alias manager founded by",
+      "intro": "AliasVault™ is an open-source password and alias manager founded by",
       "founder": "Leendert de Borst",
       "team": ". It is developed and operated by a small, dedicated team from The Netherlands. Our official cloud-hosted version runs on AliasVault's own dedicated servers in Germany, Finland, the Netherlands, and France. Geographically separated to cover single points of failure, and fully compliant with European GDPR regulations.",
       "inquiries": "For questions about our cloud-hosted service or other inquiries, please contact:",

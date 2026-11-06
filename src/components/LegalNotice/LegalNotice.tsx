@@ -27,6 +27,26 @@ const LegalNotice = () => {
 
           <div>
             <h3 className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
+              Trademarks
+            </h3>
+            <p className="text-base font-medium leading-relaxed text-body-color dark:text-body-color-dark">
+              AliasVault&trade; and the AliasVault logo are trademarks of XIVISOFT. Trademark registration is pending.
+              <br /><br />
+              The AliasVault source code is available under its{" "}
+              <a
+                href="https://github.com/aliasvault/aliasvault/blob/main/LICENSE.md"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                open-source license
+              </a>
+              , but that license does not cover the AliasVault name or logo. You&apos;re welcome to mention and link to AliasVault, for example in articles, reviews or comparisons. Please don&apos;t use the name or logo for forks, derivative products or services in a way that suggests they are official or endorsed by us.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
               Hosting & Data Protection
             </h3>
             <p className="text-base font-medium leading-relaxed text-body-color dark:text-body-color-dark">

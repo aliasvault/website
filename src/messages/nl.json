@@ -125,7 +125,7 @@
       "logo": "logo"
     },
     "language": "Taal",
-    "copyright": "AliasVault. Alle rechten voorbehouden.",
+    "copyright": "AliasVault™. Alle rechten voorbehouden.",
     "socialAriaLabel": "social-link",
     "codebergMirror": "Codeberg (GitHub mirror)",
     "gitlabMirror": "GitLab (GitHub mirror)"
@@ -237,7 +237,7 @@
         "description": "Werkt er iets niet? Bekijk voordat je contact opneemt eerst onze statuspagina om te zien of er een lopende storing of gepland onderhoud is dat de clouddienst beïnvloedt.",
         "link": "Bekijk servicestatus"
       },
-      "intro": "AliasVault is een open-source wachtwoord- en aliasmanager, opgericht door",
+      "intro": "AliasVault™ is een open-source wachtwoord- en aliasmanager, opgericht door",
       "founder": "Leendert de Borst",
       "team": ". Het wordt ontwikkeld en beheerd door een klein en toegewijd team vanuit Nederland. Onze officiële cloud-gehoste versie draait op AliasVault's eigen dedicated servers in Duitsland, Finland, Nederland en Frankrijk. Geografisch gescheiden om single point-of-failures op te vangen, en volledig conform de Europese GDPR-regelgeving.",
       "inquiries": "Voor vragen over onze cloud-gehoste dienst of andere onderwerpen, neem contact op:",
