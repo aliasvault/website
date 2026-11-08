@@ -2,7 +2,6 @@ import * as migration_20260624_074028_initial_schema from './20260624_074028_ini
 import * as migration_20260624_193323_help_center_schema from './20260624_193323_help_center_schema';
 import * as migration_20260624_222124_help_rename_schema from './20260624_222124_help_rename_schema';
 import * as migration_20261108_131059_faqs_schema from './20261108_131059_faqs_schema';
-import * as migration_20261108_131500_faqs_seed from './20261108_131500_faqs_seed';
 
 export const migrations = [
   {
@@ -24,10 +23,5 @@ export const migrations = [
     up: migration_20261108_131059_faqs_schema.up,
     down: migration_20261108_131059_faqs_schema.down,
     name: '20261108_131059_faqs_schema',
-  },
-  {
-    up: migration_20261108_131500_faqs_seed.up,
-    down: migration_20261108_131500_faqs_seed.down,
-    name: '20261108_131500_faqs_seed',
   },
 ];

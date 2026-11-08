@@ -420,7 +420,7 @@
       "noResults": "Geen vragen gevonden voor “{query}”.",
       "contact": {
         "title": "Staat je antwoord er niet bij?",
-        "description": "Neem contact met ons op, we helpen je graag. Goede vragen komen vaak in deze FAQ terecht.",
+        "description": "Neem contact met ons op, we helpen je graag.",
         "cta": "Neem contact op"
       }
     },

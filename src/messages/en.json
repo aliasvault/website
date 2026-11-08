@@ -420,7 +420,7 @@
       "noResults": "No questions match “{query}”.",
       "contact": {
         "title": "Didn't find your answer?",
-        "description": "Get in touch and we'll help you out. Good questions often end up in this FAQ.",
+        "description": "Get in touch and we'll help you out.",
         "cta": "Contact us"
       }
     },
