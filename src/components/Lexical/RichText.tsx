@@ -65,7 +65,7 @@ const jsxConverters = ({ defaultConverters }: any) => ({
   },
 })
 
-export default function RichText({ data }: { data: unknown }) {
+export default function RichText({ data, className = 'rich-text max-w-none' }: { data: unknown; className?: string }) {
   if (!data) return null
   // Fold any literal ```fenced``` paragraphs into real code-block nodes first.
   const prepared = transformCodeBlocks(data)
@@ -74,7 +74,7 @@ export default function RichText({ data }: { data: unknown }) {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       data={prepared as any}
       converters={jsxConverters}
-      className="rich-text max-w-none"
+      className={className}
     />
   )
 }

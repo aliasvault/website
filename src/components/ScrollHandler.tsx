@@ -12,7 +12,7 @@ function scrollToHashIfNeeded() {
   if (!element) return
 
   // FAQ accordions handle their own hash scrolling (open + scroll on deeplink).
-  if (element.closest('#faq, #pricing-faq')) return
+  if (element.closest('#faq, #pricing-faq, #faq-directory')) return
 
   setTimeout(() => {
     element.scrollIntoView({ behavior: 'smooth' })

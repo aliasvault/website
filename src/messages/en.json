@@ -103,6 +103,7 @@
       "alt_proton": "Alternative to Proton Pass",
       "alt_1password": "Alternative to 1Password",
       "help": "Help",
+      "faq": "FAQ",
       "contact": "Contact",
       "status": "Service Status",
       "report_abuse": "Report Abuse",
@@ -407,50 +408,50 @@
     "title": "Frequently Asked Questions",
     "description": "Find answers to common questions about AliasVault's features, security, and deployment options.",
     "copyLink": "Copy link to this question",
-    "items": {
-      "whatIsAliasVault": {
-        "question": "What is AliasVault and who is it for?",
-        "answer": "AliasVault is a password manager built with a strong focus on privacy, making it the ideal choice for privacy-conscious individuals. All your data is safely stored inside your own personal vault and encrypted with your master password that never leaves your device. No one but you, (not even us) can see inside your vault.\n\nAliasVault also features a built-in email server that allows you to create unique email addresses (aliases) for different services. If you care about controlling your digital identity, preventing spam, and reducing your exposure in data breaches, AliasVault helps you manage credentials and aliases securely.\n\nFully open-source and transparent. No third-party dependencies."
-      },
-      "passkeySupport": {
-        "question": "Does AliasVault support passkeys?",
-        "answer": "Yes! You can create and login with passkeys via the AliasVault browser extension, iOS and Android mobile apps. Passkeys are securely stored in your fully encrypted vault and automatically synced across all your devices, ensuring seamless and secure access wherever you need it."
-      },
-      "pricing": {
-        "question": "How much does AliasVault cost?",
-        "answer": "The current core version of AliasVault, with all of its features, is completely free to use and will always remain that way. Both for the official cloud-hosted and self-hosted options. \n\nIn the near future, we do plan to introduce optional premium features such as additional storage space, automatic snapshots, and more. These paid options will help support the continued development and costs of the project.\n\nThat said, we are currently focused on developing and refining the basic features of AliasVault to ensure a stable and reliable foundation for all users. Premium features are part of our longer-term roadmap, but our current priority is to deliver a solid core experience.\n\nIf you'd like to support the project in the meantime, we welcome donations. Please visit our [contactLink]contact page[/contactLink] for more information."
-      },
-      "deviceSupport": {
-        "question": "Which devices are supported by AliasVault?",
-        "answer": "AliasVault works on all major platforms: web, desktop, and mobile.\n\nYou can access your vault through the AliasVault web app, browser extensions, or by downloading the mobile apps, ensuring you always have access to your vault no matter the device."
+    "viewAll": "See all questions",
+    "learnMore": "Learn more",
+    "page": {
+      "title": "Frequently asked questions",
+      "description": "Find answers to common questions about AliasVault below.",
+      "metaTitle": "FAQ",
+      "metaDescription": "Answers to common questions about AliasVault: security and audits, email aliases, importing and exporting data, self-hosting, pricing and funding.",
+      "searchPlaceholder": "Search questions…",
+      "clearSearch": "Clear search",
+      "noResults": "No questions match “{query}”.",
+      "contact": {
+        "title": "Didn't find your answer?",
+        "description": "Get in touch and we'll help you out. Good questions often end up in this FAQ.",
+        "cta": "Contact us"
+      }
+    },
+    "categories": {
+      "getting-started": {
+        "title": "Getting started",
+        "description": "What AliasVault is and where it runs."
       },
       "security": {
-        "question": "How does AliasVault protect my data?",
-        "answer": "Security is the foundation of AliasVault. End-to-end encryption (AES-256-GCM) is used to encrypt all your data. Everything, including usernames, passwords and even email contents, is encrypted on your device. Even on our servers, your information stays encrypted, protected by your master password, which only you know. Our strict zero-knowledge architecture guarantees that no one (not even us) can access your vault.\n\nFor in-depth technical details, visit our [docsLink]architecture documentation[/docsLink]."
+        "title": "Security & trust",
+        "description": "How your data is protected."
       },
-      "importData": {
-        "question": "Can I import my passwords from other password managers?",
-        "answer": "Yes! AliasVault makes it easy to migrate your credentials from other password managers. We support importing from popular services including 1Password, Bitwarden, Chrome, Dashlane, Firefox, KeePass, KeePassXC, Proton Pass, and Strongbox.\n\nSimply export your data from your current password manager and use AliasVault's import function in the web app to seamlessly transfer all your credentials, notes, 2FA codes and other data.\n\nPlus, AliasVault also includes export functionality, so if you ever decide to switch to another service in the future, you can easily take your data with you. You have full control over your data."
+      "your-data": {
+        "title": "Your data",
+        "description": "Import, export and backups."
       },
-      "selfHosting": {
-        "question": "Can I self-host AliasVault on my own server?",
-        "answer": "Yes, AliasVault is designed from the ground up to be fully self-hosted. You can easily deploy it on your own server using Docker, giving you complete control over your data and infrastructure. AliasVault comes with an automatic install script which makes installation a breeze.\n\nDetailed installation instructions are available in our [docsLink]documentation[/docsLink]."
+      "email-aliases": {
+        "title": "Email aliases",
+        "description": "How email aliases work."
       },
-      "emailAliasFeature": {
-        "question": "How does the email alias feature work?",
-        "answer": "AliasVault includes a built-in email server that allows you to create unique email addresses (aliases) for different services.\n\nWhen someone sends an email to your alias, it's received directly in AliasVault and immediately encrypted, helping you maintain privacy and reduce spam."
+      "self-hosting": {
+        "title": "Self-hosting",
+        "description": "Running AliasVault yourself."
       },
-      "emailAliasLimitations": {
-        "question": "Are there limitations to using email aliases?",
-        "answer": "Currently there are two main restrictions:\n\n1) Email aliases are receive-only, meaning you cannot send or reply to emails from your aliases. This measure prevents potential abuse of the system for spam.\n\n2) There is a 10 megabyte size limit for incoming emails - any emails larger than this will be rejected.\n\nIn the future, optional paid subscriptions will lift these restrictions. Also, currently email storage has no limit but is based on fair-use. In the future specific limits may be introduced for the free tier, but will be announced in advance."
+      "pricing": {
+        "title": "Pricing & plans",
+        "description": "Free and paid plans."
       },
-      "story": {
-        "question": "What's the story behind AliasVault?",
-        "answer": "Leendert de Borst, the founder of AliasVault, is a software developer and architect with a long-standing focus on privacy and fighting spam. In 2013 he launched asdasd.nl, a Dutch temporary email service that grew into the multilingual SpamOK.com, helping thousands protect themselves from spam and data collection.\n\nOver the years it became clear that email protection alone wasn't enough: people needed a way to protect their entire digital identity. That led to the start of development of AliasVault in 2024: a self-hostable, end-to-end encrypted password and alias manager that puts users in control. It lets you generate unique passwords and email aliases for every site you use, keeping your personal data secure.\n\nSince the beta release in December 2024, AliasVault has been developed with frequent updates: browser extensions, mobile apps, full offline mode, multi-language support (14 languages and counting), passkey support, and best-in-class self-hosting with comprehensive documentation. Making it more powerful and accessible with every release.\n\nAliasVault is open source, entirely self-funded, and proudly independent. The project is built around transparency, community input, and privacy-first principles.\n\nLearn more about [missionLink]our mission[/missionLink] and what drives this project."
-      },
-      "serviceStatus": {
-        "question": "Is AliasVault down? How do I check service status?",
-        "answer": "If the AliasVault cloud service isn't working as expected, you can check the real-time service status and incident history on our [statusLink]status page[/statusLink]. It shows any ongoing incidents or planned maintenance. If there are no incidents and you're still experiencing problems, please contact us at [contactLink]support@aliasvault.com[/contactLink]."
+      "company": {
+        "title": "Company & mission",
+        "description": "Who we are."
       }
     }
   },
@@ -483,7 +484,7 @@
       "paragraph1": "As a software developer and architect, I've always been passionate about fighting spam and making privacy accessible. Back in 2013, I launched asdasd.nl, a Dutch temporary email service that later grew into SpamOK.com, helping thousands protect themselves from spam and data collection.",
       "paragraph1b": "Over the years, one thing became clear to me: email protection alone wasn't enough. People needed a way to protect their entire digital identity, not just their inbox. That's why, in 2024, I started building AliasVault.",
       "paragraph2": "A self-hostable, end-to-end encrypted password and alias manager that puts users in control of their digital identity. It lets you generate unique passwords and email aliases for every site you use, keeping your personal data secure.",
-      "paragraph3": "Since the beta release in December 2024, I've continued to develop AliasVault with frequent updates. We've added browser extensions, mobile apps, full offline mode, multi-language support (14 languages and counting), passkey support, best-in-class self-hosting with comprehensive documentation, and more: making AliasVault more powerful and accessible with every release.",
+      "paragraph3": "Since the beta release in December 2024, I've continued to develop AliasVault with frequent updates. We've added browser extensions, mobile apps, full offline mode, multi-language support (20 languages and counting), passkey support, best-in-class self-hosting with comprehensive documentation, and more: making AliasVault more powerful and accessible with every release.",
       "paragraph4": "AliasVault is open source, entirely self-funded, and proudly independent. The project is built around transparency, community input, and privacy-first principles. Optional premium cloud features will support long-term development, but the core version is free by design and anyone can self-host, inspect the code, and stay in full control. Read more about",
       "missionLink": "our mission",
       "paragraph4End": "to learn what drives this project."
@@ -1506,37 +1507,7 @@
     "faq": {
       "title": "Pricing FAQ",
       "description": "Find answers to your questions below. Cannot find your answer? [contactLink]Contact us[/contactLink].",
-      "copyLink": "Copy link to this question",
-      "items": {
-        "whenPremiumAvailable": {
-          "question": "When will Premium features become available?",
-          "answer": "Premium and Family are optional paid cloud tiers that we will introduce in the coming months. They are for users who want more than fair-use on the free tier: higher limits on aliases and email storage, automatic snapshots, VIP alias domains, custom domains, and planned extras such as temporary phone numbers.\n\nThey launch once our first official 1.0 release is out. We will announce exact timing, pricing, and limits before anything goes live.\n\nFor now, the free cloud tier has all features with fair-use limits. Self-hosting is free too.\n\nDonations are welcome before premium launches. See [supportLink]Support development[/supportLink] below."
-        },
-        "freeTierStays": {
-          "question": "Will you always offer a free tier?",
-          "answer": "Yes. We will always offer a free cloud tier and a free, open-source self-hosted option. Features that matter for privacy and security will not go behind a paywall.\n\nFair-use limits on shared cloud resources help keep hosting sustainable. They are not meant to lock you out of core functionality."
-        },
-        "howCanItBeFree": {
-          "question": "How can you offer AliasVault for free?",
-          "answer": "We offer a free tier because of our mission. We believe privacy is a right, not a luxury. Our mission is to put control back into the hands of users, helping them stay secure and anonymous online.\n\nWe are self-funded with enough reserves to run sustainably and built AliasVault lean: a small team, no big offices, no investors. No pressure to shrink the free tier, sell your data, or chase growth at your expense. Optional paid plans after v1.0 and community support help long term; the core product stays free."
-        },
-        "selfFunded": {
-          "question": "Who is behind AliasVault?",
-          "answer": "AliasVault is an open-source project founded by Leendert de Borst and operated from The Netherlands. Our official cloud runs on dedicated servers in Germany, Finland, the Netherlands, and France. Geographically separated to cover single points of failure, and fully compliant with European GDPR regulations.\n\nThe project is self-funded by its founders. We have no external investors or venture capital backing. We answer to users and our [missionLink]mission[/missionLink], and our roadmap follows community needs rather than outside investment pressure. Optional donations and future Premium and Family plans help sustain development. The core open-source product and self-hosted option stay central to what we build.\n\nFor more about who we are and how to reach us, visit our [contactLink]contact page[/contactLink]."
-        },
-        "fairUse": {
-          "question": "What are fair-use limits on the cloud free tier?",
-          "answer": "The cloud free tier includes every product feature: password manager, passkeys, 2FA, email aliases, offline mode, extensions, mobile apps, and more. Fair-use limits apply only to shared cloud resources: how many email aliases you use, how much vault and email storage you consume, and how backups are handled.\n\nThese limits prevent abuse and keep the free tier viable for everyone. Specific numbers will be communicated clearly before any change. Self-hosted users are not subject to our cloud fair-use policy."
-        },
-        "selfHostedVsCloud": {
-          "question": "Should I use the official cloud or self-host?",
-          "answer": "For most people, the official cloud is the simplest choice. There is no server setup, your vault syncs across devices right away, and you are always on the latest version with updates applied for you. All data is end-to-end encrypted at all times.\n\nIf you want everything in your own hands, you can self-host as well. You run AliasVault on your own server or VPS with no limits from us beyond your own hardware, and you can use your own domain on your infrastructure. Experience with Docker is required.\n\nBoth options use the same open-source software. See our [sourceLink]source code & docs[/sourceLink] to get started with self-hosting."
-        },
-        "hereToStay": {
-          "question": "Is AliasVault here for the long term?",
-          "answer": "Yes. We build AliasVault with a long-term vision, not with a quick exit in mind. The product is never \"done\"; we keep developing, improving, and refining AliasVault continuously to give users the best possible experience over the long term.\n\nOur spiritual predecessor, [SpamOK.com](https://spamok.com), has been running since 2013. That is more than 13 years of uninterrupted service helping people fight spam and protect their privacy online. The same long-term mindset applies to AliasVault."
-        }
-      }
+      "copyLink": "Copy link to this question"
     },
     "disclaimer": {
       "title": "Transparency",

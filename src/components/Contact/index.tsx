@@ -84,7 +84,7 @@ const ContactContent = () => {
             </p>
             <div className="mt-4">
             <Link
-                  href="/#faq"
+                  href="/faq"
                   className="text-primary hover:underline"
               >
                 {t('contact.content.faq.links.faq')}

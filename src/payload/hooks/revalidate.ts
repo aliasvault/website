@@ -15,7 +15,12 @@ function pathsFor(section: string, slug?: string): string[] {
 async function revalidate(paths: string[]) {
   // Imported dynamically so the config never pulls next/cache at load time
   // (it's only valid within a Next request/runtime, which is where hooks fire).
-  const { revalidatePath } = await import('next/cache')
+  let revalidatePath: (path: string) => void
+  try {
+    ;({ revalidatePath } = await import('next/cache'))
+  } catch {
+    return // not running inside Next (e.g. a CLI migration)
+  }
   for (const p of paths) {
     try {
       revalidatePath(p)
@@ -32,5 +37,18 @@ export const revalidateAfterChange: CollectionAfterChangeHook = async ({ doc, co
 
 export const revalidateAfterDelete: CollectionAfterDeleteHook = async ({ doc, collection }) => {
   await revalidate(pathsFor(sectionFor(collection.slug), doc?.slug))
+  return doc
+}
+
+// FAQ questions appear on /faq, the homepage and the pricing page (EN + NL).
+const FAQ_PATHS = ['', '/nl'].flatMap((b) => [b || '/', `${b}/faq`, `${b}/pricing`])
+
+export const revalidateFaqsAfterChange: CollectionAfterChangeHook = async ({ doc }) => {
+  await revalidate(FAQ_PATHS)
+  return doc
+}
+
+export const revalidateFaqsAfterDelete: CollectionAfterDeleteHook = async ({ doc }) => {
+  await revalidate(FAQ_PATHS)
   return doc
 }

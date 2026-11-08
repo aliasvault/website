@@ -3,9 +3,11 @@
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
-import PricingFAQ from "./PricingFAQ";
-import { PREMIUM_AVAILABILITY_FAQ_HASH } from "./pricingFaqData";
+import type { ReactNode } from "react";
 import { buttonClasses } from "@/components/Common/Button";
+
+/** FAQ entry (CMS slug) that the "coming soon" plan buttons link to. */
+const PREMIUM_AVAILABILITY_FAQ_HASH = "when-premium-available";
 
 const PANEL_BASE =
   "rounded-2xl bg-white p-6 shadow-sm dark:bg-gray-800/50 lg:p-8";
@@ -193,7 +195,8 @@ function ApproachItem({ title, body }: { title: string; body: string }) {
   );
 }
 
-export default function Pricing() {
+/** `faq` is the server-rendered PricingFAQ block (CMS content), passed in by the page. */
+export default function Pricing({ faq }: { faq?: ReactNode }) {
   const t = useTranslations("pricing");
 
   const plans: PlanConfig[] = [
@@ -281,7 +284,7 @@ export default function Pricing() {
       <div className="mt-16 bg-gray-light py-16 dark:bg-bg-color-dark md:mt-20 md:py-20 lg:py-28">
         <div className="container">
           <div className="mx-auto max-w-6xl" data-aos="fade-up" data-aos-delay="0">
-            <PricingFAQ className="!mb-0" />
+            {faq}
           </div>
         </div>
       </div>

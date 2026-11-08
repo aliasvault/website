@@ -68,6 +68,7 @@ export interface Config {
   blocks: {};
   collections: {
     'help-articles': HelpArticle;
+    faqs: Faq;
     posts: Post;
     news: News;
     media: Media;
@@ -80,6 +81,7 @@ export interface Config {
   collectionsJoins: {};
   collectionsSelect: {
     'help-articles': HelpArticlesSelect<false> | HelpArticlesSelect<true>;
+    faqs: FaqsSelect<false> | FaqsSelect<true>;
     posts: PostsSelect<false> | PostsSelect<true>;
     news: NewsSelect<false> | NewsSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
@@ -201,6 +203,52 @@ export interface HelpArticle {
     };
     [k: string]: unknown;
   };
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "faqs".
+ */
+export interface Faq {
+  id: number;
+  question: string;
+  answer: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  /**
+   * Link anchor, e.g. "self-hosting" → /faq#self-hosting. Shared across languages. Changing it breaks existing links.
+   */
+  slug: string;
+  /**
+   * Section on /faq. Categories are defined in code (src/lib/faq-categories.ts).
+   */
+  category: 'getting-started' | 'security' | 'your-data' | 'email-aliases' | 'self-hosting' | 'pricing' | 'company';
+  /**
+   * Pages that show this question. Leave empty to keep it published but hidden.
+   */
+  showOn?: ('faq' | 'home' | 'pricing')[] | null;
+  /**
+   * Lower numbers come first: within the category on /faq and on the homepage/pricing lists. Leave gaps (10, 20, …) to insert questions later.
+   */
+  order?: number | null;
+  /**
+   * Optional Help article shown as a "Learn more" link under the answer.
+   */
+  related?: (number | null) | HelpArticle;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -398,6 +446,10 @@ export interface PayloadLockedDocument {
         value: number | HelpArticle;
       } | null)
     | ({
+        relationTo: 'faqs';
+        value: number | Faq;
+      } | null)
+    | ({
         relationTo: 'posts';
         value: number | Post;
       } | null)
@@ -482,6 +534,22 @@ export interface HelpArticlesSelect<T extends boolean = true> {
   snippetId?: T;
   updated?: T;
   content?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "faqs_select".
+ */
+export interface FaqsSelect<T extends boolean = true> {
+  question?: T;
+  answer?: T;
+  slug?: T;
+  category?: T;
+  showOn?: T;
+  order?: T;
+  related?: T;
   updatedAt?: T;
   createdAt?: T;
   _status?: T;

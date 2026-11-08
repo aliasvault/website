@@ -25,6 +25,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         '/platforms',
         '/docs',
         '/blog',
+        '/faq',
         '/help',
         ...helpSectionsSorted().map((s) => `/help/${s.key}`),
         '/contact',

@@ -93,6 +93,32 @@
   .rich-text :where(.rich-text-embed) :where(h1, h2, h3, h4, h5, h6, p, ul, ol, li, blockquote, pre, hr, img) {
     @apply m-0;
   }
+
+  /* Compact rich text for FAQ answers (RichText className="faq-answer"). */
+  .faq-answer {
+    @apply text-base leading-relaxed text-body-color dark:text-body-color-dark;
+  }
+  .faq-answer :where(p, ul, ol) {
+    @apply mb-4 last:mb-0;
+  }
+  .faq-answer :where(ul) {
+    @apply list-disc pl-6;
+  }
+  .faq-answer :where(ol) {
+    @apply list-decimal pl-6;
+  }
+  .faq-answer :where(li) {
+    @apply mb-1;
+  }
+  .faq-answer :where(a) {
+    @apply text-primary underline decoration-primary/30 underline-offset-2 transition-all duration-200 hover:decoration-primary;
+  }
+  .faq-answer :where(strong) {
+    @apply font-semibold text-black dark:text-white;
+  }
+  .faq-answer :where(code) {
+    @apply rounded bg-black/5 px-1.5 py-0.5 font-mono text-sm dark:bg-white/10;
+  }
 }
 
 *[data-aos=fade-down] {

@@ -219,3 +219,22 @@ export function lexicalToMarkdown(data: any): string {
   }
   return blocks.join('\n\n').trim()
 }
+
+/**
+ * Lexical content as plain text: one line per block (paragraph, list item, …),
+ * no formatting or link targets. Used for search filtering and JSON-LD answers.
+ */
+export function lexicalToPlainText(data: any): string {
+  const lines: string[] = []
+  const walk = (nodes: any[]) => {
+    for (const node of nodes) {
+      if (node?.type === 'list') walk(node.children ?? [])
+      else {
+        const text = nodeText(node).trim()
+        if (text) lines.push(text)
+      }
+    }
+  }
+  walk(rootChildren(data))
+  return lines.join('\n')
+}

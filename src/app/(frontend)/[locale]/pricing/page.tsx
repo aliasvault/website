@@ -1,6 +1,7 @@
 import Breadcrumb from "@/components/Common/Breadcrumb";
 import Page from "@/components/Common/Page";
 import Pricing from "@/components/Pricing/Pricing";
+import PricingFAQ from "@/components/Pricing/PricingFAQ";
 import { generatePageSEOMetadata } from "@/lib/seo-utils";
 import { getTranslations } from "next-intl/server";
 import { Metadata } from "next";
@@ -32,7 +33,7 @@ export default async function PricingPage({
   return (
     <Page>
       <Breadcrumb pageName={t("pricing.title")} description={t("pricing.pageDescription")} />
-      <Pricing />
+      <Pricing faq={<PricingFAQ locale={locale} className="!mb-0" />} />
     </Page>
   );
 }

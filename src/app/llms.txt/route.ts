@@ -1,6 +1,7 @@
 import { getAllHelpArticles } from '@/lib/help'
 import { getAllBlogAndNewsPosts } from '@/lib/blog'
 import { helpSectionsSorted } from '@/lib/help-sections'
+import { getFaqs } from '@/lib/faq'
 import en from '@/messages/en.json'
 
 // Built per request — Help/blog/news content lives in the Payload DB (runtime-only).
@@ -13,13 +14,6 @@ interface FeatureCategory {
 }
 
 const clean = (s: string) => s.replace(/\s+/g, ' ').trim()
-
-// Strip the FAQ answer link placeholders (e.g. `[docsLink]text[/docsLink]`),
-// keeping the link text. Preserves paragraph breaks.
-const stripLinks = (s: string) => s.replace(/\[\/?[a-zA-Z]+Link\]/g, '').trim()
-
-// FAQ entries that are relevant to the site overview.
-const TRUST_FAQ_KEYS = ['security', 'whatIsAliasVault', 'selfHosting']
 
 /**
  * /llms.txt — a Markdown index of the site for LLMs (llmstxt.org). H1 + summary
@@ -57,8 +51,8 @@ export async function GET() {
   }
 
   // Trust & Security — a common "is it safe/trusted/secure?" question, answered
-  // from a lead summary plus the relevant FAQ entries.
-  const faqItems = en.faq.items as Record<string, { question: string; answer: string }>
+  // from a lead summary plus the FAQ's "Security & trust" category (Payload).
+  const securityFaqs = (await getFaqs('en')).filter((f) => f.category === 'security')
   lines.push(
     '## Trust & Security',
     '',
@@ -70,11 +64,10 @@ export async function GET() {
       'can self-host the entire stack on your own infrastructure for full control.',
     '',
   )
-  for (const key of TRUST_FAQ_KEYS) {
-    const item = faqItems[key]
-    if (!item) continue
-    lines.push(`**${item.question}**`, '', stripLinks(item.answer), '')
+  for (const faq of securityFaqs) {
+    lines.push(`**${faq.question}**`, '', faq.answerMarkdown, '')
   }
+  lines.push(`More questions and answers: [FAQ](${baseUrl}/faq).`, '')
 
   // Help sections + their articles.
   const articles = await getAllHelpArticles()

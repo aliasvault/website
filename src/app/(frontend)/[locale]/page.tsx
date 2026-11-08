@@ -51,7 +51,7 @@ export default async function Home({ params }: HomeProps) {
       <SectionSpacing className="pt-16" />
       <CallToAction />
       <SectionSpacing withBorder className="pt-16 md:pt-20" />
-      <FAQ />
+      <FAQ locale={locale} />
       <SectionSpacing className="pt-16" />
       <RecentBlogAndNews locale={locale} />
     </>

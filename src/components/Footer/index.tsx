@@ -345,6 +345,14 @@ const Footer = () => {
                     </Link>
                   </li>
                   <li>
+                    <Link
+                        href={`/${locale}/faq`}
+                        className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
+                    >
+                      {t('footer.links.faq')}
+                    </Link>
+                  </li>
+                  <li>
                     <a
                         href={statusUrl}
                         target="_blank"

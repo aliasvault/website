@@ -70,6 +70,11 @@ function faqPage(faq: HelpFaqItem[]) {
   }
 }
 
+/** JSON-LD for the /faq page: one FAQPage with every published question (plain-text answers). */
+export function faqPageJsonLd({ items, url, locale }: { items: HelpFaqItem[]; url: string; locale: string }) {
+  return { '@context': 'https://schema.org', ...faqPage(items), url, inLanguage: locale }
+}
+
 /**
  * Full JSON-LD @graph for a Help article page.
  */
