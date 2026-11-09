@@ -465,7 +465,7 @@ const Footer = () => {
 
         </div>
         {/* Decorative background: layered waves along the bottom, doubling as the divider above the copyright row */}
-        <Waves className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-36 w-full opacity-75 dark:opacity-55 md:h-56 xl:h-64 2xl:h-72" />
+        <Waves variant="footer" className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-36 w-full opacity-75 dark:opacity-55 md:h-72" />
         <Grain className="-z-10 opacity-[0.03] dark:opacity-[0.05]" />
       </footer>
     </>

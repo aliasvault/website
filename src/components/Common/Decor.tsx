@@ -72,27 +72,50 @@ export const Grain = ({ className = "opacity-[0.035] dark:opacity-[0.06]" }: { c
 export const WAVE_PERIOD = 1440;
 const WAVE_HEIGHT = 320;
 
+interface WaveLayer {
+  d: string;
+  opacity: number;
+  gradient: "a" | "b";
+}
+
+export type WavesVariant = "hero" | "footer";
+
 /**
- * Each layer is periodic over WAVE_PERIOD.
+ * Each layer is periodic over WAVE_PERIOD (start and end at the same y), so
+ * repeated copies tile seamlessly.
  */
-const WAVE_LAYERS = [
-  { d: "M0,170 C360,250 1080,90 1440,170 L1440,320 L0,320 Z", opacity: 0.10, gradient: "a" },
-  { d: "M0,230 C360,160 1080,300 1440,230 L1440,320 L0,320 Z", opacity: 0.14, gradient: "b" },
-  { d: "M0,275 C240,300 480,240 720,275 C960,310 1200,250 1440,275 L1440,320 L0,320 Z", opacity: 0.18, gradient: "a" },
-] as const;
+const WAVE_LAYERS: Record<WavesVariant, WaveLayer[]> = {
+  hero: [
+    { d: "M0,170 C360,250 1080,90 1440,170 L1440,320 L0,320 Z", opacity: 0.1, gradient: "a" },
+    { d: "M0,230 C360,160 1080,300 1440,230 L1440,320 L0,320 Z", opacity: 0.14, gradient: "b" },
+    { d: "M0,275 C240,300 480,240 720,275 C960,310 1200,250 1440,275 L1440,320 L0,320 Z", opacity: 0.18, gradient: "a" },
+  ],
+  footer: [
+    { d: "M0,160 C360,190 1080,140 1440,160 L1440,320 L0,320 Z", opacity: 0.07, gradient: "b" },
+    { d: "M0,212 C360,206 1080,222 1440,212 L1440,320 L0,320 Z", opacity: 0.12, gradient: "a" },
+    { d: "M0,284 C240,296 480,282 720,284 C960,292 1200,286 1440,284 L1440,320 L0,320 Z", opacity: 0.18, gradient: "a" },
+  ],
+};
 
 interface WavesProps {
   className?: string;
   repeat?: number;
   flip?: boolean;
+  variant?: WavesVariant;
 }
 
 /**
  * Layered translucent waves.
  */
-export const Waves = ({ className = "pointer-events-none absolute inset-x-0 bottom-0 h-2/5 w-full", repeat = 1, flip = false }: WavesProps) => {
+export const Waves = ({
+  className = "pointer-events-none absolute inset-x-0 bottom-0 h-2/5 w-full",
+  repeat = 1,
+  flip = false,
+  variant = "hero",
+}: WavesProps) => {
   const id = useId().replace(/:/g, "");
   const width = WAVE_PERIOD * repeat;
+  const layers = WAVE_LAYERS[variant];
 
   return (
     <svg
@@ -119,7 +142,7 @@ export const Waves = ({ className = "pointer-events-none absolute inset-x-0 bott
       </defs>
       {Array.from({ length: repeat }, (_, i) => (
         <g key={i} transform={`translate(${i * WAVE_PERIOD} 0)`}>
-          {WAVE_LAYERS.map((layer) => (
+          {layers.map((layer) => (
             <path key={layer.d} d={layer.d} fill={`url(#${id}-${layer.gradient})`} opacity={layer.opacity} />
           ))}
         </g>
