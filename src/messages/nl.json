@@ -535,13 +535,6 @@
   "featureSection": {
     "comingSoon": "Binnenkort"
   },
-  "error": {
-    "title": "Foutpagina",
-    "description": "De pagina die u heeft aangevraagd kon niet worden gevonden.",
-    "heading": "Sorry, de pagina kan niet worden gevonden",
-    "message": "De pagina die u zocht lijkt te zijn verplaatst, verwijderd of bestaat niet.",
-    "backToHome": "Terug naar homepage"
-  },
   "blogComponent": {
     "by": "Door",
     "date": "Datum",

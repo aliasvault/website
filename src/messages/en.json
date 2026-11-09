@@ -535,13 +535,6 @@
   "featureSection": {
     "comingSoon": "Coming Soon"
   },
-  "error": {
-    "title": "Error Page",
-    "description": "The page you requested could not be found.",
-    "heading": "Sorry, the page can't be found",
-    "message": "The page you were looking for appears to have been moved, deleted or does not exist.",
-    "backToHome": "Back to Homepage"
-  },
   "blogComponent": {
     "by": "By",
     "date": "Date",
