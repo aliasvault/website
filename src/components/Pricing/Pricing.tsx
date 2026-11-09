@@ -5,12 +5,10 @@ import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import type { ReactNode } from "react";
 import { buttonClasses } from "@/components/Common/Button";
+import { cardClasses } from "@/components/Common/Card";
 
 /** FAQ entry (CMS slug) that the "coming soon" plan buttons link to. */
 const PREMIUM_AVAILABILITY_FAQ_HASH = "when-premium-available";
-
-const PANEL_BASE =
-  "rounded-2xl bg-white p-6 shadow-sm dark:bg-gray-800/50 lg:p-8";
 
 type PlanId = "free" | "premium" | "family";
 type FeatureVariant = "included" | "limited" | "excluded";
@@ -29,14 +27,15 @@ type PlanConfig = {
   cta?: { label: string; href: string; external?: boolean };
 };
 
+/** Plan panels share the site-wide card surface so they match the Platforms and Contact boxes. */
 function getPanelClass(plan: Pick<PlanConfig, "recommended" | "comingSoon">) {
   if (plan.comingSoon) {
-    return `${PANEL_BASE} border border-dashed border-gray-300 dark:border-gray-600`;
+    return cardClasses({ variant: "dashed", padding: "lg", className: "bg-white dark:bg-gray-dark" });
   }
   if (plan.recommended) {
-    return `${PANEL_BASE} border-2 border-primary/50 shadow-sm dark:border-primary/40`;
+    return cardClasses({ padding: "lg", className: "ring-2 ring-primary/50 dark:ring-primary/40" });
   }
-  return `${PANEL_BASE} border border-gray-200 dark:border-gray-800`;
+  return cardClasses({ padding: "lg" });
 }
 
 function CheckIcon({ className = "" }: { className?: string }) {

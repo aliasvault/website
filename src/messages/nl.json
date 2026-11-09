@@ -472,9 +472,9 @@
     "imageAlt": "video afbeelding"
   },
   "callToAction": {
-    "title": "Bescherm je privacy, verbeter je veiligheid",
-    "description": "Stop spam • Bescherm je privacy • Open source",
-    "buttonText": "Aan de slag met AliasVault",
+    "title": "Probeer AliasVault vandaag.",
+    "description": "Importeer je wachtwoorden in enkele minuten vanuit je huidige wachtwoordmanager. Onafhankelijk, open source, end-to-end versleuteld en gratis om mee te beginnen.",
+    "buttonText": "Maak je gratis vault",
     "logoAlt": "AliasVault logo"
   },
   "founder": {

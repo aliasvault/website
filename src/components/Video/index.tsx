@@ -99,7 +99,11 @@ const Video = () => {
         </div>
       )}
 
-      <div className="absolute bottom-0 left-0 right-0 z-[-1] h-full w-full bg-[url(/images/video/shape.svg)] bg-cover bg-center bg-no-repeat"></div>
+      {/* Angular backdrop. */}
+      <div
+        className="pointer-events-none absolute inset-0 -z-10 bg-[url(/images/video/shape.svg)] bg-cover bg-center bg-no-repeat opacity-60 dark:opacity-50"
+        aria-hidden
+      />
     </section>
   );
 };

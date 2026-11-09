@@ -26,6 +26,11 @@
     @apply inline-flex;
   }
 
+  .hero-screenshot {
+    -webkit-mask-image: linear-gradient(to bottom, #000 76%, transparent 97%);
+    mask-image: linear-gradient(to bottom, #000 76%, transparent 97%);
+  }
+
   .sticky .header-logo {
     @apply py-5 lg:py-2;
   }

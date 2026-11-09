@@ -1,162 +1,98 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
+import { GlowOrb, Grain, Waves, glowStyle } from "@/components/Common/Decor";
 
 /**
- * iOS Safari/Chrome struggle with large `filter: blur()` surfaces, especially when
- * animated. Below `md` we use soft radial gradients only (no blur, no JS animation).
+ * Below `md` the glows are static: no JS animation, so scrolling on phones
+ * stays smooth.
  */
 const StaticMobileBackground = () => (
-  <div
-    className="pointer-events-none absolute inset-0 overflow-hidden md:hidden"
-    aria-hidden
-  >
-    <div
-      className="absolute h-[min(100vw,28rem)] w-[min(100vw,28rem)] rounded-full opacity-25 dark:opacity-20"
-      style={{
-        background: "radial-gradient(circle, #f49541 0%, transparent 72%)",
-        top: "-8%",
-        right: "-15%",
-      }}
-    />
-    <div
-      className="absolute h-[min(90vw,24rem)] w-[min(90vw,24rem)] rounded-full opacity-20 dark:opacity-15"
-      style={{
-        background: "radial-gradient(circle, #d68338 0%, transparent 72%)",
-        bottom: "5%",
-        left: "-10%",
-      }}
-    />
-    <div
-      className="absolute h-[min(70vw,16rem)] w-[min(70vw,16rem)] rounded-full opacity-15 dark:opacity-10"
-      style={{
-        background: "radial-gradient(circle, #fbb040 0%, transparent 72%)",
-        top: "35%",
-        left: "25%",
-      }}
-    />
-    <div
-      className="absolute hidden h-[min(80vw,20rem)] w-[min(80vw,20rem)] rounded-full dark:block dark:opacity-[0.12]"
-      style={{
-        background: "radial-gradient(circle, #6366f1 0%, transparent 72%)",
-        bottom: "15%",
-        right: "10%",
-      }}
+  <div className="pointer-events-none absolute inset-0 overflow-hidden md:hidden" aria-hidden>
+    <GlowOrb
+      tone="orange"
+      size="min(110vw, 30rem)"
+      className="-right-[18%] -top-[6%] opacity-25 dark:opacity-20"
     />
   </div>
 );
+
+/**
+ * Layered waves along the bottom edge, drifting slowly by one full period so the
+ * loop is seamless. Transform-only, so it is cheap on every device.
+ */
+const DriftingWaves = () => {
+  const reduceMotion = useReducedMotion();
+
+  return (
+    <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 overflow-hidden md:h-[45%]" aria-hidden>
+      <motion.div
+        className="absolute bottom-0 left-0 h-full w-[200%]"
+        animate={reduceMotion ? undefined : { x: ["0%", "-50%"] }}
+        transition={{ duration: 70, repeat: Infinity, ease: "linear" }}
+      >
+        <Waves repeat={2} className="h-full w-full opacity-70 dark:opacity-50" />
+      </motion.div>
+    </div>
+  );
+};
+
+/**
+ * Desktop glows. No `filter: blur()` and no `scale` animation: Chrome rasterises
+ * a blurred layer once and re-samples it while it moves, which looks blocky.
+ * A gradient translated on the compositor stays crisp and costs almost nothing.
+ */
+const ORBS = [
+  {
+    tone: "orange",
+    size: 760,
+    className: "opacity-30 dark:opacity-20",
+    position: { top: "-18%", right: "-12%" },
+    path: { x: [0, 60, -40, 0], y: [0, -40, 30, 0] },
+    duration: 24,
+  },
+  {
+    tone: "slate",
+    size: 560,
+    className: "opacity-[0.12] dark:opacity-[0.16]",
+    position: { bottom: "5%", right: "12%" },
+    path: { x: [0, -40, 50, 0], y: [0, 40, -30, 0] },
+    duration: 22,
+  },
+] as const;
+
+const DesktopOrbs = () => {
+  const reduceMotion = useReducedMotion();
+
+  return (
+    <div className="pointer-events-none absolute inset-0 hidden overflow-hidden md:block" aria-hidden>
+      {ORBS.map((orb) => (
+        <motion.div
+          key={orb.tone}
+          className={`absolute rounded-full will-change-transform ${orb.className}`}
+          style={{ width: orb.size, height: orb.size, ...orb.position, ...glowStyle(orb.tone) }}
+          animate={reduceMotion ? undefined : { x: [...orb.path.x], y: [...orb.path.y] }}
+          transition={{ duration: orb.duration, repeat: Infinity, ease: "easeInOut" }}
+        />
+      ))}
+    </div>
+  );
+};
 
 const AnimatedBackground = () => {
   return (
     <div className="absolute inset-0 overflow-hidden z-[-1]">
       <StaticMobileBackground />
+      <DesktopOrbs />
+      <DriftingWaves />
+      <Grain />
 
+      {/* Dissolve the hero (white / gray-dark) into the page background so the waves
+          fade out instead of being cut off at the section edge. Colours match <body>. */}
       <div
-        className="pointer-events-none absolute inset-0 hidden overflow-hidden md:block"
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-[#FCFCFC] dark:to-black md:h-56"
         aria-hidden
-      >
-      {/* Primary gradient orb - large, slow moving */}
-      <motion.div
-        className="absolute w-[600px] h-[600px] rounded-full opacity-30 dark:opacity-20 blur-[100px]"
-        style={{
-          background: "radial-gradient(circle, #f49541 0%, transparent 70%)",
-          top: "-10%",
-          right: "-10%",
-        }}
-        animate={{
-          x: [0, 50, -30, 0],
-          y: [0, -40, 20, 0],
-          scale: [1, 1.1, 0.95, 1],
-        }}
-        transition={{
-          duration: 20,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
       />
-
-      {/* Secondary gradient orb - medium, different timing */}
-      <motion.div
-        className="absolute w-[500px] h-[500px] rounded-full opacity-25 dark:opacity-15 blur-[80px]"
-        style={{
-          background: "radial-gradient(circle, #d68338 0%, transparent 70%)",
-          bottom: "10%",
-          left: "-5%",
-        }}
-        animate={{
-          x: [0, -40, 30, 0],
-          y: [0, 30, -20, 0],
-          scale: [1, 0.9, 1.05, 1],
-        }}
-        transition={{
-          duration: 25,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
-
-      {/* Tertiary accent orb - smaller, faster */}
-      <motion.div
-        className="absolute w-[300px] h-[300px] rounded-full opacity-20 dark:opacity-10 blur-[60px]"
-        style={{
-          background: "radial-gradient(circle, #fbb040 0%, transparent 70%)",
-          top: "40%",
-          left: "30%",
-        }}
-        animate={{
-          x: [0, 60, -40, 0],
-          y: [0, -50, 30, 0],
-          scale: [1, 1.2, 0.85, 1],
-        }}
-        transition={{
-          duration: 15,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
-
-      {/* Subtle purple/blue accent for depth - dark mode enhancement */}
-      <motion.div
-        className="absolute w-[400px] h-[400px] rounded-full opacity-0 dark:opacity-10 blur-[90px]"
-        style={{
-          background: "radial-gradient(circle, #6366f1 0%, transparent 70%)",
-          bottom: "20%",
-          right: "20%",
-        }}
-        animate={{
-          x: [0, -30, 40, 0],
-          y: [0, 40, -30, 0],
-          scale: [1, 1.15, 0.9, 1],
-        }}
-        transition={{
-          duration: 18,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
-
-      {/* Floating particles */}
-      {[...Array(6)].map((_, i) => (
-        <motion.div
-          key={i}
-          className="absolute w-2 h-2 rounded-full bg-primary/30 dark:bg-primary/20"
-          style={{
-            top: `${20 + i * 12}%`,
-            left: `${10 + i * 15}%`,
-          }}
-          animate={{
-            y: [0, -30, 0],
-            opacity: [0.3, 0.6, 0.3],
-          }}
-          transition={{
-            duration: 4 + i,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: i * 0.5,
-          }}
-        />
-      ))}
-      </div>
     </div>
   );
 };

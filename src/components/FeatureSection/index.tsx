@@ -3,6 +3,7 @@ import SectionTitle from "../Common/SectionTitle";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import IconTile from "@/components/Common/IconTile";
+import { GlowOrb } from "@/components/Common/Decor";
 
 interface FeatureItem {
   name: string;
@@ -38,7 +39,7 @@ const FeatureSection = ({
               reversed ? "lg:order-2" : ""
             }`}
           >
-            <div className="relative mx-auto mb-12 max-w-[500px] text-center lg:m-0 lg:text-left" data-aos="fade-up" data-aos-delay="150">
+            <div className="relative z-0 mx-auto mb-12 max-w-[500px] text-center lg:m-0 lg:text-left" data-aos="fade-up" data-aos-delay="150">
               <Image
                 src={imageSrc}
                 alt={imageAlt}
@@ -46,37 +47,12 @@ const FeatureSection = ({
                 height={500}
                 className="mx-auto rounded-lg"
               />
-              {/* Abstract SVG decoration */}
-              <div className={`absolute -bottom-10 ${reversed ? "-left-10" : "-right-10"} z-[-1] hidden lg:block`}>
-                <svg
-                  width="150"
-                  height="150"
-                  viewBox="0 0 150 150"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle
-                    opacity="0.08"
-                    cx="75"
-                    cy="75"
-                    r="75"
-                    fill="url(#paint0_linear_feature_section)"
-                  />
-                  <defs>
-                    <linearGradient
-                      id="paint0_linear_feature_section"
-                      x1="0"
-                      y1="75"
-                      x2="150"
-                      y2="75"
-                      gradientUnits="userSpaceOnUse"
-                    >
-                      <stop stopColor="#d68338" />
-                      <stop offset="1" stopColor="#d68338" stopOpacity="0.5" />
-                    </linearGradient>
-                  </defs>
-                </svg>
-              </div>
+              {/* Soft glow behind the screenshot */}
+              <GlowOrb
+                tone="orange"
+                size="26rem"
+                className={`${reversed ? "-left-28" : "-right-28"} -bottom-28 -z-10 hidden opacity-20 dark:opacity-[0.14] lg:block`}
+              />
             </div>
           </div>
 

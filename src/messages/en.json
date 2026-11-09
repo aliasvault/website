@@ -472,9 +472,9 @@
     "imageAlt": "video image"
   },
   "callToAction": {
-    "title": "Protect your privacy, improve your security",
-    "description": "Stop spam • Protect your privacy • Open source",
-    "buttonText": "Get started with AliasVault",
+    "title": "Try AliasVault today.",
+    "description": "Import your passwords from your existing password manager in minutes. Independent, open source, end-to-end encrypted and free to start.",
+    "buttonText": "Create your free vault",
     "logoAlt": "AliasVault logo"
   },
   "founder": {

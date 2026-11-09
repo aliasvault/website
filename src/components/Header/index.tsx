@@ -170,29 +170,6 @@ const Header = ({ banner }: { banner?: ReactNode }) => {
               ))}
               <li className="py-3">
                 <Link
-                  href="https://github.com/aliasvault/aliasvault"
-                  className="block text-base text-dark hover:text-primary dark:text-white/70 dark:hover:text-white transition-colors"
-                  onClick={() => setNavbarOpen(false)}
-                >
-                  {t('footer.social.github')}
-                  <svg
-                        className="ml-1 inline-block h-4 w-4"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                        />
-                      </svg>
-                </Link>
-              </li>
-              <li className="py-3">
-                <Link
                   href="https://app.aliasvault.com/user/login"
                   className="block text-base font-medium text-primary hover:text-primary-dark dark:text-primary dark:hover:text-primary-light transition-colors"
                   onClick={() => setNavbarOpen(false)}

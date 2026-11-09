@@ -361,9 +361,19 @@ const Hero = () => {
                 animate="visible"
               >
                 <motion.div
+                  className="relative z-0"
                   whileHover={{ scale: 1.02, y: -5 }}
                   transition={{ type: "spring" as const, stiffness: 300, damping: 20 }}
                 >
+                  {/* Soft glow behind the screenshot (desktop only). */}
+                  <div
+                    aria-hidden
+                    className="pointer-events-none absolute -inset-[12%] -z-10 hidden opacity-60 dark:opacity-50 md:block"
+                    style={{
+                      background:
+                        "radial-gradient(ellipse at 50% 55%, rgba(244,149,65,0.55) 0%, rgba(251,176,64,0.3) 30%, rgba(214,131,56,0.12) 52%, rgba(214,131,56,0) 70%)",
+                    }}
+                  />
                   <Image
                     src="/images/hero/hero-light.png"
                     alt={t('alt.heroImage')}
@@ -372,7 +382,7 @@ const Hero = () => {
                     priority
                     sizes="(max-width: 992px) 100vw, 50vw"
                     style={{ width: "100%", height: "auto" }}
-                    className="mx-auto dark:hidden"
+                    className="hero-screenshot mx-auto dark:hidden"
                   />
                   <Image
                     src="/images/hero/hero-dark.png"
@@ -382,7 +392,7 @@ const Hero = () => {
                     priority
                     sizes="(max-width: 992px) 100vw, 50vw"
                     style={{ width: "100%", height: "auto" }}
-                    className="mx-auto hidden dark:block"
+                    className="hero-screenshot mx-auto hidden dark:block"
                   />
                 </motion.div>
               </motion.div>

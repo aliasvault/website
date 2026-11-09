@@ -40,8 +40,8 @@ const paddingClasses: Record<CardPadding, string> = {
   lg: "p-6 sm:p-7 lg:p-8",
 };
 
-/** Class names for the shared card surface; used by `<Card>`. */
-function cardClasses({
+/** Class names for the shared card surface. */
+export function cardClasses({
   variant = "default",
   padding = "md",
   interactive = false,

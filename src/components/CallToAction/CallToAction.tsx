@@ -1,60 +1,21 @@
-import Link from "next/link";
-import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { buttonClasses } from "@/components/Common/Button";
+import CallToActionPanel from "./CallToActionPanel";
 
 interface CallToActionProps {
   className?: string;
 }
 
+/** Generic "create your vault" call to action, used on the homepage and feature pages. */
 const CallToAction = ({ className = "" }: CallToActionProps) => {
   const t = useTranslations();
   return (
-    <section className={`mt-8 lg:mt-20 ${className}`}>
-      <div className="container bg-gradient-to-br from-primary-400 dark:from-primary-700 dark:to-gray-900 rounded-2xl p-10 md:p-12 lg:p-16 lg:px-32">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-          {/* Left side content */}
-          <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
-            <h2 className="mb-4 text-3xl font-bold text-gray-900 dark:text-white">
-              {t('callToAction.title')}
-            </h2>
-            <p className="mb-6 text-lg text-gray-700 dark:text-white/90">
-              {t('callToAction.description')}
-            </p>
-            <Link
-              href="https://app.aliasvault.com"
-              className={buttonClasses({ variant: "primaryStrong", size: "lg" })}
-            >
-              {t('callToAction.buttonText')}
-              <svg
-                className="h-5 w-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M13 7l5 5m0 0l-5 5m5-5H6"
-                />
-              </svg>
-            </Link>
-          </div>
-
-          {/* Right side screenshot */}
-          <div className="hidden lg:flex w-full lg:w-1/2 justify-center lg:justify-end">
-            <Image
-              src="/images/logo/logo.svg"
-              alt={t('callToAction.logoAlt')}
-              width={200}
-              height={200}
-            />
-          </div>
-        </div>
-      </div>
-    </section>
+    <CallToActionPanel
+      title={t("callToAction.title")}
+      description={t("callToAction.description")}
+      buttonText={t("callToAction.buttonText")}
+      logoAlt={t("callToAction.logoAlt")}
+      className={className}
+    />
   );
 };
 
