@@ -84,17 +84,19 @@ const AnimatedBackground = () => {
     <div className="absolute inset-0 overflow-hidden z-[-1]">
       <StaticMobileBackground />
       <DesktopOrbs />
-      <DriftingWaves />
       <Grain />
-
-      {/* Dissolve the hero (white / gray-dark) into the page background so the waves
-          fade out instead of being cut off at the section edge. Colours match <body>. */}
-      <div
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-[#FCFCFC] dark:to-black md:h-56"
-        aria-hidden
-      />
     </div>
   );
 };
+
+/**
+ * Foreground layer: sits above the hero screenshot (but below the copy).
+ */
+export const HeroWaves = ({ className = "" }: { className?: string }) => (
+  <div className={`pointer-events-none absolute inset-0 overflow-hidden ${className}`} aria-hidden>
+    <DriftingWaves />
+    <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-[#FCFCFC] dark:to-black md:h-56" />
+  </div>
+);
 
 export default AnimatedBackground;

@@ -6,7 +6,7 @@ import Badge from "../Common/Badge";
 import { useTranslations } from "next-intl";
 import { motion, useReducedMotion } from "framer-motion";
 import { useLayoutEffect, useMemo, useState } from "react";
-import AnimatedBackground from "./AnimatedBackground";
+import AnimatedBackground, { HeroWaves } from "./AnimatedBackground";
 import { buttonClasses } from "@/components/Common/Button";
 
 const useNarrowViewport = () => {
@@ -165,9 +165,13 @@ const Hero = () => {
         {/* Animated gradient background */}
         <AnimatedBackground />
 
-        <div className="container relative z-10">
+        {/* Layering (no z-index on .container, so its columns share the section's stacking
+            context): background < screenshot < waves (z-[1]) < copy (z-[2]). */}
+        <HeroWaves className="z-[1]" />
+
+        <div className="container relative">
           <div className="-mx-4 flex flex-wrap items-center">
-            <div className="w-full px-4 lg:w-1/2">
+            <div className="relative z-[2] w-full px-4 lg:w-1/2">
               <motion.div
                 className="text-center lg:text-left"
                 variants={containerVariants}
@@ -365,13 +369,14 @@ const Hero = () => {
                   whileHover={{ scale: 1.02, y: -5 }}
                   transition={{ type: "spring" as const, stiffness: 300, damping: 20 }}
                 >
-                  {/* Soft glow behind the screenshot (desktop only). */}
                   <div
                     aria-hidden
                     className="pointer-events-none absolute -inset-[12%] -z-10 hidden opacity-60 dark:opacity-50 md:block"
                     style={{
                       background:
                         "radial-gradient(ellipse at 50% 55%, rgba(244,149,65,0.55) 0%, rgba(251,176,64,0.3) 30%, rgba(214,131,56,0.12) 52%, rgba(214,131,56,0) 70%)",
+                      maskImage: "linear-gradient(to bottom, #000 40%, transparent 68%)",
+                      WebkitMaskImage: "linear-gradient(to bottom, #000 40%, transparent 68%)",
                     }}
                   />
                   <Image
