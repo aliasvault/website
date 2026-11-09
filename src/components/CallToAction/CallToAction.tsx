@@ -10,6 +10,7 @@ const CallToAction = ({ className = "" }: CallToActionProps) => {
   const t = useTranslations();
   return (
     <CallToActionPanel
+      eyebrow={t("callToAction.eyebrow")}
       title={t("callToAction.title")}
       description={t("callToAction.description")}
       buttonText={t("callToAction.buttonText")}

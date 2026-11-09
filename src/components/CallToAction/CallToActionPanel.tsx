@@ -2,9 +2,10 @@ import Link from "next/link";
 import Image from "next/image";
 import type { ReactNode } from "react";
 import { buttonClasses } from "@/components/Common/Button";
-import { GlowOrb } from "@/components/Common/Decor";
+import { GlowOrb, Waves } from "@/components/Common/Decor";
 
 interface CallToActionPanelProps {
+  eyebrow?: ReactNode;
   title: ReactNode;
   description: ReactNode;
   buttonText: ReactNode;
@@ -17,6 +18,7 @@ interface CallToActionPanelProps {
  * Shared surface for all call-to-action panels.
  */
 const CallToActionPanel = ({
+  eyebrow,
   title,
   description,
   buttonText,
@@ -27,8 +29,14 @@ const CallToActionPanel = ({
   <section className={`mt-8 lg:mt-20 ${className}`}>
     <div className="container relative overflow-hidden rounded-2xl border border-primary/20 bg-white bg-gradient-to-br from-primary/[0.14] to-primary/[0.04] p-10 shadow-three dark:border-primary/25 dark:bg-gray-dark dark:from-primary/[0.07] dark:to-transparent dark:shadow-none md:p-12 lg:p-16 lg:px-32">
       <GlowOrb tone="orange" size="44rem" className="-right-64 -top-72 opacity-25 dark:hidden" />
+      <Waves className="pointer-events-none absolute inset-x-0 bottom-0 h-20 w-full opacity-40 dark:opacity-25 md:h-28" />
       <div className="relative flex flex-col items-center justify-between gap-8 lg:flex-row">
         <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
+          {eyebrow && (
+            <p className="mb-4 inline-flex items-center rounded-full border border-primary/25 bg-primary/10 px-3.5 py-1 text-sm font-medium text-primary-700 dark:border-primary/30 dark:bg-primary/15 dark:text-primary">
+              {eyebrow}
+            </p>
+          )}
           <h2 className="mb-4 text-3xl font-bold text-gray-900 dark:text-white">{title}</h2>
           <p className="mb-6 text-lg text-gray-700 dark:text-white/80">{description}</p>
           <Link href={href} className={buttonClasses({ variant: "primaryStrong", size: "lg" })}>

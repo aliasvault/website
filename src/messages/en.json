@@ -472,8 +472,9 @@
     "imageAlt": "video image"
   },
   "callToAction": {
+    "eyebrow": "Free to use",
     "title": "Try AliasVault today.",
-    "description": "Import your passwords from your existing password manager in minutes. Independent, open source, end-to-end encrypted and free to start.",
+    "description": "Import your passwords from your existing password manager in minutes. Independent, open source and end-to-end encrypted.",
     "buttonText": "Create your free vault",
     "logoAlt": "AliasVault logo"
   },

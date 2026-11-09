@@ -13,6 +13,7 @@ const ImportCallToAction = ({ namespace, href, className = "" }: ImportCallToAct
   const t = useTranslations();
   return (
     <CallToActionPanel
+      eyebrow={t("callToAction.eyebrow")}
       title={t(`${namespace}.title`)}
       description={t(`${namespace}.description`)}
       buttonText={t(`${namespace}.cta`)}

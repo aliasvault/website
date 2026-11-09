@@ -472,8 +472,9 @@
     "imageAlt": "video afbeelding"
   },
   "callToAction": {
-    "title": "Probeer AliasVault vandaag.",
-    "description": "Importeer je wachtwoorden in enkele minuten vanuit je huidige wachtwoordmanager. Onafhankelijk, open source, end-to-end versleuteld en gratis om mee te beginnen.",
+    "eyebrow": "Gratis te gebruiken",
+    "title": "Probeer AliasVault vandaag nog.",
+    "description": "Importeer je wachtwoorden in enkele minuten vanuit je huidige wachtwoordmanager. Onafhankelijk, open source en end-to-end versleuteld.",
     "buttonText": "Maak je gratis vault",
     "logoAlt": "AliasVault logo"
   },
