@@ -72,7 +72,10 @@ export function generateSEOMetadata({
     description,
     alternates: {
       canonical: canonicalUrl,
-      languages: alternateUrls
+      languages: alternateUrls,
+      types: {
+        'application/rss+xml': [{ url: localizedUrl(locale, '/rss.xml'), title: 'AliasVault Blog' }]
+      }
     },
     openGraph: {
       type,

@@ -4,19 +4,6 @@ import { NextResponse } from 'next/server';
 // Built from Payload content, which is only available at runtime.
 export const dynamic = 'force-dynamic';
 
-/** Extract plain text from a Payload Lexical editor state. */
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function lexicalToPlainText(content: any): string {
-  const parts: string[] = [];
-  const walk = (node: any) => {
-    if (!node) return;
-    if (typeof node.text === 'string') parts.push(node.text);
-    if (Array.isArray(node.children)) node.children.forEach(walk);
-  };
-  walk(content?.root);
-  return parts.join(' ');
-}
-
 const locales = ['en', 'nl'];
 const localeNames = {
   en: 'en-US',
@@ -45,13 +32,10 @@ export async function GET(
   }
 
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.aliasvault.com';
+  // The list query only selects card fields (no body), so each item uses the
+  // post's summary `description` field.
   const posts = await getAllBlogAndNewsPosts(locale);
 
-  // Build a plain-text excerpt from the Lexical content for each item.
-  const processedPosts = posts.map((post) => ({
-    ...post,
-    content: lexicalToPlainText(post.content).replace(/\s+/g, ' ').trim().slice(0, 500) + '...',
-  }));
   // Generate alternate feed links for all locales except current locale
   const alternateLinks = locales
     .filter(loc => loc !== locale) // Filter out self link
@@ -68,13 +52,13 @@ export async function GET(
         <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
         <atom:link href="${baseUrl}${locale === 'en' ? '' : '/' + locale}/rss.xml" rel="self" type="application/rss+xml" />
         ${alternateLinks}
-        ${processedPosts.map((post) => `
+        ${posts.map((post) => `
           <item>
             <title><![CDATA[${post.title}]]></title>
             <link>${baseUrl}${locale === 'en' ? '' : '/' + locale}/${post.type}/${post.slug}</link>
             <guid>${baseUrl}${locale === 'en' ? '' : '/' + locale}/${post.type}/${post.slug}</guid>
             <pubDate>${new Date(post.date).toUTCString()}</pubDate>
-            <description><![CDATA[${post.content}]]></description>
+            <description><![CDATA[${post.description}]]></description>
             <category><![CDATA[${post.tags.join(', ')}]]></category>
             <dc:creator><![CDATA[${post.author.name}]]></dc:creator>
           </item>
