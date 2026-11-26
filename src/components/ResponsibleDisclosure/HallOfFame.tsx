@@ -60,6 +60,18 @@ const socialMeta: Record<SocialPlatform, { Icon: ({ className }: { className?: s
 
 const vulnerabilities: Vulnerability[] = [
   {
+    id: "autofill-clickjacking-extension-2026",
+    researcher: "Ugur Ercan",
+    socials: [
+      { platform: "github", url: "https://github.com/ugur-ercan" },
+    ],
+    date: "2026-11-26",
+    severity: "medium",
+    ghsa: "GHSA-j2mc-qv7c-j2f8",
+    advisoryUrl: "https://github.com/aliasvault/aliasvault/security/advisories/GHSA-j2mc-qv7c-j2f8",
+    summary: "Clickjacking issue in the autofill feature of the AliasVault browser extension versions 0.31.2 and earlier: filling a vault item that did not match the current page did not require confirmation in a separate extension window, so a malicious website could trick the user into searching for and selecting an item for an unrelated website, which was then filled into the page. Fixed in version 0.31.3 on 2026-11-11 with a separate confirmation window for non-matching items and strengthened clickjacking detection.",
+  },
+  {
     id: "mobile-login-consent-phishing-2026",
     researcher: "kta1kri",
     socials: [
