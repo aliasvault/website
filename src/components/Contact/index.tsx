@@ -51,7 +51,7 @@ const ContactContent = () => {
               <dl className="mb-6 space-y-4 text-base">
                 <div>
                   <dt className="text-sm text-body-color dark:text-body-color-dark">{t('contact.content.company.name')}</dt>
-                  <dd className="font-medium text-black dark:text-white">XIVISOFT</dd>
+                  <dd className="font-medium text-black dark:text-white">AliasVault</dd>
                 </div>
                 <div>
                   <dt className="text-sm text-body-color dark:text-body-color-dark">{t('contact.content.company.location')}</dt>

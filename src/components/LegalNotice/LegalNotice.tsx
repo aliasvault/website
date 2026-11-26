@@ -10,8 +10,8 @@ const LegalNotice = () => {
               Website Operator
             </h3>
             <p className="text-base font-medium leading-relaxed text-body-color dark:text-body-color-dark">
-            AliasVault is a product of XIVISOFT<br />
-            Sole proprietorship operated by <a href="https://github.com/lanedirt" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Leendert de Borst</a>
+              AliasVault is a product and registered trade name of XIVISOFT, a sole proprietorship owned by{" "}
+              <a href="https://github.com/lanedirt" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Leendert de Borst</a>.
             </p>
           </div>
 
@@ -21,6 +21,7 @@ const LegalNotice = () => {
             </h3>
             <p className="text-base font-medium leading-relaxed text-body-color dark:text-body-color-dark">
               KVK (Chamber of Commerce): 51592193<br />
+              Registered trade name: AliasVault<br />
               Based in: The Hague, the Netherlands
             </p>
           </div>
