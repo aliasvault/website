@@ -21,7 +21,7 @@ const LegalNotice = () => {
             </h3>
             <p className="text-base font-medium leading-relaxed text-body-color dark:text-body-color-dark">
               KVK (Chamber of Commerce): 51592193<br />
-              Country of registration: Netherlands
+              Based in: The Hague, the Netherlands
             </p>
           </div>
 
@@ -99,7 +99,8 @@ const LegalNotice = () => {
             </h3>
             <p className="text-base font-medium leading-relaxed text-body-color dark:text-body-color-dark">
               Leendert de Borst<br />
-              Address available upon request
+              The Hague, the Netherlands<br />
+              Full postal address available upon request
             </p>
           </div>
 
@@ -109,16 +110,6 @@ const LegalNotice = () => {
             </h3>
             <p className="text-base font-medium leading-relaxed text-body-color dark:text-body-color-dark">
               We believe in open communication and resolving issues directly. If you have any concerns, please reach out to us first; we&apos;re happy to help.
-              <br /><br />
-              For EU consumers, the European Commission provides a platform for online dispute resolution (ODR):{" "}
-              <a
-                href="https://ec.europa.eu/consumers/odr/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary hover:underline"
-              >
-                https://ec.europa.eu/consumers/odr/
-              </a>
             </p>
           </div>
 

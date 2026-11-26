@@ -108,7 +108,6 @@
       "status": "Service Status",
       "report_abuse": "Report Abuse",
       "responsible_disclosure": "Responsible Disclosure",
-      "license": "License",
       "privacy": "Privacy Policy",
       "account_deletion": "Account Deletion",
       "terms_and_conditions": "Terms and Conditions",
@@ -125,6 +124,7 @@
     "alt": {
       "logo": "logo"
     },
+    "location": "The Hague, The Netherlands",
     "language": "Language",
     "copyright": "AliasVault™. All rights reserved.",
     "socialAriaLabel": "social-link",
@@ -229,19 +229,24 @@
     "subtitle": "Get in touch",
     "description": "Have questions or need support? We're here to help.",
     "content": {
-      "main": {
-        "title": "Contact",
-        "contactBlurb": "If you have any questions, please read our FAQ or check our documentation below. If you wish to contact us instead or need help, send an email to"
+      "email": {
+        "title": "Contact support",
+        "description": "Do you have a question regarding your account or experiencing issues? Email us and we'll get back to you as soon as we can.",
+        "languages": "Support in English and Dutch",
+        "responseTime": "Average response time: < 24 hours"
+      },
+      "company": {
+        "title": "Company details",
+        "name": "Company",
+        "location": "Based in",
+        "kvk": "Chamber of Commerce (KVK)",
+        "legalNotice": "View legal notice"
       },
       "status": {
         "title": "Service Status",
         "description": "Something not working? Before reaching out, check our status page to see whether there's an ongoing incident or planned maintenance affecting the cloud service.",
         "link": "Check service status"
       },
-      "intro": "AliasVault™ is an open-source password and alias manager founded by",
-      "founder": "Leendert de Borst",
-      "team": ". It is developed and operated by a small, dedicated team from The Netherlands. Our official cloud-hosted version runs on AliasVault's own dedicated servers in Germany, Finland, the Netherlands, and France. Geographically separated to cover single points of failure, and fully compliant with European GDPR regulations.",
-      "inquiries": "For questions about our cloud-hosted service or other inquiries, please contact:",
       "support": {
         "title": "Support & Bug Reports",
         "description": "For bug reports please use our GitHub repository. For technical discussions about the open-source project, join our Discord community:",

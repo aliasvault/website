@@ -68,11 +68,15 @@ const Footer = () => {
                 </p>
                 <a
                   href="mailto:support@aliasvault.com"
-                  className="mb-9 inline-flex items-center gap-2 text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
+                  className="mb-3 inline-flex items-center gap-2 text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                 >
                   <FaEnvelope className="h-4 w-4" aria-hidden="true" />
                   support@aliasvault.com
                 </a>
+                <p className="mb-9 flex items-center gap-2 text-base text-body-color dark:text-body-color-dark">
+                  <Image src="/images/flags/nl.svg" width={16} height={11} alt="" aria-hidden="true" className="w-4 rounded-[2px] ring-1 ring-black/10 dark:ring-white/10" />
+                  {t('footer.location')}
+                </p>
                 <div className="flex flex-wrap items-center gap-x-5 gap-y-3">
                   <a
                     href="https://github.com/aliasvault/aliasvault"
@@ -444,15 +448,6 @@ const Footer = () => {
             <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
               <p className="text-base text-body-color dark:text-body-color-dark">
                © 2024{new Date().getFullYear() !== 2024 ? `-${new Date().getFullYear()}` : ""} {t('footer.copyright')}
-                &nbsp;{t('footer.links.license')}:&nbsp;
-                <Link
-                    href="https://github.com/aliasvault/aliasvault/blob/main/LICENSE.md"
-                    target="_blank"
-                    className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
-                  >
-                     AGPL-3.0
-                  </Link>
-                  .
               </p>
               <div className="flex items-center gap-4">
                 <span className="text-sm text-body-color dark:text-body-color-dark">
