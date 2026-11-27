@@ -255,7 +255,7 @@ export default function Pricing({ faq }: { faq?: ReactNode }) {
             <p className="text-base font-medium leading-relaxed text-body-color dark:text-body-color-dark">
               <span className="font-semibold text-black dark:text-white">{t("selfHost.title")}</span>{" "}
               {t("selfHost.body")}{" "}
-              <Link href="/source-code" className="text-primary hover:underline">
+              <Link href="/open-source" className="text-primary hover:underline">
                 {t("selfHost.cta")}
               </Link>
             </p>
@@ -302,14 +302,6 @@ export default function Pricing({ faq }: { faq?: ReactNode }) {
             </div>
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
               <a
-                href="https://opencollective.com/aliasvault"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={buttonClasses()}
-              >
-                {t("support.donateOpenCollective")}
-              </a>
-              <a
                 href="https://www.buymeacoffee.com/lanedirt"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -322,8 +314,20 @@ export default function Pricing({ faq }: { faq?: ReactNode }) {
                   height={50}
                 />
               </a>
+              <a
+                href="https://opencollective.com/aliasvault"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={buttonClasses()}
+              >
+                {t("support.donateOpenCollective")}
+              </a>
             </div>
             <p className="text-base font-medium leading-relaxed text-body-color dark:text-body-color-dark">
+              <Link href="/support-us" className="text-primary hover:underline">
+                {t("support.supportUsLink")}
+              </Link>
+              {" · "}
               <Link href="/contact" className="text-primary hover:underline">
                 {t("support.contactLink")}
               </Link>

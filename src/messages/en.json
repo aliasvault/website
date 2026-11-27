@@ -96,7 +96,8 @@
       "platforms": "Platforms",
       "downloads": "Downloads",
       "documentation": "Documentation",
-      "source": "Source code",
+      "source": "Open source",
+      "support_us": "Support us",
       "press_kit": "Press Kit",
       "alt_simplelogin": "Alternative to SimpleLogin",
       "alt_bitwarden": "Alternative to Bitwarden",
@@ -280,14 +281,52 @@
         }
       },
       "donations": {
-        "title": "Donations",
-        "description": "If you find AliasVault useful, consider supporting its development. Donations are optional but greatly appreciated and will help us continue to improve the project.",
-        "imageAlt": "Buy Me A Coffee",
-        "openCollectiveAlt": "Support on OpenCollective"
+        "title": "Support AliasVault",
+        "description": "AliasVault is independent and self-funded. If you find it useful, you can support its development with a donation, or help in other ways, such as leaving a review, helping others get started with AliasVault or contributing translations.",
+        "link": "Ways to support AliasVault"
       },
       "closing": {
         "text": "Didn't find what you were looking for? Contact us at"
       }
+    }
+  },
+  "supportUs": {
+    "metadata": {
+      "title": "Support AliasVault",
+      "description": "AliasVault is open source, independent and self-funded. Donate via Open Collective or Buy Me a Coffee, or help by translating, reporting bugs and spreading the word."
+    },
+    "title": "Support AliasVault",
+    "pageDescription": "AliasVault is independent and self-funded. Here's how you can help keep it that way.",
+    "intro": {
+      "paragraph1": "AliasVault is open source and entirely self-funded. There are no investors and no ads, and we never sell your data. It's built by a small, independent team from the Netherlands.",
+      "paragraph2": "If you find AliasVault useful, consider supporting its development with a donation. Every contribution, big or small, is greatly appreciated."
+    },
+    "donate": {
+      "buyMeACoffeeAlt": "Buy Me a Coffee",
+      "openCollective": "Donate via Open Collective"
+    },
+    "why": {
+      "title": "Why your support matters",
+      "paragraph1": "We work on AliasVault full-time: building new features, apps for every platform, and keeping up with changes in browsers and operating systems. On top of that, there are external costs, such as independent security audits and running the official cloud service on our own servers.",
+      "paragraph2": "Donations help us keep working on AliasVault full-time and stay independent, so we answer to our users rather than to investors. Contributions made via Open Collective are visible on our public collective page.",
+      "paragraph3": "To everyone who donates: thank you! Your donation also helps keep AliasVault free for people who aren't able to contribute themselves. That way, you're helping protect their privacy too."
+    },
+    "audience": {
+      "title": "Self-hosted or cloud?",
+      "selfHosted": "<strong>Self-hosting AliasVault?</strong> Self-hosting is free, includes every feature and will stay that way. Since you run AliasVault on your own server, a donation is the best way to give back to the project you rely on.",
+      "cloud": "<strong>Using the official cloud?</strong> Donations are very welcome while AliasVault is in beta. After the 1.0 release we'll introduce optional Premium and Family plans, which will become the main way to support AliasVault from the cloud, with higher limits and extras in return. The free tier stays available. See our <link>pricing page</link> for details."
+    },
+    "otherWays": {
+      "title": "Other ways to help",
+      "description": "Not able to donate? There are plenty of other ways to help AliasVault grow:",
+      "review": "<link>Leave a review</link> in the app stores, or recommend AliasVault to friends.",
+      "translate": "<link>Help translate</link> AliasVault into your language on Crowdin.",
+      "star": "<link>Star AliasVault on GitHub</link>. Stars help more people discover the project.",
+      "bugs": "<bugs>Report bugs</bugs> or <ideas>suggest ideas</ideas> on GitHub.",
+      "community": "Join our <link>Discord community</link> to share feedback and help other users."
+    },
+    "closing": {
+      "text": "Questions about donating or other ways to help? Email us at"
     }
   },
   "blog": {
@@ -372,10 +411,10 @@
   },
   "sourceCode": {
     "metadata": {
-      "title": "Source Code",
+      "title": "Open Source",
       "description": "AliasVault is fully open-source. Explore repositories, mirrors, and why we keep the code public."
     },
-    "title": "Source Code",
+    "title": "Open Source",
     "pageDescription": "All AliasVault source code is public for transparency, privacy, and trust.",
     "repositories": {
       "primary": "primary",
@@ -388,8 +427,13 @@
         "paragraph2": "Privacy is at the core of our mission. Keeping the source code public helps build trust and enables independent review, so users can rely on AliasVault with confidence."
       },
       "selfHosting": {
-        "paragraph": "AliasVault can be fully self-hosted by users with technical experience. If you want full control over your infrastructure, you can deploy AliasVault yourself using our installation documentation",
+        "paragraph": "AliasVault can be fully self-hosted by users with technical experience. If you want full control over your infrastructure, you can deploy AliasVault yourself using our",
         "installationLinkText": "installation docs"
+      },
+      "support": {
+        "title": "Support the project",
+        "paragraph": "AliasVault is free, open source and entirely self-funded. If you self-host AliasVault, a donation is the best way to support its continued development. You can also help in other ways, such as leaving a review, helping others get started with AliasVault or contributing translations.",
+        "linkText": "Ways to support AliasVault"
       }
     }
   },
@@ -1416,6 +1460,7 @@
       "body": "We are entirely self-funded. Donations help us keep building AliasVault independently.",
       "donateOpenCollective": "Donate via OpenCollective",
       "donateBuyMeACoffeeAlt": "Buy Me a Coffee",
+      "supportUsLink": "More ways to support",
       "contactLink": "Contact",
       "missionLink": "Our mission",
       "featuresLink": "All features"
@@ -1584,7 +1629,7 @@
   },
   "statistics": {
     "title": "Statistics",
-    "description": "Key numbers that show AliasVault's growing impact on digital privacy since July 2026.",
+    "description": "Key numbers that show AliasVault's growing impact on digital privacy (as of November 2026).",
     "githubStars": "GitHub Stars",
     "cloudRegistrations": "Cloud User Registrations",
     "selfHostedDownloads": "Self-hosted Downloads",

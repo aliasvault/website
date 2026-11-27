@@ -96,7 +96,8 @@
       "platforms": "Platforms",
       "downloads": "Downloads",
       "documentation": "Documentatie",
-      "source": "Broncode",
+      "source": "Open source",
+      "support_us": "Steun ons",
       "press_kit": "Perskit",
       "alt_simplelogin": "Alternatief voor SimpleLogin",
       "alt_bitwarden": "Alternatief voor Bitwarden",
@@ -280,14 +281,52 @@
         }
       },
       "donations": {
-        "title": "Donaties",
-        "description": "Als je het project wilt steunen dan kan dat via een donatie. Donaties zijn optioneel maar worden zeer gewaardeerd en zullen ons helpen het project te blijven verbeteren!",
-        "imageAlt": "Buy Me A Coffee",
-        "openCollectiveAlt": "Steun via OpenCollective"
+        "title": "Steun AliasVault",
+        "description": "AliasVault is onafhankelijk en zelf-gefinancierd. Vind je het nuttig, dan kun je de ontwikkeling steunen met een donatie, of op een andere manier helpen, bijvoorbeeld door een review achter te laten, anderen op weg te helpen met AliasVault of bij te dragen aan vertalingen.",
+        "link": "Manieren om AliasVault te steunen"
       },
       "closing": {
         "text": "Niet gevonden wat je zocht? Neem contact met ons op via"
       }
+    }
+  },
+  "supportUs": {
+    "metadata": {
+      "title": "Steun AliasVault",
+      "description": "AliasVault is open source, onafhankelijk en zelf-gefinancierd. Doneer via Open Collective of Buy Me a Coffee, of help mee met vertalen, bugs melden en AliasVault aanraden."
+    },
+    "title": "Steun AliasVault",
+    "pageDescription": "AliasVault is onafhankelijk en zelf-gefinancierd. Help mee om dat zo te houden.",
+    "intro": {
+      "paragraph1": "AliasVault is open source en volledig zelf-gefinancierd. Er zijn geen investeerders en geen advertenties, en we verkopen nooit je gegevens. AliasVault wordt gebouwd door een klein, onafhankelijk team uit Nederland.",
+      "paragraph2": "Vind je AliasVault nuttig? Overweeg dan om de ontwikkeling te steunen met een donatie. Elke bijdrage, groot of klein, wordt enorm gewaardeerd."
+    },
+    "donate": {
+      "buyMeACoffeeAlt": "Buy Me a Coffee",
+      "openCollective": "Doneer via Open Collective"
+    },
+    "why": {
+      "title": "Waarom je steun belangrijk is",
+      "paragraph1": "We werken fulltime aan AliasVault: nieuwe functies, apps voor elk platform en het bijhouden van veranderingen in browsers en besturingssystemen. Daarnaast zijn er externe kosten, zoals onafhankelijke beveiligingsaudits en het draaien van de officiële clouddienst op onze eigen servers.",
+      "paragraph2": "Met donaties kunnen we fulltime aan AliasVault doorwerken en blijven we onafhankelijk, zodat we verantwoording afleggen aan onze gebruikers en niet aan investeerders. Bijdragen via Open Collective zijn zichtbaar op onze openbare Open Collective-pagina.",
+      "paragraph3": "Aan iedereen die doneert: bedankt! Met jouw vrijblijvende donatie help je AliasVault gratis te houden voor mensen die zelf niet kunnen bijdragen. Zo help je ook hun privacy te beschermen."
+    },
+    "audience": {
+      "title": "Zelf hosten of cloud?",
+      "selfHosted": "<strong>Host je AliasVault zelf?</strong> Zelf hosten is gratis, met alle functies, en dat blijft zo. Omdat je AliasVault op je eigen server draait, is een donatie de beste manier om iets terug te doen voor het project waar je op vertrouwt.",
+      "cloud": "<strong>Gebruik je de officiële cloud?</strong> Tijdens de bèta zijn donaties van harte welkom. Na de 1.0-release introduceren we optionele Premium- en Family-abonnementen. Die worden dan de belangrijkste manier om AliasVault vanuit de cloud te steunen, met in ruil daarvoor hogere limieten en extra's. De gratis versie blijft beschikbaar. Bekijk onze <link>prijzenpagina</link> voor meer informatie."
+    },
+    "otherWays": {
+      "title": "Andere manieren om te helpen",
+      "description": "Kun je niet doneren? Er zijn genoeg andere manieren om AliasVault te helpen groeien:",
+      "review": "<link>Laat een review achter</link> in de app stores, of raad AliasVault aan bij vrienden.",
+      "translate": "<link>Help mee met vertalen</link> van AliasVault in je eigen taal via Crowdin.",
+      "star": "<link>Geef AliasVault een ster op GitHub</link>. Sterren helpen meer mensen het project te ontdekken.",
+      "bugs": "<bugs>Meld bugs</bugs> of <ideas>deel ideeën</ideas> op GitHub.",
+      "community": "Word lid van onze <link>Discord-community</link> om feedback te delen en andere gebruikers te helpen."
+    },
+    "closing": {
+      "text": "Vragen over doneren of andere manieren om te helpen? Mail ons via"
     }
   },
   "blog": {
@@ -372,10 +411,10 @@
   },
   "sourceCode": {
     "metadata": {
-      "title": "Broncode",
+      "title": "Open source",
       "description": "AliasVault is volledig open-source. Bekijk repositories, mirrors en waarom we de broncode publiek houden."
     },
-    "title": "Broncode",
+    "title": "Open source",
     "pageDescription": "Alle AliasVault broncode is publiek voor transparantie, privacy en vertrouwen.",
     "repositories": {
       "primary": "primair",
@@ -388,8 +427,13 @@
         "paragraph2": "Privacy staat centraal in onze missie. Door alle broncode publiek te maken en houden maken we onafhankelijke review mogelijk, zodat gebruikers met een gerust hart op AliasVault kunnen vertrouwen."
       },
       "selfHosting": {
-        "paragraph": "AliasVault kan volledig zelf gehost worden door gebruikers met technische ervaring. Als je volledige controle wilt over je infrastructuur, kun je AliasVault zelf deployen met behulp van onze",
+        "paragraph": "AliasVault kan volledig zelf gehost worden door gebruikers met technische ervaring. Als je volledige controle wilt over je infrastructuur, kun je AliasVault zelf installeren op je eigen server met behulp van onze",
         "installationLinkText": "installatiedocumentatie"
+      },
+      "support": {
+        "title": "Steun het project",
+        "paragraph": "AliasVault is gratis, open source en volledig zelf-gefinancierd. Als je AliasVault zelf host, is een vrijblijvende donatie de beste manier om de doorontwikkeling te steunen. Je kunt ook op een andere manier helpen, bijvoorbeeld door een review achter te laten, anderen op weg te helpen met AliasVault of bij te dragen aan vertalingen.",
+        "linkText": "Manieren om AliasVault te steunen"
       }
     }
   },
@@ -1413,9 +1457,10 @@
     },
     "support": {
       "title": "Steun de ontwikkeling",
-      "body": "We zijn volledig self-funded. Donaties helpen ons AliasVault onafhankelijk te blijven bouwen.",
+      "body": "We zijn volledig self-funded. Donaties helpen ons AliasVault onafhankelijk verder te blijven doorontwikkelen.",
       "donateOpenCollective": "Doneer via OpenCollective",
       "donateBuyMeACoffeeAlt": "Buy Me a Coffee",
+      "supportUsLink": "Meer manieren om te steunen",
       "contactLink": "Contact",
       "missionLink": "Onze missie",
       "featuresLink": "Alle functies"
@@ -1584,7 +1629,7 @@
   },
   "statistics": {
     "title": "Cijfers",
-    "description": "Belangrijke cijfers die AliasVault's groeiende impact op digitale privacy weergeven (sinds juli 2026).",
+    "description": "Belangrijke cijfers die AliasVault's groeiende impact op digitale privacy weergeven. Cijfers: november 2026.",
     "githubStars": "GitHub sterren",
     "cloudRegistrations": "Cloud gebruikers",
     "selfHostedDownloads": "Self-hosted downloads",

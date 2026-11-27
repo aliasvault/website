@@ -1,3 +1,4 @@
+import { FiArrowRight } from "react-icons/fi";
 import { SiCodeberg, SiGithub, SiGitlab } from "react-icons/si";
 import { useTranslations } from "next-intl";
 import AnchorHeading from "@/components/Common/AnchorHeading";
@@ -70,6 +71,19 @@ export default function SourceCode() {
             </a>
             .
           </p>
+
+          <div className="pt-4">
+            <AnchorHeading as="h2" id="support" className="mb-2 text-2xl font-bold text-black dark:text-white sm:text-3xl">
+              {t("sourceCode.sections.support.title")}
+            </AnchorHeading>
+            <p className="mb-4 text-base font-medium leading-relaxed text-body-color dark:text-body-color-dark">
+              {t("sourceCode.sections.support.paragraph")}
+            </p>
+            <Link href="/support-us" className="group inline-flex items-center gap-2 text-base font-medium text-primary">
+              {t("sourceCode.sections.support.linkText")}
+              <FiArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
+            </Link>
+          </div>
 
           <div className="pt-4">
             <AnchorHeading as="h2" id="roadmap" className="mb-2 text-2xl font-bold text-black dark:text-white sm:text-3xl">

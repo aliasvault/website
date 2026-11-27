@@ -28,6 +28,13 @@ const nextConfig = {
       beforeFiles: [{ source: '/uploads/:filename', destination: '/api/media/file/:filename' }],
     }
   },
+  // Renamed pages: keep old URLs (inbound links, search results) working.
+  async redirects() {
+    return [
+      { source: '/source-code', destination: '/open-source', permanent: true },
+      { source: '/:locale(en|nl)/source-code', destination: '/:locale/open-source', permanent: true },
+    ]
+  },
   async headers() {
     return [
       {

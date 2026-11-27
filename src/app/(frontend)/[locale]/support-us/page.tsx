@@ -1,31 +1,30 @@
 import { Metadata } from "next";
-import Breadcrumb from "@/components/Common/Breadcrumb";
 import { useTranslations } from "next-intl";
 import { getTranslations } from "next-intl/server";
-import { generatePageSEOMetadata } from "@/lib/seo-utils";
+import Breadcrumb from "@/components/Common/Breadcrumb";
 import Page from "@/components/Common/Page";
-import SourceCode from "@/components/SourceCode/SourceCode";
+import SupportUs from "@/components/SupportUs/SupportUs";
+import { generatePageSEOMetadata } from "@/lib/seo-utils";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale });
 
   return generatePageSEOMetadata({
-    title: t("sourceCode.metadata.title"),
-    description: t("sourceCode.metadata.description"),
-    path: "/source-code",
+    title: t("supportUs.metadata.title"),
+    description: t("supportUs.metadata.description"),
+    path: "/support-us",
     locale,
   });
 }
 
-export default function SourceCodePage() {
+export default function SupportUsPage() {
   const t = useTranslations();
 
   return (
     <Page>
-      <Breadcrumb pageName={t("sourceCode.title")} description={t("sourceCode.pageDescription")} />
-      <SourceCode />
+      <Breadcrumb pageName={t("supportUs.title")} description={t("supportUs.pageDescription")} />
+      <SupportUs />
     </Page>
   );
 }
-

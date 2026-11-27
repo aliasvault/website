@@ -238,9 +238,17 @@ const Footer = () => {
                   <li>
                     <Link
                       className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
-                      href={`/${locale}/source-code`}
+                      href={`/${locale}/open-source`}
                     >
                       {t('footer.links.source')}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href={`/${locale}/support-us`}
+                      className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
+                    >
+                      {t('footer.links.support_us')}
                     </Link>
                   </li>
                   <li>

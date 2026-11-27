@@ -239,34 +239,16 @@ const ContactContent = () => {
             >
               {t('contact.content.donations.title')}
             </AnchorHeading>
-            <p className="mb-6 text-base text-body-color dark:text-body-color-dark">
+            <p className="text-base text-body-color dark:text-body-color-dark">
               {t('contact.content.donations.description')}
             </p>
-            <div className="flex flex-col gap-4 sm:flex-row sm:gap-6">
-              <a
-                href="https://www.buymeacoffee.com/lanedirt"
-                target="_blank"
-                rel="noopener noreferrer"
+            <div className="mt-4">
+              <Link
+                  href="/support-us"
+                  className="text-primary hover:underline"
               >
-                <Image
-                  src="/images/contact/buymeacoffee.png"
-                  alt={t('contact.content.donations.imageAlt')}
-                  width={217}
-                  height={60}
-                />
-              </a>
-              <a
-                href="https://opencollective.com/aliasvault"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={buttonClasses()}
-              >
-                <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 21.6c-5.293 0-9.6-4.307-9.6-9.6S6.707 2.4 12 2.4s9.6 4.307 9.6 9.6-4.307 9.6-9.6 9.6z"/>
-                  <path d="M12 6c-3.314 0-6 2.686-6 6s2.686 6 6 6 6-2.686 6-6-2.686-6-6-6zm0 10.8c-2.651 0-4.8-2.149-4.8-4.8s2.149-4.8 4.8-4.8 4.8 2.149 4.8 4.8-2.149 4.8-4.8 4.8z"/>
-                </svg>
-                {t('contact.content.donations.openCollectiveAlt')}
-              </a>
+                {t('contact.content.donations.link')}
+              </Link>
             </div>
           </div>
 
